@@ -54,10 +54,10 @@ namespace ABC_Bakery.Helpers
         {
 
             Console.WriteLine("DatabaseContext.OnModelCreating()");
-            RolePermission.Config(modelBuilder);
             Role.Config(modelBuilder);
             Permission.Config(modelBuilder);
-            //User.Config(modelBuilder);
+            RolePermission.Config(modelBuilder);
+            User.Config(modelBuilder);
             //Supplier.Config(modelBuilder);
             //Import.Config(modelBuilder);
             ImportProduct.Config(modelBuilder);

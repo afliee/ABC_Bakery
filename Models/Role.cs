@@ -14,7 +14,7 @@ namespace ABC_Bakery.Models
         public required string Name { get; set; }
         
         public virtual  ICollection<User> Users { get; set; }
-        public virtual  ICollection<RolePermission> Permissions { get; set; }
+        public virtual  ICollection<RolePermission> Permissions { get; set; } = new List<RolePermission>();
         
 
         public static void Config(ModelBuilder modelBuilder)

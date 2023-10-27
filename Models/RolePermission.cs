@@ -12,23 +12,26 @@ namespace ABC_Bakery.Models
        public int RoleId { get; set; }
         public int PermissionId { get; set; }
 
-        public virtual required Role Role { get; set; }
-        public virtual required Permission Permission { get; set; }
+        public virtual  Role Role { get; set; }
+        public virtual  Permission Permission { get; set; }
+
+        public RolePermission() { }
+
+        public RolePermission(int roleId, int permissionId)
+        {
+            RoleId = roleId;
+            PermissionId = permissionId;
+        }
+        public RolePermission(Role role, Permission permission)
+        {
+            Role = role;
+            Permission = permission;
+        }
 
         public static void Config(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RolePermission>()
                 .HasKey(rp => new { rp.RoleId, rp.PermissionId });
-
-            modelBuilder.Entity<RolePermission>()
-                .HasOne(rp => rp.Role)
-                .WithMany(r => r.Permissions)
-                .HasForeignKey(rp => rp.RoleId);
-
-            modelBuilder.Entity<RolePermission>()
-                .HasOne(rp => rp.Permission)
-                .WithMany(p => p.Roles)
-                .HasForeignKey(rp => rp.PermissionId);
         }
     }
 
