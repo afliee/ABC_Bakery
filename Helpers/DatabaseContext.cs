@@ -11,7 +11,8 @@ namespace ABC_Bakery.Helpers
 {
     internal class DatabaseContext : DbContext
     {
-        private static readonly string CONNECTION_STRING = "Data Source=ALFIE;Initial Catalog=ABC_Bakery;Persist Security Info=True;Encrypt=False;User ID=sa;Password=123456";
+        private static readonly string CONNECTION_STRING = "Data Source=TRONGDAT;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        //private static readonly string CONNECTION_STRING = "Data Source=ALFIE;Initial Catalog=ABC_Bakery;Persist Security Info=True;Encrypt=False;User ID=sa;Password=123456";
            
         public DatabaseContext() : base()
         {

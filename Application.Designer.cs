@@ -587,7 +587,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Application";
-            Text = "Form1";
+            Text = " ";
             WindowState = FormWindowState.Maximized;
             Load += Application_Load;
             panel1.ResumeLayout(false);

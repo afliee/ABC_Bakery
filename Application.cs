@@ -1,6 +1,7 @@
 using ABC_Bakery.Helpers;
 using ABC_Bakery.Models;
 using ABC_Bakery.Repositorys;
+using ABC_Bakery.Forms;
 
 namespace ABC_Bakery
 {
@@ -26,7 +27,10 @@ namespace ABC_Bakery
 
         private void Application_Load(object sender, EventArgs e)
         {
-
+            //Forms.Order order = new Forms.Order();
+            //order.Show();
+            Forms.OrderNoPayment orderNoPayment = new Forms.OrderNoPayment();
+            orderNoPayment.Show();
         }
 
         private void orderTransition_Tick(object sender, EventArgs e)
