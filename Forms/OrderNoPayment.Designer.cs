@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderNoPayment));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            dateTimePicker1 = new DateTimePicker();
+            label8 = new Label();
+            label7 = new Label();
             pictureBox1 = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
@@ -48,7 +52,12 @@
             SL = new DataGridViewTextBoxColumn();
             Thanhtien = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
             label4 = new Label();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            label5 = new Label();
             panel4 = new Panel();
             panel5 = new Panel();
             label6 = new Label();
@@ -58,8 +67,6 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -67,6 +74,7 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel6.SuspendLayout();
+            panel8.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -81,7 +89,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1226, 72);
+            panel1.Size = new Size(1436, 72);
             panel1.TabIndex = 0;
             // 
             // label2
@@ -108,30 +116,44 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(154, 59, 59);
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label7);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(760, 0);
+            panel2.Location = new Point(970, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(466, 72);
             panel2.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // label8
             // 
-            dateTimePicker1.Location = new Point(65, 21);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(228, 27);
-            dateTimePicker1.TabIndex = 1;
+            label8.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ButtonFace;
+            label8.Location = new Point(294, 28);
+            label8.Name = "label8";
+            label8.Size = new Size(160, 25);
+            label8.TabIndex = 2;
+            label8.Text = "0002311455";
+            label8.Click += label8_Click;
+            // 
+            // label7
+            // 
+            label7.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(106, 28);
+            label7.Name = "label7";
+            label7.Size = new Size(182, 25);
+            label7.TabIndex = 1;
+            label7.Text = "Lý Thất Dạ";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.calender;
-            pictureBox1.Location = new Point(0, 4);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(33, 16);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(58, 67);
+            pictureBox1.Size = new Size(50, 45);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -142,9 +164,11 @@
             flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(dataGridView1);
             flowLayoutPanel1.Controls.Add(panel6);
+            flowLayoutPanel1.Controls.Add(panel7);
+            flowLayoutPanel1.Controls.Add(panel8);
             flowLayoutPanel1.Dock = DockStyle.Right;
             flowLayoutPanel1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            flowLayoutPanel1.Location = new Point(760, 72);
+            flowLayoutPanel1.Location = new Point(970, 72);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(466, 752);
@@ -163,7 +187,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(23, 10);
+            label3.Location = new Point(7, 10);
             label3.Name = "label3";
             label3.Size = new Size(172, 26);
             label3.TabIndex = 0;
@@ -177,28 +201,46 @@
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle1.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 54;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ten, SL, Thanhtien });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(0, 46);
             dataGridView1.Margin = new Padding(0);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle3.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ShowEditingIcon = false;
             dataGridView1.Size = new Size(466, 492);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ten
             // 
@@ -207,6 +249,7 @@
             ten.HeaderText = "Tên";
             ten.MinimumWidth = 6;
             ten.Name = "ten";
+            ten.ReadOnly = true;
             ten.Width = 196;
             // 
             // SL
@@ -216,14 +259,18 @@
             SL.HeaderText = "SL";
             SL.MinimumWidth = 6;
             SL.Name = "SL";
-            SL.Width = 67;
+            SL.ReadOnly = true;
+            SL.Width = 68;
             // 
             // Thanhtien
             // 
-            Thanhtien.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Thanhtien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Thanhtien.Frozen = true;
             Thanhtien.HeaderText = "Thành tiền";
             Thanhtien.MinimumWidth = 6;
             Thanhtien.Name = "Thanhtien";
+            Thanhtien.ReadOnly = true;
+            Thanhtien.Width = 202;
             // 
             // panel6
             // 
@@ -233,8 +280,32 @@
             panel6.Controls.Add(label4);
             panel6.Location = new Point(3, 541);
             panel6.Name = "panel6";
-            panel6.Size = new Size(460, 89);
+            panel6.Size = new Size(460, 74);
             panel6.TabIndex = 1;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButton2.Location = new Point(223, 39);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(180, 27);
+            radioButton2.TabIndex = 2;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Chưa hoàn thành";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButton1.Location = new Point(29, 39);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(129, 27);
+            radioButton1.TabIndex = 1;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Hoàn thành";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -247,6 +318,36 @@
             label4.Text = "Thanh toán";
             label4.Click += label4_Click;
             // 
+            // panel7
+            // 
+            panel7.Location = new Point(3, 621);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(463, 46);
+            panel7.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(255, 224, 192);
+            panel8.Controls.Add(label5);
+            panel8.Location = new Point(3, 673);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(420, 49);
+            panel8.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label5.BackColor = Color.FromArgb(154, 59, 59);
+            label5.Font = new Font("Arial", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = SystemColors.ButtonFace;
+            label5.Location = new Point(76, -3);
+            label5.Name = "label5";
+            label5.Size = new Size(328, 52);
+            label5.TabIndex = 2;
+            label5.Text = "LƯU BIÊN NHẬN";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            label5.Click += label5_Click;
+            // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(255, 224, 192);
@@ -256,7 +357,7 @@
             panel4.Location = new Point(0, 72);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(760, 752);
+            panel4.Size = new Size(970, 752);
             panel4.TabIndex = 2;
             // 
             // panel5
@@ -287,47 +388,47 @@
             dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             dataGridView3.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle3.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.NullValue = "dasd";
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.NullValue = "dasd";
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView3.ColumnHeadersHeight = 54;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle6.SelectionBackColor = Color.RosyBrown;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle6;
             dataGridView3.EnableHeadersVisualStyles = false;
             dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
             dataGridView3.Location = new Point(0, 46);
             dataGridView3.Margin = new Padding(0);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView3.RowHeadersVisible = false;
             dataGridView3.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView3.RowTemplate.Height = 29;
             dataGridView3.ScrollBars = ScrollBars.None;
-            dataGridView3.Size = new Size(760, 569);
+            dataGridView3.Size = new Size(970, 569);
             dataGridView3.TabIndex = 2;
             dataGridView3.CellContentClick += dataGridView3_CellContentClick;
             // 
@@ -374,35 +475,11 @@
             dataGridViewTextBoxColumn5.MinimumWidth = 6;
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.Location = new Point(29, 39);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(129, 27);
-            radioButton1.TabIndex = 1;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Hoàn thành";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.Location = new Point(223, 39);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(180, 27);
-            radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Chưa hoàn thành";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
             // OrderNoPayment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1226, 824);
+            ClientSize = new Size(1436, 824);
             Controls.Add(panel4);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
@@ -422,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            panel8.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -433,8 +511,6 @@
 
         private Panel panel1;
         private Panel panel2;
-        private DateTimePicker dateTimePicker1;
-        private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label1;
         private Label label2;
@@ -450,12 +526,18 @@
         private Panel panel3;
         private Label label3;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ten;
-        private DataGridViewTextBoxColumn SL;
-        private DataGridViewTextBoxColumn Thanhtien;
         private Panel panel6;
         private Label label4;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
+        private Panel panel7;
+        private Panel panel8;
+        private Label label5;
+        private Label label7;
+        private PictureBox pictureBox1;
+        private Label label8;
+        private DataGridViewTextBoxColumn ten;
+        private DataGridViewTextBoxColumn SL;
+        private DataGridViewTextBoxColumn Thanhtien;
     }
 }

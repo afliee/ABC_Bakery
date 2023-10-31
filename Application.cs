@@ -14,6 +14,8 @@ namespace ABC_Bakery
         private Boolean IsReceiptExpanded = true;
         private Boolean IsFollowReceiptExpanded = true;
         private OrderNoPayment orderNoPayment;
+        private OrderTCNoPayment orderTCNoPayment;
+
         public Application()
         {
             InitializeComponent();
@@ -32,13 +34,13 @@ namespace ABC_Bakery
         {
             //Forms.Order order = new Forms.Order();
             //order.Show();
-            if (orderNoPayment == null)
+            if (orderTCNoPayment == null)
             {
-                orderNoPayment = new OrderNoPayment();
-                orderNoPayment.MdiParent = this;
-                orderNoPayment.Dock = DockStyle.Fill;
-                orderNoPayment.FormClosed += OrderNoPayment_FormClosed;
-                orderNoPayment.Show();
+                orderTCNoPayment = new OrderTCNoPayment();
+                orderTCNoPayment.MdiParent = this;
+                orderTCNoPayment.Dock = DockStyle.Fill;
+                orderTCNoPayment.FormClosed += OrderTCNoPayment_FormClosed;
+                orderTCNoPayment.Show();
             }
             else
             {
@@ -49,6 +51,10 @@ namespace ABC_Bakery
         private void OrderNoPayment_FormClosed(object sender, FormClosedEventArgs e)
         {
             orderNoPayment = null;
+        }
+        private void OrderTCNoPayment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            orderTCNoPayment = null;
         }
 
         private void orderTransition_Tick(object sender, EventArgs e)
