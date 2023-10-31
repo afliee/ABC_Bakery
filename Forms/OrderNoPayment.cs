@@ -28,14 +28,19 @@ namespace ABC_Bakery.Forms
             // init header for data grid view
             string[] headers =
             {
-                "STT", 
+                "STT",
                 "Mã Biên Nhận",
                 "Ngày đặt",
                 "Tổng tiền",
                 "Ghi chú"
             };
 
-            
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
