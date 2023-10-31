@@ -7,21 +7,24 @@ namespace ABC_Bakery
 {
     public partial class Application : Form
     {
-        private static readonly int ORDER_HEIGHT = 245;
+        private static readonly int ORDER_HEIGHT = 215;
         private static readonly int ORDER_ITEM_HEIGHT = 53;
-        private Boolean IsOrderExpanded = false;
+        private Boolean IsOrderExpanded = true;
         private Boolean IsSideMenuExpanded = true;
+        private Boolean IsReceiptExpanded = true;
+        private Boolean IsFollowReceiptExpanded = true;
+        private OrderNoPayment orderNoPayment;
         public Application()
         {
             InitializeComponent();
             Init();
-            toggle_Order_Click();
         }
 
         private void Init()
         {
             var db = new DatabaseContext();
             RoleRepository roleRepository = new RoleRepository(db);
+
             //roleRepository.Create(new Role { Name = "Admin" });
         }
 
@@ -29,8 +32,23 @@ namespace ABC_Bakery
         {
             //Forms.Order order = new Forms.Order();
             //order.Show();
-            Forms.OrderNoPayment orderNoPayment = new Forms.OrderNoPayment();
-            orderNoPayment.Show();
+            if (orderNoPayment == null)
+            {
+                orderNoPayment = new OrderNoPayment();
+                orderNoPayment.MdiParent = this;
+                orderNoPayment.Dock = DockStyle.Fill;
+                orderNoPayment.FormClosed += OrderNoPayment_FormClosed;
+                orderNoPayment.Show();
+            }
+            else
+            {
+                orderNoPayment.Activate();
+            }
+        }
+
+        private void OrderNoPayment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            orderNoPayment = null;
         }
 
         private void orderTransition_Tick(object sender, EventArgs e)
@@ -70,19 +88,32 @@ namespace ABC_Bakery
             if (IsSideMenuExpanded)
             {
                 sidebarContainer.Width -= 10;
-                if (sidebarContainer.Width <= 70)
+                if (sidebarContainer.Width <= 65)
                 {
                     sidebarTransition.Stop();
                     IsSideMenuExpanded = false;
+
+
+                    orderContainer.Width = sidebarContainer.Width;
+                    receiptContainer.Width = sidebarContainer.Width;
+                    followReceiptContainer.Width = sidebarContainer.Width;
+
+                    pnLogo.Visible = false;
                 }
             }
             else
             {
-                sidebarContainer.Width += 10;
+                sidebarContainer.Width += 5;
                 if (sidebarContainer.Width >= 286)
                 {
                     sidebarTransition.Stop();
                     IsSideMenuExpanded = true;
+
+                    orderContainer.Width = sidebarContainer.Width;
+                    receiptContainer.Width = sidebarContainer.Width;
+                    followReceiptContainer.Width = sidebarContainer.Width;
+
+                    pnLogo.Visible = true;
                 }
             }
         }
@@ -95,6 +126,60 @@ namespace ABC_Bakery
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
             toggle_SideMenu_Click();
+        }
+
+        private void receiptTransition_Tick(object sender, EventArgs e)
+        {
+            if (!IsReceiptExpanded)
+            {
+                receiptContainer.Height += 10;
+                if (receiptContainer.Height >= 163)
+                {
+                    receiptTransition.Stop();
+                    IsReceiptExpanded = true;
+                }
+            }
+            else
+            {
+                receiptContainer.Height -= 10;
+                if (receiptContainer.Height <= 53)
+                {
+                    receiptTransition.Stop();
+                    IsReceiptExpanded = false;
+                }
+            }
+        }
+
+        private void receipts_Click(object sender, EventArgs e)
+        {
+            receiptTransition.Start();
+        }
+
+        private void followReceiptTransition_Tick(object sender, EventArgs e)
+        {
+            if (!IsFollowReceiptExpanded)
+            {
+                followReceiptContainer.Height += 10;
+                if (followReceiptContainer.Height >= 221)
+                {
+                    followReceiptTransition.Stop();
+                    IsFollowReceiptExpanded = true;
+                }
+            }
+            else
+            {
+                followReceiptContainer.Height -= 10;
+                if (followReceiptContainer.Height <= 53)
+                {
+                    followReceiptTransition.Stop();
+                    IsFollowReceiptExpanded = false;
+                }
+            }
+        }
+
+        private void receiptFollow_Click(object sender, EventArgs e)
+        {
+            followReceiptTransition.Start();
         }
     }
 }

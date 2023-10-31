@@ -15,91 +15,27 @@ namespace ABC_Bakery.Forms
         public OrderNoPayment()
         {
             InitializeComponent();
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void nightControlBox1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel9_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void OrderNoPayment_Load(object sender, EventArgs e)
         {
-
+            this.ControlBox = false;
+            Init();
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void Init()
         {
+            // init header for data grid view
+            string[] headers =
+            {
+                "STT", 
+                "Mã Biên Nhận",
+                "Ngày đặt",
+                "Tổng tiền",
+                "Ghi chú"
+            };
 
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label11_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click_1(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }
