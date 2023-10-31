@@ -44,6 +44,11 @@
             panel3 = new Panel();
             label3 = new Label();
             dataGridView1 = new DataGridView();
+            ten = new DataGridViewTextBoxColumn();
+            SL = new DataGridViewTextBoxColumn();
+            Thanhtien = new DataGridViewTextBoxColumn();
+            panel6 = new Panel();
+            label4 = new Label();
             panel4 = new Panel();
             panel5 = new Panel();
             label6 = new Label();
@@ -53,15 +58,15 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            ten = new DataGridViewTextBoxColumn();
-            SL = new DataGridViewTextBoxColumn();
-            Thanhtien = new DataGridViewTextBoxColumn();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -136,6 +141,7 @@
             flowLayoutPanel1.BackColor = Color.FromArgb(255, 224, 192);
             flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(dataGridView1);
+            flowLayoutPanel1.Controls.Add(panel6);
             flowLayoutPanel1.Dock = DockStyle.Right;
             flowLayoutPanel1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             flowLayoutPanel1.Location = new Point(760, 72);
@@ -167,6 +173,7 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(255, 224, 192);
             dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
@@ -190,8 +197,55 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ShowEditingIcon = false;
-            dataGridView1.Size = new Size(466, 539);
+            dataGridView1.Size = new Size(466, 492);
             dataGridView1.TabIndex = 0;
+            // 
+            // ten
+            // 
+            ten.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ten.Frozen = true;
+            ten.HeaderText = "Tên";
+            ten.MinimumWidth = 6;
+            ten.Name = "ten";
+            ten.Width = 196;
+            // 
+            // SL
+            // 
+            SL.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            SL.Frozen = true;
+            SL.HeaderText = "SL";
+            SL.MinimumWidth = 6;
+            SL.Name = "SL";
+            SL.Width = 67;
+            // 
+            // Thanhtien
+            // 
+            Thanhtien.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Thanhtien.HeaderText = "Thành tiền";
+            Thanhtien.MinimumWidth = 6;
+            Thanhtien.Name = "Thanhtien";
+            // 
+            // panel6
+            // 
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(radioButton2);
+            panel6.Controls.Add(radioButton1);
+            panel6.Controls.Add(label4);
+            panel6.Location = new Point(3, 541);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(460, 89);
+            panel6.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(20, -3);
+            label4.Name = "label4";
+            label4.Size = new Size(155, 32);
+            label4.TabIndex = 0;
+            label4.Text = "Thanh toán";
+            label4.Click += label4_Click;
             // 
             // panel4
             // 
@@ -320,30 +374,29 @@
             dataGridViewTextBoxColumn5.MinimumWidth = 6;
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // ten
+            // radioButton1
             // 
-            ten.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ten.Frozen = true;
-            ten.HeaderText = "Tên";
-            ten.MinimumWidth = 6;
-            ten.Name = "ten";
-            ten.Width = 196;
+            radioButton1.AutoSize = true;
+            radioButton1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButton1.Location = new Point(29, 39);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(129, 27);
+            radioButton1.TabIndex = 1;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Hoàn thành";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
-            // SL
+            // radioButton2
             // 
-            SL.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            SL.Frozen = true;
-            SL.HeaderText = "SL";
-            SL.MinimumWidth = 6;
-            SL.Name = "SL";
-            SL.Width = 67;
-            // 
-            // Thanhtien
-            // 
-            Thanhtien.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Thanhtien.HeaderText = "Thành tiền";
-            Thanhtien.MinimumWidth = 6;
-            Thanhtien.Name = "Thanhtien";
+            radioButton2.AutoSize = true;
+            radioButton2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            radioButton2.Location = new Point(223, 39);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(180, 27);
+            radioButton2.TabIndex = 2;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Chưa hoàn thành";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // OrderNoPayment
             // 
@@ -367,6 +420,8 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -398,5 +453,9 @@
         private DataGridViewTextBoxColumn ten;
         private DataGridViewTextBoxColumn SL;
         private DataGridViewTextBoxColumn Thanhtien;
+        private Panel panel6;
+        private Label label4;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }

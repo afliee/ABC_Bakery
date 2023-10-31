@@ -42,5 +42,10 @@ namespace ABC_Bakery.Forms
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
