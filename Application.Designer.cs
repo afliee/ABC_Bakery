@@ -1,4 +1,12 @@
-﻿namespace ABC_Bakery
+﻿using Color = System.Drawing.Color;
+using Image = System.Drawing.Image;
+using RectangleF = System.Drawing.RectangleF;
+using Rectangle = System.Drawing.Rectangle;
+using Size = System.Drawing.Size;
+using Point = System.Drawing.Point;
+using SizeF = System.Drawing.SizeF;
+
+namespace ABC_Bakery
 {
     partial class Application
     {
@@ -55,17 +63,27 @@
             button6 = new Button();
             panel2 = new Panel();
             button1 = new Button();
+            panel21 = new Panel();
             followReceiptContainer = new FlowLayoutPanel();
             pnFollowReceipt = new Panel();
             receiptFollow = new Button();
             panel18 = new Panel();
             button14 = new Button();
             panel19 = new Panel();
-            button15 = new Button();
+            btnOrderTCNoPayment = new Button();
             panel9 = new Panel();
             button2 = new Button();
             panel23 = new Panel();
-            panel21 = new Panel();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            panel3 = new Panel();
+            button3 = new Button();
+            panel10 = new Panel();
+            btnCreateOrder = new Button();
+            panel13 = new Panel();
+            btnCreateProduct = new Button();
+            panel17 = new Panel();
+            button18 = new Button();
+            panel22 = new Panel();
             orderTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             receiptTransition = new System.Windows.Forms.Timer(components);
@@ -97,6 +115,11 @@
             panel18.SuspendLayout();
             panel19.SuspendLayout();
             panel9.SuspendLayout();
+            flowLayoutPanel3.SuspendLayout();
+            panel3.SuspendLayout();
+            panel10.SuspendLayout();
+            panel13.SuspendLayout();
+            panel17.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -115,6 +138,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1475, 34);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // flowLayoutPanel1
             // 
@@ -142,6 +166,7 @@
             menubar.SizeMode = PictureBoxSizeMode.Zoom;
             menubar.TabIndex = 1;
             menubar.TabStop = false;
+            menubar.Visible = false;
             menubar.Click += menubar_Click;
             // 
             // nightControlBox1
@@ -177,11 +202,13 @@
             sidebarContainer.Controls.Add(panel21);
             sidebarContainer.Controls.Add(followReceiptContainer);
             sidebarContainer.Controls.Add(panel23);
+            sidebarContainer.Controls.Add(flowLayoutPanel3);
+            sidebarContainer.Controls.Add(panel22);
             sidebarContainer.Dock = DockStyle.Left;
             sidebarContainer.FlowDirection = FlowDirection.TopDown;
             sidebarContainer.Location = new Point(0, 34);
             sidebarContainer.Name = "sidebarContainer";
-            sidebarContainer.Size = new Size(286, 734);
+            sidebarContainer.Size = new Size(286, 1066);
             sidebarContainer.TabIndex = 1;
             // 
             // pnLogo
@@ -240,7 +267,8 @@
             receipts.RightToLeft = RightToLeft.No;
             receipts.Size = new Size(317, 83);
             receipts.TabIndex = 3;
-            receipts.Text = "Phiếu thu chi";
+            receipts.Text = "            Phiếu thu chi";
+            receipts.TextAlign = ContentAlignment.MiddleLeft;
             receipts.UseVisualStyleBackColor = false;
             receipts.Click += receipts_Click;
             // 
@@ -270,7 +298,8 @@
             button12.RightToLeft = RightToLeft.No;
             button12.Size = new Size(317, 76);
             button12.TabIndex = 3;
-            button12.Text = "Phiếu thu";
+            button12.Text = "            Phiếu thu";
+            button12.TextAlign = ContentAlignment.MiddleLeft;
             button12.UseVisualStyleBackColor = false;
             // 
             // panel15
@@ -299,7 +328,8 @@
             button13.RightToLeft = RightToLeft.No;
             button13.Size = new Size(317, 76);
             button13.TabIndex = 3;
-            button13.Text = "Phiếu chi";
+            button13.Text = "            Phiếu chi";
+            button13.TextAlign = ContentAlignment.MiddleLeft;
             button13.UseVisualStyleBackColor = false;
             // 
             // panel20
@@ -348,7 +378,8 @@
             orders.RightToLeft = RightToLeft.No;
             orders.Size = new Size(317, 89);
             orders.TabIndex = 3;
-            orders.Text = "Biên nhận";
+            orders.Text = "            Biên nhận";
+            orders.TextAlign = ContentAlignment.MiddleLeft;
             orders.UseVisualStyleBackColor = false;
             orders.Click += orders_Click;
             // 
@@ -443,6 +474,14 @@
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = false;
             // 
+            // panel21
+            // 
+            panel21.BackColor = Color.Black;
+            panel21.Location = new Point(3, 453);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(288, 3);
+            panel21.TabIndex = 2;
+            // 
             // followReceiptContainer
             // 
             followReceiptContainer.Controls.Add(pnFollowReceipt);
@@ -481,7 +520,8 @@
             receiptFollow.RightToLeft = RightToLeft.No;
             receiptFollow.Size = new Size(317, 81);
             receiptFollow.TabIndex = 3;
-            receiptFollow.Text = "Theo dỗi biên nhận";
+            receiptFollow.Text = "            Theo dỗi biên nhận";
+            receiptFollow.TextAlign = ContentAlignment.MiddleLeft;
             receiptFollow.UseVisualStyleBackColor = false;
             receiptFollow.Click += receiptFollow_Click;
             // 
@@ -511,12 +551,13 @@
             button14.RightToLeft = RightToLeft.No;
             button14.Size = new Size(317, 76);
             button14.TabIndex = 3;
-            button14.Text = "BN chưa thanh toán";
+            button14.Text = "            BN chưa thanh toán";
+            button14.TextAlign = ContentAlignment.MiddleLeft;
             button14.UseVisualStyleBackColor = false;
             // 
             // panel19
             // 
-            panel19.Controls.Add(button15);
+            panel19.Controls.Add(btnOrderTCNoPayment);
             panel19.Location = new Point(0, 112);
             panel19.Margin = new Padding(0);
             panel19.Name = "panel19";
@@ -524,24 +565,26 @@
             panel19.Size = new Size(288, 53);
             panel19.TabIndex = 2;
             // 
-            // button15
+            // btnOrderTCNoPayment
             // 
-            button15.BackColor = Color.FromArgb(226, 199, 153);
-            button15.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
-            button15.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
-            button15.FlatStyle = FlatStyle.Flat;
-            button15.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button15.ForeColor = SystemColors.ControlText;
-            button15.Image = (Image)resources.GetObject("button15.Image");
-            button15.ImageAlign = ContentAlignment.MiddleLeft;
-            button15.Location = new Point(-19, -11);
-            button15.Name = "button15";
-            button15.Padding = new Padding(25, 0, 0, 0);
-            button15.RightToLeft = RightToLeft.No;
-            button15.Size = new Size(317, 76);
-            button15.TabIndex = 3;
-            button15.Text = "BN TC chưa thanh toán";
-            button15.UseVisualStyleBackColor = false;
+            btnOrderTCNoPayment.BackColor = Color.FromArgb(226, 199, 153);
+            btnOrderTCNoPayment.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnOrderTCNoPayment.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnOrderTCNoPayment.FlatStyle = FlatStyle.Flat;
+            btnOrderTCNoPayment.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOrderTCNoPayment.ForeColor = SystemColors.ControlText;
+            btnOrderTCNoPayment.Image = (Image)resources.GetObject("btnOrderTCNoPayment.Image");
+            btnOrderTCNoPayment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOrderTCNoPayment.Location = new Point(-19, -11);
+            btnOrderTCNoPayment.Name = "btnOrderTCNoPayment";
+            btnOrderTCNoPayment.Padding = new Padding(25, 0, 0, 0);
+            btnOrderTCNoPayment.RightToLeft = RightToLeft.No;
+            btnOrderTCNoPayment.Size = new Size(317, 76);
+            btnOrderTCNoPayment.TabIndex = 3;
+            btnOrderTCNoPayment.Text = "            BN TC chưa thanh toán";
+            btnOrderTCNoPayment.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrderTCNoPayment.UseVisualStyleBackColor = false;
+            btnOrderTCNoPayment.Click += btnOrderTCNoPayment_Click;
             // 
             // panel9
             // 
@@ -569,7 +612,8 @@
             button2.RightToLeft = RightToLeft.No;
             button2.Size = new Size(317, 76);
             button2.TabIndex = 3;
-            button2.Text = "Các biên nhận";
+            button2.Text = "            Các biên nhận";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = false;
             // 
             // panel23
@@ -580,13 +624,147 @@
             panel23.Size = new Size(288, 3);
             panel23.TabIndex = 3;
             // 
-            // panel21
+            // flowLayoutPanel3
             // 
-            panel21.BackColor = Color.Black;
-            panel21.Location = new Point(3, 453);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(288, 3);
-            panel21.TabIndex = 2;
+            flowLayoutPanel3.Controls.Add(panel3);
+            flowLayoutPanel3.Controls.Add(panel10);
+            flowLayoutPanel3.Controls.Add(panel13);
+            flowLayoutPanel3.Controls.Add(panel17);
+            flowLayoutPanel3.Location = new Point(0, 688);
+            flowLayoutPanel3.Margin = new Padding(0);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(288, 220);
+            flowLayoutPanel3.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(button3);
+            panel3.Location = new Point(0, 0);
+            panel3.Margin = new Padding(0);
+            panel3.Name = "panel3";
+            panel3.RightToLeft = RightToLeft.Yes;
+            panel3.Size = new Size(288, 59);
+            panel3.TabIndex = 2;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(192, 130, 97);
+            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(219, 149, 112);
+            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 149, 112);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.Black;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-19, -11);
+            button3.Name = "button3";
+            button3.Padding = new Padding(25, 0, 0, 0);
+            button3.RightToLeft = RightToLeft.No;
+            button3.Size = new Size(317, 81);
+            button3.TabIndex = 3;
+            button3.Text = "            Thao tác";
+            button3.TextAlign = ContentAlignment.MiddleLeft;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            panel10.Controls.Add(btnCreateOrder);
+            panel10.Location = new Point(0, 59);
+            panel10.Margin = new Padding(0);
+            panel10.Name = "panel10";
+            panel10.RightToLeft = RightToLeft.Yes;
+            panel10.Size = new Size(288, 53);
+            panel10.TabIndex = 2;
+            // 
+            // btnCreateOrder
+            // 
+            btnCreateOrder.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreateOrder.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateOrder.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateOrder.FlatStyle = FlatStyle.Flat;
+            btnCreateOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreateOrder.ForeColor = SystemColors.ControlText;
+            btnCreateOrder.Image = (Image)resources.GetObject("btnCreateOrder.Image");
+            btnCreateOrder.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreateOrder.Location = new Point(-19, -11);
+            btnCreateOrder.Name = "btnCreateOrder";
+            btnCreateOrder.Padding = new Padding(25, 0, 0, 0);
+            btnCreateOrder.RightToLeft = RightToLeft.No;
+            btnCreateOrder.Size = new Size(317, 76);
+            btnCreateOrder.TabIndex = 3;
+            btnCreateOrder.Text = "            Tạo phiếu mua hàng";
+            btnCreateOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreateOrder.UseVisualStyleBackColor = false;
+            btnCreateOrder.Click += btnCreateOrder_Click;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(btnCreateProduct);
+            panel13.Location = new Point(0, 112);
+            panel13.Margin = new Padding(0);
+            panel13.Name = "panel13";
+            panel13.RightToLeft = RightToLeft.Yes;
+            panel13.Size = new Size(288, 53);
+            panel13.TabIndex = 2;
+            // 
+            // btnCreateProduct
+            // 
+            btnCreateProduct.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreateProduct.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateProduct.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateProduct.FlatStyle = FlatStyle.Flat;
+            btnCreateProduct.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreateProduct.ForeColor = SystemColors.ControlText;
+            btnCreateProduct.Image = (Image)resources.GetObject("btnCreateProduct.Image");
+            btnCreateProduct.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreateProduct.Location = new Point(-19, -11);
+            btnCreateProduct.Name = "btnCreateProduct";
+            btnCreateProduct.Padding = new Padding(25, 0, 0, 0);
+            btnCreateProduct.RightToLeft = RightToLeft.No;
+            btnCreateProduct.Size = new Size(317, 76);
+            btnCreateProduct.TabIndex = 3;
+            btnCreateProduct.Text = "            Thêm sản phẩm";
+            btnCreateProduct.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreateProduct.UseVisualStyleBackColor = false;
+            btnCreateProduct.Click += btnCreateProduct_Click;
+            // 
+            // panel17
+            // 
+            panel17.Controls.Add(button18);
+            panel17.Location = new Point(0, 165);
+            panel17.Margin = new Padding(0);
+            panel17.Name = "panel17";
+            panel17.RightToLeft = RightToLeft.Yes;
+            panel17.Size = new Size(288, 53);
+            panel17.TabIndex = 2;
+            // 
+            // button18
+            // 
+            button18.BackColor = Color.FromArgb(226, 199, 153);
+            button18.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            button18.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            button18.FlatStyle = FlatStyle.Flat;
+            button18.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button18.ForeColor = SystemColors.ControlText;
+            button18.Image = (Image)resources.GetObject("button18.Image");
+            button18.ImageAlign = ContentAlignment.MiddleLeft;
+            button18.Location = new Point(-19, -11);
+            button18.Name = "button18";
+            button18.Padding = new Padding(25, 0, 0, 0);
+            button18.RightToLeft = RightToLeft.No;
+            button18.Size = new Size(317, 76);
+            button18.TabIndex = 3;
+            button18.Text = "            Các biên nhận";
+            button18.TextAlign = ContentAlignment.MiddleLeft;
+            button18.UseVisualStyleBackColor = false;
+            // 
+            // panel22
+            // 
+            panel22.BackColor = Color.Black;
+            panel22.Location = new Point(3, 911);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(288, 3);
+            panel22.TabIndex = 6;
             // 
             // orderTransition
             // 
@@ -595,7 +773,7 @@
             // 
             // sidebarTransition
             // 
-            sidebarTransition.Interval = 15;
+            sidebarTransition.Interval = 5;
             sidebarTransition.Tick += sidebarTransition_Tick;
             // 
             // receiptTransition
@@ -730,7 +908,7 @@
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1475, 768);
+            ClientSize = new Size(1475, 1100);
             Controls.Add(sidebarContainer);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -758,6 +936,11 @@
             panel18.ResumeLayout(false);
             panel19.ResumeLayout(false);
             panel9.ResumeLayout(false);
+            flowLayoutPanel3.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel17.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -815,12 +998,22 @@
         private Panel panel18;
         private Button button14;
         private Panel panel19;
-        private Button button15;
+        private Button btnOrderTCNoPayment;
         private Panel panel9;
         private Button button2;
         private Panel panel20;
         private Panel panel21;
         private Panel panel23;
         private PictureBox pictureBox1;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Panel panel3;
+        private Button button3;
+        private Panel panel10;
+        private Button btnCreateOrder;
+        private Panel panel13;
+        private Button btnCreateProduct;
+        private Panel panel17;
+        private Button button18;
+        private Panel panel22;
     }
 }

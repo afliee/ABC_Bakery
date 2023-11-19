@@ -1,4 +1,9 @@
-﻿namespace ABC_Bakery.Forms
+﻿using Color = System.Drawing.Color;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
+using SizeF = System.Drawing.SizeF;
+
+namespace ABC_Bakery.Forms
 {
     partial class Receive
     {
@@ -127,7 +132,7 @@
             dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView3.EnableHeadersVisualStyles = false;
             dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
-            dataGridView3.Location = new Point(0, 46);
+            dataGridView3.Location = new Point(0, 34);
             dataGridView3.Margin = new Padding(0);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -145,7 +150,7 @@
             dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView3.RowTemplate.Height = 29;
             dataGridView3.ScrollBars = ScrollBars.None;
-            dataGridView3.Size = new Size(760, 1149);
+            dataGridView3.Size = new Size(665, 862);
             dataGridView3.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn4
@@ -160,9 +165,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(12, 13);
+            label6.Location = new Point(10, 10);
             label6.Name = "label6";
-            label6.Size = new Size(95, 23);
+            label6.Size = new Size(77, 18);
             label6.TabIndex = 0;
             label6.Text = "Biên nhận";
             // 
@@ -173,7 +178,7 @@
             panel5.Location = new Point(0, 0);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(760, 46);
+            panel5.Size = new Size(665, 34);
             panel5.TabIndex = 2;
             // 
             // panel4
@@ -182,10 +187,9 @@
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(dataGridView3);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 72);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(0, 54);
             panel4.Name = "panel4";
-            panel4.Size = new Size(760, 752);
+            panel4.Size = new Size(665, 564);
             panel4.TabIndex = 5;
             // 
             // Thanhtien
@@ -202,7 +206,7 @@
             SL.HeaderText = "SL";
             SL.MinimumWidth = 6;
             SL.Name = "SL";
-            SL.Width = 68;
+            SL.Width = 56;
             // 
             // ten
             // 
@@ -230,7 +234,7 @@
             dataGridView1.ColumnHeadersHeight = 54;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ten, SL, Thanhtien });
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(0, 46);
+            dataGridView1.Location = new Point(0, 34);
             dataGridView1.Margin = new Padding(0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -241,16 +245,16 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ShowEditingIcon = false;
-            dataGridView1.Size = new Size(466, 492);
+            dataGridView1.Size = new Size(408, 134);
             dataGridView1.TabIndex = 0;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(23, 10);
+            label3.Location = new Point(20, 8);
             label3.Name = "label3";
-            label3.Size = new Size(172, 26);
+            label3.Size = new Size(142, 22);
             label3.TabIndex = 0;
             label3.Text = "Chi tiết hóa đơn";
             // 
@@ -260,7 +264,7 @@
             panel3.Location = new Point(0, 0);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(466, 46);
+            panel3.Size = new Size(408, 34);
             panel3.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -270,20 +274,19 @@
             flowLayoutPanel1.Controls.Add(dataGridView1);
             flowLayoutPanel1.Dock = DockStyle.Right;
             flowLayoutPanel1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            flowLayoutPanel1.Location = new Point(760, 72);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(665, 54);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(466, 752);
+            flowLayoutPanel1.Size = new Size(408, 564);
             flowLayoutPanel1.TabIndex = 4;
             // 
             // lb_receive
             // 
             lb_receive.AutoSize = true;
             lb_receive.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_receive.Location = new Point(3, 4);
+            lb_receive.Location = new Point(3, 3);
             lb_receive.Name = "lb_receive";
             lb_receive.RightToLeft = RightToLeft.Yes;
-            lb_receive.Size = new Size(109, 31);
+            lb_receive.Size = new Size(89, 25);
             lb_receive.TabIndex = 2;
             lb_receive.Text = "Phiếu thu";
             // 
@@ -291,9 +294,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(3, 37);
+            label2.Location = new Point(3, 28);
             label2.Name = "label2";
-            label2.Size = new Size(77, 24);
+            label2.Size = new Size(62, 20);
             label2.TabIndex = 2;
             label2.Text = "No. 0001";
             // 
@@ -303,20 +306,20 @@
             panel1.Controls.Add(lb_receive);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1226, 72);
+            panel1.Size = new Size(1073, 54);
             panel1.TabIndex = 3;
             // 
             // Receive
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1226, 824);
+            ClientSize = new Size(1073, 618);
             Controls.Add(panel4);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Receive";
             Text = "Receive";
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();

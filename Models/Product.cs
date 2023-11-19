@@ -21,7 +21,7 @@ namespace ABC_Bakery.Models
 
         public virtual required Category Category { get; set; }
         public virtual ICollection<Image>? Images { get; set; }
-        public virtual required ICollection<ImportProduct> ImportDetails { get; set; }
+        public virtual ICollection<ImportProduct> ImportDetails { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
 
         public Product()

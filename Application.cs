@@ -15,37 +15,69 @@ namespace ABC_Bakery
         private Boolean IsFollowReceiptExpanded = true;
         private OrderNoPayment orderNoPayment;
         private OrderTCNoPayment orderTCNoPayment;
+        private Forms.Order order;
+        private CreateProduct createProdct;
+        private DefaultForm defaultForm;
 
         public Application()
         {
             InitializeComponent();
             Init();
+            MdiProperties();
+        }
+
+        private void MdiProperties()
+        {
+            Helpers.MDI.MdiProperties.SetBevel(this, false);
+            //Controls.OfType<MdiClient>().FirstOrDefault().BackColor = ColorTranslator.FromHtml(Helpers.Constants.Colors.Primary);
         }
 
         private void Init()
         {
             var db = new DatabaseContext();
             RoleRepository roleRepository = new RoleRepository(db);
+            roleRepository.Create(new Role { Name = "Cashier" });
 
-            //roleRepository.Create(new Role { Name = "Admin" });
+            var cashierRole = roleRepository.FindByName("Cashier");
+            if (cashierRole == null)
+            {
+                return;
+            }
+            UserRepository userRepository = new UserRepository(db);
+            if (userRepository.FindByName("Cashier") != null)
+            {
+                return;
+            }
+            User user = new User
+            {
+                Name = "Cashier",
+                Password = "cashier",
+                RoleId = cashierRole.Id
+            };
+
+            userRepository.Create(user);
         }
 
         private void Application_Load(object sender, EventArgs e)
         {
-            //Forms.Order order = new Forms.Order();
-            //order.Show();
-            if (orderTCNoPayment == null)
+            if (defaultForm == null)
             {
-                orderTCNoPayment = new OrderTCNoPayment();
-                orderTCNoPayment.MdiParent = this;
-                orderTCNoPayment.Dock = DockStyle.Fill;
-                orderTCNoPayment.FormClosed += OrderTCNoPayment_FormClosed;
-                orderTCNoPayment.Show();
-            }
+                defaultForm = new DefaultForm();
+                defaultForm.MdiParent = this;
+                defaultForm.Dock = DockStyle.Fill;
+                defaultForm.FormClosed += DefaultForm_FormClosed;
+                defaultForm.Show();
+            } 
             else
             {
-                orderNoPayment.Activate();
+                defaultForm.Activate();
             }
+
+        }
+
+        private void DefaultForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            defaultForm = null;
         }
 
         private void OrderNoPayment_FormClosed(object sender, FormClosedEventArgs e)
@@ -186,6 +218,69 @@ namespace ABC_Bakery
         private void receiptFollow_Click(object sender, EventArgs e)
         {
             followReceiptTransition.Start();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+            if (order == null)
+            {
+                order = new Forms.Order();
+                order.MdiParent = this;
+                order.Dock = DockStyle.Fill;
+                order.FormClosed += Order_FormClosed;
+                order.Show();
+            }
+            else
+            {
+                order.Activate();
+            }
+        }
+
+        private void Order_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            order = null;
+        }
+
+        private void btnOrderTCNoPayment_Click(object sender, EventArgs e)
+        {
+            if (orderTCNoPayment == null)
+            {
+                orderTCNoPayment = new OrderTCNoPayment();
+                orderTCNoPayment.MdiParent = this;
+                orderTCNoPayment.Dock = DockStyle.Fill;
+                orderTCNoPayment.FormClosed += OrderTCNoPayment_FormClosed;
+                orderTCNoPayment.Show();
+            }
+            else
+            {
+                orderTCNoPayment.Activate();
+            }
+        }
+
+        private void btnCreateProduct_Click(object sender, EventArgs e)
+        {
+            if (createProdct == null)
+            {
+                createProdct = new CreateProduct();
+                createProdct.MdiParent = this;
+                createProdct.Dock = DockStyle.Fill;
+                createProdct.FormClosed += CreateProdct_FormClosed;
+                createProdct.Show();
+            }
+            else
+            {
+                createProdct.Activate();
+            }
+        }
+
+        private void CreateProdct_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            createProdct = null;
         }
     }
 }

@@ -16,17 +16,14 @@ namespace ABC_Bakery.Forms
         {
             //this.BackgroundImage = Properties.Resources.Bg;
             InitializeComponent();
-            panel2.BackColor = Color.Transparent;
-            panel4.BackColor = Color.Transparent;
-            panel7.BackColor = Color.Transparent;
-            panel8.BackColor = Color.Transparent;
-            dateTime.Format = DateTimePickerFormat.Custom;
-            dateTime.CustomFormat = "dd-MM-yyyy";
-            dateTime.CalendarTitleBackColor = Color.Transparent;
+            //this.ControlBox = false;
+            //panel2.BackColor = Color.Transparent;
+
         }
 
         private void Order_Load(object sender, EventArgs e)
         {
+            this.ControlBox = false;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

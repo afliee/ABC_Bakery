@@ -9,16 +9,38 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Docs\" />
-    <Folder Include="Tests\" />
-    <Folder Include="Resources\" />
+    <None Remove="Resources\Icons\chat.png" />
+    <None Remove="Resources\Icons\error.png" />
+    <None Remove="Resources\Icons\exclamation.png" />
+    <None Remove="Resources\Icons\find.png" />
+    <None Remove="Resources\Icons\information.png" />
+    <None Remove="Resources\Icons\question.png" />
+    <None Remove="Resources\Images\logo_team.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\chat.png" />
+    <EmbeddedResource Include="Resources\Icons\error.png" />
+    <EmbeddedResource Include="Resources\Icons\exclamation.png" />
+    <EmbeddedResource Include="Resources\Icons\find.png" />
+    <EmbeddedResource Include="Resources\Icons\information.png" />
+    <EmbeddedResource Include="Resources\Icons\question.png" />
+    <EmbeddedResource Include="Resources\Images\logo_team.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Docs\" />
+    <Folder Include="Tests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BarCode" Version="2023.11.8" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
     <PackageReference Include="ReaLTaiizor" Version="3.7.9.6" />
+    <PackageReference Include="RJCodeAdvance.RJControls" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

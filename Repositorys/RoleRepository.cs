@@ -25,6 +25,17 @@ namespace ABC_Bakery.Repositorys
         {
             try
             {
+                if (obj == null)
+                {
+                       return false;
+                }
+
+                var role = this.FindByName(obj.Name);
+                if (role != null)
+                {
+                    return false;
+                }
+
                 this._context.Roles.Add(obj);
                 return this._context.SaveChanges() > 0;
             } catch (Exception e)

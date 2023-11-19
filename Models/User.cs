@@ -14,11 +14,11 @@ namespace ABC_Bakery.Models
         public required string Password { get; set; } // TODO: Hash this
         public DateTime CreateAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public int RoleId { get; set; }
+        public required int RoleId { get; set; }
 
-        public virtual required Role Role { get; set; }
-        public virtual required ICollection<Order> Orders { get; set; }
-        public virtual required ICollection<Import> Imports { get; set; }
+        public virtual  Role Role { get; set; }
+        public virtual  ICollection<Order> Orders { get; set; }
+        public virtual  ICollection<Import> Imports { get; set; }
 
         public User()
         {

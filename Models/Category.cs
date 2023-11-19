@@ -42,5 +42,7 @@ namespace ABC_Bakery.Models
                 .Property(c => c.Name)
                 .IsRequired();
         }
+
+        public override string ToString() => this.Name;
     }
 }

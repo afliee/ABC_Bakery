@@ -1,4 +1,9 @@
-﻿namespace ABC_Bakery.Forms
+﻿using Color = System.Drawing.Color;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
+using SizeF = System.Drawing.SizeF;
+
+namespace ABC_Bakery.Forms
 {
     partial class Receipt
     {
