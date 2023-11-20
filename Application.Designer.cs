@@ -135,24 +135,26 @@ namespace ABC_Bakery
             panel1.Controls.Add(nightControlBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1475, 34);
+            panel1.Size = new Size(1686, 45);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(3, 34);
+            flowLayoutPanel1.Location = new Point(3, 45);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(249, 555);
+            flowLayoutPanel1.Size = new Size(285, 740);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
             label1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(51, -1);
+            label1.Location = new Point(58, -1);
             label1.Name = "label1";
-            label1.Size = new Size(115, 32);
+            label1.Size = new Size(131, 43);
             label1.TabIndex = 0;
             label1.Text = "ABC Bakery";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -160,9 +162,10 @@ namespace ABC_Bakery
             // menubar
             // 
             menubar.Image = Properties.Resources.menu_bar;
-            menubar.Location = new Point(12, 3);
+            menubar.Location = new Point(14, 4);
+            menubar.Margin = new Padding(3, 4, 3, 4);
             menubar.Name = "menubar";
-            menubar.Size = new Size(33, 28);
+            menubar.Size = new Size(38, 37);
             menubar.SizeMode = PictureBoxSizeMode.Zoom;
             menubar.TabIndex = 1;
             menubar.TabStop = false;
@@ -183,7 +186,7 @@ namespace ABC_Bakery
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1336, 0);
+            nightControlBox1.Location = new Point(1547, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -206,26 +209,29 @@ namespace ABC_Bakery
             sidebarContainer.Controls.Add(panel22);
             sidebarContainer.Dock = DockStyle.Left;
             sidebarContainer.FlowDirection = FlowDirection.TopDown;
-            sidebarContainer.Location = new Point(0, 34);
+            sidebarContainer.Location = new Point(0, 45);
+            sidebarContainer.Margin = new Padding(3, 4, 3, 4);
             sidebarContainer.Name = "sidebarContainer";
-            sidebarContainer.Size = new Size(286, 1066);
+            sidebarContainer.Size = new Size(327, 1057);
             sidebarContainer.TabIndex = 1;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.FromArgb(0, 0, 0, 0);
             pnLogo.Controls.Add(pictureBox1);
-            pnLogo.Location = new Point(3, 3);
+            pnLogo.Location = new Point(3, 4);
+            pnLogo.Margin = new Padding(3, 4, 3, 4);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(288, 59);
+            pnLogo.Size = new Size(329, 79);
             pnLogo.TabIndex = 5;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(291, 58);
+            pictureBox1.Size = new Size(333, 77);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -235,10 +241,10 @@ namespace ABC_Bakery
             receiptContainer.Controls.Add(pnReceipt);
             receiptContainer.Controls.Add(panel14);
             receiptContainer.Controls.Add(panel15);
-            receiptContainer.Location = new Point(0, 65);
+            receiptContainer.Location = new Point(0, 87);
             receiptContainer.Margin = new Padding(0);
             receiptContainer.Name = "receiptContainer";
-            receiptContainer.Size = new Size(288, 163);
+            receiptContainer.Size = new Size(329, 217);
             receiptContainer.TabIndex = 4;
             // 
             // pnReceipt
@@ -248,7 +254,7 @@ namespace ABC_Bakery
             pnReceipt.Margin = new Padding(0);
             pnReceipt.Name = "pnReceipt";
             pnReceipt.RightToLeft = RightToLeft.Yes;
-            pnReceipt.Size = new Size(288, 59);
+            pnReceipt.Size = new Size(329, 79);
             pnReceipt.TabIndex = 2;
             // 
             // receipts
@@ -261,11 +267,12 @@ namespace ABC_Bakery
             receipts.ForeColor = Color.Black;
             receipts.Image = (Image)resources.GetObject("receipts.Image");
             receipts.ImageAlign = ContentAlignment.MiddleLeft;
-            receipts.Location = new Point(-19, -11);
+            receipts.Location = new Point(-22, -15);
+            receipts.Margin = new Padding(3, 4, 3, 4);
             receipts.Name = "receipts";
-            receipts.Padding = new Padding(25, 0, 0, 0);
+            receipts.Padding = new Padding(29, 0, 0, 0);
             receipts.RightToLeft = RightToLeft.No;
-            receipts.Size = new Size(317, 83);
+            receipts.Size = new Size(362, 111);
             receipts.TabIndex = 3;
             receipts.Text = "            Phiếu thu chi";
             receipts.TextAlign = ContentAlignment.MiddleLeft;
@@ -275,11 +282,11 @@ namespace ABC_Bakery
             // panel14
             // 
             panel14.Controls.Add(button12);
-            panel14.Location = new Point(0, 59);
+            panel14.Location = new Point(0, 79);
             panel14.Margin = new Padding(0);
             panel14.Name = "panel14";
             panel14.RightToLeft = RightToLeft.Yes;
-            panel14.Size = new Size(288, 53);
+            panel14.Size = new Size(329, 71);
             panel14.TabIndex = 2;
             // 
             // button12
@@ -292,24 +299,26 @@ namespace ABC_Bakery
             button12.ForeColor = SystemColors.ControlText;
             button12.Image = (Image)resources.GetObject("button12.Image");
             button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(-19, -11);
+            button12.Location = new Point(-22, -15);
+            button12.Margin = new Padding(3, 4, 3, 4);
             button12.Name = "button12";
-            button12.Padding = new Padding(25, 0, 0, 0);
+            button12.Padding = new Padding(29, 0, 0, 0);
             button12.RightToLeft = RightToLeft.No;
-            button12.Size = new Size(317, 76);
+            button12.Size = new Size(362, 101);
             button12.TabIndex = 3;
             button12.Text = "            Phiếu thu";
             button12.TextAlign = ContentAlignment.MiddleLeft;
             button12.UseVisualStyleBackColor = false;
+            button12.Click += btnReceipt_Click;
             // 
             // panel15
             // 
             panel15.Controls.Add(button13);
-            panel15.Location = new Point(0, 112);
+            panel15.Location = new Point(0, 150);
             panel15.Margin = new Padding(0);
             panel15.Name = "panel15";
             panel15.RightToLeft = RightToLeft.Yes;
-            panel15.Size = new Size(288, 53);
+            panel15.Size = new Size(329, 71);
             panel15.TabIndex = 2;
             // 
             // button13
@@ -322,22 +331,25 @@ namespace ABC_Bakery
             button13.ForeColor = SystemColors.ControlText;
             button13.Image = (Image)resources.GetObject("button13.Image");
             button13.ImageAlign = ContentAlignment.MiddleLeft;
-            button13.Location = new Point(-19, -11);
+            button13.Location = new Point(-22, -15);
+            button13.Margin = new Padding(3, 4, 3, 4);
             button13.Name = "button13";
-            button13.Padding = new Padding(25, 0, 0, 0);
+            button13.Padding = new Padding(29, 0, 0, 0);
             button13.RightToLeft = RightToLeft.No;
-            button13.Size = new Size(317, 76);
+            button13.Size = new Size(362, 101);
             button13.TabIndex = 3;
             button13.Text = "            Phiếu chi";
             button13.TextAlign = ContentAlignment.MiddleLeft;
             button13.UseVisualStyleBackColor = false;
+            button13.Click += btnReceive_Click;
             // 
             // panel20
             // 
             panel20.BackColor = Color.Black;
-            panel20.Location = new Point(3, 231);
+            panel20.Location = new Point(3, 308);
+            panel20.Margin = new Padding(3, 4, 3, 4);
             panel20.Name = "panel20";
-            panel20.Size = new Size(288, 3);
+            panel20.Size = new Size(329, 4);
             panel20.TabIndex = 2;
             // 
             // orderContainer
@@ -346,10 +358,10 @@ namespace ABC_Bakery
             orderContainer.Controls.Add(panel8);
             orderContainer.Controls.Add(panel7);
             orderContainer.Controls.Add(panel2);
-            orderContainer.Location = new Point(0, 237);
+            orderContainer.Location = new Point(0, 316);
             orderContainer.Margin = new Padding(0);
             orderContainer.Name = "orderContainer";
-            orderContainer.Size = new Size(288, 213);
+            orderContainer.Size = new Size(329, 284);
             orderContainer.TabIndex = 3;
             // 
             // pnOrder
@@ -359,7 +371,7 @@ namespace ABC_Bakery
             pnOrder.Margin = new Padding(0);
             pnOrder.Name = "pnOrder";
             pnOrder.RightToLeft = RightToLeft.Yes;
-            pnOrder.Size = new Size(288, 53);
+            pnOrder.Size = new Size(329, 71);
             pnOrder.TabIndex = 2;
             // 
             // orders
@@ -372,11 +384,12 @@ namespace ABC_Bakery
             orders.ForeColor = Color.Black;
             orders.Image = (Image)resources.GetObject("orders.Image");
             orders.ImageAlign = ContentAlignment.MiddleLeft;
-            orders.Location = new Point(-19, -18);
+            orders.Location = new Point(-22, -24);
+            orders.Margin = new Padding(3, 4, 3, 4);
             orders.Name = "orders";
-            orders.Padding = new Padding(25, 0, 0, 0);
+            orders.Padding = new Padding(29, 0, 0, 0);
             orders.RightToLeft = RightToLeft.No;
-            orders.Size = new Size(317, 89);
+            orders.Size = new Size(362, 119);
             orders.TabIndex = 3;
             orders.Text = "            Biên nhận";
             orders.TextAlign = ContentAlignment.MiddleLeft;
@@ -386,11 +399,11 @@ namespace ABC_Bakery
             // panel8
             // 
             panel8.Controls.Add(button7);
-            panel8.Location = new Point(0, 53);
+            panel8.Location = new Point(0, 71);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
             panel8.RightToLeft = RightToLeft.Yes;
-            panel8.Size = new Size(288, 53);
+            panel8.Size = new Size(329, 71);
             panel8.TabIndex = 2;
             // 
             // button7
@@ -403,11 +416,12 @@ namespace ABC_Bakery
             button7.ForeColor = SystemColors.ControlText;
             button7.Image = (Image)resources.GetObject("button7.Image");
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(-19, -11);
+            button7.Location = new Point(-22, -15);
+            button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
-            button7.Padding = new Padding(25, 0, 0, 0);
+            button7.Padding = new Padding(29, 0, 0, 0);
             button7.RightToLeft = RightToLeft.No;
-            button7.Size = new Size(317, 76);
+            button7.Size = new Size(362, 101);
             button7.TabIndex = 3;
             button7.Text = "            Biên nhận thế chân";
             button7.TextAlign = ContentAlignment.MiddleLeft;
@@ -416,11 +430,11 @@ namespace ABC_Bakery
             // panel7
             // 
             panel7.Controls.Add(button6);
-            panel7.Location = new Point(0, 106);
+            panel7.Location = new Point(0, 142);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
             panel7.RightToLeft = RightToLeft.Yes;
-            panel7.Size = new Size(288, 53);
+            panel7.Size = new Size(329, 71);
             panel7.TabIndex = 2;
             // 
             // button6
@@ -433,11 +447,12 @@ namespace ABC_Bakery
             button6.ForeColor = SystemColors.ControlText;
             button6.Image = (Image)resources.GetObject("button6.Image");
             button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-19, -11);
+            button6.Location = new Point(-22, -15);
+            button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
-            button6.Padding = new Padding(25, 0, 0, 0);
+            button6.Padding = new Padding(29, 0, 0, 0);
             button6.RightToLeft = RightToLeft.No;
-            button6.Size = new Size(317, 76);
+            button6.Size = new Size(362, 101);
             button6.TabIndex = 3;
             button6.Text = "            Biên nhận bánh đặt trước";
             button6.TextAlign = ContentAlignment.MiddleLeft;
@@ -446,11 +461,11 @@ namespace ABC_Bakery
             // panel2
             // 
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(0, 159);
+            panel2.Location = new Point(0, 213);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
             panel2.RightToLeft = RightToLeft.Yes;
-            panel2.Size = new Size(288, 53);
+            panel2.Size = new Size(329, 71);
             panel2.TabIndex = 2;
             // 
             // button1
@@ -463,12 +478,12 @@ namespace ABC_Bakery
             button1.ForeColor = SystemColors.ControlText;
             button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-19, -11);
+            button1.Location = new Point(-22, -15);
             button1.Margin = new Padding(0);
             button1.Name = "button1";
-            button1.Padding = new Padding(25, 0, 0, 0);
+            button1.Padding = new Padding(29, 0, 0, 0);
             button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(317, 76);
+            button1.Size = new Size(362, 101);
             button1.TabIndex = 3;
             button1.Text = "            Biên nhận bánh tại quầy";
             button1.TextAlign = ContentAlignment.MiddleLeft;
@@ -477,9 +492,10 @@ namespace ABC_Bakery
             // panel21
             // 
             panel21.BackColor = Color.Black;
-            panel21.Location = new Point(3, 453);
+            panel21.Location = new Point(3, 604);
+            panel21.Margin = new Padding(3, 4, 3, 4);
             panel21.Name = "panel21";
-            panel21.Size = new Size(288, 3);
+            panel21.Size = new Size(329, 4);
             panel21.TabIndex = 2;
             // 
             // followReceiptContainer
@@ -488,10 +504,10 @@ namespace ABC_Bakery
             followReceiptContainer.Controls.Add(panel18);
             followReceiptContainer.Controls.Add(panel19);
             followReceiptContainer.Controls.Add(panel9);
-            followReceiptContainer.Location = new Point(0, 459);
+            followReceiptContainer.Location = new Point(0, 612);
             followReceiptContainer.Margin = new Padding(0);
             followReceiptContainer.Name = "followReceiptContainer";
-            followReceiptContainer.Size = new Size(288, 220);
+            followReceiptContainer.Size = new Size(329, 293);
             followReceiptContainer.TabIndex = 4;
             // 
             // pnFollowReceipt
@@ -501,7 +517,7 @@ namespace ABC_Bakery
             pnFollowReceipt.Margin = new Padding(0);
             pnFollowReceipt.Name = "pnFollowReceipt";
             pnFollowReceipt.RightToLeft = RightToLeft.Yes;
-            pnFollowReceipt.Size = new Size(288, 59);
+            pnFollowReceipt.Size = new Size(329, 79);
             pnFollowReceipt.TabIndex = 2;
             // 
             // receiptFollow
@@ -514,11 +530,12 @@ namespace ABC_Bakery
             receiptFollow.ForeColor = Color.Black;
             receiptFollow.Image = (Image)resources.GetObject("receiptFollow.Image");
             receiptFollow.ImageAlign = ContentAlignment.MiddleLeft;
-            receiptFollow.Location = new Point(-19, -11);
+            receiptFollow.Location = new Point(-22, -15);
+            receiptFollow.Margin = new Padding(3, 4, 3, 4);
             receiptFollow.Name = "receiptFollow";
-            receiptFollow.Padding = new Padding(25, 0, 0, 0);
+            receiptFollow.Padding = new Padding(29, 0, 0, 0);
             receiptFollow.RightToLeft = RightToLeft.No;
-            receiptFollow.Size = new Size(317, 81);
+            receiptFollow.Size = new Size(362, 108);
             receiptFollow.TabIndex = 3;
             receiptFollow.Text = "            Theo dỗi biên nhận";
             receiptFollow.TextAlign = ContentAlignment.MiddleLeft;
@@ -528,11 +545,11 @@ namespace ABC_Bakery
             // panel18
             // 
             panel18.Controls.Add(button14);
-            panel18.Location = new Point(0, 59);
+            panel18.Location = new Point(0, 79);
             panel18.Margin = new Padding(0);
             panel18.Name = "panel18";
             panel18.RightToLeft = RightToLeft.Yes;
-            panel18.Size = new Size(288, 53);
+            panel18.Size = new Size(329, 71);
             panel18.TabIndex = 2;
             // 
             // button14
@@ -545,11 +562,12 @@ namespace ABC_Bakery
             button14.ForeColor = SystemColors.ControlText;
             button14.Image = (Image)resources.GetObject("button14.Image");
             button14.ImageAlign = ContentAlignment.MiddleLeft;
-            button14.Location = new Point(-19, -11);
+            button14.Location = new Point(-22, -15);
+            button14.Margin = new Padding(3, 4, 3, 4);
             button14.Name = "button14";
-            button14.Padding = new Padding(25, 0, 0, 0);
+            button14.Padding = new Padding(29, 0, 0, 0);
             button14.RightToLeft = RightToLeft.No;
-            button14.Size = new Size(317, 76);
+            button14.Size = new Size(362, 101);
             button14.TabIndex = 3;
             button14.Text = "            BN chưa thanh toán";
             button14.TextAlign = ContentAlignment.MiddleLeft;
@@ -558,11 +576,11 @@ namespace ABC_Bakery
             // panel19
             // 
             panel19.Controls.Add(btnOrderTCNoPayment);
-            panel19.Location = new Point(0, 112);
+            panel19.Location = new Point(0, 150);
             panel19.Margin = new Padding(0);
             panel19.Name = "panel19";
             panel19.RightToLeft = RightToLeft.Yes;
-            panel19.Size = new Size(288, 53);
+            panel19.Size = new Size(329, 71);
             panel19.TabIndex = 2;
             // 
             // btnOrderTCNoPayment
@@ -575,11 +593,12 @@ namespace ABC_Bakery
             btnOrderTCNoPayment.ForeColor = SystemColors.ControlText;
             btnOrderTCNoPayment.Image = (Image)resources.GetObject("btnOrderTCNoPayment.Image");
             btnOrderTCNoPayment.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOrderTCNoPayment.Location = new Point(-19, -11);
+            btnOrderTCNoPayment.Location = new Point(-22, -15);
+            btnOrderTCNoPayment.Margin = new Padding(3, 4, 3, 4);
             btnOrderTCNoPayment.Name = "btnOrderTCNoPayment";
-            btnOrderTCNoPayment.Padding = new Padding(25, 0, 0, 0);
+            btnOrderTCNoPayment.Padding = new Padding(29, 0, 0, 0);
             btnOrderTCNoPayment.RightToLeft = RightToLeft.No;
-            btnOrderTCNoPayment.Size = new Size(317, 76);
+            btnOrderTCNoPayment.Size = new Size(362, 101);
             btnOrderTCNoPayment.TabIndex = 3;
             btnOrderTCNoPayment.Text = "            BN TC chưa thanh toán";
             btnOrderTCNoPayment.TextAlign = ContentAlignment.MiddleLeft;
@@ -589,11 +608,11 @@ namespace ABC_Bakery
             // panel9
             // 
             panel9.Controls.Add(button2);
-            panel9.Location = new Point(0, 165);
+            panel9.Location = new Point(0, 221);
             panel9.Margin = new Padding(0);
             panel9.Name = "panel9";
             panel9.RightToLeft = RightToLeft.Yes;
-            panel9.Size = new Size(288, 53);
+            panel9.Size = new Size(329, 71);
             panel9.TabIndex = 2;
             // 
             // button2
@@ -606,11 +625,12 @@ namespace ABC_Bakery
             button2.ForeColor = SystemColors.ControlText;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-19, -11);
+            button2.Location = new Point(-22, -15);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Padding = new Padding(25, 0, 0, 0);
+            button2.Padding = new Padding(29, 0, 0, 0);
             button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(317, 76);
+            button2.Size = new Size(362, 101);
             button2.TabIndex = 3;
             button2.Text = "            Các biên nhận";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -619,9 +639,10 @@ namespace ABC_Bakery
             // panel23
             // 
             panel23.BackColor = Color.Black;
-            panel23.Location = new Point(3, 682);
+            panel23.Location = new Point(3, 909);
+            panel23.Margin = new Padding(3, 4, 3, 4);
             panel23.Name = "panel23";
-            panel23.Size = new Size(288, 3);
+            panel23.Size = new Size(329, 4);
             panel23.TabIndex = 3;
             // 
             // flowLayoutPanel3
@@ -630,10 +651,10 @@ namespace ABC_Bakery
             flowLayoutPanel3.Controls.Add(panel10);
             flowLayoutPanel3.Controls.Add(panel13);
             flowLayoutPanel3.Controls.Add(panel17);
-            flowLayoutPanel3.Location = new Point(0, 688);
+            flowLayoutPanel3.Location = new Point(335, 0);
             flowLayoutPanel3.Margin = new Padding(0);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(288, 220);
+            flowLayoutPanel3.Size = new Size(329, 293);
             flowLayoutPanel3.TabIndex = 7;
             // 
             // panel3
@@ -643,7 +664,7 @@ namespace ABC_Bakery
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
             panel3.RightToLeft = RightToLeft.Yes;
-            panel3.Size = new Size(288, 59);
+            panel3.Size = new Size(329, 79);
             panel3.TabIndex = 2;
             // 
             // button3
@@ -656,11 +677,12 @@ namespace ABC_Bakery
             button3.ForeColor = Color.Black;
             button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-19, -11);
+            button3.Location = new Point(-22, -15);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Padding = new Padding(25, 0, 0, 0);
+            button3.Padding = new Padding(29, 0, 0, 0);
             button3.RightToLeft = RightToLeft.No;
-            button3.Size = new Size(317, 81);
+            button3.Size = new Size(362, 108);
             button3.TabIndex = 3;
             button3.Text = "            Thao tác";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -669,11 +691,11 @@ namespace ABC_Bakery
             // panel10
             // 
             panel10.Controls.Add(btnCreateOrder);
-            panel10.Location = new Point(0, 59);
+            panel10.Location = new Point(0, 79);
             panel10.Margin = new Padding(0);
             panel10.Name = "panel10";
             panel10.RightToLeft = RightToLeft.Yes;
-            panel10.Size = new Size(288, 53);
+            panel10.Size = new Size(329, 71);
             panel10.TabIndex = 2;
             // 
             // btnCreateOrder
@@ -686,11 +708,12 @@ namespace ABC_Bakery
             btnCreateOrder.ForeColor = SystemColors.ControlText;
             btnCreateOrder.Image = (Image)resources.GetObject("btnCreateOrder.Image");
             btnCreateOrder.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreateOrder.Location = new Point(-19, -11);
+            btnCreateOrder.Location = new Point(-22, -15);
+            btnCreateOrder.Margin = new Padding(3, 4, 3, 4);
             btnCreateOrder.Name = "btnCreateOrder";
-            btnCreateOrder.Padding = new Padding(25, 0, 0, 0);
+            btnCreateOrder.Padding = new Padding(29, 0, 0, 0);
             btnCreateOrder.RightToLeft = RightToLeft.No;
-            btnCreateOrder.Size = new Size(317, 76);
+            btnCreateOrder.Size = new Size(362, 101);
             btnCreateOrder.TabIndex = 3;
             btnCreateOrder.Text = "            Tạo phiếu mua hàng";
             btnCreateOrder.TextAlign = ContentAlignment.MiddleLeft;
@@ -700,11 +723,11 @@ namespace ABC_Bakery
             // panel13
             // 
             panel13.Controls.Add(btnCreateProduct);
-            panel13.Location = new Point(0, 112);
+            panel13.Location = new Point(0, 150);
             panel13.Margin = new Padding(0);
             panel13.Name = "panel13";
             panel13.RightToLeft = RightToLeft.Yes;
-            panel13.Size = new Size(288, 53);
+            panel13.Size = new Size(329, 71);
             panel13.TabIndex = 2;
             // 
             // btnCreateProduct
@@ -717,11 +740,12 @@ namespace ABC_Bakery
             btnCreateProduct.ForeColor = SystemColors.ControlText;
             btnCreateProduct.Image = (Image)resources.GetObject("btnCreateProduct.Image");
             btnCreateProduct.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreateProduct.Location = new Point(-19, -11);
+            btnCreateProduct.Location = new Point(-22, -15);
+            btnCreateProduct.Margin = new Padding(3, 4, 3, 4);
             btnCreateProduct.Name = "btnCreateProduct";
-            btnCreateProduct.Padding = new Padding(25, 0, 0, 0);
+            btnCreateProduct.Padding = new Padding(29, 0, 0, 0);
             btnCreateProduct.RightToLeft = RightToLeft.No;
-            btnCreateProduct.Size = new Size(317, 76);
+            btnCreateProduct.Size = new Size(362, 101);
             btnCreateProduct.TabIndex = 3;
             btnCreateProduct.Text = "            Thêm sản phẩm";
             btnCreateProduct.TextAlign = ContentAlignment.MiddleLeft;
@@ -731,11 +755,11 @@ namespace ABC_Bakery
             // panel17
             // 
             panel17.Controls.Add(btnCreateCategory);
-            panel17.Location = new Point(0, 165);
+            panel17.Location = new Point(0, 221);
             panel17.Margin = new Padding(0);
             panel17.Name = "panel17";
             panel17.RightToLeft = RightToLeft.Yes;
-            panel17.Size = new Size(288, 53);
+            panel17.Size = new Size(329, 71);
             panel17.TabIndex = 2;
             // 
             // btnCreateCategory
@@ -748,11 +772,12 @@ namespace ABC_Bakery
             btnCreateCategory.ForeColor = SystemColors.ControlText;
             btnCreateCategory.Image = (Image)resources.GetObject("btnCreateCategory.Image");
             btnCreateCategory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreateCategory.Location = new Point(-19, -11);
+            btnCreateCategory.Location = new Point(-22, -15);
+            btnCreateCategory.Margin = new Padding(3, 4, 3, 4);
             btnCreateCategory.Name = "btnCreateCategory";
-            btnCreateCategory.Padding = new Padding(25, 0, 0, 0);
+            btnCreateCategory.Padding = new Padding(29, 0, 0, 0);
             btnCreateCategory.RightToLeft = RightToLeft.No;
-            btnCreateCategory.Size = new Size(317, 76);
+            btnCreateCategory.Size = new Size(362, 101);
             btnCreateCategory.TabIndex = 3;
             btnCreateCategory.Text = "            Tạo Danh Mục";
             btnCreateCategory.TextAlign = ContentAlignment.MiddleLeft;
@@ -762,9 +787,10 @@ namespace ABC_Bakery
             // panel22
             // 
             panel22.BackColor = Color.Black;
-            panel22.Location = new Point(3, 911);
+            panel22.Location = new Point(338, 297);
+            panel22.Margin = new Padding(3, 4, 3, 4);
             panel22.Name = "panel22";
-            panel22.Size = new Size(288, 3);
+            panel22.Size = new Size(329, 4);
             panel22.TabIndex = 6;
             // 
             // orderTransition
@@ -907,13 +933,14 @@ namespace ABC_Bakery
             // Application
             // 
             AllowDrop = true;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1475, 1100);
+            ClientSize = new Size(1686, 1102);
             Controls.Add(sidebarContainer);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Application";
             Text = " ";
             WindowState = FormWindowState.Maximized;

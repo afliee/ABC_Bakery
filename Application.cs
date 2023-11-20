@@ -18,7 +18,8 @@ namespace ABC_Bakery
         private Forms.Order order;
         private CreateProduct createProdct;
         private DefaultForm defaultForm;
-
+        private Forms.Receipt receipt;
+        private Receive receive;
         public Application()
         {
             InitializeComponent();
@@ -285,7 +286,47 @@ namespace ABC_Bakery
 
         private void btnCreateCategory_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnReceipt_Click(object sender, EventArgs e)
+        {
+            if (receipt == null)
+            {
+                receipt = new Forms.Receipt();
+                receipt.MdiParent = this;
+                receipt.Dock = DockStyle.Fill;
+                receipt.FormClosed += Receipt_FormClosed;
+                receipt.Show();
+            }
+            else
+            {
+                receipt.Activate();
+            }
+        }
+        private void Receipt_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            receipt = null;
+        }
+
+        private void btnReceive_Click(object sender, EventArgs e)
+        {
+            if(receipt == null)
+            {
+                receipt = new Forms.Receipt();
+                receipt.MdiParent = this;
+                receipt.Dock = DockStyle.Fill;
+                receive.FormClosed += Receive_FormClosed;
+                receive.Show();
+            }
+            else
+            {
+                receive.Activate();
+            }
+        }
+        private void Receive_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            receive = null;
         }
     }
 }
