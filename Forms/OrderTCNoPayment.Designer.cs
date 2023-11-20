@@ -34,19 +34,31 @@ namespace ABC_Bakery.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panel2 = new Panel();
+            roundedPanel4 = new Helpers.UI.RoundedPanel();
+            datetimePickerCustom1 = new Helpers.UI.DatetimePickerCustom();
+            pictureBox1 = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             panel4 = new Panel();
+            panel5 = new Panel();
+            roundedPanel3 = new Helpers.UI.RoundedPanel();
+            dataGridView3 = new DataGridView();
+            stt = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             panel3 = new Panel();
             roundedButton1 = new Helpers.UI.RoundedButton();
             roundedPanel2 = new Helpers.UI.RoundedPanel();
@@ -68,20 +80,14 @@ namespace ABC_Bakery.Forms
             radioButton1 = new RadioButton();
             label11 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            panel5 = new Panel();
-            roundedPanel3 = new Helpers.UI.RoundedPanel();
-            dataGridView3 = new DataGridView();
-            stt = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            roundedPanel4 = new Helpers.UI.RoundedPanel();
-            datetimePickerCustom1 = new Helpers.UI.DatetimePickerCustom();
-            pictureBox1 = new PictureBox();
-            panel2 = new Panel();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            roundedPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            roundedPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             panel3.SuspendLayout();
             roundedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -89,12 +95,6 @@ namespace ABC_Bakery.Forms
             roundedPanel1.SuspendLayout();
             panel6.SuspendLayout();
             panel8.SuspendLayout();
-            panel5.SuspendLayout();
-            roundedPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            roundedPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -109,6 +109,52 @@ namespace ABC_Bakery.Forms
             panel1.Padding = new Padding(10);
             panel1.Size = new Size(1434, 70);
             panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(roundedPanel4);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(1026, 10);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(398, 50);
+            panel2.TabIndex = 7;
+            // 
+            // roundedPanel4
+            // 
+            roundedPanel4.BackColor = Color.FromArgb(154, 59, 59);
+            roundedPanel4.Controls.Add(datetimePickerCustom1);
+            roundedPanel4.Controls.Add(pictureBox1);
+            roundedPanel4.Dock = DockStyle.Fill;
+            roundedPanel4.ForeColor = Color.White;
+            roundedPanel4.Location = new Point(0, 0);
+            roundedPanel4.Margin = new Padding(3, 15, 3, 3);
+            roundedPanel4.Name = "roundedPanel4";
+            roundedPanel4.Size = new Size(398, 50);
+            roundedPanel4.TabIndex = 6;
+            // 
+            // datetimePickerCustom1
+            // 
+            datetimePickerCustom1.BorderColor = Color.FromArgb(154, 59, 59);
+            datetimePickerCustom1.BorderSize = 3;
+            datetimePickerCustom1.CustomFormat = "dddd , dd MMMM yyyy";
+            datetimePickerCustom1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            datetimePickerCustom1.Location = new Point(104, 4);
+            datetimePickerCustom1.MinimumSize = new Size(4, 50);
+            datetimePickerCustom1.Name = "datetimePickerCustom1";
+            datetimePickerCustom1.Size = new Size(328, 50);
+            datetimePickerCustom1.SkinColor = Color.FromArgb(154, 59, 59);
+            datetimePickerCustom1.TabIndex = 1;
+            datetimePickerCustom1.TextColor = Color.White;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.calender;
+            pictureBox1.Location = new Point(3, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(54, 36);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -146,6 +192,127 @@ namespace ABC_Bakery.Forms
             panel4.Padding = new Padding(15, 3, 15, 15);
             panel4.Size = new Size(1026, 732);
             panel4.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(roundedPanel3);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(15, 59);
+            panel5.Name = "panel5";
+            panel5.Padding = new Padding(0, 10, 0, 10);
+            panel5.Size = new Size(996, 581);
+            panel5.TabIndex = 6;
+            // 
+            // roundedPanel3
+            // 
+            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel3.Controls.Add(dataGridView3);
+            roundedPanel3.Dock = DockStyle.Fill;
+            roundedPanel3.ForeColor = Color.White;
+            roundedPanel3.Location = new Point(0, 10);
+            roundedPanel3.Name = "roundedPanel3";
+            roundedPanel3.Size = new Size(996, 561);
+            roundedPanel3.TabIndex = 0;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView3.BackgroundColor = Color.FromArgb(255, 224, 192);
+            dataGridView3.BorderStyle = BorderStyle.None;
+            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            dataGridView3.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle10.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.NullValue = "dasd";
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridView3.ColumnHeadersHeight = 54;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { stt, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.RosyBrown;
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
+            dataGridView3.Location = new Point(0, -6);
+            dataGridView3.Margin = new Padding(0);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridView3.RowHeadersVisible = false;
+            dataGridView3.RowHeadersWidth = 51;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridView3.RowTemplate.Height = 29;
+            dataGridView3.ScrollBars = ScrollBars.None;
+            dataGridView3.Size = new Size(996, 573);
+            dataGridView3.TabIndex = 3;
+            // 
+            // stt
+            // 
+            stt.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle11.BackColor = Color.Red;
+            dataGridViewCellStyle11.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = Color.White;
+            stt.DefaultCellStyle = dataGridViewCellStyle11;
+            stt.Frozen = true;
+            stt.HeaderText = "STT";
+            stt.MinimumWidth = 6;
+            stt.Name = "stt";
+            stt.Resizable = DataGridViewTriState.True;
+            stt.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewTextBoxColumn2.FillWeight = 273.6842F;
+            dataGridViewTextBoxColumn2.HeaderText = "Mã Biên Nhận";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn3.FillWeight = 42.1052666F;
+            dataGridViewTextBoxColumn3.HeaderText = "Ngày đặt";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.FillWeight = 42.1052666F;
+            dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.FillWeight = 42.1052666F;
+            dataGridViewTextBoxColumn5.HeaderText = "Ghi chú";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // panel3
             // 
@@ -199,42 +366,42 @@ namespace ABC_Bakery.Forms
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle19.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle15.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             dataGridView1.ColumnHeadersHeight = 54;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ten, SL, Thanhtien });
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle20.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle20.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle20.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle16.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle16;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(5, 67);
             dataGridView1.Margin = new Padding(5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle21.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle21.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle17.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle22.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle18;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ShowEditingIcon = false;
@@ -417,173 +584,6 @@ namespace ABC_Bakery.Forms
             label11.TabIndex = 0;
             label11.Text = "Thanh toán";
             // 
-            // panel5
-            // 
-            panel5.Controls.Add(roundedPanel3);
-            panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(15, 59);
-            panel5.Name = "panel5";
-            panel5.Padding = new Padding(0, 10, 0, 10);
-            panel5.Size = new Size(996, 581);
-            panel5.TabIndex = 6;
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
-            roundedPanel3.Controls.Add(dataGridView3);
-            roundedPanel3.Dock = DockStyle.Fill;
-            roundedPanel3.ForeColor = Color.White;
-            roundedPanel3.Location = new Point(0, 10);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(996, 561);
-            roundedPanel3.TabIndex = 0;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView3.BackgroundColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridView3.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle23.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle23.ForeColor = Color.White;
-            dataGridViewCellStyle23.NullValue = "dasd";
-            dataGridViewCellStyle23.SelectionBackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle23.SelectionForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            dataGridView3.ColumnHeadersHeight = 54;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { stt, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle25.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle25.ForeColor = Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = Color.RosyBrown;
-            dataGridViewCellStyle25.SelectionForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.False;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle25;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
-            dataGridView3.Location = new Point(0, -6);
-            dataGridView3.Margin = new Padding(0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle26.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle26.ForeColor = Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
-            dataGridView3.RowHeadersVisible = false;
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridViewCellStyle27.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle27;
-            dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.ScrollBars = ScrollBars.None;
-            dataGridView3.Size = new Size(996, 573);
-            dataGridView3.TabIndex = 3;
-            // 
-            // stt
-            // 
-            stt.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle24.BackColor = Color.Red;
-            dataGridViewCellStyle24.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle24.ForeColor = Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = Color.White;
-            stt.DefaultCellStyle = dataGridViewCellStyle24;
-            stt.Frozen = true;
-            stt.HeaderText = "STT";
-            stt.MinimumWidth = 6;
-            stt.Name = "stt";
-            stt.Resizable = DataGridViewTriState.True;
-            stt.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewTextBoxColumn2.FillWeight = 273.6842F;
-            dataGridViewTextBoxColumn2.HeaderText = "Mã Biên Nhận";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn3.FillWeight = 42.1052666F;
-            dataGridViewTextBoxColumn3.HeaderText = "Ngày đặt";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 42.1052666F;
-            dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.FillWeight = 42.1052666F;
-            dataGridViewTextBoxColumn5.HeaderText = "Ghi chú";
-            dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // roundedPanel4
-            // 
-            roundedPanel4.BackColor = Color.FromArgb(154, 59, 59);
-            roundedPanel4.Controls.Add(datetimePickerCustom1);
-            roundedPanel4.Controls.Add(pictureBox1);
-            roundedPanel4.Dock = DockStyle.Fill;
-            roundedPanel4.ForeColor = Color.White;
-            roundedPanel4.Location = new Point(0, 0);
-            roundedPanel4.Margin = new Padding(3, 15, 3, 3);
-            roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(398, 50);
-            roundedPanel4.TabIndex = 6;
-            // 
-            // datetimePickerCustom1
-            // 
-            datetimePickerCustom1.BorderColor = Color.FromArgb(154, 59, 59);
-            datetimePickerCustom1.BorderSize = 3;
-            datetimePickerCustom1.CustomFormat = "dddd , dd MMMM yyyy";
-            datetimePickerCustom1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            datetimePickerCustom1.Location = new Point(104, 4);
-            datetimePickerCustom1.MinimumSize = new Size(4, 50);
-            datetimePickerCustom1.Name = "datetimePickerCustom1";
-            datetimePickerCustom1.Size = new Size(328, 50);
-            datetimePickerCustom1.SkinColor = Color.FromArgb(154, 59, 59);
-            datetimePickerCustom1.TabIndex = 1;
-            datetimePickerCustom1.TextColor = Color.White;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.calender;
-            pictureBox1.Location = new Point(3, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(54, 36);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(roundedPanel4);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(1026, 10);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(398, 50);
-            panel2.TabIndex = 7;
-            // 
             // OrderTCNoPayment
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -600,7 +600,13 @@ namespace ABC_Bakery.Forms
             Load += OrderTCNoPayment_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            roundedPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            roundedPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             panel3.ResumeLayout(false);
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
@@ -612,12 +618,6 @@ namespace ABC_Bakery.Forms
             panel6.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            panel5.ResumeLayout(false);
-            roundedPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            roundedPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 

@@ -83,6 +83,10 @@ namespace ABC_Bakery
             btnCreateProduct = new Button();
             panel17 = new Panel();
             btnCreateCategory = new Button();
+            panel24 = new Panel();
+            btnCreateOrderNoPayment = new Button();
+            panel25 = new Panel();
+            btnCreateDH = new Button();
             panel22 = new Panel();
             orderTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
@@ -120,6 +124,8 @@ namespace ABC_Bakery
             panel10.SuspendLayout();
             panel13.SuspendLayout();
             panel17.SuspendLayout();
+            panel24.SuspendLayout();
+            panel25.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -655,6 +661,12 @@ namespace ABC_Bakery
             flowLayoutPanel3.Margin = new Padding(0);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(329, 293);
+            flowLayoutPanel3.Controls.Add(panel24);
+            flowLayoutPanel3.Controls.Add(panel25);
+            flowLayoutPanel3.Location = new Point(0, 688);
+            flowLayoutPanel3.Margin = new Padding(0);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(288, 343);
             flowLayoutPanel3.TabIndex = 7;
             // 
             // panel3
@@ -784,11 +796,74 @@ namespace ABC_Bakery
             btnCreateCategory.UseVisualStyleBackColor = false;
             btnCreateCategory.Click += btnCreateCategory_Click;
             // 
+            // panel24
+            // 
+            panel24.Controls.Add(btnCreateOrderNoPayment);
+            panel24.Location = new Point(0, 218);
+            panel24.Margin = new Padding(0);
+            panel24.Name = "panel24";
+            panel24.RightToLeft = RightToLeft.Yes;
+            panel24.Size = new Size(288, 53);
+            panel24.TabIndex = 2;
+            // 
+            // btnCreateOrderNoPayment
+            // 
+            btnCreateOrderNoPayment.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreateOrderNoPayment.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateOrderNoPayment.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateOrderNoPayment.FlatStyle = FlatStyle.Flat;
+            btnCreateOrderNoPayment.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreateOrderNoPayment.ForeColor = SystemColors.ControlText;
+            btnCreateOrderNoPayment.Image = (Image)resources.GetObject("btnCreateOrderNoPayment.Image");
+            btnCreateOrderNoPayment.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreateOrderNoPayment.Location = new Point(-19, -11);
+            btnCreateOrderNoPayment.Name = "btnCreateOrderNoPayment";
+            btnCreateOrderNoPayment.Padding = new Padding(25, 0, 0, 0);
+            btnCreateOrderNoPayment.RightToLeft = RightToLeft.No;
+            btnCreateOrderNoPayment.Size = new Size(317, 76);
+            btnCreateOrderNoPayment.TabIndex = 3;
+            btnCreateOrderNoPayment.Text = "            Tạo BN Chưa thanh toán";
+            btnCreateOrderNoPayment.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreateOrderNoPayment.UseVisualStyleBackColor = false;
+            btnCreateOrderNoPayment.Click += btnCreateOrderNoPayment_Click;
+            // 
+            // panel25
+            // 
+            panel25.Controls.Add(btnCreateDH);
+            panel25.Location = new Point(0, 271);
+            panel25.Margin = new Padding(0);
+            panel25.Name = "panel25";
+            panel25.RightToLeft = RightToLeft.Yes;
+            panel25.Size = new Size(288, 53);
+            panel25.TabIndex = 2;
+            // 
+            // btnCreateDH
+            // 
+            btnCreateDH.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreateDH.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateDH.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateDH.FlatStyle = FlatStyle.Flat;
+            btnCreateDH.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreateDH.ForeColor = SystemColors.ControlText;
+            btnCreateDH.Image = (Image)resources.GetObject("btnCreateDH.Image");
+            btnCreateDH.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreateDH.Location = new Point(-19, -11);
+            btnCreateDH.Name = "btnCreateDH";
+            btnCreateDH.Padding = new Padding(25, 0, 0, 0);
+            btnCreateDH.RightToLeft = RightToLeft.No;
+            btnCreateDH.Size = new Size(317, 76);
+            btnCreateDH.TabIndex = 3;
+            btnCreateDH.Text = "            Tạo Đơn đặt hàng";
+            btnCreateDH.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreateDH.UseVisualStyleBackColor = false;
+            btnCreateDH.Click += btnCreateDH_Click;
+            // 
             // panel22
             // 
             panel22.BackColor = Color.Black;
             panel22.Location = new Point(338, 297);
             panel22.Margin = new Padding(3, 4, 3, 4);
+            panel22.Location = new Point(3, 1034);
             panel22.Name = "panel22";
             panel22.Size = new Size(329, 4);
             panel22.TabIndex = 6;
@@ -969,6 +1044,8 @@ namespace ABC_Bakery
             panel10.ResumeLayout(false);
             panel13.ResumeLayout(false);
             panel17.ResumeLayout(false);
+            panel24.ResumeLayout(false);
+            panel25.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -1043,5 +1120,9 @@ namespace ABC_Bakery
         private Panel panel17;
         private Button btnCreateCategory;
         private Panel panel22;
+        private Panel panel24;
+        private Button btnCreateOrderNoPayment;
+        private Panel panel25;
+        private Button btnCreateDH;
     }
 }

@@ -15,6 +15,7 @@ namespace ABC_Bakery
         private Boolean IsFollowReceiptExpanded = true;
         private OrderNoPayment orderNoPayment;
         private OrderTCNoPayment orderTCNoPayment;
+        private OrderDH orderDH;
         private Forms.Order order;
         private CreateProduct createProdct;
         private DefaultForm defaultForm;
@@ -88,6 +89,11 @@ namespace ABC_Bakery
         private void OrderTCNoPayment_FormClosed(object sender, FormClosedEventArgs e)
         {
             orderTCNoPayment = null;
+        }
+
+        private void OrderDH_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            orderDH = null;
         }
 
         private void orderTransition_Tick(object sender, EventArgs e)
@@ -311,7 +317,7 @@ namespace ABC_Bakery
 
         private void btnReceive_Click(object sender, EventArgs e)
         {
-            if(receipt == null)
+            if (receipt == null)
             {
                 receipt = new Forms.Receipt();
                 receipt.MdiParent = this;
@@ -328,5 +334,38 @@ namespace ABC_Bakery
         {
             receive = null;
         }
+
+        private void btnCreateOrderNoPayment_Click(object sender, EventArgs e)
+        {
+            if (orderNoPayment == null)
+            {
+                orderNoPayment = new OrderNoPayment();
+                orderNoPayment.MdiParent = this;
+                orderNoPayment.Dock = DockStyle.Fill;
+                orderNoPayment.FormClosed += OrderNoPayment_FormClosed;
+                orderNoPayment.Show();
+            }
+            else
+            {
+                orderNoPayment.Activate();
+            }
+        }
+
+        private void btnCreateDH_Click(object sender, EventArgs e)
+        {
+            if (orderDH == null)
+            {
+                orderDH = new OrderDH();
+                orderDH.MdiParent = this;
+                orderDH.Dock = DockStyle.Fill;
+                orderDH.FormClosed += OrderDH_FormClosed;
+                orderDH.Show();
+            }
+            else
+            {
+                orderDH.Activate();
+            }
+        }
     }
+
 }
