@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ABC_Bakery.Models;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
+using ABC_Bakery.Models.Constants;
+using ABC_Bakery.Services;
 
 namespace ABC_Bakery.Helpers
 {
@@ -22,14 +24,14 @@ namespace ABC_Bakery.Helpers
                 Database.EnsureCreated();
             } else
             {
-                Database.Migrate();
+                //Database.Migrate();
             }
         }
 
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) 
-        { 
+        //public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) 
+        //{ 
                
-        }
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -60,18 +62,45 @@ namespace ABC_Bakery.Helpers
             Permission.Config(modelBuilder);
             RolePermission.Config(modelBuilder);
             User.Config(modelBuilder);
+            Category.Config(modelBuilder);
             //Supplier.Config(modelBuilder);
-            //Import.Config(modelBuilder);
+            Import.Config(modelBuilder);
             ImportProduct.Config(modelBuilder);
-            //Product.Config(modelBuilder);
-            //Receipt.Config(modelBuilder);
-            //Order.Config(modelBuilder);
+            Product.Config(modelBuilder);
+            Receipt.Config(modelBuilder);
             OrderDetail.Config(modelBuilder);
+            Order.Config(modelBuilder);
             //Promotion.Config(modelBuilder);
             //Models.Image.Config(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
+            new ContextInitialize(modelBuilder).Seed();
+        }
 
+        public void Auto_Insert_Receipt()
+        {
+            Receipt importReceipt = new Receipt
+            {
+                Name = string.Format("Hóa đơn thu ngày {0}", DateTime.Now.ToString("dd/MM/yyyy")),
+                Recieved = 0,
+                Expense = 0,
+                Total = 0,
+                ReceiptType = ReceiptType.Import,
+                Orders = new List<Order>()
+            };
+
+            Receipt exportReceipt = new Receipt
+            {
+                Name = string.Format("Hóa đơn chi ngày {0}", DateTime.Now.ToString("dd/MM/yyyy")),
+                Recieved = 0,
+                Expense = 0,
+                Total = 0,
+                ReceiptType = ReceiptType.Export,
+                Orders = new List<Order>()
+            };
+
+            ReceiptService.GetInstance().Create(importReceipt);
+            ReceiptService.GetInstance().Create(exportReceipt);
         }
     }
 }

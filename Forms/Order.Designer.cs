@@ -33,11 +33,13 @@ namespace ABC_Bakery.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             dungeonHeaderLabel1 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
@@ -52,39 +54,32 @@ namespace ABC_Bakery.Forms
             datetimePickerCustom2 = new Helpers.UI.DatetimePickerCustom();
             label4 = new Label();
             roundedPanel7 = new Helpers.UI.RoundedPanel();
-            rjTextBox3 = new Helpers.UI.RJTextBox();
+            tbReceived = new Helpers.UI.RJTextBox();
             label8 = new Label();
+            label11 = new Label();
             label9 = new Label();
             roundedPanel8 = new Helpers.UI.RoundedPanel();
-            rjTextBox4 = new Helpers.UI.RJTextBox();
-            label10 = new Label();
-            label11 = new Label();
+            lbTotal = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             roundedPanel5 = new Helpers.UI.RoundedPanel();
-            rjTextBox2 = new Helpers.UI.RJTextBox();
+            tbDiscount = new Helpers.UI.RJTextBox();
             label5 = new Label();
             roundedPanel6 = new Helpers.UI.RoundedPanel();
-            rjTextBox1 = new Helpers.UI.RJTextBox();
+            tbSurcharge = new Helpers.UI.RJTextBox();
             label7 = new Label();
             label6 = new Label();
             roundedPanel9 = new Helpers.UI.RoundedPanel();
-            rjTextBox5 = new Helpers.UI.RJTextBox();
-            label12 = new Label();
+            lbMoneyChange = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             label13 = new Label();
             flowLayoutPanel2 = new FlowLayoutPanel();
             roundedPanel10 = new Helpers.UI.RoundedPanel();
             parrotGroupBox1 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            rjTextBox6 = new Helpers.UI.RJTextBox();
+            tbNote = new Helpers.UI.RJTextBox();
             panel2 = new Panel();
-            roundedButton1 = new Helpers.UI.RoundedButton();
+            btnSave = new Helpers.UI.RoundedButton();
             panel3 = new Panel();
             panel8 = new Panel();
-            dataGridView3 = new DataGridView();
-            stt = new DataGridViewTextBoxColumn();
-            name = new DataGridViewTextBoxColumn();
-            price = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            total = new DataGridViewTextBoxColumn();
-            action = new DataGridViewTextBoxColumn();
+            roundedPanel11 = new Helpers.UI.RoundedPanel();
+            dgProducts = new DataGridView();
             panel4 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel5 = new Panel();
@@ -99,6 +94,13 @@ namespace ABC_Bakery.Forms
             tbSearch = new Helpers.UI.RJTextBox();
             pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
+            id = new DataGridViewTextBoxColumn();
+            barcode = new DataGridViewImageColumn();
+            name = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            total = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -115,7 +117,8 @@ namespace ABC_Bakery.Forms
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            roundedPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgProducts).BeginInit();
             panel4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -270,36 +273,38 @@ namespace ABC_Bakery.Forms
             // roundedPanel7
             // 
             roundedPanel7.BackColor = Color.FromArgb(242, 236, 190);
-            roundedPanel7.Controls.Add(rjTextBox3);
+            roundedPanel7.Controls.Add(tbReceived);
             roundedPanel7.Controls.Add(label8);
-            roundedPanel7.Controls.Add(label9);
+            roundedPanel7.Controls.Add(label11);
             roundedPanel7.ForeColor = Color.White;
             roundedPanel7.Location = new Point(3, 281);
             roundedPanel7.Name = "roundedPanel7";
             roundedPanel7.Size = new Size(374, 60);
             roundedPanel7.TabIndex = 5;
             // 
-            // rjTextBox3
+            // tbReceived
             // 
-            rjTextBox3.BackColor = SystemColors.Window;
-            rjTextBox3.BorderColor = Color.FromArgb(154, 59, 59);
-            rjTextBox3.BorderFocusColor = Color.HotPink;
-            rjTextBox3.BorderRadius = 10;
-            rjTextBox3.BorderSize = 2;
-            rjTextBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox3.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox3.Location = new Point(106, 6);
-            rjTextBox3.Margin = new Padding(4);
-            rjTextBox3.Multiline = false;
-            rjTextBox3.Name = "rjTextBox3";
-            rjTextBox3.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox3.PasswordChar = false;
-            rjTextBox3.PlaceholderColor = Color.DarkGray;
-            rjTextBox3.PlaceholderText = "";
-            rjTextBox3.Size = new Size(216, 47);
-            rjTextBox3.TabIndex = 3;
-            rjTextBox3.Texts = "";
-            rjTextBox3.UnderlinedStyle = false;
+            tbReceived.BackColor = SystemColors.Window;
+            tbReceived.BorderColor = Color.FromArgb(154, 59, 59);
+            tbReceived.BorderFocusColor = Color.HotPink;
+            tbReceived.BorderRadius = 10;
+            tbReceived.BorderSize = 2;
+            tbReceived.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbReceived.ForeColor = Color.FromArgb(64, 64, 64);
+            tbReceived.Location = new Point(106, 6);
+            tbReceived.Margin = new Padding(4);
+            tbReceived.Multiline = false;
+            tbReceived.Name = "tbReceived";
+            tbReceived.Padding = new Padding(10, 7, 10, 7);
+            tbReceived.PasswordChar = false;
+            tbReceived.PlaceholderColor = Color.DarkGray;
+            tbReceived.PlaceholderText = "";
+            tbReceived.Size = new Size(216, 47);
+            tbReceived.TabIndex = 3;
+            tbReceived.TextAlign = HorizontalAlignment.Left;
+            tbReceived.Texts = "0";
+            tbReceived.UnderlinedStyle = false;
+            tbReceived._TextChanged += tbReceived__TextChanged;
             // 
             // label8
             // 
@@ -311,6 +316,17 @@ namespace ABC_Bakery.Forms
             label8.Size = new Size(54, 25);
             label8.TabIndex = 2;
             label8.Text = "VND";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(12, 16);
+            label11.Name = "label11";
+            label11.Size = new Size(96, 25);
+            label11.TabIndex = 0;
+            label11.Text = "Tiền nhận";
             // 
             // label9
             // 
@@ -326,63 +342,31 @@ namespace ABC_Bakery.Forms
             // roundedPanel8
             // 
             roundedPanel8.BackColor = Color.FromArgb(242, 236, 190);
-            roundedPanel8.Controls.Add(rjTextBox4);
-            roundedPanel8.Controls.Add(label10);
-            roundedPanel8.Controls.Add(label11);
+            roundedPanel8.Controls.Add(lbTotal);
+            roundedPanel8.Controls.Add(label9);
             roundedPanel8.ForeColor = Color.White;
             roundedPanel8.Location = new Point(3, 347);
             roundedPanel8.Name = "roundedPanel8";
             roundedPanel8.Size = new Size(374, 60);
             roundedPanel8.TabIndex = 6;
             // 
-            // rjTextBox4
+            // lbTotal
             // 
-            rjTextBox4.BackColor = SystemColors.Window;
-            rjTextBox4.BorderColor = Color.FromArgb(154, 59, 59);
-            rjTextBox4.BorderFocusColor = Color.HotPink;
-            rjTextBox4.BorderRadius = 10;
-            rjTextBox4.BorderSize = 2;
-            rjTextBox4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox4.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox4.Location = new Point(106, 6);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = false;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "";
-            rjTextBox4.Size = new Size(216, 47);
-            rjTextBox4.TabIndex = 4;
-            rjTextBox4.Texts = "";
-            rjTextBox4.UnderlinedStyle = false;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.Black;
-            label10.Location = new Point(320, 16);
-            label10.Name = "label10";
-            label10.Size = new Size(54, 25);
-            label10.TabIndex = 2;
-            label10.Text = "VND";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.Black;
-            label11.Location = new Point(12, 16);
-            label11.Name = "label11";
-            label11.Size = new Size(96, 25);
-            label11.TabIndex = 0;
-            label11.Text = "Tiền nhận";
+            lbTotal.BackColor = Color.Transparent;
+            lbTotal.Dock = DockStyle.Right;
+            lbTotal.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTotal.ForeColor = Color.FromArgb(76, 76, 77);
+            lbTotal.Location = new Point(251, 0);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(123, 60);
+            lbTotal.TabIndex = 1;
+            lbTotal.Text = "0";
+            lbTotal.TextAlign = ContentAlignment.MiddleRight;
             // 
             // roundedPanel5
             // 
             roundedPanel5.BackColor = Color.FromArgb(242, 236, 190);
-            roundedPanel5.Controls.Add(rjTextBox2);
+            roundedPanel5.Controls.Add(tbDiscount);
             roundedPanel5.Controls.Add(label5);
             roundedPanel5.ForeColor = Color.White;
             roundedPanel5.Location = new Point(3, 149);
@@ -390,27 +374,28 @@ namespace ABC_Bakery.Forms
             roundedPanel5.Size = new Size(374, 60);
             roundedPanel5.TabIndex = 3;
             // 
-            // rjTextBox2
+            // tbDiscount
             // 
-            rjTextBox2.BackColor = SystemColors.Window;
-            rjTextBox2.BorderColor = Color.FromArgb(154, 59, 59);
-            rjTextBox2.BorderFocusColor = Color.HotPink;
-            rjTextBox2.BorderRadius = 10;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox2.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new Point(145, 6);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new Size(225, 47);
-            rjTextBox2.TabIndex = 1;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = false;
+            tbDiscount.BackColor = SystemColors.Window;
+            tbDiscount.BorderColor = Color.FromArgb(154, 59, 59);
+            tbDiscount.BorderFocusColor = Color.HotPink;
+            tbDiscount.BorderRadius = 10;
+            tbDiscount.BorderSize = 2;
+            tbDiscount.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbDiscount.ForeColor = Color.FromArgb(64, 64, 64);
+            tbDiscount.Location = new Point(145, 6);
+            tbDiscount.Margin = new Padding(4);
+            tbDiscount.Multiline = false;
+            tbDiscount.Name = "tbDiscount";
+            tbDiscount.Padding = new Padding(10, 7, 10, 7);
+            tbDiscount.PasswordChar = false;
+            tbDiscount.PlaceholderColor = Color.DarkGray;
+            tbDiscount.PlaceholderText = "";
+            tbDiscount.Size = new Size(225, 47);
+            tbDiscount.TabIndex = 1;
+            tbDiscount.TextAlign = HorizontalAlignment.Left;
+            tbDiscount.Texts = "";
+            tbDiscount.UnderlinedStyle = false;
             // 
             // label5
             // 
@@ -426,7 +411,7 @@ namespace ABC_Bakery.Forms
             // roundedPanel6
             // 
             roundedPanel6.BackColor = Color.FromArgb(242, 236, 190);
-            roundedPanel6.Controls.Add(rjTextBox1);
+            roundedPanel6.Controls.Add(tbSurcharge);
             roundedPanel6.Controls.Add(label7);
             roundedPanel6.Controls.Add(label6);
             roundedPanel6.ForeColor = Color.White;
@@ -435,27 +420,29 @@ namespace ABC_Bakery.Forms
             roundedPanel6.Size = new Size(374, 60);
             roundedPanel6.TabIndex = 4;
             // 
-            // rjTextBox1
+            // tbSurcharge
             // 
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = Color.FromArgb(154, 59, 59);
-            rjTextBox1.BorderFocusColor = Color.HotPink;
-            rjTextBox1.BorderRadius = 10;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox1.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new Point(106, 6);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new Size(216, 47);
-            rjTextBox1.TabIndex = 2;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
+            tbSurcharge.BackColor = SystemColors.Window;
+            tbSurcharge.BorderColor = Color.FromArgb(154, 59, 59);
+            tbSurcharge.BorderFocusColor = Color.HotPink;
+            tbSurcharge.BorderRadius = 10;
+            tbSurcharge.BorderSize = 2;
+            tbSurcharge.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSurcharge.ForeColor = Color.FromArgb(64, 64, 64);
+            tbSurcharge.Location = new Point(106, 6);
+            tbSurcharge.Margin = new Padding(4);
+            tbSurcharge.Multiline = false;
+            tbSurcharge.Name = "tbSurcharge";
+            tbSurcharge.Padding = new Padding(10, 7, 10, 7);
+            tbSurcharge.PasswordChar = false;
+            tbSurcharge.PlaceholderColor = Color.DarkGray;
+            tbSurcharge.PlaceholderText = "";
+            tbSurcharge.Size = new Size(216, 47);
+            tbSurcharge.TabIndex = 2;
+            tbSurcharge.TextAlign = HorizontalAlignment.Left;
+            tbSurcharge.Texts = "0";
+            tbSurcharge.UnderlinedStyle = false;
+            tbSurcharge._TextChanged += tbSurcharge__TextChanged;
             // 
             // label7
             // 
@@ -482,8 +469,7 @@ namespace ABC_Bakery.Forms
             // roundedPanel9
             // 
             roundedPanel9.BackColor = Color.FromArgb(242, 236, 190);
-            roundedPanel9.Controls.Add(rjTextBox5);
-            roundedPanel9.Controls.Add(label12);
+            roundedPanel9.Controls.Add(lbMoneyChange);
             roundedPanel9.Controls.Add(label13);
             roundedPanel9.ForeColor = Color.White;
             roundedPanel9.Location = new Point(3, 413);
@@ -492,38 +478,18 @@ namespace ABC_Bakery.Forms
             roundedPanel9.Size = new Size(374, 60);
             roundedPanel9.TabIndex = 7;
             // 
-            // rjTextBox5
+            // lbMoneyChange
             // 
-            rjTextBox5.BackColor = SystemColors.Window;
-            rjTextBox5.BorderColor = Color.FromArgb(154, 59, 59);
-            rjTextBox5.BorderFocusColor = Color.HotPink;
-            rjTextBox5.BorderRadius = 10;
-            rjTextBox5.BorderSize = 2;
-            rjTextBox5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox5.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox5.Location = new Point(106, 6);
-            rjTextBox5.Margin = new Padding(4);
-            rjTextBox5.Multiline = false;
-            rjTextBox5.Name = "rjTextBox5";
-            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox5.PasswordChar = false;
-            rjTextBox5.PlaceholderColor = Color.DarkGray;
-            rjTextBox5.PlaceholderText = "";
-            rjTextBox5.Size = new Size(216, 47);
-            rjTextBox5.TabIndex = 5;
-            rjTextBox5.Texts = "";
-            rjTextBox5.UnderlinedStyle = false;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.Black;
-            label12.Location = new Point(320, 16);
-            label12.Name = "label12";
-            label12.Size = new Size(54, 25);
-            label12.TabIndex = 2;
-            label12.Text = "VND";
+            lbMoneyChange.BackColor = Color.Transparent;
+            lbMoneyChange.Dock = DockStyle.Right;
+            lbMoneyChange.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lbMoneyChange.ForeColor = Color.FromArgb(76, 76, 77);
+            lbMoneyChange.Location = new Point(242, 0);
+            lbMoneyChange.Name = "lbMoneyChange";
+            lbMoneyChange.Size = new Size(132, 60);
+            lbMoneyChange.TabIndex = 1;
+            lbMoneyChange.Text = "0";
+            lbMoneyChange.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label13
             // 
@@ -569,7 +535,7 @@ namespace ABC_Bakery.Forms
             // 
             parrotGroupBox1.BorderColor = Color.FromArgb(154, 59, 59);
             parrotGroupBox1.BorderWidth = 2;
-            parrotGroupBox1.Controls.Add(rjTextBox6);
+            parrotGroupBox1.Controls.Add(tbNote);
             parrotGroupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             parrotGroupBox1.Location = new Point(3, 491);
             parrotGroupBox1.Margin = new Padding(3, 3, 3, 10);
@@ -582,53 +548,55 @@ namespace ABC_Bakery.Forms
             parrotGroupBox1.Text = "Ghi chú";
             parrotGroupBox1.TextColor = Color.White;
             // 
-            // rjTextBox6
+            // tbNote
             // 
-            rjTextBox6.BackColor = SystemColors.Window;
-            rjTextBox6.BorderColor = Color.FromArgb(154, 59, 59);
-            rjTextBox6.BorderFocusColor = Color.HotPink;
-            rjTextBox6.BorderRadius = 5;
-            rjTextBox6.BorderSize = 2;
-            rjTextBox6.Dock = DockStyle.Fill;
-            rjTextBox6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox6.ForeColor = Color.FromArgb(64, 64, 64);
-            rjTextBox6.Location = new Point(5, 31);
-            rjTextBox6.Margin = new Padding(0);
-            rjTextBox6.Multiline = true;
-            rjTextBox6.Name = "rjTextBox6";
-            rjTextBox6.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox6.PasswordChar = false;
-            rjTextBox6.PlaceholderColor = Color.DarkGray;
-            rjTextBox6.PlaceholderText = "";
-            rjTextBox6.Size = new Size(364, 184);
-            rjTextBox6.TabIndex = 9;
-            rjTextBox6.Texts = "";
-            rjTextBox6.UnderlinedStyle = false;
+            tbNote.BackColor = SystemColors.Window;
+            tbNote.BorderColor = Color.FromArgb(154, 59, 59);
+            tbNote.BorderFocusColor = Color.HotPink;
+            tbNote.BorderRadius = 5;
+            tbNote.BorderSize = 2;
+            tbNote.Dock = DockStyle.Fill;
+            tbNote.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            tbNote.ForeColor = Color.FromArgb(64, 64, 64);
+            tbNote.Location = new Point(5, 31);
+            tbNote.Margin = new Padding(0);
+            tbNote.Multiline = true;
+            tbNote.Name = "tbNote";
+            tbNote.Padding = new Padding(10, 7, 10, 7);
+            tbNote.PasswordChar = false;
+            tbNote.PlaceholderColor = Color.DarkGray;
+            tbNote.PlaceholderText = "";
+            tbNote.Size = new Size(364, 184);
+            tbNote.TabIndex = 9;
+            tbNote.TextAlign = HorizontalAlignment.Left;
+            tbNote.Texts = "";
+            tbNote.UnderlinedStyle = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 0, 0, 0);
-            panel2.Controls.Add(roundedButton1);
+            panel2.Controls.Add(btnSave);
             panel2.Location = new Point(3, 724);
             panel2.Name = "panel2";
             panel2.Size = new Size(377, 64);
             panel2.TabIndex = 17;
             // 
-            // roundedButton1
+            // btnSave
             // 
-            roundedButton1.BackColor = Color.FromArgb(154, 59, 59);
-            roundedButton1.Dock = DockStyle.Fill;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(0, 0);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(377, 64);
-            roundedButton1.TabIndex = 16;
-            roundedButton1.Text = "LƯU BIÊN NHẬN";
-            roundedButton1.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.FromArgb(154, 59, 59);
+            btnSave.Dock = DockStyle.Fill;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(0, 0);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(377, 64);
+            btnSave.TabIndex = 16;
+            btnSave.Text = "LƯU BIÊN NHẬN";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // panel3
             // 
@@ -645,118 +613,80 @@ namespace ABC_Bakery.Forms
             // 
             // panel8
             // 
-            panel8.Controls.Add(dataGridView3);
+            panel8.Controls.Add(roundedPanel11);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(10, 66);
             panel8.Name = "panel8";
-            panel8.Padding = new Padding(0, 10, 0, 0);
+            panel8.Padding = new Padding(0, 10, 0, 10);
             panel8.Size = new Size(857, 778);
             panel8.TabIndex = 5;
             // 
-            // dataGridView3
+            // roundedPanel11
             // 
-            dataGridView3.BackgroundColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridView3.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle6.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.NullValue = "dasd";
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView3.ColumnHeadersHeight = 54;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { stt, name, price, quantity, total, action });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle8.SelectionBackColor = Color.RosyBrown;
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle8;
-            dataGridView3.Dock = DockStyle.Fill;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
-            dataGridView3.Location = new Point(0, 10);
-            dataGridView3.Margin = new Padding(0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridView3.RowHeadersVisible = false;
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.ScrollBars = ScrollBars.None;
-            dataGridView3.Size = new Size(857, 768);
-            dataGridView3.TabIndex = 4;
+            roundedPanel11.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel11.Controls.Add(dgProducts);
+            roundedPanel11.Dock = DockStyle.Fill;
+            roundedPanel11.ForeColor = Color.White;
+            roundedPanel11.Location = new Point(0, 10);
+            roundedPanel11.Name = "roundedPanel11";
+            roundedPanel11.Size = new Size(857, 758);
+            roundedPanel11.TabIndex = 0;
             // 
-            // stt
+            // dgProducts
             // 
-            stt.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle7.BackColor = Color.Red;
-            dataGridViewCellStyle7.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            stt.DefaultCellStyle = dataGridViewCellStyle7;
-            stt.Frozen = true;
-            stt.HeaderText = "STT";
-            stt.MinimumWidth = 6;
-            stt.Name = "stt";
-            stt.Resizable = DataGridViewTriState.True;
-            stt.Width = 60;
-            // 
-            // name
-            // 
-            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            name.FillWeight = 273.6842F;
-            name.HeaderText = "Tên Sản Phẩm";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            name.Width = 170;
-            // 
-            // price
-            // 
-            price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            price.FillWeight = 42.1052666F;
-            price.HeaderText = "Giá Tiền";
-            price.MinimumWidth = 6;
-            price.Name = "price";
-            // 
-            // quantity
-            // 
-            quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            quantity.FillWeight = 42.1052666F;
-            quantity.HeaderText = "Số lượng";
-            quantity.MinimumWidth = 6;
-            quantity.Name = "quantity";
-            // 
-            // total
-            // 
-            total.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            total.FillWeight = 42.1052666F;
-            total.HeaderText = "Tổng Tiền";
-            total.MinimumWidth = 6;
-            total.Name = "total";
-            // 
-            // action
-            // 
-            action.HeaderText = "Thao Tác";
-            action.Name = "action";
+            dgProducts.AllowUserToAddRows = false;
+            dgProducts.BackgroundColor = Color.FromArgb(255, 224, 192);
+            dgProducts.BorderStyle = BorderStyle.None;
+            dgProducts.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            dgProducts.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dgProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgProducts.ColumnHeadersHeight = 55;
+            dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgProducts.Columns.AddRange(new DataGridViewColumn[] { id, barcode, name, price, quantity, total, delete });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.RosyBrown;
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgProducts.DefaultCellStyle = dataGridViewCellStyle4;
+            dgProducts.Dock = DockStyle.Fill;
+            dgProducts.EnableHeadersVisualStyles = false;
+            dgProducts.GridColor = Color.FromArgb(224, 224, 224);
+            dgProducts.Location = new Point(0, 0);
+            dgProducts.Margin = new Padding(0);
+            dgProducts.MultiSelect = false;
+            dgProducts.Name = "dgProducts";
+            dgProducts.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgProducts.RowHeadersVisible = false;
+            dgProducts.RowHeadersWidth = 50;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(226, 199, 153);
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgProducts.RowTemplate.Height = 50;
+            dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgProducts.Size = new Size(857, 758);
+            dgProducts.TabIndex = 6;
             // 
             // panel4
             // 
@@ -921,20 +851,23 @@ namespace ABC_Bakery.Forms
             tbSearch.BorderFocusColor = Color.HotPink;
             tbSearch.BorderRadius = 10;
             tbSearch.BorderSize = 2;
-            tbSearch.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbSearch.ForeColor = Color.FromArgb(64, 64, 64);
-            tbSearch.Location = new Point(78, 9);
+            tbSearch.Location = new Point(78, 10);
             tbSearch.Margin = new Padding(4);
             tbSearch.Multiline = false;
             tbSearch.Name = "tbSearch";
             tbSearch.Padding = new Padding(10, 7, 10, 7);
             tbSearch.PasswordChar = false;
             tbSearch.PlaceholderColor = Color.DarkGray;
-            tbSearch.PlaceholderText = "";
-            tbSearch.Size = new Size(267, 47);
+            tbSearch.PlaceholderText = "Nhập/ Ấn vào để Scan";
+            tbSearch.Size = new Size(267, 40);
             tbSearch.TabIndex = 3;
+            tbSearch.TextAlign = HorizontalAlignment.Left;
             tbSearch.Texts = "";
             tbSearch.UnderlinedStyle = false;
+            tbSearch._TextChanged += tbSearch__TextChanged;
+            tbSearch.KeyDown += tbSearch_KeyDown;
             // 
             // pictureBox2
             // 
@@ -959,6 +892,61 @@ namespace ABC_Bakery.Forms
             dungeonHeaderLabel2.TabIndex = 1;
             dungeonHeaderLabel2.Text = "Sản phẩm đã thêm";
             // 
+            // id
+            // 
+            id.HeaderText = "Mã SP";
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // barcode
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            barcode.DefaultCellStyle = dataGridViewCellStyle2;
+            barcode.HeaderText = "Barcode";
+            barcode.Name = "barcode";
+            barcode.ReadOnly = true;
+            barcode.Width = 150;
+            // 
+            // name
+            // 
+            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            name.FillWeight = 28.3298721F;
+            name.HeaderText = "Tên Sản Phẩm";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            // 
+            // price
+            // 
+            price.FillWeight = 4.35844231F;
+            price.HeaderText = "Giá Tiền";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            // 
+            // quantity
+            // 
+            quantity.FillWeight = 4.35844231F;
+            quantity.HeaderText = "Số lượng";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            // 
+            // total
+            // 
+            total.HeaderText = "Tổng Tiền";
+            total.Name = "total";
+            total.ReadOnly = true;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new Padding(10);
+            delete.DefaultCellStyle = dataGridViewCellStyle3;
+            delete.HeaderText = "Thao Tác";
+            delete.Name = "delete";
+            delete.Text = "Xóa";
+            delete.UseColumnTextForButtonValue = true;
+            // 
             // Order
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -976,6 +964,7 @@ namespace ABC_Bakery.Forms
             ShowInTaskbar = false;
             Text = "Order";
             WindowState = FormWindowState.Maximized;
+            FormClosing += Order_FormClosing;
             Load += Order_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -1002,7 +991,8 @@ namespace ABC_Bakery.Forms
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            roundedPanel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgProducts).EndInit();
             panel4.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -1028,7 +1018,7 @@ namespace ABC_Bakery.Forms
         private Helpers.UI.DatetimePickerCustom datetimePickerCustom2;
         private Helpers.UI.RoundedPanel roundedPanel5;
         private Label label5;
-        private Helpers.UI.RJTextBox rjTextBox2;
+        private Helpers.UI.RJTextBox tbDiscount;
         private Helpers.UI.RoundedPanel roundedPanel6;
         private Label label6;
         private Label label7;
@@ -1036,21 +1026,17 @@ namespace ABC_Bakery.Forms
         private Label label8;
         private Label label9;
         private Helpers.UI.RoundedPanel roundedPanel8;
-        private Label label10;
         private Label label11;
         private Helpers.UI.RoundedPanel roundedPanel9;
-        private Label label12;
         private Label label13;
         private FlowLayoutPanel flowLayoutPanel1;
         private FlowLayoutPanel flowLayoutPanel2;
         private Helpers.UI.RoundedPanel roundedPanel10;
-        private Helpers.UI.RJTextBox rjTextBox1;
-        private Helpers.UI.RJTextBox rjTextBox3;
-        private Helpers.UI.RJTextBox rjTextBox4;
-        private Helpers.UI.RJTextBox rjTextBox5;
+        private Helpers.UI.RJTextBox tbSurcharge;
+        private Helpers.UI.RJTextBox tbReceived;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
-        private Helpers.UI.RJTextBox rjTextBox6;
-        private Helpers.UI.RoundedButton roundedButton1;
+        private Helpers.UI.RJTextBox tbNote;
+        private Helpers.UI.RoundedButton btnSave;
         private Panel panel2;
         private Panel panel3;
         private Helpers.UI.RoundedPanel roundedPanel4;
@@ -1068,15 +1054,19 @@ namespace ABC_Bakery.Forms
         private Panel panel7;
         private Helpers.UI.RJButton rjButton4;
         private Panel panel8;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn stt;
+        private PictureBox pictureBox2;
+        private Helpers.UI.RJTextBox tbSearch;
+        private Panel panel9;
+        private Helpers.UI.RoundedPanel roundedPanel11;
+        private DataGridView dgProducts;
+        private ReaLTaiizor.Controls.DungeonHeaderLabel lbTotal;
+        private ReaLTaiizor.Controls.DungeonHeaderLabel lbMoneyChange;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewImageColumn barcode;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn price;
         private DataGridViewTextBoxColumn quantity;
         private DataGridViewTextBoxColumn total;
-        private DataGridViewTextBoxColumn action;
-        private PictureBox pictureBox2;
-        private Helpers.UI.RJTextBox tbSearch;
-        private Panel panel9;
+        private DataGridViewButtonColumn delete;
     }
 }

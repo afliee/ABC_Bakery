@@ -18,7 +18,7 @@ namespace ABC_Bakery.Models
         public required double Total { get; set; }
         public required ReceiptType ReceiptType { get; set; }
         public DateTime CreatedAt { get; set; }
-
+        public static readonly string Prefix = "R";
         public virtual required ICollection<Order> Orders { get; set; }
 
         public Receipt()
@@ -48,9 +48,15 @@ namespace ABC_Bakery.Models
                 .Property(r => r.Total)
                 .HasConversion<double>();
 
-            modelBuilder.Entity<Receipt>()
-                .Property(r => r.ReceiptType)
-                .HasDefaultValueSql(ReceiptType.Import.ToString());
+            modelBuilder
+                .Entity<Receipt>()
+                .HasMany(r => r.Orders)
+                .WithOne(o => o.Receipt)
+                .HasForeignKey(o => o.ReceiptId);
+
+            //modelBuilder.Entity<Receipt>()
+            //    .Property(r => r.ReceiptType)
+            //    .HasDefaultValueSql(ReceiptType.Import.ToString());
 
         }
     }

@@ -14,6 +14,7 @@ namespace ABC_Bakery.Models
         public required double Price { get; set; }
         public required int Amount { get; set; }
         public required DateTime ExpiredDate { get; set; }
+        public static readonly string Prefix = "SP";
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public Boolean IsAvailable { get; set; }
@@ -28,6 +29,8 @@ namespace ABC_Bakery.Models
         {
             this.CreatedAt = DateTime.Now;
             this.UpdatedAt = DateTime.Now;
+            this.IsAvailable = true;
+            this.IsActived = true;
         }
 
         public static void Config(ModelBuilder modelBuilder) { 

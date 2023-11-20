@@ -13,6 +13,9 @@ using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+using System.Diagnostics.Tracing;
+using System.Windows;
+
 namespace ABC_Bakery.Helpers.UI
 {
     [DefaultEvent("_TextChanged")]
@@ -34,6 +37,8 @@ namespace ABC_Bakery.Helpers.UI
 
         //Events
         public event EventHandler _TextChanged;
+        public event EventHandler _KeyDown;
+        public event EventHandler _KeyPress;
 
         #endregion
         //Fields
@@ -55,6 +60,14 @@ namespace ABC_Bakery.Helpers.UI
                 borderColor = value;
                 this.Invalidate();
             }
+        }
+
+        // set and get text align of textbox
+        [Category("RJ Code Advance")]
+        public System.Windows.Forms.HorizontalAlignment TextAlign
+        {
+            get { return textBox1.TextAlign; }
+            set { textBox1.TextAlign = value; }
         }
 
         [Category("RJ Code Advance")]
@@ -267,6 +280,14 @@ namespace ABC_Bakery.Helpers.UI
                 }
             }
         }
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+            base.OnKeyDown(e);
+        }
         #endregion
 
         #region -> Private methods
@@ -356,7 +377,8 @@ namespace ABC_Bakery.Helpers.UI
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.OnKeyPress(e);
+            //this.OnKeyPress(e);
+
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -364,6 +386,7 @@ namespace ABC_Bakery.Helpers.UI
             isFocused = true;
             this.Invalidate();
             RemovePlaceholder();
+            //this.OnEnter(e);
         }
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -371,7 +394,16 @@ namespace ABC_Bakery.Helpers.UI
             this.Invalidate();
             SetPlaceholder();
         }
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.OnKeyDown(e);
+        }
         ///::::+
         #endregion
+
+        public void ClearText()
+        {
+            textBox1.Clear();
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using ABC_Bakery.Helpers;
 using ABC_Bakery.Models.Constants;
 
-namespace ABC_Bakery.Repositorys
+namespace ABC_Bakery.Repositories
 {
     internal class RoleRepository : Repository<Role>
     {

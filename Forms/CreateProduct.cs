@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ABC_Bakery.Helpers;
 using ABC_Bakery.Models;
-using ABC_Bakery.Repositorys;
+using ABC_Bakery.Repositories;
 using Microsoft.IdentityModel.Tokens;
 using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
+using IronBarCode;
+using ABC_Bakery.Services;
+using Image = System.Drawing.Image;
 namespace ABC_Bakery.Forms
 {
     public partial class CreateProduct : Form
@@ -63,6 +66,8 @@ namespace ABC_Bakery.Forms
             this.cbCategory.SelectedIndex = 0;
 
             Load_Data();
+            Category test = categoryRepository.FindByName("Bánh mì");
+
         }
         private void CreateProduct_Load(object sender, EventArgs e)
         {
@@ -137,7 +142,8 @@ namespace ABC_Bakery.Forms
                 dgProducts.Rows.Clear();
                 products.ForEach(product =>
                 {
-                    dgProducts.Rows.Add(product.Id, product.Name, product.Price, product.Amount, product.IsActived);
+                    Image barcode = ProductService.GetInstance().GetBarcode(product.Id);
+                    dgProducts.Rows.Add(product.Id,barcode, product.Name, product.Price, product.Amount, product.IsActived);
                 });
             }
         }
@@ -297,7 +303,6 @@ namespace ABC_Bakery.Forms
                 tbName.Focus();
                 return;
             }
-
             Product product = new Product
             {
                 Name = name,
@@ -308,7 +313,13 @@ namespace ABC_Bakery.Forms
                 ExpiredDate = DateTime.Now
             };
 
+            category.Products.Add(product);
+
             bool result = this.productRepository.Create(product);
+            if (result)
+            {
+                result = this.categoryRepository.Update(category);
+            }
             if (!result)
             {
                 Helpers.UI.MessageBox.Show("Thêm sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -330,7 +341,12 @@ namespace ABC_Bakery.Forms
             var dt = new DataTable();
             products.ForEach(product =>
             {
-                dgProducts.Rows.Add(product.Id, product.Name, product.Price, product.Amount, product.IsActived);
+                GeneratedBarcode barcode = BarcodeWriter.CreateBarcode(string.Format("{0}_{1}", Product.Prefix, product.Id), BarcodeWriterEncoding.Code128, 200, 60);
+
+                // convert barcode to image
+                System.Drawing.Image barcodeImage = barcode.Image;
+
+                dgProducts.Rows.Add(product.Id, barcodeImage, product.Name, product.Price, product.Amount, product.IsActived);
             });
         }
 

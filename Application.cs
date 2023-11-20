@@ -1,8 +1,8 @@
 using ABC_Bakery.Helpers;
 using ABC_Bakery.Models;
-using ABC_Bakery.Repositorys;
+using ABC_Bakery.Repositories;
 using ABC_Bakery.Forms;
-
+using ABC_Bakery.Services;
 namespace ABC_Bakery
 {
     public partial class Application : Form
@@ -67,7 +67,7 @@ namespace ABC_Bakery
                 defaultForm.Dock = DockStyle.Fill;
                 defaultForm.FormClosed += DefaultForm_FormClosed;
                 defaultForm.Show();
-            } 
+            }
             else
             {
                 defaultForm.Activate();
@@ -281,6 +281,11 @@ namespace ABC_Bakery
         private void CreateProdct_FormClosed(object sender, FormClosedEventArgs e)
         {
             createProdct = null;
+        }
+
+        private void btnCreateCategory_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

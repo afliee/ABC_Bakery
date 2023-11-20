@@ -82,7 +82,7 @@ namespace ABC_Bakery
             panel13 = new Panel();
             btnCreateProduct = new Button();
             panel17 = new Panel();
-            button18 = new Button();
+            btnCreateCategory = new Button();
             panel22 = new Panel();
             orderTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
@@ -730,7 +730,7 @@ namespace ABC_Bakery
             // 
             // panel17
             // 
-            panel17.Controls.Add(button18);
+            panel17.Controls.Add(btnCreateCategory);
             panel17.Location = new Point(0, 165);
             panel17.Margin = new Padding(0);
             panel17.Name = "panel17";
@@ -738,25 +738,26 @@ namespace ABC_Bakery
             panel17.Size = new Size(288, 53);
             panel17.TabIndex = 2;
             // 
-            // button18
+            // btnCreateCategory
             // 
-            button18.BackColor = Color.FromArgb(226, 199, 153);
-            button18.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
-            button18.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
-            button18.FlatStyle = FlatStyle.Flat;
-            button18.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button18.ForeColor = SystemColors.ControlText;
-            button18.Image = (Image)resources.GetObject("button18.Image");
-            button18.ImageAlign = ContentAlignment.MiddleLeft;
-            button18.Location = new Point(-19, -11);
-            button18.Name = "button18";
-            button18.Padding = new Padding(25, 0, 0, 0);
-            button18.RightToLeft = RightToLeft.No;
-            button18.Size = new Size(317, 76);
-            button18.TabIndex = 3;
-            button18.Text = "            Các biên nhận";
-            button18.TextAlign = ContentAlignment.MiddleLeft;
-            button18.UseVisualStyleBackColor = false;
+            btnCreateCategory.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreateCategory.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateCategory.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreateCategory.FlatStyle = FlatStyle.Flat;
+            btnCreateCategory.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreateCategory.ForeColor = SystemColors.ControlText;
+            btnCreateCategory.Image = (Image)resources.GetObject("btnCreateCategory.Image");
+            btnCreateCategory.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreateCategory.Location = new Point(-19, -11);
+            btnCreateCategory.Name = "btnCreateCategory";
+            btnCreateCategory.Padding = new Padding(25, 0, 0, 0);
+            btnCreateCategory.RightToLeft = RightToLeft.No;
+            btnCreateCategory.Size = new Size(317, 76);
+            btnCreateCategory.TabIndex = 3;
+            btnCreateCategory.Text = "            Tạo Danh Mục";
+            btnCreateCategory.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreateCategory.UseVisualStyleBackColor = false;
+            btnCreateCategory.Click += btnCreateCategory_Click;
             // 
             // panel22
             // 
@@ -1013,7 +1014,7 @@ namespace ABC_Bakery
         private Panel panel13;
         private Button btnCreateProduct;
         private Panel panel17;
-        private Button button18;
+        private Button btnCreateCategory;
         private Panel panel22;
     }
 }

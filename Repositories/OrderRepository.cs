@@ -7,7 +7,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ABC_Bakery.Repositorys
+namespace ABC_Bakery.Repositories
 {
     internal class OrderRepository : Repository<Models.Order>
     {
@@ -26,7 +26,7 @@ namespace ABC_Bakery.Repositorys
             } catch (Exception e)
             {
                 // alert log
-                Console.Write(e.ToString());
+                Console.WriteLine(e);
                 return false;
             }
         }

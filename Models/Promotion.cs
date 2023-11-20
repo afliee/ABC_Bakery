@@ -35,10 +35,10 @@ namespace ABC_Bakery.Models
                 .Property(p => p.UpdatedAt)
                 .HasDefaultValueSql("getdate()");
 
-            modelBuilder.Entity<Promotion>()
-                .HasMany(p => p.Orders)
-                .WithOne(o => o.Promotion)
-                .HasForeignKey(o => o.PromotionId);
+            //modelBuilder.Entity<Promotion>()
+            //    .HasMany(p => p.Orders)
+            //    .WithOne(o => o.Promotion)
+            //    .HasForeignKey(o => o.PromotionId);
         }
     }
 }

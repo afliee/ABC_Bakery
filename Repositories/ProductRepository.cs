@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ABC_Bakery.Repositorys
+
+namespace ABC_Bakery.Repositories
 {
     internal class ProductRepository : Repository<Product>
     {
@@ -75,6 +76,11 @@ namespace ABC_Bakery.Repositorys
         public List<Product> FindByNameContains(string name)
         {
             return this.context.Products.Where(p => p.Name.Contains(name)).ToList();
+        }
+
+        public List<Product> FindByIdIn(List<int> ids)
+        {
+            return this.context.Products.Where(p => ids.Contains(p.Id)).ToList();
         }
     }
 }

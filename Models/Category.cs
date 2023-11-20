@@ -21,6 +21,7 @@ namespace ABC_Bakery.Models
         {
             this.CreatedAt = DateTime.Now;
             this.UpdatedAt = DateTime.Now;
+            Products = new List<Product>();
         }
 
         public static void Config(ModelBuilder modelBuilder)
@@ -36,7 +37,8 @@ namespace ABC_Bakery.Models
             modelBuilder.Entity<Category>()
                 .HasMany(c => c.Products)
                 .WithOne(p => p.Category)
-                .HasForeignKey(p => p.CategoryId);
+                .HasForeignKey(p => p.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Category>()
                 .Property(c => c.Name)

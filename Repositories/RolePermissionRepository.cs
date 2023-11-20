@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ABC_Bakery.Repositorys
+
+namespace ABC_Bakery.Repositories
 {
     internal class RolePermissionRepository : Repository<RolePermission>
     {

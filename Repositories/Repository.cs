@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace ABC_Bakery.Repositorys
+namespace ABC_Bakery.Repositories
 {
     internal interface Repository<T>
     {

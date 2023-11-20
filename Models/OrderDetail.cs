@@ -13,14 +13,13 @@ namespace ABC_Bakery.Models
         public int OrderId { get; set; }
         public int? ProductId { get; set; }
         public int? Quantity { get; set; }
-        public int? Price { get; set; }
-        public int? Total { get; set; }
-        public string Note { get; set; }
+        public double? Price { get; set; }
+        public double? Total { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        public virtual required Order Order { get; set; }
-        public virtual required Product Product { get; set; }
+        public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
 
         public OrderDetail()
         {

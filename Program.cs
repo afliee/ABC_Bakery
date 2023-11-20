@@ -1,3 +1,7 @@
+using ABC_Bakery.Helpers;
+using Microsoft.Extensions.DependencyInjection;
+using System.Windows.Forms;
+
 namespace ABC_Bakery
 {
     internal static class Program
@@ -13,5 +17,11 @@ namespace ABC_Bakery
             ApplicationConfiguration.Initialize();
             System.Windows.Forms.Application.Run(new Application());
         }
+    }
+
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+            => services.AddDbContext<DatabaseContext>();
     }
 }

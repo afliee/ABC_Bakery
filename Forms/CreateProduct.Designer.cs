@@ -38,11 +38,13 @@ namespace ABC_Bakery.Forms
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateProduct));
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -59,6 +61,7 @@ namespace ABC_Bakery.Forms
             roundedPanel2 = new Helpers.UI.RoundedPanel();
             dgProducts = new DataGridView();
             stt = new DataGridViewTextBoxColumn();
+            barcode = new DataGridViewImageColumn();
             name = new DataGridViewTextBoxColumn();
             price = new DataGridViewTextBoxColumn();
             quantity = new DataGridViewTextBoxColumn();
@@ -223,6 +226,7 @@ namespace ABC_Bakery.Forms
             tbSearch.PlaceholderText = "";
             tbSearch.Size = new Size(374, 47);
             tbSearch.TabIndex = 3;
+            tbSearch.TextAlign = HorizontalAlignment.Left;
             tbSearch.Texts = "";
             tbSearch.UnderlinedStyle = false;
             tbSearch._TextChanged += tbSearch__TextChanged;
@@ -258,7 +262,7 @@ namespace ABC_Bakery.Forms
             pnProductBoundary.Location = new Point(10, 63);
             pnProductBoundary.Name = "pnProductBoundary";
             pnProductBoundary.Padding = new Padding(0, 10, 0, 0);
-            pnProductBoundary.Size = new Size(1223, 232);
+            pnProductBoundary.Size = new Size(1223, 333);
             pnProductBoundary.TabIndex = 4;
             // 
             // roundedPanel2
@@ -269,11 +273,12 @@ namespace ABC_Bakery.Forms
             roundedPanel2.ForeColor = Color.White;
             roundedPanel2.Location = new Point(0, 10);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1223, 222);
+            roundedPanel2.Size = new Size(1223, 323);
             roundedPanel2.TabIndex = 0;
             // 
             // dgProducts
             // 
+            dgProducts.AllowUserToAddRows = false;
             dgProducts.BackgroundColor = Color.FromArgb(255, 224, 192);
             dgProducts.BorderStyle = BorderStyle.None;
             dgProducts.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
@@ -289,15 +294,15 @@ namespace ABC_Bakery.Forms
             dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgProducts.ColumnHeadersHeight = 55;
             dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgProducts.Columns.AddRange(new DataGridViewColumn[] { stt, name, price, quantity, status, delete });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.RosyBrown;
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgProducts.DefaultCellStyle = dataGridViewCellStyle4;
+            dgProducts.Columns.AddRange(new DataGridViewColumn[] { stt, barcode, name, price, quantity, status, delete });
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.RosyBrown;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgProducts.DefaultCellStyle = dataGridViewCellStyle5;
             dgProducts.Dock = DockStyle.Fill;
             dgProducts.EnableHeadersVisualStyles = false;
             dgProducts.GridColor = Color.FromArgb(224, 224, 224);
@@ -306,25 +311,25 @@ namespace ABC_Bakery.Forms
             dgProducts.MultiSelect = false;
             dgProducts.Name = "dgProducts";
             dgProducts.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dgProducts.RowHeadersVisible = false;
-            dgProducts.RowHeadersWidth = 50;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(226, 199, 153);
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgProducts.RowHeadersVisible = false;
+            dgProducts.RowHeadersWidth = 50;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(226, 199, 153);
+            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
+            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle7;
             dgProducts.RowTemplate.Height = 50;
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgProducts.Size = new Size(1223, 222);
+            dgProducts.Size = new Size(1223, 323);
             dgProducts.TabIndex = 5;
             dgProducts.CellContentClick += dgProducts_CellContentClick;
             // 
@@ -337,58 +342,67 @@ namespace ABC_Bakery.Forms
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             stt.DefaultCellStyle = dataGridViewCellStyle2;
-            stt.Frozen = true;
             stt.HeaderText = "STT";
             stt.MinimumWidth = 6;
             stt.Name = "stt";
+            stt.ReadOnly = true;
             stt.Resizable = DataGridViewTriState.True;
             stt.Width = 60;
+            // 
+            // barcode
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = resources.GetObject("dataGridViewCellStyle3.NullValue");
+            dataGridViewCellStyle3.Padding = new Padding(5);
+            barcode.DefaultCellStyle = dataGridViewCellStyle3;
+            barcode.HeaderText = "Barcode";
+            barcode.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            barcode.Name = "barcode";
+            barcode.ReadOnly = true;
+            barcode.Width = 200;
             // 
             // name
             // 
             name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            name.FillWeight = 106.614632F;
+            name.FillWeight = 28.3298721F;
             name.HeaderText = "Tên Sản Phẩm";
             name.MinimumWidth = 6;
             name.Name = "name";
             // 
             // price
             // 
-            price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            price.FillWeight = 16.4022522F;
+            price.FillWeight = 4.35844231F;
             price.HeaderText = "Giá Tiền";
             price.MinimumWidth = 6;
             price.Name = "price";
             // 
             // quantity
             // 
-            quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            quantity.FillWeight = 16.4022522F;
+            quantity.FillWeight = 4.35844231F;
             quantity.HeaderText = "Số lượng";
             quantity.MinimumWidth = 6;
             quantity.Name = "quantity";
             // 
             // status
             // 
-            status.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            status.FillWeight = 38.9553452F;
+            status.FillWeight = 10.3512993F;
             status.HeaderText = "Trạng Thái (Ẩn/ Hiện)";
             status.Name = "status";
             status.Resizable = DataGridViewTriState.True;
             status.SortMode = DataGridViewColumnSortMode.Automatic;
+            status.Width = 200;
             // 
             // delete
             // 
-            delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.Padding = new Padding(10);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            delete.DefaultCellStyle = dataGridViewCellStyle3;
-            delete.FillWeight = 379.520233F;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.Padding = new Padding(10);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            delete.DefaultCellStyle = dataGridViewCellStyle4;
+            delete.FillWeight = 142.421158F;
             delete.HeaderText = "Xóa Sản Phẩm";
             delete.Name = "delete";
             delete.Resizable = DataGridViewTriState.True;
@@ -396,7 +410,6 @@ namespace ABC_Bakery.Forms
             delete.Text = "Xóa";
             delete.ToolTipText = "Xóa sản phẩm";
             delete.UseColumnTextForButtonValue = true;
-            delete.Width = 125;
             // 
             // pnProducts
             // 
@@ -407,7 +420,7 @@ namespace ABC_Bakery.Forms
             pnProducts.Location = new Point(0, 87);
             pnProducts.Name = "pnProducts";
             pnProducts.Padding = new Padding(10, 0, 10, 0);
-            pnProducts.Size = new Size(1243, 295);
+            pnProducts.Size = new Size(1243, 396);
             pnProducts.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -421,7 +434,7 @@ namespace ABC_Bakery.Forms
             tableLayoutPanel1.Controls.Add(parrotGroupBox2, 1, 0);
             tableLayoutPanel1.Controls.Add(parrotGroupBox4, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Top;
-            tableLayoutPanel1.Location = new Point(0, 382);
+            tableLayoutPanel1.Location = new Point(0, 483);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.Padding = new Padding(10);
             tableLayoutPanel1.RowCount = 2;
@@ -467,6 +480,7 @@ namespace ABC_Bakery.Forms
             tbPrice.PlaceholderText = "Nhập giá tiền. VD: 10000 = 10.000VND";
             tbPrice.Size = new Size(599, 59);
             tbPrice.TabIndex = 1;
+            tbPrice.TextAlign = HorizontalAlignment.Left;
             tbPrice.Texts = "";
             tbPrice.UnderlinedStyle = false;
             tbPrice._TextChanged += tbPrice__TextChanged;
@@ -507,6 +521,7 @@ namespace ABC_Bakery.Forms
             tbName.PlaceholderText = "Nhập tên sản phẩm";
             tbName.Size = new Size(599, 59);
             tbName.TabIndex = 1;
+            tbName.TextAlign = HorizontalAlignment.Left;
             tbName.Texts = "";
             tbName.UnderlinedStyle = false;
             tbName._TextChanged += tbName__TextChanged;
@@ -594,6 +609,7 @@ namespace ABC_Bakery.Forms
             tbQuantity.PlaceholderText = "Nhập số lượng sản phẩm";
             tbQuantity.Size = new Size(600, 59);
             tbQuantity.TabIndex = 1;
+            tbQuantity.TextAlign = HorizontalAlignment.Left;
             tbQuantity.Texts = "";
             tbQuantity.UnderlinedStyle = false;
             tbQuantity._TextChanged += tbQuantity__TextChanged;
@@ -604,7 +620,7 @@ namespace ABC_Bakery.Forms
             roundedPanel5.Controls.Add(parrotGroupBox5);
             roundedPanel5.Dock = DockStyle.Top;
             roundedPanel5.ForeColor = Color.White;
-            roundedPanel5.Location = new Point(0, 594);
+            roundedPanel5.Location = new Point(0, 695);
             roundedPanel5.Name = "roundedPanel5";
             roundedPanel5.Padding = new Padding(10);
             roundedPanel5.Size = new Size(1243, 176);
@@ -647,6 +663,7 @@ namespace ABC_Bakery.Forms
             tbDescription.PlaceholderText = "Nhập mô tả của sản phẩm";
             tbDescription.Size = new Size(1213, 117);
             tbDescription.TabIndex = 1;
+            tbDescription.TextAlign = HorizontalAlignment.Left;
             tbDescription.Texts = "";
             tbDescription.UnderlinedStyle = false;
             // 
@@ -728,6 +745,7 @@ namespace ABC_Bakery.Forms
             parrotGroupBox4.PerformLayout();
             roundedPanel5.ResumeLayout(false);
             parrotGroupBox5.ResumeLayout(false);
+            parrotGroupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)error).EndInit();
             ResumeLayout(false);
         }
@@ -768,6 +786,7 @@ namespace ABC_Bakery.Forms
         private System.Windows.Forms.Timer delayTextChanged;
         private ErrorProvider error;
         private DataGridViewTextBoxColumn stt;
+        private DataGridViewImageColumn barcode;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn price;
         private DataGridViewTextBoxColumn quantity;

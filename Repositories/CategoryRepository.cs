@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ABC_Bakery.Repositorys
+namespace ABC_Bakery.Repositories
 {
     internal class CategoryRepository : Repository<Category>
     {
@@ -54,12 +54,22 @@ namespace ABC_Bakery.Repositorys
 
         public bool Update(Category obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                this.context.Categories.Update(obj);
+                return this.context.SaveChanges() > 0;
+            } catch (Exception e)
+            {
+                Console.Write(e);
+                return false;
+            }
         }
 
         public Category FindByName(string name)
         {
             return this.context.Categories.Where(c => c.Name == name).FirstOrDefault();
         }
+
+        public bool Save() => this.context.SaveChanges() > 0;
     }
 }

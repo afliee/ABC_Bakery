@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ABC_Bakery.Models;
 using ABC_Bakery.Helpers;
 
-namespace ABC_Bakery.Repositorys
+namespace ABC_Bakery.Repositories
 {
     internal class UserRepository : Repository<Models.User>
     {
@@ -46,12 +46,12 @@ namespace ABC_Bakery.Repositorys
 
         public User Find(int id)
         {
-            throw new NotImplementedException();
+            return this._context.Users.Find(id);
         }
 
         public List<User> FindAll()
         {
-            throw new NotImplementedException();
+            return this._context.Users.ToList();
         }
 
         public bool Update(User obj)
