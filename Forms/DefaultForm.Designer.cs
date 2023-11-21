@@ -51,9 +51,9 @@
             skyLabel1.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
             skyLabel1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             skyLabel1.ForeColor = System.Drawing.Color.FromArgb(243, 255, 244);
-            skyLabel1.Location = new System.Drawing.Point(129, 353);
+            skyLabel1.Location = new System.Drawing.Point(147, 471);
             skyLabel1.Name = "skyLabel1";
-            skyLabel1.Size = new System.Drawing.Size(249, 37);
+            skyLabel1.Size = new System.Drawing.Size(307, 46);
             skyLabel1.TabIndex = 3;
             skyLabel1.Text = "Design By LaTeam";
             // 
@@ -63,9 +63,9 @@
             lbTimer.BackColor = System.Drawing.Color.Transparent;
             lbTimer.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             lbTimer.ForeColor = System.Drawing.Color.FromArgb(184, 191, 183);
-            lbTimer.Location = new System.Drawing.Point(0, 444);
+            lbTimer.Location = new System.Drawing.Point(0, 592);
             lbTimer.Name = "lbTimer";
-            lbTimer.Size = new System.Drawing.Size(502, 49);
+            lbTimer.Size = new System.Drawing.Size(574, 65);
             lbTimer.TabIndex = 4;
             lbTimer.Text = "smallLabel1";
             lbTimer.TextAlign = ContentAlignment.MiddleCenter;
@@ -80,9 +80,10 @@
             rjCircularPictureBox1.BorderSize = 0;
             rjCircularPictureBox1.GradientAngle = 50F;
             rjCircularPictureBox1.Image = Properties.Resources.logo_team;
-            rjCircularPictureBox1.Location = new System.Drawing.Point(81, 17);
+            rjCircularPictureBox1.Location = new System.Drawing.Point(93, 23);
+            rjCircularPictureBox1.Margin = new Padding(3, 4, 3, 4);
             rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            rjCircularPictureBox1.Size = new System.Drawing.Size(333, 333);
+            rjCircularPictureBox1.Size = new System.Drawing.Size(381, 381);
             rjCircularPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             rjCircularPictureBox1.TabIndex = 5;
             rjCircularPictureBox1.TabStop = false;
@@ -96,9 +97,10 @@
             roundedPanel1.Controls.Add(skyLabel1);
             roundedPanel1.Controls.Add(lbTimer);
             roundedPanel1.ForeColor = System.Drawing.Color.White;
-            roundedPanel1.Location = new System.Drawing.Point(273, 75);
+            roundedPanel1.Location = new System.Drawing.Point(312, 100);
+            roundedPanel1.Margin = new Padding(3, 4, 3, 4);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new System.Drawing.Size(502, 507);
+            roundedPanel1.Size = new System.Drawing.Size(574, 676);
             roundedPanel1.TabIndex = 6;
             // 
             // lbTime
@@ -109,23 +111,24 @@
             lbTime.FlatStyle = FlatStyle.Flat;
             lbTime.Font = new Font("Segoe UI", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
             lbTime.ForeColor = System.Drawing.Color.FromArgb(220, 229, 219);
-            lbTime.Location = new System.Drawing.Point(166, 399);
+            lbTime.Location = new System.Drawing.Point(190, 532);
             lbTime.Name = "lbTime";
-            lbTime.Size = new System.Drawing.Size(170, 45);
+            lbTime.Size = new System.Drawing.Size(218, 57);
             lbTime.TabIndex = 6;
             lbTime.Text = "bigLabel1";
             // 
             // DefaultForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(226, 199, 153);
             BackgroundImage = Properties.Resources.Bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new System.Drawing.Size(1059, 603);
+            ClientSize = new System.Drawing.Size(1210, 804);
             Controls.Add(roundedPanel1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "DefaultForm";
             Text = "DefaultForm";
             Load += DefaultForm_Load;

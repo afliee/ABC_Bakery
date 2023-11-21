@@ -143,7 +143,7 @@ namespace ABC_Bakery.Forms
                 products.ForEach(product =>
                 {
                     Image barcode = ProductService.GetInstance().GetBarcode(product.Id);
-                    dgProducts.Rows.Add(product.Id,barcode, product.Name, product.Price, product.Amount, product.IsActived);
+                    dgProducts.Rows.Add(product.Id, barcode, product.Name, product.Price, product.Amount, product.IsActived);
                 });
             }
         }

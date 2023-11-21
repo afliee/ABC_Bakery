@@ -62,6 +62,7 @@ namespace ABC_Bakery
 
         private void Application_Load(object sender, EventArgs e)
         {
+            sidebarContainer.HorizontalScroll.Visible = true;
             if (defaultForm == null)
             {
                 defaultForm = new DefaultForm();
@@ -317,11 +318,11 @@ namespace ABC_Bakery
 
         private void btnReceive_Click(object sender, EventArgs e)
         {
-            if (receipt == null)
+            if (receive == null)
             {
-                receipt = new Forms.Receipt();
-                receipt.MdiParent = this;
-                receipt.Dock = DockStyle.Fill;
+                receive = new Receive();
+                receive.MdiParent = this;
+                receive.Dock = DockStyle.Fill;
                 receive.FormClosed += Receive_FormClosed;
                 receive.Show();
             }

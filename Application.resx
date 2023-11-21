@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCreateProduct.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
+        SbbCZyXD/FoWMUzrgjxgfwdYmVU4u1laqJlVOLtpXbC/A6zMKpzdLC3UzCqc3bQu2P4BrbgP0EJUxpqb
+        zJdFZKy5ibswYfXc+wYoheOY6nlB7nVQZu8xVdJDKd2h54gLnPfExzS7wWrO8AmluIbyZU7QxQFeof6O
+        iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="receipts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -163,7 +172,7 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
@@ -172,7 +181,7 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
@@ -191,6 +200,15 @@
 </value>
   </data>
   <data name="btnOrderTCNoPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
+        SbbCZyXD/FoWMUzrgjxgfwdYmVU4u1laqJlVOLtpXbC/A6zMKpzdLC3UzCqc3bQu2P4BrbgP0EJUxpqb
+        zJdFZKy5ibswYfXc+wYoheOY6nlB7nVQZu8xVdJDKd2h54gLnPfExzS7wWrO8AmluIbyZU7QxQFeof6O
+        iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnCreateOrderNoPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
@@ -226,24 +244,6 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnCreateProduct.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
-        SbbCZyXD/FoWMUzrgjxgfwdYmVU4u1laqJlVOLtpXbC/A6zMKpzdLC3UzCqc3bQu2P4BrbgP0EJUxpqb
-        zJdFZKy5ibswYfXc+wYoheOY6nlB7nVQZu8xVdJDKd2h54gLnPfExzS7wWrO8AmluIbyZU7QxQFeof6O
-        iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnCreateCategory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
-        SbbCZyXD/FoWMUzrgjxgfwdYmVU4u1laqJlVOLtpXbC/A6zMKpzdLC3UzCqc3bQu2P4BrbgP0EJUxpqb
-        zJdFZKy5ibswYfXc+wYoheOY6nlB7nVQZu8xVdJDKd2h54gLnPfExzS7wWrO8AmluIbyZU7QxQFeof6O
-        iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnCreateDH.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -253,7 +253,7 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnCreateOrderNoPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCreateCategory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
@@ -309,5 +309,8 @@
   </data>
   <metadata name="followReceiptTransition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>672, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>
