@@ -784,7 +784,9 @@ namespace ABC_Bakery.Forms
             tableLayoutPanel1.ResumeLayout(false);
             parrotGroupBox3.ResumeLayout(false);
             parrotGroupBox1.ResumeLayout(false);
+            parrotGroupBox1.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
+            parrotGroupBox2.PerformLayout();
             roundedPanel3.ResumeLayout(false);
             parrotGroupBox4.ResumeLayout(false);
             roundedPanel5.ResumeLayout(false);
