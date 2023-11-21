@@ -80,20 +80,6 @@ namespace ABC_Bakery.Forms
             panel8 = new Panel();
             roundedPanel11 = new Helpers.UI.RoundedPanel();
             dgProducts = new DataGridView();
-            panel4 = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            panel5 = new Panel();
-            rjButton2 = new Helpers.UI.RJButton();
-            rjButton1 = new Helpers.UI.RJButton();
-            panel6 = new Panel();
-            rjButton3 = new Helpers.UI.RJButton();
-            panel7 = new Panel();
-            rjButton4 = new Helpers.UI.RJButton();
-            roundedPanel4 = new Helpers.UI.RoundedPanel();
-            panel9 = new Panel();
-            tbSearch = new Helpers.UI.RJTextBox();
-            pictureBox2 = new PictureBox();
-            dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             id = new DataGridViewTextBoxColumn();
             barcode = new DataGridViewImageColumn();
             name = new DataGridViewTextBoxColumn();
@@ -101,6 +87,20 @@ namespace ABC_Bakery.Forms
             quantity = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
             delete = new DataGridViewButtonColumn();
+            panel4 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            panel5 = new Panel();
+            btnRenew = new Helpers.UI.RJButton();
+            rjButton1 = new Helpers.UI.RJButton();
+            panel6 = new Panel();
+            btnCanceled = new Helpers.UI.RJButton();
+            panel7 = new Panel();
+            btnPrint = new Helpers.UI.RJButton();
+            roundedPanel4 = new Helpers.UI.RoundedPanel();
+            panel9 = new Panel();
+            tbSearch = new Helpers.UI.RJTextBox();
+            pictureBox2 = new PictureBox();
+            dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -688,6 +688,61 @@ namespace ABC_Bakery.Forms
             dgProducts.Size = new Size(857, 758);
             dgProducts.TabIndex = 6;
             // 
+            // id
+            // 
+            id.HeaderText = "Mã SP";
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // barcode
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            barcode.DefaultCellStyle = dataGridViewCellStyle2;
+            barcode.HeaderText = "Barcode";
+            barcode.Name = "barcode";
+            barcode.ReadOnly = true;
+            barcode.Width = 150;
+            // 
+            // name
+            // 
+            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            name.FillWeight = 28.3298721F;
+            name.HeaderText = "Tên Sản Phẩm";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            // 
+            // price
+            // 
+            price.FillWeight = 4.35844231F;
+            price.HeaderText = "Giá Tiền";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            // 
+            // quantity
+            // 
+            quantity.FillWeight = 4.35844231F;
+            quantity.HeaderText = "Số lượng";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            // 
+            // total
+            // 
+            total.HeaderText = "Tổng Tiền";
+            total.Name = "total";
+            total.ReadOnly = true;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new Padding(10);
+            delete.DefaultCellStyle = dataGridViewCellStyle3;
+            delete.HeaderText = "Thao Tác";
+            delete.Name = "delete";
+            delete.Text = "Xóa";
+            delete.UseColumnTextForButtonValue = true;
+            // 
             // panel4
             // 
             panel4.Controls.Add(tableLayoutPanel1);
@@ -717,7 +772,7 @@ namespace ABC_Bakery.Forms
             // 
             // panel5
             // 
-            panel5.Controls.Add(rjButton2);
+            panel5.Controls.Add(btnRenew);
             panel5.Controls.Add(rjButton1);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(3, 3);
@@ -725,25 +780,26 @@ namespace ABC_Bakery.Forms
             panel5.Size = new Size(279, 58);
             panel5.TabIndex = 0;
             // 
-            // rjButton2
+            // btnRenew
             // 
-            rjButton2.BackColor = Color.FromArgb(154, 59, 59);
-            rjButton2.BackgroundColor = Color.FromArgb(154, 59, 59);
-            rjButton2.BorderColor = Color.PaleVioletRed;
-            rjButton2.BorderRadius = 5;
-            rjButton2.BorderSize = 0;
-            rjButton2.Dock = DockStyle.Fill;
-            rjButton2.FlatAppearance.BorderSize = 0;
-            rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjButton2.ForeColor = Color.White;
-            rjButton2.Location = new Point(0, 0);
-            rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(279, 58);
-            rjButton2.TabIndex = 1;
-            rjButton2.Text = "THÊM PHIẾU";
-            rjButton2.TextColor = Color.White;
-            rjButton2.UseVisualStyleBackColor = false;
+            btnRenew.BackColor = Color.FromArgb(154, 59, 59);
+            btnRenew.BackgroundColor = Color.FromArgb(154, 59, 59);
+            btnRenew.BorderColor = Color.PaleVioletRed;
+            btnRenew.BorderRadius = 5;
+            btnRenew.BorderSize = 0;
+            btnRenew.Dock = DockStyle.Fill;
+            btnRenew.FlatAppearance.BorderSize = 0;
+            btnRenew.FlatStyle = FlatStyle.Flat;
+            btnRenew.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRenew.ForeColor = Color.White;
+            btnRenew.Location = new Point(0, 0);
+            btnRenew.Name = "btnRenew";
+            btnRenew.Size = new Size(279, 58);
+            btnRenew.TabIndex = 1;
+            btnRenew.Text = "THÊM PHIẾU";
+            btnRenew.TextColor = Color.White;
+            btnRenew.UseVisualStyleBackColor = false;
+            btnRenew.Click += btnRenew_Click;
             // 
             // rjButton1
             // 
@@ -766,61 +822,62 @@ namespace ABC_Bakery.Forms
             // 
             // panel6
             // 
-            panel6.Controls.Add(rjButton3);
+            panel6.Controls.Add(btnCanceled);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(288, 3);
             panel6.Name = "panel6";
             panel6.Size = new Size(279, 58);
             panel6.TabIndex = 1;
             // 
-            // rjButton3
+            // btnCanceled
             // 
-            rjButton3.BackColor = Color.FromArgb(154, 59, 59);
-            rjButton3.BackgroundColor = Color.FromArgb(154, 59, 59);
-            rjButton3.BorderColor = Color.PaleVioletRed;
-            rjButton3.BorderRadius = 5;
-            rjButton3.BorderSize = 0;
-            rjButton3.Dock = DockStyle.Fill;
-            rjButton3.FlatAppearance.BorderSize = 0;
-            rjButton3.FlatStyle = FlatStyle.Flat;
-            rjButton3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjButton3.ForeColor = Color.White;
-            rjButton3.Location = new Point(0, 0);
-            rjButton3.Name = "rjButton3";
-            rjButton3.Size = new Size(279, 58);
-            rjButton3.TabIndex = 2;
-            rjButton3.Text = "HỦY PHIẾU";
-            rjButton3.TextColor = Color.White;
-            rjButton3.UseVisualStyleBackColor = false;
+            btnCanceled.BackColor = Color.FromArgb(154, 59, 59);
+            btnCanceled.BackgroundColor = Color.FromArgb(154, 59, 59);
+            btnCanceled.BorderColor = Color.PaleVioletRed;
+            btnCanceled.BorderRadius = 5;
+            btnCanceled.BorderSize = 0;
+            btnCanceled.Dock = DockStyle.Fill;
+            btnCanceled.FlatAppearance.BorderSize = 0;
+            btnCanceled.FlatStyle = FlatStyle.Flat;
+            btnCanceled.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCanceled.ForeColor = Color.White;
+            btnCanceled.Location = new Point(0, 0);
+            btnCanceled.Name = "btnCanceled";
+            btnCanceled.Size = new Size(279, 58);
+            btnCanceled.TabIndex = 2;
+            btnCanceled.Text = "HỦY PHIẾU";
+            btnCanceled.TextColor = Color.White;
+            btnCanceled.UseVisualStyleBackColor = false;
+            btnCanceled.Click += btnCanceled_Click;
             // 
             // panel7
             // 
-            panel7.Controls.Add(rjButton4);
+            panel7.Controls.Add(btnPrint);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(573, 3);
             panel7.Name = "panel7";
             panel7.Size = new Size(281, 58);
             panel7.TabIndex = 2;
             // 
-            // rjButton4
+            // btnPrint
             // 
-            rjButton4.BackColor = Color.FromArgb(154, 59, 59);
-            rjButton4.BackgroundColor = Color.FromArgb(154, 59, 59);
-            rjButton4.BorderColor = Color.PaleVioletRed;
-            rjButton4.BorderRadius = 5;
-            rjButton4.BorderSize = 0;
-            rjButton4.Dock = DockStyle.Fill;
-            rjButton4.FlatAppearance.BorderSize = 0;
-            rjButton4.FlatStyle = FlatStyle.Flat;
-            rjButton4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjButton4.ForeColor = Color.White;
-            rjButton4.Location = new Point(0, 0);
-            rjButton4.Name = "rjButton4";
-            rjButton4.Size = new Size(281, 58);
-            rjButton4.TabIndex = 2;
-            rjButton4.Text = "IN PHIẾU";
-            rjButton4.TextColor = Color.White;
-            rjButton4.UseVisualStyleBackColor = false;
+            btnPrint.BackColor = Color.FromArgb(154, 59, 59);
+            btnPrint.BackgroundColor = Color.FromArgb(154, 59, 59);
+            btnPrint.BorderColor = Color.PaleVioletRed;
+            btnPrint.BorderRadius = 5;
+            btnPrint.BorderSize = 0;
+            btnPrint.Dock = DockStyle.Fill;
+            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPrint.ForeColor = Color.White;
+            btnPrint.Location = new Point(0, 0);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(281, 58);
+            btnPrint.TabIndex = 2;
+            btnPrint.Text = "IN PHIẾU";
+            btnPrint.TextColor = Color.White;
+            btnPrint.UseVisualStyleBackColor = false;
             // 
             // roundedPanel4
             // 
@@ -891,61 +948,6 @@ namespace ABC_Bakery.Forms
             dungeonHeaderLabel2.Size = new Size(198, 30);
             dungeonHeaderLabel2.TabIndex = 1;
             dungeonHeaderLabel2.Text = "Sản phẩm đã thêm";
-            // 
-            // id
-            // 
-            id.HeaderText = "Mã SP";
-            id.Name = "id";
-            id.ReadOnly = true;
-            // 
-            // barcode
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
-            dataGridViewCellStyle2.Padding = new Padding(5);
-            barcode.DefaultCellStyle = dataGridViewCellStyle2;
-            barcode.HeaderText = "Barcode";
-            barcode.Name = "barcode";
-            barcode.ReadOnly = true;
-            barcode.Width = 150;
-            // 
-            // name
-            // 
-            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            name.FillWeight = 28.3298721F;
-            name.HeaderText = "Tên Sản Phẩm";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            // 
-            // price
-            // 
-            price.FillWeight = 4.35844231F;
-            price.HeaderText = "Giá Tiền";
-            price.MinimumWidth = 6;
-            price.Name = "price";
-            // 
-            // quantity
-            // 
-            quantity.FillWeight = 4.35844231F;
-            quantity.HeaderText = "Số lượng";
-            quantity.MinimumWidth = 6;
-            quantity.Name = "quantity";
-            // 
-            // total
-            // 
-            total.HeaderText = "Tổng Tiền";
-            total.Name = "total";
-            total.ReadOnly = true;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new Padding(10);
-            delete.DefaultCellStyle = dataGridViewCellStyle3;
-            delete.HeaderText = "Thao Tác";
-            delete.Name = "delete";
-            delete.Text = "Xóa";
-            delete.UseColumnTextForButtonValue = true;
             // 
             // Order
             // 
@@ -1047,12 +1049,12 @@ namespace ABC_Bakery.Forms
         private Panel panel4;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel5;
-        private Helpers.UI.RJButton rjButton2;
+        private Helpers.UI.RJButton btnRenew;
         private Helpers.UI.RJButton rjButton1;
         private Panel panel6;
-        private Helpers.UI.RJButton rjButton3;
+        private Helpers.UI.RJButton btnCanceled;
         private Panel panel7;
-        private Helpers.UI.RJButton rjButton4;
+        private Helpers.UI.RJButton btnPrint;
         private Panel panel8;
         private PictureBox pictureBox2;
         private Helpers.UI.RJTextBox tbSearch;

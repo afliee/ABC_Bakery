@@ -18,7 +18,7 @@
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
     <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
@@ -190,15 +190,6 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button14.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
-        SbbCZyXD/FoWMUzrgjxgfwdYmVU4u1laqJlVOLtpXbC/A6zMKpzdLC3UzCqc3bQu2P4BrbgP0EJUxpqb
-        zJdFZKy5ibswYfXc+wYoheOY6nlB7nVQZu8xVdJDKd2h54gLnPfExzS7wWrO8AmluIbyZU7QxQFeof6O
-        iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnOrderTCNoPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -253,7 +244,7 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnCreateOrderNoPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCreateDH.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl
@@ -262,7 +253,7 @@
         iNKVN3c/PEn+RClfV9fSZn8XAP8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnCreateDH.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCreateOrderNoPayment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALJJREFUWEftkUEKwlAMRP89tDvx6iLSnd5KwZ5AJ6WBMhj6k1+Eljx4iwlMmrYl

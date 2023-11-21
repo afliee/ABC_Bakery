@@ -171,7 +171,7 @@ namespace ABC_Bakery.Forms
                 CultureInfor = TextCurrency.VIETNAM
             };
 
-            dgProducts.Rows.Add(string.Format("{0}_{1}", Product.Prefix, product.Id),image, product.Name, priceString, 1, priceString.Clone());
+            dgProducts.Rows.Add(string.Format("{0}_{1}", Product.Prefix, product.Id), image, product.Name, priceString, 1, priceString.Clone());
             tbSearch.ClearText();
             tbSearch.Focus();
 
@@ -351,8 +351,8 @@ namespace ABC_Bakery.Forms
                 Product product = _productService.Find(int.Parse(productId.Substring(Product.Prefix.Length + 1)));
                 OrderDetail orderDetail = new OrderDetail
                 {
-                    Order = orderEntity,
-                    Product = product,
+                    OrderId = orderEntity.Id,
+                    ProductId = product.Id,
                     Price = priceCol.Value,
                     Quantity = quantity,
                     Total = priceCol.Value * quantity
@@ -363,37 +363,44 @@ namespace ABC_Bakery.Forms
             }
 
             orderEntity.OrderDetails = orders;
-            // log some iinfor
-            string str = "Order Entity: {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}";
-
-            MessageBox.Show(string.Format(str, orderEntity.Id, orderEntity.Name, orderEntity.Address, orderEntity.CashierId, orderEntity.ReceiptId, orderEntity.Price, orderEntity.Note, orderEntity.Type, orderEntity.CreatedAt), "Thông Báo");
-
+           
             if (OrderService.GetInstance().Create(orderEntity))
             {
-                MessageBox.Show("Thanh toán thành công", "Thông Báo");
-                dgProducts.Rows.Clear();
-                tbSearch.ClearText();
-                tbSurcharge.ClearText();
-                tbReceived.ClearText();
-                tbNote.ClearText();
-                lbTotal.Text = new TextCurrency
-                {
-                    Format = TextCurrency.NO_DECIMAL,
-                    Value = 0,
-                    CultureInfor = TextCurrency.VIETNAM
-                }.ToString();
 
-                lbMoneyChange.Text = new TextCurrency
-                {
-                    Format = TextCurrency.NO_DECIMAL,
-                    Value = 0,
-                    CultureInfor = TextCurrency.VIETNAM
-                }.ToString();
+                MessageBox.Show("Thanh toán thành công", "Thông Báo");
+                btnRenew_Click(sender, e);
             }
             else
             {
                 MessageBox.Show("Thanh toán thất bại", "Thông Báo");
             }
+        }
+
+        private void btnRenew_Click(object sender, EventArgs e)
+        {
+            dgProducts.Rows.Clear();
+            tbSearch.ClearText();
+            tbSurcharge.ClearText();
+            tbReceived.ClearText();
+            tbNote.ClearText();
+            lbTotal.Text = new TextCurrency
+            {
+                Format = TextCurrency.NO_DECIMAL,
+                Value = 0,
+                CultureInfor = TextCurrency.VIETNAM
+            }.ToString();
+
+            lbMoneyChange.Text = new TextCurrency
+            {
+                Format = TextCurrency.NO_DECIMAL,
+                Value = 0,
+                CultureInfor = TextCurrency.VIETNAM
+            }.ToString();
+        }
+
+        private void btnCanceled_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
