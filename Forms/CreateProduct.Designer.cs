@@ -116,9 +116,8 @@ namespace ABC_Bakery.Forms
             panel1.Controls.Add(flowLayoutPanel1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1421, 116);
+            panel1.Size = new Size(1243, 87);
             panel1.TabIndex = 0;
             // 
             // bigLabel1
@@ -128,9 +127,9 @@ namespace ABC_Bakery.Forms
             bigLabel1.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
             bigLabel1.ForeColor = Color.White;
             bigLabel1.ImageAlign = ContentAlignment.MiddleLeft;
-            bigLabel1.Location = new Point(0, 25);
+            bigLabel1.Location = new Point(0, 19);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(325, 57);
+            bigLabel1.Size = new Size(260, 46);
             bigLabel1.TabIndex = 2;
             bigLabel1.Text = "Thêm Sản Phẩm";
             // 
@@ -138,10 +137,9 @@ namespace ABC_Bakery.Forms
             // 
             flowLayoutPanel1.Controls.Add(roundedPanel1);
             flowLayoutPanel1.Dock = DockStyle.Right;
-            flowLayoutPanel1.Location = new Point(979, 0);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(856, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(442, 116);
+            flowLayoutPanel1.Size = new Size(387, 87);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // roundedPanel1
@@ -150,10 +148,10 @@ namespace ABC_Bakery.Forms
             roundedPanel1.Controls.Add(datetimePickerCustom1);
             roundedPanel1.Controls.Add(pictureBox1);
             roundedPanel1.ForeColor = Color.White;
-            roundedPanel1.Location = new Point(3, 20);
-            roundedPanel1.Margin = new Padding(3, 20, 3, 4);
+            roundedPanel1.Location = new Point(3, 15);
+            roundedPanel1.Margin = new Padding(3, 15, 3, 3);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(424, 72);
+            roundedPanel1.Size = new Size(371, 54);
             roundedPanel1.TabIndex = 5;
             // 
             // datetimePickerCustom1
@@ -162,11 +160,10 @@ namespace ABC_Bakery.Forms
             datetimePickerCustom1.BorderSize = 3;
             datetimePickerCustom1.CustomFormat = "dddd , dd MMMM yyyy";
             datetimePickerCustom1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            datetimePickerCustom1.Location = new Point(72, 5);
-            datetimePickerCustom1.Margin = new Padding(3, 4, 3, 4);
+            datetimePickerCustom1.Location = new Point(63, 4);
             datetimePickerCustom1.MinimumSize = new Size(4, 50);
             datetimePickerCustom1.Name = "datetimePickerCustom1";
-            datetimePickerCustom1.Size = new Size(421, 50);
+            datetimePickerCustom1.Size = new Size(369, 50);
             datetimePickerCustom1.SkinColor = Color.FromArgb(154, 59, 59);
             datetimePickerCustom1.TabIndex = 1;
             datetimePickerCustom1.TextColor = Color.White;
@@ -174,10 +171,9 @@ namespace ABC_Bakery.Forms
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.calender;
-            pictureBox1.Location = new Point(3, 13);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(3, 10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(62, 48);
+            pictureBox1.Size = new Size(54, 36);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -186,10 +182,9 @@ namespace ABC_Bakery.Forms
             // 
             flowLayoutPanel2.BackColor = Color.FromArgb(0, 0, 0, 0);
             flowLayoutPanel2.Dock = DockStyle.Right;
-            flowLayoutPanel2.Location = new Point(1421, 116);
-            flowLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel2.Location = new Point(1243, 87);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(0, 973);
+            flowLayoutPanel2.Size = new Size(0, 730);
             flowLayoutPanel2.TabIndex = 1;
             // 
             // roundedPanel4
@@ -199,10 +194,9 @@ namespace ABC_Bakery.Forms
             roundedPanel4.Controls.Add(dungeonHeaderLabel2);
             roundedPanel4.Dock = DockStyle.Top;
             roundedPanel4.ForeColor = Color.White;
-            roundedPanel4.Location = new Point(11, 0);
-            roundedPanel4.Margin = new Padding(3, 4, 3, 4);
+            roundedPanel4.Location = new Point(10, 0);
             roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(1399, 84);
+            roundedPanel4.Size = new Size(1223, 63);
             roundedPanel4.TabIndex = 3;
             // 
             // panel9
@@ -210,10 +204,9 @@ namespace ABC_Bakery.Forms
             panel9.Controls.Add(tbSearch);
             panel9.Controls.Add(pictureBox2);
             panel9.Dock = DockStyle.Right;
-            panel9.Location = new Point(874, 0);
-            panel9.Margin = new Padding(3, 4, 3, 4);
+            panel9.Location = new Point(764, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(525, 84);
+            panel9.Size = new Size(459, 63);
             panel9.TabIndex = 4;
             // 
             // tbSearch
@@ -225,15 +218,15 @@ namespace ABC_Bakery.Forms
             tbSearch.BorderSize = 2;
             tbSearch.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             tbSearch.ForeColor = Color.FromArgb(64, 64, 64);
-            tbSearch.Location = new Point(89, 12);
-            tbSearch.Margin = new Padding(5);
+            tbSearch.Location = new Point(78, 9);
+            tbSearch.Margin = new Padding(4);
             tbSearch.Multiline = false;
             tbSearch.Name = "tbSearch";
-            tbSearch.Padding = new Padding(11, 9, 11, 9);
+            tbSearch.Padding = new Padding(10, 7, 10, 7);
             tbSearch.PasswordChar = false;
             tbSearch.PlaceholderColor = Color.DarkGray;
             tbSearch.PlaceholderText = "";
-            tbSearch.Size = new Size(427, 60);
+            tbSearch.Size = new Size(374, 47);
             tbSearch.TabIndex = 3;
             tbSearch.TextAlign = HorizontalAlignment.Left;
             tbSearch.Texts = "";
@@ -244,10 +237,9 @@ namespace ABC_Bakery.Forms
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.find;
-            pictureBox2.Location = new Point(50, 23);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Location = new Point(44, 17);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 44);
+            pictureBox2.Size = new Size(27, 33);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -259,9 +251,9 @@ namespace ABC_Bakery.Forms
             dungeonHeaderLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             dungeonHeaderLabel2.ForeColor = Color.FromArgb(76, 76, 77);
             dungeonHeaderLabel2.ImageAlign = ContentAlignment.MiddleLeft;
-            dungeonHeaderLabel2.Location = new Point(3, 23);
+            dungeonHeaderLabel2.Location = new Point(3, 17);
             dungeonHeaderLabel2.Name = "dungeonHeaderLabel2";
-            dungeonHeaderLabel2.Size = new Size(256, 37);
+            dungeonHeaderLabel2.Size = new Size(198, 30);
             dungeonHeaderLabel2.TabIndex = 1;
             dungeonHeaderLabel2.Text = "Sản phẩm đã thêm";
             // 
@@ -269,11 +261,10 @@ namespace ABC_Bakery.Forms
             // 
             pnProductBoundary.Controls.Add(roundedPanel2);
             pnProductBoundary.Dock = DockStyle.Fill;
-            pnProductBoundary.Location = new Point(11, 84);
-            pnProductBoundary.Margin = new Padding(3, 4, 3, 4);
+            pnProductBoundary.Location = new Point(10, 63);
             pnProductBoundary.Name = "pnProductBoundary";
-            pnProductBoundary.Padding = new Padding(0, 13, 0, 0);
-            pnProductBoundary.Size = new Size(1399, 235);
+            pnProductBoundary.Padding = new Padding(0, 10, 0, 0);
+            pnProductBoundary.Size = new Size(1223, 176);
             pnProductBoundary.TabIndex = 4;
             // 
             // roundedPanel2
@@ -282,10 +273,9 @@ namespace ABC_Bakery.Forms
             roundedPanel2.Controls.Add(dgProducts);
             roundedPanel2.Dock = DockStyle.Fill;
             roundedPanel2.ForeColor = Color.White;
-            roundedPanel2.Location = new Point(0, 13);
-            roundedPanel2.Margin = new Padding(3, 4, 3, 4);
+            roundedPanel2.Location = new Point(0, 10);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1399, 222);
+            roundedPanel2.Size = new Size(1223, 166);
             roundedPanel2.TabIndex = 0;
             // 
             // dgProducts
@@ -341,7 +331,7 @@ namespace ABC_Bakery.Forms
             dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle7;
             dgProducts.RowTemplate.Height = 50;
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgProducts.Size = new Size(1399, 222);
+            dgProducts.Size = new Size(1223, 166);
             dgProducts.TabIndex = 5;
             dgProducts.CellContentClick += dgProducts_CellContentClick;
             // 
@@ -359,7 +349,7 @@ namespace ABC_Bakery.Forms
             stt.Name = "stt";
             stt.ReadOnly = true;
             stt.Resizable = DataGridViewTriState.True;
-            stt.Width = 74;
+            stt.Width = 60;
             // 
             // barcode
             // 
@@ -435,11 +425,10 @@ namespace ABC_Bakery.Forms
             pnProducts.Controls.Add(pnProductBoundary);
             pnProducts.Controls.Add(roundedPanel4);
             pnProducts.Dock = DockStyle.Top;
-            pnProducts.Location = new Point(0, 116);
-            pnProducts.Margin = new Padding(3, 4, 3, 4);
+            pnProducts.Location = new Point(0, 87);
             pnProducts.Name = "pnProducts";
-            pnProducts.Padding = new Padding(11, 0, 11, 0);
-            pnProducts.Size = new Size(1421, 319);
+            pnProducts.Padding = new Padding(10, 0, 10, 0);
+            pnProducts.Size = new Size(1243, 239);
             pnProducts.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -453,15 +442,14 @@ namespace ABC_Bakery.Forms
             tableLayoutPanel1.Controls.Add(parrotGroupBox2, 1, 0);
             tableLayoutPanel1.Controls.Add(parrotGroupBox4, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Top;
-            tableLayoutPanel1.Location = new Point(5, 5);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Location = new Point(4, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.Padding = new Padding(11, 13, 11, 13);
+            tableLayoutPanel1.Padding = new Padding(10);
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1390, 283);
+            tableLayoutPanel1.Size = new Size(1218, 212);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // parrotGroupBox3
@@ -471,12 +459,10 @@ namespace ABC_Bakery.Forms
             parrotGroupBox3.Controls.Add(tbPrice);
             parrotGroupBox3.Dock = DockStyle.Fill;
             parrotGroupBox3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox3.Location = new Point(14, 150);
-            parrotGroupBox3.Margin = new Padding(3, 4, 3, 4);
+            parrotGroupBox3.Location = new Point(13, 113);
             parrotGroupBox3.Name = "parrotGroupBox3";
-            parrotGroupBox3.Padding = new Padding(3, 4, 3, 4);
             parrotGroupBox3.ShowText = true;
-            parrotGroupBox3.Size = new Size(678, 125);
+            parrotGroupBox3.Size = new Size(593, 94);
             parrotGroupBox3.TabIndex = 2;
             parrotGroupBox3.TabStop = false;
             parrotGroupBox3.Text = "Giá sản phẩm";
@@ -492,15 +478,15 @@ namespace ABC_Bakery.Forms
             tbPrice.Dock = DockStyle.Fill;
             tbPrice.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbPrice.ForeColor = Color.FromArgb(64, 64, 64);
-            tbPrice.Location = new Point(3, 40);
-            tbPrice.Margin = new Padding(5);
+            tbPrice.Location = new Point(3, 32);
+            tbPrice.Margin = new Padding(4);
             tbPrice.Multiline = true;
             tbPrice.Name = "tbPrice";
-            tbPrice.Padding = new Padding(11, 9, 11, 9);
+            tbPrice.Padding = new Padding(10, 7, 10, 7);
             tbPrice.PasswordChar = false;
             tbPrice.PlaceholderColor = Color.DarkGray;
             tbPrice.PlaceholderText = "Nhập giá tiền. VD: 10000 = 10.000VND";
-            tbPrice.Size = new Size(672, 81);
+            tbPrice.Size = new Size(587, 59);
             tbPrice.TabIndex = 1;
             tbPrice.TextAlign = HorizontalAlignment.Left;
             tbPrice.Texts = "";
@@ -514,12 +500,10 @@ namespace ABC_Bakery.Forms
             parrotGroupBox1.Controls.Add(tbName);
             parrotGroupBox1.Dock = DockStyle.Fill;
             parrotGroupBox1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox1.Location = new Point(14, 17);
-            parrotGroupBox1.Margin = new Padding(3, 4, 3, 4);
+            parrotGroupBox1.Location = new Point(13, 13);
             parrotGroupBox1.Name = "parrotGroupBox1";
-            parrotGroupBox1.Padding = new Padding(3, 4, 3, 4);
             parrotGroupBox1.ShowText = true;
-            parrotGroupBox1.Size = new Size(678, 125);
+            parrotGroupBox1.Size = new Size(593, 94);
             parrotGroupBox1.TabIndex = 0;
             parrotGroupBox1.TabStop = false;
             parrotGroupBox1.Text = "Tên sản phẩm";
@@ -535,15 +519,15 @@ namespace ABC_Bakery.Forms
             tbName.Dock = DockStyle.Fill;
             tbName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbName.ForeColor = Color.FromArgb(64, 64, 64);
-            tbName.Location = new Point(3, 40);
-            tbName.Margin = new Padding(5);
+            tbName.Location = new Point(3, 32);
+            tbName.Margin = new Padding(4);
             tbName.Multiline = true;
             tbName.Name = "tbName";
-            tbName.Padding = new Padding(11, 9, 11, 9);
+            tbName.Padding = new Padding(10, 7, 10, 7);
             tbName.PasswordChar = false;
             tbName.PlaceholderColor = Color.DarkGray;
             tbName.PlaceholderText = "Nhập tên sản phẩm";
-            tbName.Size = new Size(672, 81);
+            tbName.Size = new Size(587, 59);
             tbName.TabIndex = 1;
             tbName.TextAlign = HorizontalAlignment.Left;
             tbName.Texts = "";
@@ -557,12 +541,10 @@ namespace ABC_Bakery.Forms
             parrotGroupBox2.Controls.Add(roundedPanel3);
             parrotGroupBox2.Dock = DockStyle.Fill;
             parrotGroupBox2.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox2.Location = new Point(698, 17);
-            parrotGroupBox2.Margin = new Padding(3, 4, 3, 4);
+            parrotGroupBox2.Location = new Point(612, 13);
             parrotGroupBox2.Name = "parrotGroupBox2";
-            parrotGroupBox2.Padding = new Padding(3, 4, 3, 4);
             parrotGroupBox2.ShowText = true;
-            parrotGroupBox2.Size = new Size(678, 125);
+            parrotGroupBox2.Size = new Size(593, 94);
             parrotGroupBox2.TabIndex = 1;
             parrotGroupBox2.TabStop = false;
             parrotGroupBox2.Text = "Thể loại";
@@ -574,10 +556,9 @@ namespace ABC_Bakery.Forms
             roundedPanel3.Controls.Add(cbCategory);
             roundedPanel3.Dock = DockStyle.Fill;
             roundedPanel3.ForeColor = Color.White;
-            roundedPanel3.Location = new Point(3, 40);
-            roundedPanel3.Margin = new Padding(3, 4, 3, 4);
+            roundedPanel3.Location = new Point(3, 32);
             roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(672, 81);
+            roundedPanel3.Size = new Size(587, 59);
             roundedPanel3.TabIndex = 3;
             // 
             // cbCategory
@@ -593,11 +574,10 @@ namespace ABC_Bakery.Forms
             cbCategory.ListBackColor = Color.FromArgb(230, 228, 245);
             cbCategory.ListTextColor = Color.DimGray;
             cbCategory.Location = new Point(0, 0);
-            cbCategory.Margin = new Padding(3, 4, 3, 4);
-            cbCategory.MinimumSize = new Size(229, 40);
+            cbCategory.MinimumSize = new Size(200, 30);
             cbCategory.Name = "cbCategory";
-            cbCategory.Padding = new Padding(2, 3, 2, 3);
-            cbCategory.Size = new Size(672, 81);
+            cbCategory.Padding = new Padding(2);
+            cbCategory.Size = new Size(587, 59);
             cbCategory.TabIndex = 0;
             cbCategory.Texts = "";
             // 
@@ -608,12 +588,10 @@ namespace ABC_Bakery.Forms
             parrotGroupBox4.Controls.Add(tbQuantity);
             parrotGroupBox4.Dock = DockStyle.Fill;
             parrotGroupBox4.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox4.Location = new Point(698, 150);
-            parrotGroupBox4.Margin = new Padding(3, 4, 3, 4);
+            parrotGroupBox4.Location = new Point(612, 113);
             parrotGroupBox4.Name = "parrotGroupBox4";
-            parrotGroupBox4.Padding = new Padding(3, 4, 3, 4);
             parrotGroupBox4.ShowText = true;
-            parrotGroupBox4.Size = new Size(678, 125);
+            parrotGroupBox4.Size = new Size(593, 94);
             parrotGroupBox4.TabIndex = 3;
             parrotGroupBox4.TabStop = false;
             parrotGroupBox4.Text = "Số lượng sản phẩm";
@@ -629,15 +607,15 @@ namespace ABC_Bakery.Forms
             tbQuantity.Dock = DockStyle.Fill;
             tbQuantity.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbQuantity.ForeColor = Color.FromArgb(64, 64, 64);
-            tbQuantity.Location = new Point(3, 40);
-            tbQuantity.Margin = new Padding(5);
+            tbQuantity.Location = new Point(3, 32);
+            tbQuantity.Margin = new Padding(4);
             tbQuantity.Multiline = true;
             tbQuantity.Name = "tbQuantity";
-            tbQuantity.Padding = new Padding(11, 9, 11, 9);
+            tbQuantity.Padding = new Padding(10, 7, 10, 7);
             tbQuantity.PasswordChar = false;
             tbQuantity.PlaceholderColor = Color.DarkGray;
             tbQuantity.PlaceholderText = "Nhập số lượng sản phẩm";
-            tbQuantity.Size = new Size(672, 81);
+            tbQuantity.Size = new Size(587, 59);
             tbQuantity.TabIndex = 1;
             tbQuantity.TextAlign = HorizontalAlignment.Left;
             tbQuantity.Texts = "";
@@ -650,11 +628,10 @@ namespace ABC_Bakery.Forms
             roundedPanel5.Controls.Add(parrotGroupBox5);
             roundedPanel5.Dock = DockStyle.Bottom;
             roundedPanel5.ForeColor = Color.White;
-            roundedPanel5.Location = new Point(5, 283);
-            roundedPanel5.Margin = new Padding(3, 4, 3, 4);
+            roundedPanel5.Location = new Point(4, 212);
             roundedPanel5.Name = "roundedPanel5";
-            roundedPanel5.Padding = new Padding(11, 13, 11, 13);
-            roundedPanel5.Size = new Size(1390, 235);
+            roundedPanel5.Padding = new Padding(10);
+            roundedPanel5.Size = new Size(1218, 176);
             roundedPanel5.TabIndex = 4;
             // 
             // parrotGroupBox5
@@ -664,12 +641,11 @@ namespace ABC_Bakery.Forms
             parrotGroupBox5.Controls.Add(tbDescription);
             parrotGroupBox5.Dock = DockStyle.Fill;
             parrotGroupBox5.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox5.Location = new Point(11, 13);
-            parrotGroupBox5.Margin = new Padding(3, 4, 3, 4);
+            parrotGroupBox5.Location = new Point(10, 10);
             parrotGroupBox5.Name = "parrotGroupBox5";
-            parrotGroupBox5.Padding = new Padding(6, 7, 6, 7);
+            parrotGroupBox5.Padding = new Padding(5);
             parrotGroupBox5.ShowText = true;
-            parrotGroupBox5.Size = new Size(1368, 209);
+            parrotGroupBox5.Size = new Size(1198, 156);
             parrotGroupBox5.TabIndex = 0;
             parrotGroupBox5.TabStop = false;
             parrotGroupBox5.Text = "Mô tả sản phẩm";
@@ -685,15 +661,15 @@ namespace ABC_Bakery.Forms
             tbDescription.Dock = DockStyle.Fill;
             tbDescription.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             tbDescription.ForeColor = Color.FromArgb(64, 64, 64);
-            tbDescription.Location = new Point(6, 43);
-            tbDescription.Margin = new Padding(5);
+            tbDescription.Location = new Point(5, 34);
+            tbDescription.Margin = new Padding(4);
             tbDescription.Multiline = true;
             tbDescription.Name = "tbDescription";
-            tbDescription.Padding = new Padding(11, 9, 11, 9);
+            tbDescription.Padding = new Padding(10, 7, 10, 7);
             tbDescription.PasswordChar = false;
             tbDescription.PlaceholderColor = Color.DarkGray;
             tbDescription.PlaceholderText = "Nhập mô tả của sản phẩm";
-            tbDescription.Size = new Size(1356, 159);
+            tbDescription.Size = new Size(1188, 117);
             tbDescription.TabIndex = 1;
             tbDescription.TextAlign = HorizontalAlignment.Left;
             tbDescription.Texts = "";
@@ -711,10 +687,9 @@ namespace ABC_Bakery.Forms
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(0, 1016);
-            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Location = new Point(0, 762);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(1421, 73);
+            btnSave.Size = new Size(1243, 55);
             btnSave.TabIndex = 5;
             btnSave.Text = "LƯU THÔNG TIN SẢN PHẨM";
             btnSave.TextColor = Color.White;
@@ -744,19 +719,20 @@ namespace ABC_Bakery.Forms
             pnInfoBounary.Controls.Add(roundedPanel5);
             pnInfoBounary.Dock = DockStyle.Top;
             pnInfoBounary.ForeColor = Color.White;
-            pnInfoBounary.Location = new Point(0, 435);
+            pnInfoBounary.Location = new Point(0, 326);
+            pnInfoBounary.Margin = new Padding(3, 2, 3, 2);
             pnInfoBounary.Name = "pnInfoBounary";
-            pnInfoBounary.Padding = new Padding(5);
-            pnInfoBounary.Size = new Size(1421, 465);
+            pnInfoBounary.Padding = new Padding(4);
+            pnInfoBounary.Size = new Size(1243, 349);
             pnInfoBounary.TabIndex = 6;
             // 
             // CreateProduct
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1421, 1089);
+            ClientSize = new Size(1243, 817);
             Controls.Add(pnInfoBounary);
             Controls.Add(btnSave);
             Controls.Add(pnProducts);
@@ -764,7 +740,6 @@ namespace ABC_Bakery.Forms
             Controls.Add(panel1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CreateProduct";
             Text = "CreateProduct";
             Load += CreateProduct_Load;
@@ -783,14 +758,17 @@ namespace ABC_Bakery.Forms
             pnProducts.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             parrotGroupBox3.ResumeLayout(false);
+            parrotGroupBox3.PerformLayout();
             parrotGroupBox1.ResumeLayout(false);
             parrotGroupBox1.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
             parrotGroupBox2.PerformLayout();
             roundedPanel3.ResumeLayout(false);
             parrotGroupBox4.ResumeLayout(false);
+            parrotGroupBox4.PerformLayout();
             roundedPanel5.ResumeLayout(false);
             parrotGroupBox5.ResumeLayout(false);
+            parrotGroupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)error).EndInit();
             pnInfoBounary.ResumeLayout(false);
             ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using ABC_Bakery.Models;
+using ABC_Bakery.Models.Constants;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,50 @@ namespace ABC_Bakery.Helpers
                     new Promotion { Name = "Giảm 10%", Code = "ABCNGON", Ratio = 10, IsActived = true, Id = 2 },
                     new Promotion { Name = "Giảm 20%", Code = "LATEAM", Ratio = 20, IsActived = true, Id = 3}
                 );
+
+            ModelBuilder.Entity<Models.Receipt>().HasData(
+                new Receipt
+                {
+                    Id = 1,
+                    Name = string.Format("Hóa đơn thu ngày {0}", DateTime.Now.ToString("dd/MM/yyyy")),
+                    Recieved = 0,
+                    Expense = 0,
+                    Total = 0,
+                    ReceiptType = ReceiptType.Import,
+                    Orders = new List<Order>()
+                },
+            new Receipt
+            {
+                Id = 2,
+                Name = string.Format("Hóa đơn chi ngày {0}", DateTime.Now.ToString("dd/MM/yyyy")),
+                Recieved = 0,
+                Expense = 0,
+                Total = 0,
+                ReceiptType = ReceiptType.Export,
+                Orders = new List<Order>()
+            },
+            new Receipt
+            {
+                Id = 3,
+                Name = string.Format("Hóa đơn thu ngày {0}", DateTime.Now.AddDays(1).ToString("dd/MM/yyyy")),
+                Recieved = 0,
+                Expense = 0,
+                Total = 0,
+                ReceiptType = ReceiptType.Import,
+                Orders = new List<Order>()
+            },
+
+            new Receipt
+            {
+                Id = 4,
+                Name = string.Format("Hóa đơn thu ngày {0}", DateTime.Now.AddDays(1).ToString("dd/MM/yyyy")),
+                Recieved = 0,
+                Expense = 0,
+                Total = 0,
+                ReceiptType = ReceiptType.Import,
+                Orders = new List<Order>()
+            }
+            );
         }
     }
 }

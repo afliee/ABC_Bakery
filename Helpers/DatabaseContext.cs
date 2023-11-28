@@ -14,9 +14,9 @@ namespace ABC_Bakery.Helpers
     internal class DatabaseContext : DbContext
     {
         //private static readonly string CONNECTION_STRING = "Data Source=TRONGDAT;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-        //private static readonly string CONNECTION_STRING = "Data Source=ALFIE;Initial Catalog=ABC_Bakery;Persist Security Info=True;Encrypt=False;User ID=sa;Password=123456";
+        private static readonly string CONNECTION_STRING = "Data Source=ALFIE;Initial Catalog=ABC_Bakery;Persist Security Info=True;Encrypt=False;User ID=sa;Password=123456";
         //private static readonly string CONNECTION_STRING = "Data Source=HOANG-PHUC;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-        private static readonly string CONNECTION_STRING = "Data Source=BARO;Initial Catalog=ABC_Bakery;Integrated Security=True;TrustServerCertificate=True";
+        //private static readonly string CONNECTION_STRING = "Data Source=BARO;Initial Catalog=ABC_Bakery;Integrated Security=True;TrustServerCertificate=True";
         public DatabaseContext() : base()
         {
             if (!Database.CanConnect())
@@ -68,39 +68,13 @@ namespace ABC_Bakery.Helpers
             ImportProduct.Config(modelBuilder);
             Product.Config(modelBuilder);
             Receipt.Config(modelBuilder);
-            OrderDetail.Config(modelBuilder);
             Order.Config(modelBuilder);
+            OrderDetail.Config(modelBuilder);
             //Promotion.Config(modelBuilder);
             //Models.Image.Config(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
             new ContextInitialize(modelBuilder).Seed();
-        }
-
-        public void Auto_Insert_Receipt()
-        {
-            Receipt importReceipt = new Receipt
-            {
-                Name = string.Format("Hóa đơn thu ngày {0}", DateTime.Now.ToString("dd/MM/yyyy")),
-                Recieved = 0,
-                Expense = 0,
-                Total = 0,
-                ReceiptType = ReceiptType.Import,
-                Orders = new List<Order>()
-            };
-
-            Receipt exportReceipt = new Receipt
-            {
-                Name = string.Format("Hóa đơn chi ngày {0}", DateTime.Now.ToString("dd/MM/yyyy")),
-                Recieved = 0,
-                Expense = 0,
-                Total = 0,
-                ReceiptType = ReceiptType.Export,
-                Orders = new List<Order>()
-            };
-
-            ReceiptService.GetInstance().Create(importReceipt);
-            ReceiptService.GetInstance().Create(exportReceipt);
         }
     }
 }

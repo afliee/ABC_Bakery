@@ -38,7 +38,14 @@ namespace ABC_Bakery.Repositories
 
         public Order Find(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _context.Orders.Find(id);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
         }
 
         public List<Order> FindAll()
@@ -49,6 +56,30 @@ namespace ABC_Bakery.Repositories
         public bool Update(Order obj)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Order> FindAllByReceiptId(int receiptId)
+        {
+            try {
+                return this._context.Orders.Where(o => o.ReceiptId == receiptId).ToList();
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+        }
+
+        public List<Order> FindAllByType(int type)
+        {
+            try
+            {
+                // find and sort by created_at desc
+                return this._context.Orders.Where(o => o.Type == type).OrderByDescending(o => o.CreatedAt).ToList();
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
         }
     }
 }

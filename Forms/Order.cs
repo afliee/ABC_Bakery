@@ -15,22 +15,25 @@ using Image = System.Drawing.Image;
 using ABC_Bakery.Helpers.Utils;
 using System.Xml.Linq;
 using ABC_Bakery.Models.Constants;
-
+using System.Drawing.Printing;
+using Color = System.Drawing.Color;
 namespace ABC_Bakery.Forms
 {
     public partial class Order : Form
     {
         private ProductService _productService;
+        private OrderDetailService _orderDetailService;
         private TextCurrency _total;
         private TextCurrency _moneyChange;
+        private Models.Order _order;
         public Order()
         {
             //this.BackgroundImage = Properties.Resources.Bg;
             InitializeComponent();
             //this.ControlBox = false;
-            //panel2.BackColor = Color.Transparent;
             //this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             _productService = ProductService.GetInstance();
+            _orderDetailService = OrderDetailService.GetInstance();
             _total = new TextCurrency
             {
                 Format = TextCurrency.NO_DECIMAL,
@@ -331,7 +334,6 @@ namespace ABC_Bakery.Forms
             string note = tbNote.Texts;
             User cashier = UserService.GetInstance().Find(1);
             Models.Receipt receipt = ReceiptService.GetInstance().FindByCreatedDayAndReceiptType(DateTime.Now, (int)ReceiptType.Import);
-
             Models.Order orderEntity = new Models.Order
             {
                 Address = "",
@@ -340,6 +342,8 @@ namespace ABC_Bakery.Forms
                 Name = string.Format("Hóa Đơn Mã {0}_{1}", Models.Receipt.Prefix, receipt.Id),
                 Type = (int)OrderType.Paid,
                 Note = note,
+                Price = _total.Value,
+                Status = (int)OrderStatus.Completed
             };
             List<OrderDetail> orders = new List<OrderDetail>();
             foreach (DataGridViewRow row in dgProducts.Rows)
@@ -363,12 +367,25 @@ namespace ABC_Bakery.Forms
             }
 
             orderEntity.OrderDetails = orders;
-           
+
             if (OrderService.GetInstance().Create(orderEntity))
             {
 
                 MessageBox.Show("Thanh toán thành công", "Thông Báo");
-                btnRenew_Click(sender, e);
+                _order = orderEntity;
+                // show message box to ask print receipt
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn in hóa đơn không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // print receipt
+                    PrintReceipt();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // do something else
+                    btnCanceled.Enabled = false;
+                    btnRenew_Click(sender, e);
+                }
             }
             else
             {
@@ -400,6 +417,61 @@ namespace ABC_Bakery.Forms
 
         private void btnCanceled_Click(object sender, EventArgs e)
         {
+            btnRenew_Click(sender, e);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // get order
+
+        }
+
+        private void PrintReceipt()
+        {
+            print_order.Print();
+        }
+
+        private void print_order_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            print_order.DefaultPageSettings.PaperSize = new PaperSize("A4", 827, 1170);
+            Graphics graphic = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float fontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString("ABC Bakery", new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
+
+            graphic.DrawString("Số Điện Thoại: 0123456789", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("Địa Chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM", font, new SolidBrush(Color.Black), startX, startY + offset * 2);
+            graphic.DrawString("Ngày: " + DateTime.Now.ToString("dd/MM/yyyy"), font, new SolidBrush(Color.Black), startX, startY + offset * 3);
+            graphic.DrawString("Giờ: " + DateTime.Now.ToString("HH:mm:ss"), font, new SolidBrush(Color.Black), startX, startY + offset * 4);
+            //graphic.DrawString("Nhân Viên: " + _order.Cashier.Name, font, new SolidBrush(Color.Black), startX, startY + offset * 5);
+            graphic.DrawString("Hóa Đơn: " + _order.Name, font, new SolidBrush(Color.Black), startX, startY + offset * 6);
+            // show products
+            graphic.DrawString("Sản Phẩm", font, new SolidBrush(Color.Black), startX, startY + offset * 7);
+            graphic.DrawString("Số Lượng", font, new SolidBrush(Color.Black), startX + 200, startY + offset * 7);
+            graphic.DrawString("Đơn Giá", font, new SolidBrush(Color.Black), startX + 300, startY + offset * 7);
+            graphic.DrawString("Thành Tiền", font, new SolidBrush(Color.Black), startX + 400, startY + offset * 7);
+            int i = 0;
+            var orderDetails = _orderDetailService.FindByOrderId(_order.Id);
+            foreach (OrderDetail orderDetail in orderDetails)
+            {
+                //graphic.DrawString(orderDetail.Product.Name, font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
+                //graphic.DrawString(orderDetail.Quantity.ToString(), font, new SolidBrush(Color.Black), startX + 200, startY + offset * (8 + i));
+                //graphic.DrawString(orderDetail.Price.ToString(), font, new SolidBrush(Color.Black), startX + 300, startY + offset * (8 + i));
+                //graphic.DrawString(orderDetail.Total.ToString(), font, new SolidBrush(Color.Black), startX + 400, startY + offset * (8 + i));
+
+                i++;
+            }
+
+            graphic.DrawString("Tổng Tiền: " + _order.Price.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
+            
+            graphic.DrawString("Cảm ơn quý khách", font, new SolidBrush(Color.Black), startX, startY + offset * (9 + i));
+
+            print_order.PrintPage += new PrintPageEventHandler(print_order_PrintPage);
+            print_order.Print();
 
         }
     }

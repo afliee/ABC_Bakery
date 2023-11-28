@@ -101,6 +101,8 @@ namespace ABC_Bakery.Forms
             tbSearch = new Helpers.UI.RJTextBox();
             pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
+            print_review_order = new PrintPreviewDialog();
+            print_order = new System.Drawing.Printing.PrintDocument();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -878,6 +880,7 @@ namespace ABC_Bakery.Forms
             btnPrint.Text = "IN PHIẾU";
             btnPrint.TextColor = Color.White;
             btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnPrint_Click;
             // 
             // roundedPanel4
             // 
@@ -948,6 +951,20 @@ namespace ABC_Bakery.Forms
             dungeonHeaderLabel2.Size = new Size(198, 30);
             dungeonHeaderLabel2.TabIndex = 1;
             dungeonHeaderLabel2.Text = "Sản phẩm đã thêm";
+            // 
+            // print_review_order
+            // 
+            print_review_order.AutoScrollMargin = new Size(0, 0);
+            print_review_order.AutoScrollMinSize = new Size(0, 0);
+            print_review_order.ClientSize = new Size(400, 300);
+            print_review_order.Enabled = true;
+            print_review_order.Icon = (Icon)resources.GetObject("print_review_order.Icon");
+            print_review_order.Name = "print_review_order";
+            print_review_order.Visible = false;
+            // 
+            // print_order
+            // 
+            print_order.PrintPage += print_order_PrintPage;
             // 
             // Order
             // 
@@ -1070,5 +1087,7 @@ namespace ABC_Bakery.Forms
         private DataGridViewTextBoxColumn quantity;
         private DataGridViewTextBoxColumn total;
         private DataGridViewButtonColumn delete;
+        private PrintPreviewDialog print_review_order;
+        private System.Drawing.Printing.PrintDocument print_order;
     }
 }

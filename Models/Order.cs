@@ -10,6 +10,7 @@ namespace ABC_Bakery.Models
 {
     internal class Order
     {
+        public static readonly string PREFIX = "OD";
         public int Id { get; set; }
         public int? PromotionId { get; set; }
         public int? ReceiptId { get; set; }
@@ -19,6 +20,7 @@ namespace ABC_Bakery.Models
         public required string Name { get; set; }
         public required string Address { get; set; }
         public required int Type { get; set; }
+        public required int Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
@@ -58,15 +60,32 @@ namespace ABC_Bakery.Models
             //    .WithMany(r => r.Orders)
             //    .HasForeignKey(o => o.ReceiptId);
 
-            //modelBuilder.Entity<Order>()
-            //    .HasOne(o => o.Cashier)
-            //    .WithMany(u => u.Orders)
-            //    .HasForeignKey(o => o.CashierId);
-
             modelBuilder.Entity<Order>()
-                .HasMany(o => o.OrderDetails)
-                .WithOne(od => od.Order)
-                .HasForeignKey(od => od.OrderId);
+                .HasOne(o => o.Cashier)
+                .WithMany(u => u.Orders)
+                .HasForeignKey(o => o.CashierId);
+
+            //modelBuilder.Entity<Order>()
+            //    .HasMany(o => o.OrderDetails)
+            //    .WithOne(od => od.Order)
+            //    .HasForeignKey(od => od.OrderId);
+        }
+
+        public override string ToString()
+        {
+            if (OrderDetails != null)
+            {
+                string orderDetails = "";
+                foreach (OrderDetail orderDetail in OrderDetails)
+                {
+                    orderDetails += orderDetail.ToString();
+                }
+                return $"Order: {Id}, {Name}, {Address}, {Type}, {CreatedAt}, {UpdatedAt}, {orderDetails}";
+            }
+            else
+            {
+                return $"Order: {Id}, {Name}, {Address}, {Type}, {CreatedAt}, {UpdatedAt}, ";
+            }
         }
     }
 }

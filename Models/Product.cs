@@ -52,10 +52,10 @@ namespace ABC_Bakery.Models
                 .WithOne(i => i.Product)
                 .HasForeignKey(i => i.ProductId);
 
-            modelBuilder.Entity<Product>()
-                .HasMany(p => p.OrderDetails)
-                .WithOne(o => o.Product)
-                .HasForeignKey(o => o.ProductId);
+            //modelBuilder.Entity<Product>()
+            //    .HasMany(p => p.OrderDetails)
+            //    .WithOne(o => o.Product)
+            //    .HasForeignKey(o => o.ProductId);
         }
     }
 }

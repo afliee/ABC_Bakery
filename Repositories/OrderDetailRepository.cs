@@ -48,5 +48,10 @@ namespace ABC_Bakery.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public List<OrderDetail> FindByOrderId(int orderId)
+        {
+            return this._context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+        }
     }
 }

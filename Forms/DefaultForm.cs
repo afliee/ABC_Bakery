@@ -15,6 +15,8 @@ namespace ABC_Bakery.Forms
         public DefaultForm()
         {
             InitializeComponent();
+            // unvisible util shown
+            this.Visible = false;
         }
 
         private void DefaultForm_Load(object sender, EventArgs e)

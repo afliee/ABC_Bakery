@@ -21,6 +21,7 @@ namespace ABC_Bakery
         private DefaultForm defaultForm;
         private Forms.Receipt receipt;
         private Receive receive;
+        private PrePlaceOrder prePlaceOrder;
         public Application()
         {
             InitializeComponent();
@@ -353,6 +354,26 @@ namespace ABC_Bakery
         }
 
         private void btnCreateDH_Click(object sender, EventArgs e)
+        {
+            if (prePlaceOrder == null)
+            {
+                prePlaceOrder = new PrePlaceOrder();
+                prePlaceOrder.MdiParent = this;
+                prePlaceOrder.Dock = DockStyle.Fill;
+                prePlaceOrder.FormClosed += PrePlaceOrder_FormClosed;
+                prePlaceOrder.Show();
+            }
+            else
+            {
+                prePlaceOrder.Activate();
+            }
+        }
+        private void PrePlaceOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            prePlaceOrder = null;
+        }
+
+        private void ordersDH_Click(object sender, EventArgs e)
         {
             if (orderDH == null)
             {

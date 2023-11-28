@@ -11,15 +11,15 @@ namespace ABC_Bakery.Models
     {
         public int Id { get; set; }
         public int OrderId { get; set; }
-        public int? ProductId { get; set; }
+        public int ProductId { get; set; }
         public int? Quantity { get; set; }
-        public double? Price { get; set; }
+        public double Price { get; set; }
         public double? Total { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        public virtual Order Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Order? Order { get; set; }
+        public virtual Product? Product { get; set; }
 
         public OrderDetail()
         {
@@ -38,6 +38,9 @@ namespace ABC_Bakery.Models
                 .Property(od => od.UpdatedAt)
                 .HasDefaultValueSql("getdate()");
 
+            //modelBuilder.Entity<OrderDetail>()
+            //    .HasKey(od => new { od.OrderId, od.ProductId });
+
             modelBuilder.Entity<OrderDetail>()
                 .HasOne(od => od.Order)
                 .WithMany(o => o.OrderDetails)
@@ -47,6 +50,11 @@ namespace ABC_Bakery.Models
                 .HasOne(od => od.Product)
                 .WithMany(p => p.OrderDetails)
                 .HasForeignKey(od => od.ProductId);
+        }
+
+        public override string ToString()
+        {
+            return $"OrderDetail: Id={Id}, OrderId={OrderId}, ProductId={ProductId}, Quantity={Quantity}, Price={Price}, Total={Total}, CreatedAt={CreatedAt}, UpdatedAt={UpdatedAt}";
         }
     }
 }
