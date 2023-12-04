@@ -9,6 +9,7 @@ namespace ABC_Bakery
     {
         private static readonly int ORDER_HEIGHT = 215;
         private static readonly int ORDER_ITEM_HEIGHT = 53;
+        private readonly ReceiptService _receiptService;
         private Boolean IsOrderExpanded = true;
         private Boolean IsSideMenuExpanded = true;
         private Boolean IsReceiptExpanded = true;
@@ -22,9 +23,14 @@ namespace ABC_Bakery
         private Forms.Receipt receipt;
         private Receive receive;
         private PrePlaceOrder prePlaceOrder;
+        private PlaceOrderTC placeOrderTC;
+        private OrdersEquipment ordersEquipment;
+        private OrdersDirect ordersDirect;
+        private OrdersPrePlaced ordersPrePlaced;
         public Application()
         {
             InitializeComponent();
+            _receiptService = ReceiptService.GetInstance();
             Init();
             MdiProperties();
         }
@@ -37,6 +43,7 @@ namespace ABC_Bakery
 
         private void Init()
         {
+            _receiptService.InitToday();
             var db = new DatabaseContext();
             RoleRepository roleRepository = new RoleRepository(db);
             roleRepository.Create(new Role { Name = "Cashier" });
@@ -59,6 +66,7 @@ namespace ABC_Bakery
             };
 
             userRepository.Create(user);
+
         }
 
         private void Application_Load(object sender, EventArgs e)
@@ -387,6 +395,90 @@ namespace ABC_Bakery
             {
                 orderDH.Activate();
             }
+        }
+
+        private void btnCreatePlaceTCOrder_Click(object sender, EventArgs e)
+        {
+            if (placeOrderTC == null)
+            {
+                placeOrderTC = new PlaceOrderTC();
+                placeOrderTC.MdiParent = this;
+                placeOrderTC.Dock = DockStyle.Fill;
+                placeOrderTC.FormClosed += PlaceOrderTC_FormClosed;
+                placeOrderTC.Show();
+            }
+            else
+            {
+                placeOrderTC.Activate();
+            }
+        }
+
+        private void PlaceOrderTC_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            placeOrderTC = null;
+        }
+
+        private void orders_equip_Click(object sender, EventArgs e)
+        {
+            if (ordersEquipment == null)
+            {
+                ordersEquipment = new OrdersEquipment();
+                ordersEquipment.MdiParent = this;
+                ordersEquipment.Dock = DockStyle.Fill;
+                ordersEquipment.FormClosed += OrdersEquipment_FormClosed;
+                ordersEquipment.Show();
+            }
+            else
+            {
+                ordersEquipment.Activate();
+            }
+        }
+
+        private void OrdersEquipment_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ordersEquipment = null;
+        }
+
+        private void btnOrderDirect_Click(object sender, EventArgs e)
+        {
+            if (ordersDirect == null)
+            {
+                ordersDirect = new OrdersDirect();
+                ordersDirect.MdiParent = this;
+                ordersDirect.Dock = DockStyle.Fill;
+                ordersDirect.FormClosed += OrdersDirect_FormClosed;
+                ordersDirect.Show();
+            }
+            else
+            {
+                ordersDirect.Activate();
+            }
+        }
+
+        private void OrdersDirect_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ordersDirect = null;
+        }
+
+        private void btnOrdersPrePlaced_Click(object sender, EventArgs e)
+        {
+            if (ordersPrePlaced == null)
+            {
+                ordersPrePlaced = new OrdersPrePlaced();
+                ordersPrePlaced.MdiParent = this;
+                ordersPrePlaced.Dock = DockStyle.Fill;
+                ordersPrePlaced.FormClosed += OrdersPrePlaced_FormClosed;
+                ordersPrePlaced.Show();
+            }
+            else
+            {
+                ordersPrePlaced.Activate();
+            }
+        }
+
+        private void OrdersPrePlaced_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ordersPrePlaced = null;
         }
     }
 

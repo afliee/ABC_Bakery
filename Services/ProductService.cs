@@ -41,7 +41,7 @@ namespace ABC_Bakery.Services
             return _productRepository.Find(id);
         }
 
-        public Product FindByBarcode(string barcode)
+        public Product? FindByBarcode(string barcode)
         {
             if (barcode == null) return null;
             if (string.IsNullOrEmpty(barcode)) return null;
@@ -50,7 +50,8 @@ namespace ABC_Bakery.Services
             // check id is number
             if (!int.TryParse(id, out int result)) return null;
 
-            return _productRepository.Find(result);
+            var product = _productRepository.Find(result);
+            return product.IsActived ? product : null;
         }
 
         public Image GetBarcode(int id)
@@ -76,6 +77,11 @@ namespace ABC_Bakery.Services
         public Product Find(int id)
         {
             return _productRepository.Find(id);
+        }
+
+        public Product FindByName(string name)
+        {
+            return _productRepository.FindByName(name);
         }
     }
 }

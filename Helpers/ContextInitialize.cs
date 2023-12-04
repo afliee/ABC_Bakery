@@ -58,7 +58,8 @@ namespace ABC_Bakery.Helpers
                     new Category { Name = "Bánh Kem", Products = new List<Product>(), Id = 4 },
                     new Category { Name = "Bánh Đóng Gói", Products = new List<Product>(), Id = 5 },
                     new Category { Name = "Bánh Bao", Products = new List<Product>(), Id = 6 },
-                    new Category { Name = "Bánh Theo Mùa", Products = new List<Product>(), Id = 7}
+                    new Category { Name = "Bánh Theo Mùa", Products = new List<Product>(), Id = 7},
+                    new Category { Name = "Thiết bị, Dụng cụ", Products = new List<Product>(), Id = 8}
                 );
 
             ModelBuilder.Entity<Promotion>().HasData(
@@ -109,6 +110,49 @@ namespace ABC_Bakery.Helpers
                 ReceiptType = ReceiptType.Import,
                 Orders = new List<Order>()
             }
+            );
+
+            ModelBuilder.Entity<Product>().HasData(
+                new Product
+                {
+                    Id = 1,
+                    Amount = 50,
+                    CategoryId = 1,
+                    Description = "Bánh mì thịt nguội",
+                    Name = "Bánh mì thịt nguội",
+                    Price = 10000,
+                    ExpiredDate = DateTime.Now.AddDays(1),
+                },
+                new Product
+                {
+                    Id = 2,
+                    Amount = 50,
+                    CategoryId = 1,
+                    Name = "Bánh mì que",
+                    Description = "Bánh mì que",
+                    Price = 10000,
+                    ExpiredDate = DateTime.Now.AddDays(1),
+                },
+                new Product
+                {
+                    Id = 3, 
+                    Amount = 50,
+                    CategoryId = 1,
+                    Name = "Bánh mì phô mai",
+                    Description = "Bánh mì phô mai",
+                    Price = 10000,
+                    ExpiredDate = DateTime.Now.AddDays(1),
+                },
+                new Product
+                {
+                    Id = 4,
+                    Amount = 10,
+                    CategoryId = 8,
+                    Name = "Bộ đồ làm bánh",
+                    Description = "Bộ đồ làm bánh",
+                    Price = 100000,
+                    ExpiredDate = DateTime.Now.AddDays(1),
+                }
             );
         }
     }

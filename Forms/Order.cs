@@ -23,8 +23,10 @@ namespace ABC_Bakery.Forms
     {
         private ProductService _productService;
         private OrderDetailService _orderDetailService;
+        private OrderService _orderService;
         private TextCurrency _total;
         private TextCurrency _moneyChange;
+        private TextCurrency _moneyRecieved;
         private Models.Order _order;
         public Order()
         {
@@ -34,6 +36,7 @@ namespace ABC_Bakery.Forms
             //this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             _productService = ProductService.GetInstance();
             _orderDetailService = OrderDetailService.GetInstance();
+            _orderService = OrderService.GetInstance();
             _total = new TextCurrency
             {
                 Format = TextCurrency.NO_DECIMAL,
@@ -47,20 +50,13 @@ namespace ABC_Bakery.Forms
                 Value = 0,
                 CultureInfor = TextCurrency.VIETNAM
             };
-        }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            // get the value of barcode scanner
-            if (e.KeyCode == Keys.Enter)
+            _moneyRecieved = new TextCurrency
             {
-                if (!tbSearch.Focused)
-                {
-                    MessageBox.Show("Ấn hoặc Nhập vào ô tìm kiếm để tìm sản phẩm", "Thông Báo");
-                    tbSearch.Focus();
-                    return;
-                }
-            }
+                Format = TextCurrency.NO_DECIMAL,
+                Value = 0,
+                CultureInfor = TextCurrency.VIETNAM
+            };
         }
 
         private void Order_Load(object sender, EventArgs e)
@@ -79,21 +75,12 @@ namespace ABC_Bakery.Forms
                 Value = 0,
                 CultureInfor = TextCurrency.VIETNAM
             }.ToString();
-        }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateTime_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
+            btnCanceled.Enabled = false;
+            btnPrint.Enabled = false;
+            btnRenew.Enabled = false;
+            tbSearch.Focus();
+            lb_index.Text = $"No. {Models.Order.PREFIX}{_orderService.Count() - 1}";
         }
 
         private void Order_FormClosing(object sender, FormClosingEventArgs e)
@@ -126,7 +113,7 @@ namespace ABC_Bakery.Forms
                 Product product = _productService.FindByBarcode(barcodeText);
                 if (product == null)
                 {
-                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông Báo");
+                    MessageBox.Show("Không tìm thấy sản phẩm hoặc không khả dụng", "Thông Báo");
                     return;
                 }
                 else
@@ -263,6 +250,7 @@ namespace ABC_Bakery.Forms
                 if (text.All(char.IsDigit))
                 {
                     Calculate_Change();
+
                     return;
                 }
                 else
@@ -296,7 +284,9 @@ namespace ABC_Bakery.Forms
 
             double moneyReceived = double.Parse(moneyReceivedText);
             double total = _total.Value;
-            if (moneyReceived < total)
+            _moneyRecieved.Value = moneyReceived;
+
+            if (moneyReceived <= total)
             {
                 lbMoneyChange.Text = new TextCurrency
                 {
@@ -315,6 +305,7 @@ namespace ABC_Bakery.Forms
                 Value = moneyReceived - total,
                 CultureInfor = TextCurrency.VIETNAM
             }.ToString();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -334,16 +325,30 @@ namespace ABC_Bakery.Forms
             string note = tbNote.Texts;
             User cashier = UserService.GetInstance().Find(1);
             Models.Receipt receipt = ReceiptService.GetInstance().FindByCreatedDayAndReceiptType(DateTime.Now, (int)ReceiptType.Import);
+            OrderType orderType;
+            double deposit = 0;
+            if (_moneyRecieved.Value < _total.Value)
+            {
+                orderType = OrderType.Prepay;
+                deposit = _moneyRecieved.Value;
+            }
+            else
+            {
+                orderType = OrderType.Completed;
+            }
+            MessageBox.Show(string.Format("Tổng tiền: {0}\nNhận: {1}\nTrả lại: {2}\nDeposit: {3}", _total.ToString(), _moneyRecieved.ToString(), _moneyChange.ToString(), deposit), "Thông Báo");
             Models.Order orderEntity = new Models.Order
             {
                 Address = "",
                 CashierId = cashier.Id,
                 ReceiptId = receipt.Id,
                 Name = string.Format("Hóa Đơn Mã {0}_{1}", Models.Receipt.Prefix, receipt.Id),
-                Type = (int)OrderType.Paid,
+                Type = (int)orderType,
                 Note = note,
+                Deposit = deposit,
                 Price = _total.Value,
-                Status = (int)OrderStatus.Completed
+                Status = (int)OrderStatus.Completed,
+                RecordType = (int)OrderRecordType.Direct
             };
             List<OrderDetail> orders = new List<OrderDetail>();
             foreach (DataGridViewRow row in dgProducts.Rows)
@@ -371,7 +376,14 @@ namespace ABC_Bakery.Forms
             if (OrderService.GetInstance().Create(orderEntity))
             {
 
-                MessageBox.Show("Thanh toán thành công", "Thông Báo");
+                if (orderType == OrderType.Prepay)
+                {
+                    MessageBox.Show("Đặt cọc thành công", "Thông Báo");
+                }
+                else
+                {
+                    MessageBox.Show("Thanh toán thành công", "Thông Báo");
+                }
                 _order = orderEntity;
                 // show message box to ask print receipt
                 DialogResult dialogResult = MessageBox.Show("Bạn có muốn in hóa đơn không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -379,6 +391,9 @@ namespace ABC_Bakery.Forms
                 {
                     // print receipt
                     PrintReceipt();
+                    btnRenew.Enabled = true;
+                    btnPrint.Enabled = true;
+                    btnCanceled.Enabled = false;
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -413,6 +428,7 @@ namespace ABC_Bakery.Forms
                 Value = 0,
                 CultureInfor = TextCurrency.VIETNAM
             }.ToString();
+            lb_index.Text = $"No. {Models.Order.PREFIX}{_orderService.Count() - 1}";
         }
 
         private void btnCanceled_Click(object sender, EventArgs e)
@@ -434,6 +450,7 @@ namespace ABC_Bakery.Forms
         private void print_order_PrintPage(object sender, PrintPageEventArgs e)
         {
             print_order.DefaultPageSettings.PaperSize = new PaperSize("A4", 827, 1170);
+            e.Graphics.Clear(Color.White);
             Graphics graphic = e.Graphics;
             Font font = new Font("Courier New", 12);
             float fontHeight = font.GetHeight();
@@ -454,25 +471,51 @@ namespace ABC_Bakery.Forms
             graphic.DrawString("Số Lượng", font, new SolidBrush(Color.Black), startX + 200, startY + offset * 7);
             graphic.DrawString("Đơn Giá", font, new SolidBrush(Color.Black), startX + 300, startY + offset * 7);
             graphic.DrawString("Thành Tiền", font, new SolidBrush(Color.Black), startX + 400, startY + offset * 7);
+            
             int i = 0;
             var orderDetails = _orderDetailService.FindByOrderId(_order.Id);
             foreach (OrderDetail orderDetail in orderDetails)
             {
-                //graphic.DrawString(orderDetail.Product.Name, font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
-                //graphic.DrawString(orderDetail.Quantity.ToString(), font, new SolidBrush(Color.Black), startX + 200, startY + offset * (8 + i));
-                //graphic.DrawString(orderDetail.Price.ToString(), font, new SolidBrush(Color.Black), startX + 300, startY + offset * (8 + i));
-                //graphic.DrawString(orderDetail.Total.ToString(), font, new SolidBrush(Color.Black), startX + 400, startY + offset * (8 + i));
+                var product = _productService.FindById(orderDetail.ProductId);
 
+                graphic.DrawString(product.Name, font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
+                graphic.DrawString(orderDetail.Quantity.ToString(), font, new SolidBrush(Color.Black), startX + 200, startY + offset * (8 + i));
+                graphic.DrawString(new TextCurrency
+                {
+                    CultureInfor = TextCurrency.VIETNAM,
+                    Value = orderDetail.Price,
+                    Format = TextCurrency.NO_DECIMAL
+                }.ToString(), font, new SolidBrush(Color.Black), startX + 300, startY + offset * (8 + i));
+
+                graphic.DrawString(new TextCurrency { 
+                    CultureInfor = TextCurrency.VIETNAM,
+                    Value = orderDetail.Total,
+                    Format = TextCurrency.NO_DECIMAL
+                }.ToString(), font, new SolidBrush(Color.Black), startX + 400, startY + offset * (8 + i));
                 i++;
             }
+            graphic.DrawString(string.Format("Tổng tiền: {0}", new TextCurrency { 
+                CultureInfor = TextCurrency.VIETNAM,
+                Value = _order.Price,
+                Format = TextCurrency.NO_DECIMAL
+            }).ToString(), font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
 
-            graphic.DrawString("Tổng Tiền: " + _order.Price.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
-            
             graphic.DrawString("Cảm ơn quý khách", font, new SolidBrush(Color.Black), startX, startY + offset * (9 + i));
+            
+            // set graphic to print
+            //e.HasMorePages = false;
+        }
 
-            print_order.PrintPage += new PrintPageEventHandler(print_order_PrintPage);
-            print_order.Print();
-
+        private void dgProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // remove product with index = e.RowIndex
+            // check if user click on remove button
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                dgProducts.Rows.RemoveAt(e.RowIndex);
+                Update_Total();
+            }
         }
     }
 }

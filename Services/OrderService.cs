@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ABC_Bakery.Models.Constants;
 
 namespace ABC_Bakery.Services
 {
@@ -17,7 +18,7 @@ namespace ABC_Bakery.Services
 
         private OrderService()
         {
-            _db = new DatabaseContext();
+            _db = SingletonContext.GetInstance().GetDatabaseContext();
             _orderRepository = new OrderRepository(_db);
         }
 
@@ -35,6 +36,18 @@ namespace ABC_Bakery.Services
             return _orderRepository.Create(obj);
         }
 
+        public bool Update(Models.Order obj)
+        {
+            return _orderRepository.Update(obj);
+        }
+
+        public bool UpdatePrice(int id, double price)
+        {
+            var order = _orderRepository.Find(id);
+            order.Price = price;
+            return _orderRepository.Update(order);
+        }
+
         public List<Order> FindAllByReceiptId(int receiptId)
         {
             return _orderRepository.FindAllByReceiptId(receiptId);
@@ -45,9 +58,46 @@ namespace ABC_Bakery.Services
             return _orderRepository.FindAllByType(type);
         }
 
+        public List<Order> FindAllOrderDirectNoPayment(DateTime date)
+        {
+            return _orderRepository.FindAllByRepordTypeAndTypeInDate((int)OrderRecordType.Direct, (int)OrderType.Prepay, date);
+        }
+
+
+        public List<Order> FindAllOrderPrePlaceNoPayment(DateTime date)
+        {
+            return _orderRepository.FindAllByRepordTypeAndTypeInDate((int)OrderRecordType.PreOrder, (int)OrderType.Prepay, date);
+        }
+
+        public List<Order> FindAllOrderEquipNoPayment(DateTime date)
+        {
+            return _orderRepository.FindAllByRepordTypeAndTypeInDate((int)OrderRecordType.Equipment, (int)OrderType.Prepay, date);
+        }
+
+        public List<Order> FindAllOrderDirect(DateTime date)
+        {
+            return _orderRepository.FindAllByRepordTypeAndTypeInDate((int)OrderRecordType.Direct, (int)OrderType.Completed, date);
+        }
+
+
+        public List<Order> FindAllOrderPrePlace(DateTime date)
+        {
+            return _orderRepository.FindAllByRepordTypeAndTypeInDate((int)OrderRecordType.PreOrder, (int)OrderType.Completed, date);
+        }
+
+
+        public List<Order> FindAllOrderEquip(DateTime date)
+        {
+            return _orderRepository.FindAllByRepordTypeAndTypeInDate((int)OrderRecordType.Equipment, (int)OrderType.Completed, date);
+        }
         public Order FindById(int id)
         {
             return _orderRepository.Find(id);
+        }
+
+        public int Count()
+        {
+            return _orderRepository.Count();
         }
     }
 }

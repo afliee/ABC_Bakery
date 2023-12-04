@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrePlaceOrder));
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            dungeonHeaderLabel1 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
+            lbIndex = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             roundedPanel1 = new Helpers.UI.RoundedPanel();
@@ -45,20 +45,20 @@
             roundedPanel2 = new Helpers.UI.RoundedPanel();
             roundedPanel3 = new Helpers.UI.RoundedPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
+            roundedPanel18 = new Helpers.UI.RoundedPanel();
+            datetimePickerCustom4 = new Helpers.UI.DatetimePickerCustom();
+            label17 = new Label();
             roundedPanel7 = new Helpers.UI.RoundedPanel();
-            datetimePickerCustom3 = new Helpers.UI.DatetimePickerCustom();
+            dt_recieved = new Helpers.UI.DatetimePickerCustom();
             label1 = new Label();
-            roundedPanel5 = new Helpers.UI.RoundedPanel();
-            datetimePickerCustom2 = new Helpers.UI.DatetimePickerCustom();
-            label4 = new Label();
             roundedPanel8 = new Helpers.UI.RoundedPanel();
             roundedPanel15 = new Helpers.UI.RoundedPanel();
             label14 = new Label();
             cyberRadioButton1 = new ReaLTaiizor.Controls.CyberRadioButton();
             cyberRadioButton2 = new ReaLTaiizor.Controls.CyberRadioButton();
             label3 = new Label();
-            rb_not_delivery = new ReaLTaiizor.Controls.CyberRadioButton();
             rb_delivery = new ReaLTaiizor.Controls.CyberRadioButton();
+            rb_not_delivery = new ReaLTaiizor.Controls.CyberRadioButton();
             roundedPanel9 = new Helpers.UI.RoundedPanel();
             tbDiscount = new Helpers.UI.RJTextBox();
             label5 = new Label();
@@ -66,32 +66,28 @@
             tbSurcharge = new Helpers.UI.RJTextBox();
             label7 = new Label();
             label6 = new Label();
-            roundedPanel12 = new Helpers.UI.RoundedPanel();
-            tbReceived = new Helpers.UI.RJTextBox();
-            label8 = new Label();
-            label11 = new Label();
             roundedPanel13 = new Helpers.UI.RoundedPanel();
-            rjTextBox1 = new Helpers.UI.RJTextBox();
+            tbDeposit = new Helpers.UI.RJTextBox();
             label9 = new Label();
             label10 = new Label();
             roundedPanel14 = new Helpers.UI.RoundedPanel();
-            rjTextBox2 = new Helpers.UI.RJTextBox();
+            tbTotal = new Helpers.UI.RJTextBox();
             label12 = new Label();
             label13 = new Label();
             roundedPanel16 = new Helpers.UI.RoundedPanel();
+            parrotGroupBox2 = new ReaLTaiizor.Controls.ParrotGroupBox();
+            rb_not_done = new ReaLTaiizor.Controls.CyberRadioButton();
+            rb_done = new ReaLTaiizor.Controls.CyberRadioButton();
             roundedPanel17 = new Helpers.UI.RoundedPanel();
             label15 = new Label();
             cyberRadioButton3 = new ReaLTaiizor.Controls.CyberRadioButton();
             cyberRadioButton4 = new ReaLTaiizor.Controls.CyberRadioButton();
-            label16 = new Label();
-            cyberRadioButton5 = new ReaLTaiizor.Controls.CyberRadioButton();
-            cyberRadioButton6 = new ReaLTaiizor.Controls.CyberRadioButton();
             parrotGroupBox1 = new ReaLTaiizor.Controls.ParrotGroupBox();
             tbNote = new Helpers.UI.RJTextBox();
             roundedPanel6 = new Helpers.UI.RoundedPanel();
             label2 = new Label();
             metroDivider1 = new ReaLTaiizor.Controls.MetroDivider();
-            rjButton2 = new Helpers.UI.RJButton();
+            btnSave = new Helpers.UI.RJButton();
             panel3 = new Panel();
             panel8 = new Panel();
             roundedPanel11 = new Helpers.UI.RoundedPanel();
@@ -117,6 +113,7 @@
             tbSearch = new Helpers.UI.RJTextBox();
             pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
+            print_order = new System.Drawing.Printing.PrintDocument();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -124,16 +121,16 @@
             roundedPanel2.SuspendLayout();
             roundedPanel3.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
+            roundedPanel18.SuspendLayout();
             roundedPanel7.SuspendLayout();
-            roundedPanel5.SuspendLayout();
             roundedPanel8.SuspendLayout();
             roundedPanel15.SuspendLayout();
             roundedPanel9.SuspendLayout();
             roundedPanel10.SuspendLayout();
-            roundedPanel12.SuspendLayout();
             roundedPanel13.SuspendLayout();
             roundedPanel14.SuspendLayout();
             roundedPanel16.SuspendLayout();
+            parrotGroupBox2.SuspendLayout();
             roundedPanel17.SuspendLayout();
             parrotGroupBox1.SuspendLayout();
             roundedPanel6.SuspendLayout();
@@ -154,7 +151,7 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
-            panel1.Controls.Add(dungeonHeaderLabel1);
+            panel1.Controls.Add(lbIndex);
             panel1.Controls.Add(bigLabel1);
             panel1.Controls.Add(flowLayoutPanel1);
             panel1.Dock = DockStyle.Top;
@@ -163,18 +160,18 @@
             panel1.Size = new System.Drawing.Size(1189, 87);
             panel1.TabIndex = 10;
             // 
-            // dungeonHeaderLabel1
+            // lbIndex
             // 
-            dungeonHeaderLabel1.AutoSize = true;
-            dungeonHeaderLabel1.BackColor = System.Drawing.Color.Transparent;
-            dungeonHeaderLabel1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            dungeonHeaderLabel1.ForeColor = System.Drawing.Color.White;
-            dungeonHeaderLabel1.Location = new System.Drawing.Point(10, 49);
-            dungeonHeaderLabel1.Name = "dungeonHeaderLabel1";
-            dungeonHeaderLabel1.Size = new System.Drawing.Size(83, 20);
-            dungeonHeaderLabel1.TabIndex = 1;
-            dungeonHeaderLabel1.Text = "No. 00001";
-            dungeonHeaderLabel1.TextAlign = ContentAlignment.MiddleLeft;
+            lbIndex.AutoSize = true;
+            lbIndex.BackColor = System.Drawing.Color.Transparent;
+            lbIndex.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            lbIndex.ForeColor = System.Drawing.Color.White;
+            lbIndex.Location = new System.Drawing.Point(10, 49);
+            lbIndex.Name = "lbIndex";
+            lbIndex.Size = new System.Drawing.Size(83, 20);
+            lbIndex.TabIndex = 1;
+            lbIndex.Text = "No. 00001";
+            lbIndex.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // bigLabel1
             // 
@@ -251,7 +248,7 @@
             roundedPanel3.BackColor = System.Drawing.Color.FromArgb(249, 245, 220);
             roundedPanel3.Controls.Add(flowLayoutPanel2);
             roundedPanel3.Controls.Add(roundedPanel6);
-            roundedPanel3.Controls.Add(rjButton2);
+            roundedPanel3.Controls.Add(btnSave);
             roundedPanel3.Dock = DockStyle.Fill;
             roundedPanel3.ForeColor = System.Drawing.Color.White;
             roundedPanel3.Location = new System.Drawing.Point(5, 5);
@@ -262,12 +259,11 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.AutoScroll = true;
+            flowLayoutPanel2.Controls.Add(roundedPanel18);
             flowLayoutPanel2.Controls.Add(roundedPanel7);
-            flowLayoutPanel2.Controls.Add(roundedPanel5);
             flowLayoutPanel2.Controls.Add(roundedPanel8);
             flowLayoutPanel2.Controls.Add(roundedPanel9);
             flowLayoutPanel2.Controls.Add(roundedPanel10);
-            flowLayoutPanel2.Controls.Add(roundedPanel12);
             flowLayoutPanel2.Controls.Add(roundedPanel13);
             flowLayoutPanel2.Controls.Add(roundedPanel14);
             flowLayoutPanel2.Controls.Add(roundedPanel16);
@@ -278,29 +274,67 @@
             flowLayoutPanel2.Size = new System.Drawing.Size(382, 872);
             flowLayoutPanel2.TabIndex = 8;
             // 
+            // roundedPanel18
+            // 
+            roundedPanel18.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
+            roundedPanel18.Controls.Add(datetimePickerCustom4);
+            roundedPanel18.Controls.Add(label17);
+            roundedPanel18.ForeColor = System.Drawing.Color.White;
+            roundedPanel18.Location = new System.Drawing.Point(3, 3);
+            roundedPanel18.Name = "roundedPanel18";
+            roundedPanel18.Size = new System.Drawing.Size(374, 60);
+            roundedPanel18.TabIndex = 4;
+            // 
+            // datetimePickerCustom4
+            // 
+            datetimePickerCustom4.BorderColor = System.Drawing.Color.FromArgb(242, 236, 190);
+            datetimePickerCustom4.BorderSize = 3;
+            datetimePickerCustom4.CustomFormat = "dd/MM/yyyy";
+            datetimePickerCustom4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            datetimePickerCustom4.Format = DateTimePickerFormat.Custom;
+            datetimePickerCustom4.Location = new System.Drawing.Point(217, 0);
+            datetimePickerCustom4.MinimumSize = new System.Drawing.Size(4, 60);
+            datetimePickerCustom4.Name = "datetimePickerCustom4";
+            datetimePickerCustom4.Size = new System.Drawing.Size(154, 60);
+            datetimePickerCustom4.SkinColor = System.Drawing.Color.FromArgb(242, 236, 190);
+            datetimePickerCustom4.TabIndex = 0;
+            datetimePickerCustom4.TextColor = System.Drawing.Color.Black;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = System.Drawing.Color.Black;
+            label17.Location = new System.Drawing.Point(12, 15);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(92, 25);
+            label17.TabIndex = 0;
+            label17.Text = "Ngày đặt";
+            // 
             // roundedPanel7
             // 
             roundedPanel7.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            roundedPanel7.Controls.Add(datetimePickerCustom3);
+            roundedPanel7.Controls.Add(dt_recieved);
             roundedPanel7.Controls.Add(label1);
             roundedPanel7.ForeColor = System.Drawing.Color.White;
-            roundedPanel7.Location = new System.Drawing.Point(3, 3);
+            roundedPanel7.Location = new System.Drawing.Point(3, 69);
             roundedPanel7.Name = "roundedPanel7";
             roundedPanel7.Size = new System.Drawing.Size(374, 60);
             roundedPanel7.TabIndex = 4;
             // 
-            // datetimePickerCustom3
+            // dt_recieved
             // 
-            datetimePickerCustom3.BorderColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            datetimePickerCustom3.BorderSize = 3;
-            datetimePickerCustom3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            datetimePickerCustom3.Location = new System.Drawing.Point(127, 0);
-            datetimePickerCustom3.MinimumSize = new System.Drawing.Size(4, 60);
-            datetimePickerCustom3.Name = "datetimePickerCustom3";
-            datetimePickerCustom3.Size = new System.Drawing.Size(244, 60);
-            datetimePickerCustom3.SkinColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            datetimePickerCustom3.TabIndex = 0;
-            datetimePickerCustom3.TextColor = System.Drawing.Color.Black;
+            dt_recieved.BorderColor = System.Drawing.Color.FromArgb(242, 236, 190);
+            dt_recieved.BorderSize = 3;
+            dt_recieved.CustomFormat = "dd/MM/yyyy";
+            dt_recieved.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dt_recieved.Location = new System.Drawing.Point(217, 0);
+            dt_recieved.MinimumSize = new System.Drawing.Size(4, 60);
+            dt_recieved.Name = "dt_recieved";
+            dt_recieved.Size = new System.Drawing.Size(154, 60);
+            dt_recieved.SkinColor = System.Drawing.Color.FromArgb(242, 236, 190);
+            dt_recieved.TabIndex = 0;
+            dt_recieved.TextColor = System.Drawing.Color.Black;
             // 
             // label1
             // 
@@ -309,52 +343,17 @@
             label1.ForeColor = System.Drawing.Color.Black;
             label1.Location = new System.Drawing.Point(12, 15);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(92, 25);
+            label1.Size = new System.Drawing.Size(106, 25);
             label1.TabIndex = 0;
-            label1.Text = "Ngày đặt";
-            // 
-            // roundedPanel5
-            // 
-            roundedPanel5.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            roundedPanel5.Controls.Add(datetimePickerCustom2);
-            roundedPanel5.Controls.Add(label4);
-            roundedPanel5.ForeColor = System.Drawing.Color.White;
-            roundedPanel5.Location = new System.Drawing.Point(3, 69);
-            roundedPanel5.Name = "roundedPanel5";
-            roundedPanel5.Size = new System.Drawing.Size(374, 60);
-            roundedPanel5.TabIndex = 3;
-            // 
-            // datetimePickerCustom2
-            // 
-            datetimePickerCustom2.BorderColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            datetimePickerCustom2.BorderSize = 3;
-            datetimePickerCustom2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            datetimePickerCustom2.Location = new System.Drawing.Point(127, 0);
-            datetimePickerCustom2.MinimumSize = new System.Drawing.Size(4, 60);
-            datetimePickerCustom2.Name = "datetimePickerCustom2";
-            datetimePickerCustom2.Size = new System.Drawing.Size(244, 60);
-            datetimePickerCustom2.SkinColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            datetimePickerCustom2.TabIndex = 0;
-            datetimePickerCustom2.TextColor = System.Drawing.Color.Black;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = System.Drawing.Color.Black;
-            label4.Location = new System.Drawing.Point(12, 15);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(106, 25);
-            label4.TabIndex = 0;
-            label4.Text = "Ngày nhận";
+            label1.Text = "Ngày nhận";
             // 
             // roundedPanel8
             // 
             roundedPanel8.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
             roundedPanel8.Controls.Add(roundedPanel15);
             roundedPanel8.Controls.Add(label3);
-            roundedPanel8.Controls.Add(rb_not_delivery);
             roundedPanel8.Controls.Add(rb_delivery);
+            roundedPanel8.Controls.Add(rb_not_delivery);
             roundedPanel8.ForeColor = System.Drawing.Color.White;
             roundedPanel8.Location = new System.Drawing.Point(3, 135);
             roundedPanel8.Name = "roundedPanel8";
@@ -479,48 +478,6 @@
             label3.TabIndex = 0;
             label3.Text = "Giao hàng";
             // 
-            // rb_not_delivery
-            // 
-            rb_not_delivery.BackColor = System.Drawing.Color.Transparent;
-            rb_not_delivery.Background = true;
-            rb_not_delivery.Background_WidthPen = 2F;
-            rb_not_delivery.BackgroundPen = true;
-            rb_not_delivery.Checked = false;
-            rb_not_delivery.Color_1_Background_value = System.Drawing.Color.Empty;
-            rb_not_delivery.Color_2_Background_value = System.Drawing.Color.Empty;
-            rb_not_delivery.ColorBackground = System.Drawing.Color.FromArgb(37, 52, 68);
-            rb_not_delivery.ColorBackground_1 = System.Drawing.Color.FromArgb(37, 52, 68);
-            rb_not_delivery.ColorBackground_2 = System.Drawing.Color.FromArgb(41, 63, 86);
-            rb_not_delivery.ColorBackground_Pen = System.Drawing.Color.FromArgb(29, 200, 238);
-            rb_not_delivery.ColorChecked = System.Drawing.Color.FromArgb(154, 59, 59);
-            rb_not_delivery.ColorPen_1 = System.Drawing.Color.FromArgb(37, 52, 68);
-            rb_not_delivery.ColorPen_2 = System.Drawing.Color.FromArgb(41, 63, 86);
-            rb_not_delivery.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            rb_not_delivery.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
-            rb_not_delivery.Effect_1_Transparency = 25;
-            rb_not_delivery.Effect_2 = true;
-            rb_not_delivery.Effect_2_ColorBackground = System.Drawing.Color.White;
-            rb_not_delivery.Effect_2_Transparency = 15;
-            rb_not_delivery.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rb_not_delivery.ForeColor = System.Drawing.Color.Black;
-            rb_not_delivery.LinearGradient_Background = false;
-            rb_not_delivery.LinearGradient_Value = false;
-            rb_not_delivery.LinearGradientPen = false;
-            rb_not_delivery.Location = new System.Drawing.Point(132, 7);
-            rb_not_delivery.Name = "rb_not_delivery";
-            rb_not_delivery.RGB = false;
-            rb_not_delivery.Rounding = true;
-            rb_not_delivery.RoundingInt = 100;
-            rb_not_delivery.Size = new System.Drawing.Size(107, 45);
-            rb_not_delivery.SizeChecked = 8;
-            rb_not_delivery.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            rb_not_delivery.TabIndex = 5;
-            rb_not_delivery.Tag = "Cyber";
-            rb_not_delivery.TextButton = "Có";
-            rb_not_delivery.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            rb_not_delivery.Timer_Effect_1 = 1;
-            rb_not_delivery.Timer_RGB = 300;
-            // 
             // rb_delivery
             // 
             rb_delivery.BackColor = System.Drawing.Color.Transparent;
@@ -541,27 +498,71 @@
             rb_delivery.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
             rb_delivery.Effect_1_Transparency = 25;
             rb_delivery.Effect_2 = true;
-            rb_delivery.Effect_2_ColorBackground = System.Drawing.Color.Black;
+            rb_delivery.Effect_2_ColorBackground = System.Drawing.Color.White;
             rb_delivery.Effect_2_Transparency = 15;
             rb_delivery.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             rb_delivery.ForeColor = System.Drawing.Color.Black;
             rb_delivery.LinearGradient_Background = false;
             rb_delivery.LinearGradient_Value = false;
             rb_delivery.LinearGradientPen = false;
-            rb_delivery.Location = new System.Drawing.Point(245, 7);
+            rb_delivery.Location = new System.Drawing.Point(132, 7);
             rb_delivery.Name = "rb_delivery";
             rb_delivery.RGB = false;
             rb_delivery.Rounding = true;
             rb_delivery.RoundingInt = 100;
-            rb_delivery.Size = new System.Drawing.Size(118, 45);
+            rb_delivery.Size = new System.Drawing.Size(107, 45);
             rb_delivery.SizeChecked = 8;
             rb_delivery.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            rb_delivery.TabIndex = 6;
+            rb_delivery.TabIndex = 5;
             rb_delivery.Tag = "Cyber";
-            rb_delivery.TextButton = "Không";
+            rb_delivery.TextButton = "Có";
             rb_delivery.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             rb_delivery.Timer_Effect_1 = 1;
             rb_delivery.Timer_RGB = 300;
+            rb_delivery.Click += rb_delivery_Click;
+            // 
+            // rb_not_delivery
+            // 
+            rb_not_delivery.BackColor = System.Drawing.Color.Transparent;
+            rb_not_delivery.Background = true;
+            rb_not_delivery.Background_WidthPen = 2F;
+            rb_not_delivery.BackgroundPen = true;
+            rb_not_delivery.Checked = false;
+            rb_not_delivery.Color_1_Background_value = System.Drawing.Color.Empty;
+            rb_not_delivery.Color_2_Background_value = System.Drawing.Color.Empty;
+            rb_not_delivery.ColorBackground = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_not_delivery.ColorBackground_1 = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_not_delivery.ColorBackground_2 = System.Drawing.Color.FromArgb(41, 63, 86);
+            rb_not_delivery.ColorBackground_Pen = System.Drawing.Color.FromArgb(29, 200, 238);
+            rb_not_delivery.ColorChecked = System.Drawing.Color.FromArgb(154, 59, 59);
+            rb_not_delivery.ColorPen_1 = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_not_delivery.ColorPen_2 = System.Drawing.Color.FromArgb(41, 63, 86);
+            rb_not_delivery.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            rb_not_delivery.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
+            rb_not_delivery.Effect_1_Transparency = 25;
+            rb_not_delivery.Effect_2 = true;
+            rb_not_delivery.Effect_2_ColorBackground = System.Drawing.Color.Black;
+            rb_not_delivery.Effect_2_Transparency = 15;
+            rb_not_delivery.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            rb_not_delivery.ForeColor = System.Drawing.Color.Black;
+            rb_not_delivery.LinearGradient_Background = false;
+            rb_not_delivery.LinearGradient_Value = false;
+            rb_not_delivery.LinearGradientPen = false;
+            rb_not_delivery.Location = new System.Drawing.Point(245, 7);
+            rb_not_delivery.Name = "rb_not_delivery";
+            rb_not_delivery.RGB = false;
+            rb_not_delivery.Rounding = true;
+            rb_not_delivery.RoundingInt = 100;
+            rb_not_delivery.Size = new System.Drawing.Size(118, 45);
+            rb_not_delivery.SizeChecked = 8;
+            rb_not_delivery.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            rb_not_delivery.TabIndex = 6;
+            rb_not_delivery.Tag = "Cyber";
+            rb_not_delivery.TextButton = "Không";
+            rb_not_delivery.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            rb_not_delivery.Timer_Effect_1 = 1;
+            rb_not_delivery.Timer_RGB = 300;
+            rb_not_delivery.Click += rb_not_delivery_Click;
             // 
             // roundedPanel9
             // 
@@ -642,6 +643,7 @@
             tbSurcharge.TextAlign = HorizontalAlignment.Left;
             tbSurcharge.Texts = "0";
             tbSurcharge.UnderlinedStyle = false;
+            tbSurcharge._TextChanged += tbSurcharge__TextChanged;
             // 
             // label7
             // 
@@ -665,97 +667,41 @@
             label6.TabIndex = 0;
             label6.Text = "Phụ thu";
             // 
-            // roundedPanel12
-            // 
-            roundedPanel12.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            roundedPanel12.Controls.Add(tbReceived);
-            roundedPanel12.Controls.Add(label8);
-            roundedPanel12.Controls.Add(label11);
-            roundedPanel12.ForeColor = System.Drawing.Color.White;
-            roundedPanel12.Location = new System.Drawing.Point(3, 333);
-            roundedPanel12.Name = "roundedPanel12";
-            roundedPanel12.Size = new System.Drawing.Size(374, 60);
-            roundedPanel12.TabIndex = 7;
-            // 
-            // tbReceived
-            // 
-            tbReceived.BackColor = SystemColors.Window;
-            tbReceived.BorderColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            tbReceived.BorderFocusColor = System.Drawing.Color.HotPink;
-            tbReceived.BorderRadius = 10;
-            tbReceived.BorderSize = 2;
-            tbReceived.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            tbReceived.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            tbReceived.Location = new System.Drawing.Point(106, 6);
-            tbReceived.Margin = new Padding(4);
-            tbReceived.Multiline = false;
-            tbReceived.Name = "tbReceived";
-            tbReceived.Padding = new Padding(10, 7, 10, 7);
-            tbReceived.PasswordChar = false;
-            tbReceived.PlaceholderColor = System.Drawing.Color.DarkGray;
-            tbReceived.PlaceholderText = "";
-            tbReceived.Size = new System.Drawing.Size(216, 47);
-            tbReceived.TabIndex = 3;
-            tbReceived.TextAlign = HorizontalAlignment.Left;
-            tbReceived.Texts = "0";
-            tbReceived.UnderlinedStyle = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = System.Drawing.Color.Black;
-            label8.Location = new System.Drawing.Point(320, 16);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(54, 25);
-            label8.TabIndex = 2;
-            label8.Text = "VND";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = System.Drawing.Color.Black;
-            label11.Location = new System.Drawing.Point(12, 16);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(96, 25);
-            label11.TabIndex = 0;
-            label11.Text = "Tiền nhận";
-            // 
             // roundedPanel13
             // 
             roundedPanel13.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            roundedPanel13.Controls.Add(rjTextBox1);
+            roundedPanel13.Controls.Add(tbDeposit);
             roundedPanel13.Controls.Add(label9);
             roundedPanel13.Controls.Add(label10);
             roundedPanel13.ForeColor = System.Drawing.Color.White;
-            roundedPanel13.Location = new System.Drawing.Point(3, 399);
+            roundedPanel13.Location = new System.Drawing.Point(3, 333);
             roundedPanel13.Name = "roundedPanel13";
             roundedPanel13.Size = new System.Drawing.Size(374, 60);
             roundedPanel13.TabIndex = 8;
             // 
-            // rjTextBox1
+            // tbDeposit
             // 
-            rjTextBox1.BackColor = SystemColors.Window;
-            rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            rjTextBox1.BorderRadius = 10;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            rjTextBox1.Location = new System.Drawing.Point(106, 6);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            rjTextBox1.PlaceholderText = "";
-            rjTextBox1.Size = new System.Drawing.Size(216, 47);
-            rjTextBox1.TabIndex = 3;
-            rjTextBox1.TextAlign = HorizontalAlignment.Left;
-            rjTextBox1.Texts = "0";
-            rjTextBox1.UnderlinedStyle = false;
+            tbDeposit.BackColor = SystemColors.Window;
+            tbDeposit.BorderColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            tbDeposit.BorderFocusColor = System.Drawing.Color.HotPink;
+            tbDeposit.BorderRadius = 10;
+            tbDeposit.BorderSize = 2;
+            tbDeposit.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbDeposit.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            tbDeposit.Location = new System.Drawing.Point(106, 6);
+            tbDeposit.Margin = new Padding(4);
+            tbDeposit.Multiline = false;
+            tbDeposit.Name = "tbDeposit";
+            tbDeposit.Padding = new Padding(10, 7, 10, 7);
+            tbDeposit.PasswordChar = false;
+            tbDeposit.PlaceholderColor = System.Drawing.Color.DarkGray;
+            tbDeposit.PlaceholderText = "";
+            tbDeposit.Size = new System.Drawing.Size(216, 47);
+            tbDeposit.TabIndex = 3;
+            tbDeposit.TextAlign = HorizontalAlignment.Left;
+            tbDeposit.Texts = "0";
+            tbDeposit.UnderlinedStyle = false;
+            tbDeposit._TextChanged += tbDeposit__TextChanged;
             // 
             // label9
             // 
@@ -782,37 +728,38 @@
             // roundedPanel14
             // 
             roundedPanel14.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
-            roundedPanel14.Controls.Add(rjTextBox2);
+            roundedPanel14.Controls.Add(tbTotal);
             roundedPanel14.Controls.Add(label12);
             roundedPanel14.Controls.Add(label13);
             roundedPanel14.ForeColor = System.Drawing.Color.White;
-            roundedPanel14.Location = new System.Drawing.Point(3, 465);
+            roundedPanel14.Location = new System.Drawing.Point(3, 399);
             roundedPanel14.Name = "roundedPanel14";
             roundedPanel14.Size = new System.Drawing.Size(374, 60);
             roundedPanel14.TabIndex = 9;
             // 
-            // rjTextBox2
+            // tbTotal
             // 
-            rjTextBox2.BackColor = SystemColors.ScrollBar;
-            rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            rjTextBox2.BorderRadius = 10;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            rjTextBox2.Location = new System.Drawing.Point(106, 6);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            rjTextBox2.PlaceholderText = "";
-            rjTextBox2.Size = new System.Drawing.Size(216, 47);
-            rjTextBox2.TabIndex = 3;
-            rjTextBox2.TextAlign = HorizontalAlignment.Left;
-            rjTextBox2.Texts = "0";
-            rjTextBox2.UnderlinedStyle = false;
+            tbTotal.BackColor = SystemColors.ScrollBar;
+            tbTotal.BorderColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            tbTotal.BorderFocusColor = System.Drawing.Color.HotPink;
+            tbTotal.BorderRadius = 10;
+            tbTotal.BorderSize = 2;
+            tbTotal.Enabled = false;
+            tbTotal.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            tbTotal.ForeColor = System.Drawing.Color.FromArgb(64, 64, 64);
+            tbTotal.Location = new System.Drawing.Point(106, 6);
+            tbTotal.Margin = new Padding(4);
+            tbTotal.Multiline = false;
+            tbTotal.Name = "tbTotal";
+            tbTotal.Padding = new Padding(10, 7, 10, 7);
+            tbTotal.PasswordChar = false;
+            tbTotal.PlaceholderColor = System.Drawing.Color.DarkGray;
+            tbTotal.PlaceholderText = "";
+            tbTotal.Size = new System.Drawing.Size(216, 47);
+            tbTotal.TabIndex = 3;
+            tbTotal.TextAlign = HorizontalAlignment.Left;
+            tbTotal.Texts = "0";
+            tbTotal.UnderlinedStyle = false;
             // 
             // label12
             // 
@@ -839,15 +786,115 @@
             // roundedPanel16
             // 
             roundedPanel16.BackColor = System.Drawing.Color.FromArgb(242, 236, 190);
+            roundedPanel16.Controls.Add(parrotGroupBox2);
             roundedPanel16.Controls.Add(roundedPanel17);
-            roundedPanel16.Controls.Add(label16);
-            roundedPanel16.Controls.Add(cyberRadioButton5);
-            roundedPanel16.Controls.Add(cyberRadioButton6);
             roundedPanel16.ForeColor = System.Drawing.Color.White;
-            roundedPanel16.Location = new System.Drawing.Point(3, 531);
+            roundedPanel16.Location = new System.Drawing.Point(3, 465);
             roundedPanel16.Name = "roundedPanel16";
-            roundedPanel16.Size = new System.Drawing.Size(374, 110);
+            roundedPanel16.Size = new System.Drawing.Size(374, 99);
             roundedPanel16.TabIndex = 4;
+            // 
+            // parrotGroupBox2
+            // 
+            parrotGroupBox2.BorderColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
+            parrotGroupBox2.BorderWidth = 0;
+            parrotGroupBox2.Controls.Add(rb_not_done);
+            parrotGroupBox2.Controls.Add(rb_done);
+            parrotGroupBox2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            parrotGroupBox2.Location = new System.Drawing.Point(3, 3);
+            parrotGroupBox2.Name = "parrotGroupBox2";
+            parrotGroupBox2.ShowText = true;
+            parrotGroupBox2.Size = new System.Drawing.Size(371, 93);
+            parrotGroupBox2.TabIndex = 8;
+            parrotGroupBox2.TabStop = false;
+            parrotGroupBox2.Text = "Thanh toán";
+            parrotGroupBox2.TextColor = System.Drawing.Color.Black;
+            // 
+            // rb_not_done
+            // 
+            rb_not_done.BackColor = System.Drawing.Color.Transparent;
+            rb_not_done.Background = true;
+            rb_not_done.Background_WidthPen = 2F;
+            rb_not_done.BackgroundPen = true;
+            rb_not_done.Checked = false;
+            rb_not_done.Color_1_Background_value = System.Drawing.Color.Empty;
+            rb_not_done.Color_2_Background_value = System.Drawing.Color.Empty;
+            rb_not_done.ColorBackground = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_not_done.ColorBackground_1 = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_not_done.ColorBackground_2 = System.Drawing.Color.FromArgb(41, 63, 86);
+            rb_not_done.ColorBackground_Pen = System.Drawing.Color.FromArgb(29, 200, 238);
+            rb_not_done.ColorChecked = System.Drawing.Color.FromArgb(154, 59, 59);
+            rb_not_done.ColorPen_1 = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_not_done.ColorPen_2 = System.Drawing.Color.FromArgb(41, 63, 86);
+            rb_not_done.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            rb_not_done.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
+            rb_not_done.Effect_1_Transparency = 25;
+            rb_not_done.Effect_2 = true;
+            rb_not_done.Effect_2_ColorBackground = System.Drawing.Color.Black;
+            rb_not_done.Effect_2_Transparency = 15;
+            rb_not_done.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rb_not_done.ForeColor = System.Drawing.Color.Black;
+            rb_not_done.LinearGradient_Background = false;
+            rb_not_done.LinearGradient_Value = false;
+            rb_not_done.LinearGradientPen = false;
+            rb_not_done.Location = new System.Drawing.Point(187, 42);
+            rb_not_done.Name = "rb_not_done";
+            rb_not_done.RGB = false;
+            rb_not_done.Rounding = true;
+            rb_not_done.RoundingInt = 100;
+            rb_not_done.Size = new System.Drawing.Size(173, 45);
+            rb_not_done.SizeChecked = 8;
+            rb_not_done.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            rb_not_done.TabIndex = 6;
+            rb_not_done.Tag = "Cyber";
+            rb_not_done.TextButton = "Chưa hoàn thành";
+            rb_not_done.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            rb_not_done.Timer_Effect_1 = 1;
+            rb_not_done.Timer_RGB = 300;
+            rb_not_done.Click += rb_not_done_Click;
+            // 
+            // rb_done
+            // 
+            rb_done.BackColor = System.Drawing.Color.Transparent;
+            rb_done.Background = true;
+            rb_done.Background_WidthPen = 2F;
+            rb_done.BackgroundPen = true;
+            rb_done.Checked = false;
+            rb_done.Color_1_Background_value = System.Drawing.Color.Empty;
+            rb_done.Color_2_Background_value = System.Drawing.Color.Empty;
+            rb_done.ColorBackground = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_done.ColorBackground_1 = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_done.ColorBackground_2 = System.Drawing.Color.FromArgb(41, 63, 86);
+            rb_done.ColorBackground_Pen = System.Drawing.Color.FromArgb(29, 200, 238);
+            rb_done.ColorChecked = System.Drawing.Color.FromArgb(154, 59, 59);
+            rb_done.ColorPen_1 = System.Drawing.Color.FromArgb(37, 52, 68);
+            rb_done.ColorPen_2 = System.Drawing.Color.FromArgb(41, 63, 86);
+            rb_done.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            rb_done.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
+            rb_done.Effect_1_Transparency = 25;
+            rb_done.Effect_2 = true;
+            rb_done.Effect_2_ColorBackground = System.Drawing.Color.White;
+            rb_done.Effect_2_Transparency = 15;
+            rb_done.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rb_done.ForeColor = System.Drawing.Color.Black;
+            rb_done.LinearGradient_Background = false;
+            rb_done.LinearGradient_Value = false;
+            rb_done.LinearGradientPen = false;
+            rb_done.Location = new System.Drawing.Point(12, 42);
+            rb_done.Name = "rb_done";
+            rb_done.RGB = false;
+            rb_done.Rounding = true;
+            rb_done.RoundingInt = 100;
+            rb_done.Size = new System.Drawing.Size(169, 45);
+            rb_done.SizeChecked = 8;
+            rb_done.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            rb_done.TabIndex = 5;
+            rb_done.Tag = "Cyber";
+            rb_done.TextButton = "Hoàn thành";
+            rb_done.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            rb_done.Timer_Effect_1 = 1;
+            rb_done.Timer_RGB = 300;
+            rb_done.Click += rb_done_Click;
             // 
             // roundedPanel17
             // 
@@ -956,108 +1003,13 @@
             cyberRadioButton4.Timer_Effect_1 = 1;
             cyberRadioButton4.Timer_RGB = 300;
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = System.Drawing.Color.Black;
-            label16.Location = new System.Drawing.Point(12, 15);
-            label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(99, 25);
-            label16.TabIndex = 0;
-            label16.Text = "Giao hàng";
-            // 
-            // cyberRadioButton5
-            // 
-            cyberRadioButton5.BackColor = System.Drawing.Color.Transparent;
-            cyberRadioButton5.Background = true;
-            cyberRadioButton5.Background_WidthPen = 2F;
-            cyberRadioButton5.BackgroundPen = true;
-            cyberRadioButton5.Checked = false;
-            cyberRadioButton5.Color_1_Background_value = System.Drawing.Color.Empty;
-            cyberRadioButton5.Color_2_Background_value = System.Drawing.Color.Empty;
-            cyberRadioButton5.ColorBackground = System.Drawing.Color.FromArgb(37, 52, 68);
-            cyberRadioButton5.ColorBackground_1 = System.Drawing.Color.FromArgb(37, 52, 68);
-            cyberRadioButton5.ColorBackground_2 = System.Drawing.Color.FromArgb(41, 63, 86);
-            cyberRadioButton5.ColorBackground_Pen = System.Drawing.Color.FromArgb(29, 200, 238);
-            cyberRadioButton5.ColorChecked = System.Drawing.Color.FromArgb(154, 59, 59);
-            cyberRadioButton5.ColorPen_1 = System.Drawing.Color.FromArgb(37, 52, 68);
-            cyberRadioButton5.ColorPen_2 = System.Drawing.Color.FromArgb(41, 63, 86);
-            cyberRadioButton5.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberRadioButton5.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
-            cyberRadioButton5.Effect_1_Transparency = 25;
-            cyberRadioButton5.Effect_2 = true;
-            cyberRadioButton5.Effect_2_ColorBackground = System.Drawing.Color.White;
-            cyberRadioButton5.Effect_2_Transparency = 15;
-            cyberRadioButton5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            cyberRadioButton5.ForeColor = System.Drawing.Color.Black;
-            cyberRadioButton5.LinearGradient_Background = false;
-            cyberRadioButton5.LinearGradient_Value = false;
-            cyberRadioButton5.LinearGradientPen = false;
-            cyberRadioButton5.Location = new System.Drawing.Point(145, 3);
-            cyberRadioButton5.Name = "cyberRadioButton5";
-            cyberRadioButton5.RGB = false;
-            cyberRadioButton5.Rounding = true;
-            cyberRadioButton5.RoundingInt = 100;
-            cyberRadioButton5.Size = new System.Drawing.Size(221, 45);
-            cyberRadioButton5.SizeChecked = 8;
-            cyberRadioButton5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberRadioButton5.TabIndex = 5;
-            cyberRadioButton5.Tag = "Cyber";
-            cyberRadioButton5.TextButton = "Hoàn thành";
-            cyberRadioButton5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberRadioButton5.Timer_Effect_1 = 1;
-            cyberRadioButton5.Timer_RGB = 300;
-            // 
-            // cyberRadioButton6
-            // 
-            cyberRadioButton6.BackColor = System.Drawing.Color.Transparent;
-            cyberRadioButton6.Background = true;
-            cyberRadioButton6.Background_WidthPen = 2F;
-            cyberRadioButton6.BackgroundPen = true;
-            cyberRadioButton6.Checked = false;
-            cyberRadioButton6.Color_1_Background_value = System.Drawing.Color.Empty;
-            cyberRadioButton6.Color_2_Background_value = System.Drawing.Color.Empty;
-            cyberRadioButton6.ColorBackground = System.Drawing.Color.FromArgb(37, 52, 68);
-            cyberRadioButton6.ColorBackground_1 = System.Drawing.Color.FromArgb(37, 52, 68);
-            cyberRadioButton6.ColorBackground_2 = System.Drawing.Color.FromArgb(41, 63, 86);
-            cyberRadioButton6.ColorBackground_Pen = System.Drawing.Color.FromArgb(29, 200, 238);
-            cyberRadioButton6.ColorChecked = System.Drawing.Color.FromArgb(154, 59, 59);
-            cyberRadioButton6.ColorPen_1 = System.Drawing.Color.FromArgb(37, 52, 68);
-            cyberRadioButton6.ColorPen_2 = System.Drawing.Color.FromArgb(41, 63, 86);
-            cyberRadioButton6.CyberRadioButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberRadioButton6.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(29, 200, 238);
-            cyberRadioButton6.Effect_1_Transparency = 25;
-            cyberRadioButton6.Effect_2 = true;
-            cyberRadioButton6.Effect_2_ColorBackground = System.Drawing.Color.Black;
-            cyberRadioButton6.Effect_2_Transparency = 15;
-            cyberRadioButton6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            cyberRadioButton6.ForeColor = System.Drawing.Color.Black;
-            cyberRadioButton6.LinearGradient_Background = false;
-            cyberRadioButton6.LinearGradient_Value = false;
-            cyberRadioButton6.LinearGradientPen = false;
-            cyberRadioButton6.Location = new System.Drawing.Point(145, 44);
-            cyberRadioButton6.Name = "cyberRadioButton6";
-            cyberRadioButton6.RGB = false;
-            cyberRadioButton6.Rounding = true;
-            cyberRadioButton6.RoundingInt = 100;
-            cyberRadioButton6.Size = new System.Drawing.Size(207, 45);
-            cyberRadioButton6.SizeChecked = 8;
-            cyberRadioButton6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberRadioButton6.TabIndex = 6;
-            cyberRadioButton6.Tag = "Cyber";
-            cyberRadioButton6.TextButton = "Chưa hoàn thành";
-            cyberRadioButton6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberRadioButton6.Timer_Effect_1 = 1;
-            cyberRadioButton6.Timer_RGB = 300;
-            // 
             // parrotGroupBox1
             // 
             parrotGroupBox1.BorderColor = System.Drawing.Color.FromArgb(154, 59, 59);
             parrotGroupBox1.BorderWidth = 2;
             parrotGroupBox1.Controls.Add(tbNote);
             parrotGroupBox1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox1.Location = new System.Drawing.Point(3, 647);
+            parrotGroupBox1.Location = new System.Drawing.Point(3, 570);
             parrotGroupBox1.Name = "parrotGroupBox1";
             parrotGroupBox1.ShowText = true;
             parrotGroupBox1.Size = new System.Drawing.Size(374, 166);
@@ -1083,7 +1035,7 @@
             tbNote.Padding = new Padding(10, 7, 10, 7);
             tbNote.PasswordChar = false;
             tbNote.PlaceholderColor = System.Drawing.Color.DarkGray;
-            tbNote.PlaceholderText = "";
+            tbNote.PlaceholderText = "Giờ có thể ghi ở đây";
             tbNote.Size = new System.Drawing.Size(368, 134);
             tbNote.TabIndex = 10;
             tbNote.TextAlign = HorizontalAlignment.Left;
@@ -1129,25 +1081,26 @@
             metroDivider1.ThemeName = "MetroLight";
             metroDivider1.Thickness = 1;
             // 
-            // rjButton2
+            // btnSave
             // 
-            rjButton2.BackColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            rjButton2.BorderRadius = 5;
-            rjButton2.BorderSize = 0;
-            rjButton2.Dock = DockStyle.Bottom;
-            rjButton2.FlatAppearance.BorderSize = 0;
-            rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rjButton2.ForeColor = System.Drawing.Color.White;
-            rjButton2.Location = new System.Drawing.Point(0, 937);
-            rjButton2.Name = "rjButton2";
-            rjButton2.Size = new System.Drawing.Size(382, 59);
-            rjButton2.TabIndex = 0;
-            rjButton2.Text = "LƯU BIÊN NHẬN";
-            rjButton2.TextColor = System.Drawing.Color.White;
-            rjButton2.UseVisualStyleBackColor = false;
+            btnSave.BackColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            btnSave.BackgroundColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnSave.BorderRadius = 5;
+            btnSave.BorderSize = 0;
+            btnSave.Dock = DockStyle.Bottom;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = System.Drawing.Color.White;
+            btnSave.Location = new System.Drawing.Point(0, 937);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(382, 59);
+            btnSave.TabIndex = 0;
+            btnSave.Text = "LƯU BIÊN NHẬN";
+            btnSave.TextColor = System.Drawing.Color.White;
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // panel3
             // 
@@ -1191,25 +1144,25 @@
             dgProducts.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             dgProducts.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dgProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgProducts.ColumnHeadersHeight = 55;
             dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgProducts.Columns.AddRange(new DataGridViewColumn[] { id, barcode, name, price, quantity, total, delete });
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            dgProducts.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgProducts.DefaultCellStyle = dataGridViewCellStyle4;
             dgProducts.Dock = DockStyle.Fill;
             dgProducts.EnableHeadersVisualStyles = false;
             dgProducts.GridColor = System.Drawing.Color.FromArgb(224, 224, 224);
@@ -1218,26 +1171,27 @@
             dgProducts.MultiSelect = false;
             dgProducts.Name = "dgProducts";
             dgProducts.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgProducts.RowHeadersVisible = false;
             dgProducts.RowHeadersWidth = 50;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(226, 199, 153);
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(226, 199, 153);
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgProducts.RowTemplate.Height = 50;
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgProducts.Size = new System.Drawing.Size(777, 841);
             dgProducts.TabIndex = 6;
+            dgProducts.CellContentClick += dgProducts_CellContentClick;
             // 
             // id
             // 
@@ -1247,10 +1201,10 @@
             // 
             // barcode
             // 
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = resources.GetObject("dataGridViewCellStyle8.NullValue");
-            dataGridViewCellStyle8.Padding = new Padding(5);
-            barcode.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            barcode.DefaultCellStyle = dataGridViewCellStyle2;
             barcode.HeaderText = "Barcode";
             barcode.Name = "barcode";
             barcode.ReadOnly = true;
@@ -1286,9 +1240,9 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Padding = new Padding(10);
-            delete.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new Padding(10);
+            delete.DefaultCellStyle = dataGridViewCellStyle3;
             delete.HeaderText = "Thao Tác";
             delete.Name = "delete";
             delete.Text = "Xóa";
@@ -1350,6 +1304,7 @@
             btnRenew.Text = "THÊM PHIẾU";
             btnRenew.TextColor = System.Drawing.Color.White;
             btnRenew.UseVisualStyleBackColor = false;
+            btnRenew.Click += btnRenew_Click;
             // 
             // rjButton1
             // 
@@ -1398,6 +1353,7 @@
             btnCanceled.Text = "HỦY PHIẾU";
             btnCanceled.TextColor = System.Drawing.Color.White;
             btnCanceled.UseVisualStyleBackColor = false;
+            btnCanceled.Click += btnCanceled_Click;
             // 
             // panel7
             // 
@@ -1472,6 +1428,8 @@
             tbSearch.TextAlign = HorizontalAlignment.Left;
             tbSearch.Texts = "";
             tbSearch.UnderlinedStyle = false;
+            tbSearch._TextChanged += tbSearch__TextChanged;
+            tbSearch.KeyDown += tbSearch_KeyDown;
             // 
             // pictureBox2
             // 
@@ -1496,6 +1454,10 @@
             dungeonHeaderLabel2.TabIndex = 1;
             dungeonHeaderLabel2.Text = "Sản phẩm đã thêm";
             // 
+            // print_order
+            // 
+            print_order.PrintPage += print_order_PrintPage;
+            // 
             // PrePlaceOrder
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1519,10 +1481,10 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel3.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
+            roundedPanel18.ResumeLayout(false);
+            roundedPanel18.PerformLayout();
             roundedPanel7.ResumeLayout(false);
             roundedPanel7.PerformLayout();
-            roundedPanel5.ResumeLayout(false);
-            roundedPanel5.PerformLayout();
             roundedPanel8.ResumeLayout(false);
             roundedPanel8.PerformLayout();
             roundedPanel15.ResumeLayout(false);
@@ -1531,14 +1493,13 @@
             roundedPanel9.PerformLayout();
             roundedPanel10.ResumeLayout(false);
             roundedPanel10.PerformLayout();
-            roundedPanel12.ResumeLayout(false);
-            roundedPanel12.PerformLayout();
             roundedPanel13.ResumeLayout(false);
             roundedPanel13.PerformLayout();
             roundedPanel14.ResumeLayout(false);
             roundedPanel14.PerformLayout();
             roundedPanel16.ResumeLayout(false);
-            roundedPanel16.PerformLayout();
+            parrotGroupBox2.ResumeLayout(false);
+            parrotGroupBox2.PerformLayout();
             roundedPanel17.ResumeLayout(false);
             roundedPanel17.PerformLayout();
             parrotGroupBox1.ResumeLayout(false);
@@ -1563,7 +1524,7 @@
 
         #endregion
         private Panel panel1;
-        private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel1;
+        private ReaLTaiizor.Controls.DungeonHeaderLabel lbIndex;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Helpers.UI.RoundedPanel roundedPanel1;
@@ -1596,25 +1557,22 @@
         private Helpers.UI.RJTextBox tbSearch;
         private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel2;
-        private Helpers.UI.RJButton rjButton2;
+        private Helpers.UI.RJButton btnSave;
         private Helpers.UI.RoundedPanel roundedPanel6;
         private Label label2;
         private ReaLTaiizor.Controls.MetroDivider metroDivider1;
         private FlowLayoutPanel flowLayoutPanel2;
         private Helpers.UI.RoundedPanel roundedPanel7;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom3;
+        private Helpers.UI.DatetimePickerCustom dt_recieved;
         private Label label1;
-        private Helpers.UI.RoundedPanel roundedPanel5;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom2;
-        private Label label4;
         private Helpers.UI.RoundedPanel roundedPanel8;
         private Helpers.UI.RoundedPanel roundedPanel15;
         private Label label14;
         private ReaLTaiizor.Controls.CyberRadioButton cyberRadioButton1;
         private ReaLTaiizor.Controls.CyberRadioButton cyberRadioButton2;
         private Label label3;
-        private ReaLTaiizor.Controls.CyberRadioButton rb_not_delivery;
         private ReaLTaiizor.Controls.CyberRadioButton rb_delivery;
+        private ReaLTaiizor.Controls.CyberRadioButton rb_not_delivery;
         private Helpers.UI.RoundedPanel roundedPanel9;
         private Helpers.UI.RJTextBox tbDiscount;
         private Label label5;
@@ -1622,16 +1580,12 @@
         private Helpers.UI.RJTextBox tbSurcharge;
         private Label label7;
         private Label label6;
-        private Helpers.UI.RoundedPanel roundedPanel12;
-        private Helpers.UI.RJTextBox tbReceived;
-        private Label label8;
-        private Label label11;
         private Helpers.UI.RoundedPanel roundedPanel13;
-        private Helpers.UI.RJTextBox rjTextBox1;
+        private Helpers.UI.RJTextBox tbDeposit;
         private Label label9;
         private Label label10;
         private Helpers.UI.RoundedPanel roundedPanel14;
-        private Helpers.UI.RJTextBox rjTextBox2;
+        private Helpers.UI.RJTextBox tbTotal;
         private Label label12;
         private Label label13;
         private Helpers.UI.RoundedPanel roundedPanel16;
@@ -1641,8 +1595,12 @@
         private Label label15;
         private ReaLTaiizor.Controls.CyberRadioButton cyberRadioButton3;
         private ReaLTaiizor.Controls.CyberRadioButton cyberRadioButton4;
-        private Label label16;
-        private ReaLTaiizor.Controls.CyberRadioButton cyberRadioButton5;
-        private ReaLTaiizor.Controls.CyberRadioButton cyberRadioButton6;
+        private ReaLTaiizor.Controls.CyberRadioButton rb_done;
+        private ReaLTaiizor.Controls.CyberRadioButton rb_not_done;
+        private Helpers.UI.RoundedPanel roundedPanel18;
+        private Helpers.UI.DatetimePickerCustom datetimePickerCustom4;
+        private Label label17;
+        private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
+        private System.Drawing.Printing.PrintDocument print_order;
     }
 }

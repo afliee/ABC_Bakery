@@ -449,7 +449,7 @@ namespace ABC_Bakery.Forms
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1218, 212);
+            tableLayoutPanel1.Size = new Size(1235, 212);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // parrotGroupBox3
@@ -628,10 +628,10 @@ namespace ABC_Bakery.Forms
             roundedPanel5.Controls.Add(parrotGroupBox5);
             roundedPanel5.Dock = DockStyle.Bottom;
             roundedPanel5.ForeColor = Color.White;
-            roundedPanel5.Location = new Point(4, 212);
+            roundedPanel5.Location = new Point(4, 169);
             roundedPanel5.Name = "roundedPanel5";
             roundedPanel5.Padding = new Padding(10);
-            roundedPanel5.Size = new Size(1218, 176);
+            roundedPanel5.Size = new Size(1235, 176);
             roundedPanel5.TabIndex = 4;
             // 
             // parrotGroupBox5
@@ -712,8 +712,6 @@ namespace ABC_Bakery.Forms
             // 
             // pnInfoBounary
             // 
-            pnInfoBounary.AutoScroll = true;
-            pnInfoBounary.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnInfoBounary.BackColor = Color.FromArgb(0, 0, 0, 0);
             pnInfoBounary.Controls.Add(tableLayoutPanel1);
             pnInfoBounary.Controls.Add(roundedPanel5);

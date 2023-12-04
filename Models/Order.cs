@@ -16,13 +16,16 @@ namespace ABC_Bakery.Models
         public int? ReceiptId { get; set; }
         public int? CashierId { get; set; }
         public double Price { get; set; }
+        public double Deposit { get; set; }
         public string Note { get; set; }
         public required string Name { get; set; }
         public required string Address { get; set; }
         public required int Type { get; set; }
         public required int Status { get; set; }
+        public required int RecordType { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        public DateTime RefundedAt { get; set; }
 
         public virtual Promotion Promotion { get; set; }
         public virtual Receipt ?Receipt { get; set; }
@@ -44,7 +47,9 @@ namespace ABC_Bakery.Models
             modelBuilder.Entity<Order>()
                 .Property(o => o.UpdatedAt)
                 .HasDefaultValueSql("getdate()");
-
+            modelBuilder.Entity<Order>()
+                .Property(o => o.RefundedAt)
+                .HasDefaultValueSql("getdate()");
             // allow null for promotion attribute
             //modelBuilder.Entity<Order>()
             //    .Property(o => o.PromotionId)

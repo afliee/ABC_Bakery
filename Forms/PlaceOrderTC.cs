@@ -13,78 +13,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
-using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
 using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
+using Color = System.Drawing.Color;
 
 namespace ABC_Bakery.Forms
 {
-    public partial class PrePlaceOrder : Form
+    public partial class PlaceOrderTC : Form
     {
         private readonly ProductService _productService;
-        private readonly OrderService _orderService;
         private OrderDetailService _orderDetailService;
+        private OrderService _orderService;
+        private Models.Order _order;
         private readonly TextCurrency _total = new TextCurrency
         {
             Format = TextCurrency.NO_DECIMAL,
-            Value = 0,
-            CultureInfor = TextCurrency.VIETNAM
+            CultureInfor = TextCurrency.VIETNAM,
+            Value = 0
         };
-        private Models.Order _order;
-        public PrePlaceOrder()
+        public PlaceOrderTC()
         {
             InitializeComponent();
             _productService = ProductService.GetInstance();
-            _orderService = OrderService.GetInstance();
             _orderDetailService = OrderDetailService.GetInstance();
+            _orderService = OrderService.GetInstance();
         }
 
-        private void PrePlaceOrder_Load(object sender, EventArgs e)
+        private void PlaceOrderTC_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            rb_not_delivery.Checked = true;
-            rb_not_done.Checked = true;
+            this.ControlBox = false;
             btnCanceled.Enabled = false;
             btnPrint.Enabled = false;
             btnRenew.Enabled = false;
             tbSearch.Focus();
             lbIndex.Text = $"No. {Models.Order.PREFIX}{_orderService.Count() - 1}";
-        }
-
-        private void rb_delivery_Click(object sender, EventArgs e)
-        {
-            if (rb_not_delivery.Checked)
-            {
-                rb_not_delivery.Checked = false;
-                rb_delivery.Checked = true;
-            }
-        }
-
-        private void rb_not_delivery_Click(object sender, EventArgs e)
-        {
-            if (rb_delivery.Checked)
-            {
-                rb_delivery.Checked = false;
-                rb_not_delivery.Checked = true;
-            }
-        }
-
-        private void rb_done_Click(object sender, EventArgs e)
-        {
-            if (rb_not_done.Checked)
-            {
-                rb_not_done.Checked = false;
-                rb_done.Checked = true;
-            }
-        }
-
-        private void rb_not_done_Click(object sender, EventArgs e)
-        {
-            if (rb_done.Checked)
-            {
-                rb_done.Checked = false;
-                rb_not_done.Checked = true;
-            }
         }
 
         private void tbSearch__TextChanged(object sender, EventArgs e)
@@ -175,47 +138,6 @@ namespace ABC_Bakery.Forms
             tbTotal.Texts = _total.ToString();
         }
 
-        private void tbDeposit__TextChanged(object sender, EventArgs e)
-        {
-            string text = tbSurcharge.Texts;
-            if (string.IsNullOrWhiteSpace(text))
-            {
-                return;
-            }
-
-            if (text.Length == 0)
-            {
-                tbSurcharge.Texts = "0";
-                return;
-            }
-
-            if (text.StartsWith("0"))
-            {
-                tbSurcharge.Texts = text.Substring(1);
-            }
-
-            if (text.Length > 0)
-            {
-                if (text.All(char.IsDigit))
-                {
-
-                    return;
-                }
-                else
-                {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    if (text.Length == 1)
-                    {
-                        tbSurcharge.Texts = "0";
-                    }
-                    else
-                    {
-                        tbSurcharge.Texts = text.Substring(0, text.Length - 1);
-                    }
-                }
-            }
-        }
-
         private void tbSurcharge__TextChanged(object sender, EventArgs e)
         {
             string text = tbSurcharge.Texts;
@@ -257,21 +179,49 @@ namespace ABC_Bakery.Forms
             }
         }
 
+        private void tbDeposit__TextChanged(object sender, EventArgs e)
+        {
+            string text = tbSurcharge.Texts;
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return;
+            }
+
+            if (text.Length == 0)
+            {
+                tbSurcharge.Texts = "0";
+                return;
+            }
+
+            if (text.StartsWith("0"))
+            {
+                tbSurcharge.Texts = text.Substring(1);
+            }
+
+            if (text.Length > 0)
+            {
+                if (text.All(char.IsDigit))
+                {
+
+                    return;
+                }
+                else
+                {
+                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (text.Length == 1)
+                    {
+                        tbSurcharge.Texts = "0";
+                    }
+                    else
+                    {
+                        tbSurcharge.Texts = text.Substring(0, text.Length - 1);
+                    }
+                }
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // check if one in two radio button is checked
-            if (!rb_delivery.Checked && !rb_not_delivery.Checked)
-            {
-                MessageBox.Show("Vui lòng chọn hình thức giao hàng", "Thông Báo");
-                return;
-            }
-
-            if (!rb_done.Checked && !rb_not_done.Checked)
-            {
-                MessageBox.Show("Vui lòng chọn hình thức thanh toán", "Thông Báo");
-                return;
-            }
-
             if (dgProducts.Rows.Count == 0)
             {
                 MessageBox.Show("Không có sản phẩm nào để thanh toán", "Thông Báo");
@@ -288,21 +238,19 @@ namespace ABC_Bakery.Forms
             User cashier = UserService.GetInstance().Find(1);
             Models.Receipt receipt = ReceiptService.GetInstance().FindByCreatedDayAndReceiptType(DateTime.Now, (int)ReceiptType.Import);
             double deposit = double.Parse(tbDeposit.Texts);
-            OrderType orderType;
-            if (rb_done.Checked)
-            {
-                if (deposit < _total.Value)
-                {
-                    MessageBox.Show("Số tiền đặt cọc không được nhỏ hơn tổng tiền", "Thông Báo");
-                    return;
-                }
+            MessageBox.Show(string.Format("Tổng tiền: {0}\nĐặt cọc: {1}\nCòn lại: {2}", _total.Value, deposit, _total.Value - deposit), "Thông Báo");
 
-                orderType = OrderType.Completed;
-            }
-            else
+            OrderType orderType;
+            if (deposit < _total.Value)
             {
                 orderType = OrderType.Prepay;
             }
+            else
+            {
+                deposit = Math.Min(deposit, _total.Value);
+                orderType = OrderType.Completed;
+            }
+
             Models.Order orderEntity = new Models.Order
             {
                 Address = "",
@@ -313,9 +261,9 @@ namespace ABC_Bakery.Forms
                 Note = note,
                 Price = _total.Value,
                 Deposit = deposit,
-                Status = rb_delivery.Checked ? (int)OrderStatus.Delivered : (int)OrderStatus.Processing,
-                RecordType = (int)OrderRecordType.PreOrder,
-                RefundedAt = dt_recieved.Value
+                Status = (int)OrderStatus.Processing,
+                RecordType = (int)OrderRecordType.Equipment,
+                RefundedAt = dt_refundedTime.Value
             };
             List<OrderDetail> orders = new List<OrderDetail>();
             foreach (DataGridViewRow row in dgProducts.Rows)
@@ -378,26 +326,6 @@ namespace ABC_Bakery.Forms
             }
         }
 
-        private void btnRenew_Click(object sender, EventArgs e)
-        {
-            dgProducts.Rows.Clear();
-            tbSearch.ClearText();
-            tbSurcharge.ClearText();
-            tbDeposit.ClearText();
-            tbNote.ClearText();
-            tbTotal.Texts = new TextCurrency
-            {
-                Format = TextCurrency.NO_DECIMAL,
-                Value = 0,
-                CultureInfor = TextCurrency.VIETNAM
-            }.ToString();
-
-            lbIndex.Text = $"No. {Models.Order.PREFIX}{_orderService.Count() - 1}";
-
-            btnCanceled.Enabled = false;
-            btnPrint.Enabled = false;
-        }
-
         private void print_order_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             print_order.DefaultPageSettings.PaperSize = new PaperSize("A4", 827, 1170);
@@ -446,7 +374,6 @@ namespace ABC_Bakery.Forms
                 }.ToString(), font, new SolidBrush(Color.Black), startX + 400, startY + offset * (8 + i));
                 i++;
             }
-            
             graphic.DrawString(string.Format("Tổng tiền: {0}", new TextCurrency
             {
                 CultureInfor = TextCurrency.VIETNAM,
@@ -457,7 +384,7 @@ namespace ABC_Bakery.Forms
             graphic.DrawString("Cảm ơn quý khách", font, new SolidBrush(Color.Black), startX, startY + offset * (9 + i));
         }
 
-        private void btnCanceled_Click(object sender, EventArgs e)
+        private void btnRenew_Click(object sender, EventArgs e)
         {
             dgProducts.Rows.Clear();
             tbSearch.ClearText();

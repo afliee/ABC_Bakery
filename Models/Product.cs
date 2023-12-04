@@ -20,7 +20,7 @@ namespace ABC_Bakery.Models
         public Boolean IsAvailable { get; set; }
         public Boolean IsActived { get; set; }
 
-        public virtual required Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public virtual ICollection<Image>? Images { get; set; }
         public virtual ICollection<ImportProduct> ImportDetails { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }

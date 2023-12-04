@@ -41,7 +41,7 @@ namespace ABC_Bakery.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            dungeonHeaderLabel1 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
+            lb_index = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             roundedPanel1 = new Helpers.UI.RoundedPanel();
@@ -134,7 +134,7 @@ namespace ABC_Bakery.Forms
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            panel1.Controls.Add(dungeonHeaderLabel1);
+            panel1.Controls.Add(lb_index);
             panel1.Controls.Add(bigLabel1);
             panel1.Controls.Add(flowLayoutPanel1);
             panel1.Dock = DockStyle.Top;
@@ -143,18 +143,18 @@ namespace ABC_Bakery.Forms
             panel1.Size = new Size(1264, 87);
             panel1.TabIndex = 0;
             // 
-            // dungeonHeaderLabel1
+            // lb_index
             // 
-            dungeonHeaderLabel1.AutoSize = true;
-            dungeonHeaderLabel1.BackColor = Color.Transparent;
-            dungeonHeaderLabel1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            dungeonHeaderLabel1.ForeColor = Color.White;
-            dungeonHeaderLabel1.Location = new Point(10, 49);
-            dungeonHeaderLabel1.Name = "dungeonHeaderLabel1";
-            dungeonHeaderLabel1.Size = new Size(83, 20);
-            dungeonHeaderLabel1.TabIndex = 1;
-            dungeonHeaderLabel1.Text = "No. 00001";
-            dungeonHeaderLabel1.TextAlign = ContentAlignment.MiddleLeft;
+            lb_index.AutoSize = true;
+            lb_index.BackColor = Color.Transparent;
+            lb_index.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_index.ForeColor = Color.White;
+            lb_index.Location = new Point(10, 49);
+            lb_index.Name = "lb_index";
+            lb_index.Size = new Size(83, 20);
+            lb_index.TabIndex = 1;
+            lb_index.Text = "No. 00001";
+            lb_index.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // bigLabel1
             // 
@@ -216,7 +216,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel2
             // 
-            roundedPanel2.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel2.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel2.Controls.Add(dungeonHeaderLabel3);
             roundedPanel2.ForeColor = Color.White;
             roundedPanel2.Location = new Point(3, 3);
@@ -239,7 +239,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel3
             // 
-            roundedPanel3.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel3.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel3.Controls.Add(datetimePickerCustom2);
             roundedPanel3.Controls.Add(label4);
             roundedPanel3.ForeColor = Color.White;
@@ -252,12 +252,12 @@ namespace ABC_Bakery.Forms
             // 
             datetimePickerCustom2.BorderColor = Color.FromArgb(242, 236, 190);
             datetimePickerCustom2.BorderSize = 3;
-            datetimePickerCustom2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            datetimePickerCustom2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             datetimePickerCustom2.Location = new Point(127, 0);
             datetimePickerCustom2.MinimumSize = new Size(4, 60);
             datetimePickerCustom2.Name = "datetimePickerCustom2";
             datetimePickerCustom2.Size = new Size(244, 60);
-            datetimePickerCustom2.SkinColor = Color.FromArgb(242, 236, 190);
+            datetimePickerCustom2.SkinColor = Color.FromArgb(249, 245, 220);
             datetimePickerCustom2.TabIndex = 0;
             datetimePickerCustom2.TextColor = Color.Black;
             // 
@@ -274,7 +274,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel7
             // 
-            roundedPanel7.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel7.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel7.Controls.Add(tbReceived);
             roundedPanel7.Controls.Add(label8);
             roundedPanel7.Controls.Add(label11);
@@ -343,7 +343,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel8
             // 
-            roundedPanel8.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel8.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel8.Controls.Add(lbTotal);
             roundedPanel8.Controls.Add(label9);
             roundedPanel8.ForeColor = Color.White;
@@ -367,7 +367,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel5
             // 
-            roundedPanel5.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel5.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel5.Controls.Add(tbDiscount);
             roundedPanel5.Controls.Add(label5);
             roundedPanel5.ForeColor = Color.White;
@@ -412,7 +412,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel6
             // 
-            roundedPanel6.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel6.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel6.Controls.Add(tbSurcharge);
             roundedPanel6.Controls.Add(label7);
             roundedPanel6.Controls.Add(label6);
@@ -470,7 +470,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel9
             // 
-            roundedPanel9.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel9.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel9.Controls.Add(lbMoneyChange);
             roundedPanel9.Controls.Add(label13);
             roundedPanel9.ForeColor = Color.White;
@@ -637,7 +637,7 @@ namespace ABC_Bakery.Forms
             // dgProducts
             // 
             dgProducts.AllowUserToAddRows = false;
-            dgProducts.BackgroundColor = Color.FromArgb(255, 224, 192);
+            dgProducts.BackgroundColor = Color.FromArgb(249, 245, 220);
             dgProducts.BorderStyle = BorderStyle.None;
             dgProducts.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             dgProducts.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
@@ -689,6 +689,7 @@ namespace ABC_Bakery.Forms
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgProducts.Size = new Size(857, 758);
             dgProducts.TabIndex = 6;
+            dgProducts.CellContentClick += dgProducts_CellContentClick;
             // 
             // id
             // 
@@ -884,7 +885,7 @@ namespace ABC_Bakery.Forms
             // 
             // roundedPanel4
             // 
-            roundedPanel4.BackColor = Color.FromArgb(242, 236, 190);
+            roundedPanel4.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel4.Controls.Add(panel9);
             roundedPanel4.Controls.Add(dungeonHeaderLabel2);
             roundedPanel4.Dock = DockStyle.Top;
@@ -1060,7 +1061,7 @@ namespace ABC_Bakery.Forms
         private Panel panel3;
         private Helpers.UI.RoundedPanel roundedPanel4;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
-        private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel1;
+        private ReaLTaiizor.Controls.DungeonHeaderLabel lb_index;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel2;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel3;
         private Panel panel4;

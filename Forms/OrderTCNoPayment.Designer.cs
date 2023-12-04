@@ -34,36 +34,45 @@ namespace ABC_Bakery.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
             label6 = new Label();
-            mail = new DataGridViewTextBoxColumn();
-            note = new DataGridViewTextBoxColumn();
-            total = new DataGridViewTextBoxColumn();
-            orderDate = new DataGridViewTextBoxColumn();
-            maBienBhna = new DataGridViewTextBoxColumn();
-            stt = new DataGridViewTextBoxColumn();
-            dataGridView3 = new DataGridView();
-            roundedPanel3 = new Helpers.UI.RoundedPanel();
-            panel5 = new Panel();
-            pictureBox1 = new PictureBox();
-            datetimePickerCustom1 = new Helpers.UI.DatetimePickerCustom();
-            roundedPanel4 = new Helpers.UI.RoundedPanel();
             label1 = new Label();
             panel2 = new Panel();
+            roundedPanel4 = new Helpers.UI.RoundedPanel();
+            dt_date = new Helpers.UI.DatetimePickerCustom();
             roundedPanel2 = new Helpers.UI.RoundedPanel();
             panel4 = new Panel();
+            panel5 = new Panel();
+            roundedPanel3 = new Helpers.UI.RoundedPanel();
+            dgOrders = new DataGridView();
+            stt = new DataGridViewTextBoxColumn();
+            maBienNhan = new DataGridViewTextBoxColumn();
+            orderDate = new DataGridViewTextBoxColumn();
+            refund_date = new DataGridViewTextBoxColumn();
+            total = new DataGridViewTextBoxColumn();
+            note = new DataGridViewTextBoxColumn();
             roundedPanel1 = new Helpers.UI.RoundedPanel();
             roundedPanel5 = new Helpers.UI.RoundedPanel();
             panel1 = new Panel();
+            dgOrderDetail = new DataGridView();
+            order_name = new DataGridViewTextBoxColumn();
+            order_quantity = new DataGridViewTextBoxColumn();
+            order_total = new DataGridViewTextBoxColumn();
+            oderDetail_Id = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
             metroDivider2 = new ReaLTaiizor.Controls.MetroDivider();
             lb_pay = new ReaLTaiizor.Controls.MetroLabel();
@@ -76,28 +85,23 @@ namespace ABC_Bakery.Forms
             roundedPanel6 = new Helpers.UI.RoundedPanel();
             label2 = new Label();
             metroDivider1 = new ReaLTaiizor.Controls.MetroDivider();
-            roundedButton1 = new Helpers.UI.RoundedButton();
+            btnSave = new Helpers.UI.RoundedButton();
             panel3 = new Panel();
-            dataGridView1 = new DataGridView();
-            order_name = new DataGridViewTextBoxColumn();
-            order_quantity = new DataGridViewTextBoxColumn();
-            order_total = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            roundedPanel3.SuspendLayout();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            roundedPanel4.SuspendLayout();
             panel2.SuspendLayout();
+            roundedPanel4.SuspendLayout();
             roundedPanel2.SuspendLayout();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            roundedPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgOrders).BeginInit();
             roundedPanel1.SuspendLayout();
             roundedPanel5.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgOrderDetail).BeginInit();
             panel6.SuspendLayout();
             parrotGroupBox1.SuspendLayout();
             roundedPanel6.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label6
@@ -109,164 +113,6 @@ namespace ABC_Bakery.Forms
             label6.Size = new Size(104, 22);
             label6.TabIndex = 0;
             label6.Text = "Biên nhận";
-            // 
-            // mail
-            // 
-            mail.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            mail.HeaderText = "";
-            mail.Name = "mail";
-            mail.ReadOnly = true;
-            // 
-            // note
-            // 
-            note.HeaderText = "Ghi Chú";
-            note.Name = "note";
-            note.ReadOnly = true;
-            note.Width = 200;
-            // 
-            // total
-            // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.TopCenter;
-            total.DefaultCellStyle = dataGridViewCellStyle9;
-            total.HeaderText = "Tổng Tiền";
-            total.Name = "total";
-            total.ReadOnly = true;
-            total.Width = 200;
-            // 
-            // orderDate
-            // 
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.TopCenter;
-            orderDate.DefaultCellStyle = dataGridViewCellStyle10;
-            orderDate.HeaderText = "Ngày Đặt";
-            orderDate.Name = "orderDate";
-            orderDate.ReadOnly = true;
-            orderDate.Width = 200;
-            // 
-            // maBienBhna
-            // 
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.TopCenter;
-            maBienBhna.DefaultCellStyle = dataGridViewCellStyle11;
-            maBienBhna.HeaderText = "Mã Biên Nhận";
-            maBienBhna.Name = "maBienBhna";
-            maBienBhna.ReadOnly = true;
-            maBienBhna.Width = 200;
-            // 
-            // stt
-            // 
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.TopCenter;
-            stt.DefaultCellStyle = dataGridViewCellStyle12;
-            stt.HeaderText = "STT";
-            stt.Name = "stt";
-            stt.ReadOnly = true;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.BackgroundColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView3.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle13.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.NullValue = "dasd";
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridView3.ColumnHeadersHeight = 58;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { stt, maBienBhna, orderDate, total, note, mail });
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = Color.RosyBrown;
-            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle14;
-            dataGridView3.Dock = DockStyle.Fill;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
-            dataGridView3.Location = new Point(0, 0);
-            dataGridView3.Margin = new Padding(0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridView3.RowHeadersVisible = false;
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.ScrollBars = ScrollBars.None;
-            dataGridView3.Size = new Size(1003, 643);
-            dataGridView3.TabIndex = 3;
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
-            roundedPanel3.Controls.Add(dataGridView3);
-            roundedPanel3.Dock = DockStyle.Fill;
-            roundedPanel3.ForeColor = Color.White;
-            roundedPanel3.Location = new Point(0, 10);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(1003, 643);
-            roundedPanel3.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(roundedPanel3);
-            panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(15, 59);
-            panel5.Name = "panel5";
-            panel5.Padding = new Padding(0, 10, 0, 10);
-            panel5.Size = new Size(1003, 663);
-            panel5.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.calender;
-            pictureBox1.Location = new Point(3, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(54, 36);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // datetimePickerCustom1
-            // 
-            datetimePickerCustom1.BorderColor = Color.FromArgb(154, 59, 59);
-            datetimePickerCustom1.BorderSize = 3;
-            datetimePickerCustom1.CustomFormat = "dddd , dd MMMM yyyy";
-            datetimePickerCustom1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            datetimePickerCustom1.Location = new Point(109, 3);
-            datetimePickerCustom1.MinimumSize = new Size(4, 50);
-            datetimePickerCustom1.Name = "datetimePickerCustom1";
-            datetimePickerCustom1.Size = new Size(328, 50);
-            datetimePickerCustom1.SkinColor = Color.FromArgb(154, 59, 59);
-            datetimePickerCustom1.TabIndex = 1;
-            datetimePickerCustom1.TextColor = Color.White;
-            // 
-            // roundedPanel4
-            // 
-            roundedPanel4.BackColor = Color.FromArgb(154, 59, 59);
-            roundedPanel4.Controls.Add(pictureBox1);
-            roundedPanel4.Controls.Add(datetimePickerCustom1);
-            roundedPanel4.Dock = DockStyle.Fill;
-            roundedPanel4.ForeColor = Color.White;
-            roundedPanel4.Location = new Point(5, 5);
-            roundedPanel4.Margin = new Padding(3, 15, 3, 3);
-            roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(391, 55);
-            roundedPanel4.TabIndex = 6;
             // 
             // label1
             // 
@@ -293,9 +139,37 @@ namespace ABC_Bakery.Forms
             panel2.Size = new Size(401, 65);
             panel2.TabIndex = 10;
             // 
+            // roundedPanel4
+            // 
+            roundedPanel4.BackColor = Color.FromArgb(154, 59, 59);
+            roundedPanel4.Controls.Add(dt_date);
+            roundedPanel4.Dock = DockStyle.Fill;
+            roundedPanel4.ForeColor = Color.White;
+            roundedPanel4.Location = new Point(5, 5);
+            roundedPanel4.Margin = new Padding(3, 15, 3, 3);
+            roundedPanel4.Name = "roundedPanel4";
+            roundedPanel4.Size = new Size(391, 55);
+            roundedPanel4.TabIndex = 7;
+            // 
+            // dt_date
+            // 
+            dt_date.BorderColor = Color.FromArgb(154, 59, 59);
+            dt_date.BorderSize = 3;
+            dt_date.CalendarFont = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dt_date.CustomFormat = "dddd , dd MMMM yyyy";
+            dt_date.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dt_date.Location = new Point(16, 2);
+            dt_date.MinimumSize = new Size(4, 50);
+            dt_date.Name = "dt_date";
+            dt_date.Size = new Size(366, 50);
+            dt_date.SkinColor = Color.FromArgb(154, 59, 59);
+            dt_date.TabIndex = 1;
+            dt_date.TextColor = Color.White;
+            dt_date.ValueChanged += dt_date_ValueChanged;
+            // 
             // roundedPanel2
             // 
-            roundedPanel2.BackColor = Color.FromArgb(255, 224, 192);
+            roundedPanel2.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel2.Controls.Add(label6);
             roundedPanel2.Dock = DockStyle.Top;
             roundedPanel2.ForeColor = Color.Black;
@@ -316,6 +190,138 @@ namespace ABC_Bakery.Forms
             panel4.Size = new Size(1033, 737);
             panel4.TabIndex = 20;
             // 
+            // panel5
+            // 
+            panel5.Controls.Add(roundedPanel3);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(15, 59);
+            panel5.Name = "panel5";
+            panel5.Padding = new Padding(0, 10, 0, 10);
+            panel5.Size = new Size(1003, 663);
+            panel5.TabIndex = 8;
+            // 
+            // roundedPanel3
+            // 
+            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel3.Controls.Add(dgOrders);
+            roundedPanel3.Dock = DockStyle.Fill;
+            roundedPanel3.ForeColor = Color.White;
+            roundedPanel3.Location = new Point(0, 10);
+            roundedPanel3.Name = "roundedPanel3";
+            roundedPanel3.Size = new Size(1003, 643);
+            roundedPanel3.TabIndex = 0;
+            // 
+            // dgOrders
+            // 
+            dgOrders.AllowUserToAddRows = false;
+            dgOrders.BackgroundColor = Color.FromArgb(249, 245, 220);
+            dgOrders.BorderStyle = BorderStyle.None;
+            dgOrders.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgOrders.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dgOrders.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle16.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.White;
+            dataGridViewCellStyle16.NullValue = "dasd";
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            dgOrders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dgOrders.ColumnHeadersHeight = 58;
+            dgOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgOrders.Columns.AddRange(new DataGridViewColumn[] { stt, maBienNhan, orderDate, refund_date, total, note });
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle22.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = Color.RosyBrown;
+            dataGridViewCellStyle22.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.False;
+            dgOrders.DefaultCellStyle = dataGridViewCellStyle22;
+            dgOrders.Dock = DockStyle.Fill;
+            dgOrders.EnableHeadersVisualStyles = false;
+            dgOrders.GridColor = Color.FromArgb(224, 224, 224);
+            dgOrders.Location = new Point(0, 0);
+            dgOrders.Margin = new Padding(0);
+            dgOrders.MultiSelect = false;
+            dgOrders.Name = "dgOrders";
+            dgOrders.ReadOnly = true;
+            dgOrders.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle23.ForeColor = Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
+            dgOrders.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dgOrders.RowHeadersVisible = false;
+            dgOrders.RowHeadersWidth = 51;
+            dataGridViewCellStyle24.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle24.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = Color.FromArgb(226, 199, 153);
+            dataGridViewCellStyle24.SelectionForeColor = Color.Black;
+            dgOrders.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dgOrders.RowTemplate.Height = 50;
+            dgOrders.ScrollBars = ScrollBars.None;
+            dgOrders.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgOrders.Size = new Size(1003, 643);
+            dgOrders.TabIndex = 3;
+            dgOrders.CellContentClick += dgOrders_CellContentClick;
+            // 
+            // stt
+            // 
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            stt.DefaultCellStyle = dataGridViewCellStyle17;
+            stt.HeaderText = "STT";
+            stt.Name = "stt";
+            stt.ReadOnly = true;
+            // 
+            // maBienNhan
+            // 
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            maBienNhan.DefaultCellStyle = dataGridViewCellStyle18;
+            maBienNhan.HeaderText = "Mã BN";
+            maBienNhan.Name = "maBienNhan";
+            maBienNhan.ReadOnly = true;
+            maBienNhan.Width = 150;
+            // 
+            // orderDate
+            // 
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            orderDate.DefaultCellStyle = dataGridViewCellStyle19;
+            orderDate.HeaderText = "Ngày Đặt";
+            orderDate.Name = "orderDate";
+            orderDate.ReadOnly = true;
+            orderDate.Width = 200;
+            // 
+            // refund_date
+            // 
+            refund_date.HeaderText = "Ngày trả";
+            refund_date.Name = "refund_date";
+            refund_date.ReadOnly = true;
+            refund_date.Width = 150;
+            // 
+            // total
+            // 
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            total.DefaultCellStyle = dataGridViewCellStyle20;
+            total.HeaderText = "Tổng Tiền";
+            total.Name = "total";
+            total.ReadOnly = true;
+            total.Width = 200;
+            // 
+            // note
+            // 
+            note.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            note.DefaultCellStyle = dataGridViewCellStyle21;
+            note.HeaderText = "Ghi Chú";
+            note.Name = "note";
+            note.ReadOnly = true;
+            // 
             // roundedPanel1
             // 
             roundedPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
@@ -333,7 +339,7 @@ namespace ABC_Bakery.Forms
             roundedPanel5.BackColor = Color.FromArgb(255, 224, 192);
             roundedPanel5.Controls.Add(panel1);
             roundedPanel5.Controls.Add(roundedPanel6);
-            roundedPanel5.Controls.Add(roundedButton1);
+            roundedPanel5.Controls.Add(btnSave);
             roundedPanel5.Dock = DockStyle.Fill;
             roundedPanel5.ForeColor = Color.White;
             roundedPanel5.Location = new Point(5, 3);
@@ -344,7 +350,7 @@ namespace ABC_Bakery.Forms
             // 
             // panel1
             // 
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dgOrderDetail);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(parrotGroupBox1);
             panel1.Dock = DockStyle.Fill;
@@ -353,8 +359,85 @@ namespace ABC_Bakery.Forms
             panel1.Size = new Size(385, 584);
             panel1.TabIndex = 8;
             // 
+            // dgOrderDetail
+            // 
+            dgOrderDetail.AllowUserToAddRows = false;
+            dgOrderDetail.BackgroundColor = Color.FromArgb(249, 245, 220);
+            dgOrderDetail.BorderStyle = BorderStyle.None;
+            dgOrderDetail.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgOrderDetail.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle25.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle25.ForeColor = Color.Black;
+            dataGridViewCellStyle25.Padding = new Padding(0, 10, 0, 0);
+            dataGridViewCellStyle25.SelectionBackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle25.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle25.WrapMode = DataGridViewTriState.True;
+            dgOrderDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dgOrderDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgOrderDetail.Columns.AddRange(new DataGridViewColumn[] { order_name, order_quantity, order_total, oderDetail_Id });
+            dataGridViewCellStyle29.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle29.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle29.ForeColor = Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle29.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle29.WrapMode = DataGridViewTriState.False;
+            dgOrderDetail.DefaultCellStyle = dataGridViewCellStyle29;
+            dgOrderDetail.Dock = DockStyle.Fill;
+            dgOrderDetail.EnableHeadersVisualStyles = false;
+            dgOrderDetail.GridColor = Color.FromArgb(224, 224, 224);
+            dgOrderDetail.Location = new Point(0, 0);
+            dgOrderDetail.Name = "dgOrderDetail";
+            dgOrderDetail.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgOrderDetail.RowHeadersVisible = false;
+            dataGridViewCellStyle30.BackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle30.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle30.ForeColor = Color.Black;
+            dataGridViewCellStyle30.SelectionBackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle30.SelectionForeColor = Color.Black;
+            dgOrderDetail.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dgOrderDetail.RowTemplate.Height = 42;
+            dgOrderDetail.Size = new Size(385, 377);
+            dgOrderDetail.TabIndex = 6;
+            dgOrderDetail.CellEndEdit += dgOrderDetail_CellEndEdit;
+            // 
+            // order_name
+            // 
+            order_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            order_name.DefaultCellStyle = dataGridViewCellStyle26;
+            order_name.HeaderText = "Tên";
+            order_name.Name = "order_name";
+            // 
+            // order_quantity
+            // 
+            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            order_quantity.DefaultCellStyle = dataGridViewCellStyle27;
+            order_quantity.HeaderText = "SL";
+            order_quantity.Name = "order_quantity";
+            order_quantity.Width = 65;
+            // 
+            // order_total
+            // 
+            dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            order_total.DefaultCellStyle = dataGridViewCellStyle28;
+            order_total.HeaderText = "Thành tiền";
+            order_total.Name = "order_total";
+            order_total.Width = 150;
+            // 
+            // oderDetail_Id
+            // 
+            oderDetail_Id.HeaderText = "";
+            oderDetail_Id.Name = "oderDetail_Id";
+            oderDetail_Id.ReadOnly = true;
+            oderDetail_Id.Visible = false;
+            oderDetail_Id.Width = 5;
+            // 
             // panel6
             // 
+            panel6.BackColor = Color.FromArgb(249, 245, 220);
             panel6.Controls.Add(metroDivider2);
             panel6.Controls.Add(lb_pay);
             panel6.Controls.Add(lb_deposit);
@@ -383,7 +466,7 @@ namespace ABC_Bakery.Forms
             // 
             // lb_pay
             // 
-            lb_pay.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_pay.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lb_pay.IsDerivedStyle = true;
             lb_pay.Location = new Point(275, 52);
             lb_pay.Name = "lb_pay";
@@ -398,11 +481,11 @@ namespace ABC_Bakery.Forms
             // 
             // lb_deposit
             // 
-            lb_deposit.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_deposit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lb_deposit.IsDerivedStyle = true;
             lb_deposit.Location = new Point(278, 8);
             lb_deposit.Name = "lb_deposit";
-            lb_deposit.Size = new Size(100, 23);
+            lb_deposit.Size = new Size(97, 23);
             lb_deposit.Style = ReaLTaiizor.Enum.Metro.Style.Light;
             lb_deposit.StyleManager = null;
             lb_deposit.TabIndex = 1;
@@ -437,6 +520,7 @@ namespace ABC_Bakery.Forms
             // 
             // parrotGroupBox1
             // 
+            parrotGroupBox1.BackColor = Color.FromArgb(249, 245, 220);
             parrotGroupBox1.BorderColor = Color.FromArgb(0, 0, 0, 0);
             parrotGroupBox1.BorderWidth = 0;
             parrotGroupBox1.Controls.Add(rb_not_done);
@@ -493,6 +577,7 @@ namespace ABC_Bakery.Forms
             rb_not_done.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             rb_not_done.Timer_Effect_1 = 1;
             rb_not_done.Timer_RGB = 300;
+            rb_not_done.Click += rb_not_done_Click;
             // 
             // rb_done
             // 
@@ -535,10 +620,11 @@ namespace ABC_Bakery.Forms
             rb_done.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             rb_done.Timer_Effect_1 = 1;
             rb_done.Timer_RGB = 300;
+            rb_done.Click += rb_done_Click;
             // 
             // roundedPanel6
             // 
-            roundedPanel6.BackColor = Color.FromArgb(255, 224, 192);
+            roundedPanel6.BackColor = Color.FromArgb(249, 245, 220);
             roundedPanel6.Controls.Add(label2);
             roundedPanel6.Controls.Add(metroDivider1);
             roundedPanel6.Dock = DockStyle.Top;
@@ -575,21 +661,22 @@ namespace ABC_Bakery.Forms
             metroDivider1.ThemeName = "MetroLight";
             metroDivider1.Thickness = 1;
             // 
-            // roundedButton1
+            // btnSave
             // 
-            roundedButton1.BackColor = Color.FromArgb(154, 59, 59);
-            roundedButton1.Dock = DockStyle.Bottom;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(3, 652);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(385, 54);
-            roundedButton1.TabIndex = 5;
-            roundedButton1.Text = "Lưu biên nhận";
-            roundedButton1.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.FromArgb(154, 59, 59);
+            btnSave.Dock = DockStyle.Bottom;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(3, 652);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(385, 54);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "LƯU BIÊN NHẬN";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // panel3
             // 
@@ -601,61 +688,6 @@ namespace ABC_Bakery.Forms
             panel3.Name = "panel3";
             panel3.Size = new Size(1434, 65);
             panel3.TabIndex = 18;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.BackgroundColor = Color.FromArgb(255, 224, 192);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle17.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle17.ForeColor = Color.Black;
-            dataGridViewCellStyle17.Padding = new Padding(0, 10, 0, 0);
-            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle17.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { order_name, order_quantity, order_total });
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle18.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = Color.FromArgb(224, 224, 224);
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(385, 377);
-            dataGridView1.TabIndex = 6;
-            // 
-            // order_name
-            // 
-            order_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            order_name.HeaderText = "Tên";
-            order_name.Name = "order_name";
-            // 
-            // order_quantity
-            // 
-            order_quantity.HeaderText = "SL";
-            order_quantity.Name = "order_quantity";
-            order_quantity.Width = 65;
-            // 
-            // order_total
-            // 
-            order_total.HeaderText = "Thành tiền";
-            order_total.Name = "order_total";
-            order_total.Width = 150;
             // 
             // OrderTCNoPayment
             // 
@@ -671,18 +703,18 @@ namespace ABC_Bakery.Forms
             Text = "OrderNoPayment";
             WindowState = FormWindowState.Maximized;
             Load += OrderTCNoPayment_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            roundedPanel3.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            roundedPanel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            roundedPanel4.ResumeLayout(false);
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            roundedPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgOrders).EndInit();
             roundedPanel1.ResumeLayout(false);
             roundedPanel5.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgOrderDetail).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             parrotGroupBox1.ResumeLayout(false);
@@ -691,25 +723,12 @@ namespace ABC_Bakery.Forms
             roundedPanel6.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label label6;
-        private DataGridViewTextBoxColumn mail;
-        private DataGridViewTextBoxColumn note;
-        private DataGridViewTextBoxColumn total;
-        private DataGridViewTextBoxColumn orderDate;
-        private DataGridViewTextBoxColumn maBienBhna;
-        private DataGridViewTextBoxColumn stt;
-        private DataGridView dataGridView3;
-        private Helpers.UI.RoundedPanel roundedPanel3;
-        private Panel panel5;
-        private PictureBox pictureBox1;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom1;
-        private Helpers.UI.RoundedPanel roundedPanel4;
         private Label label1;
         private Panel panel2;
         private Helpers.UI.RoundedPanel roundedPanel2;
@@ -729,11 +748,23 @@ namespace ABC_Bakery.Forms
         private Helpers.UI.RoundedPanel roundedPanel6;
         private Label label2;
         private ReaLTaiizor.Controls.MetroDivider metroDivider1;
-        private Helpers.UI.RoundedButton roundedButton1;
+        private Helpers.UI.RoundedButton btnSave;
         private Panel panel3;
-        private DataGridView dataGridView1;
+        private DataGridView dgOrderDetail;
+        private Helpers.UI.RoundedPanel roundedPanel4;
+        private Helpers.UI.DatetimePickerCustom dt_date;
+        private Panel panel5;
+        private Helpers.UI.RoundedPanel roundedPanel3;
+        private DataGridView dgOrders;
+        private DataGridViewTextBoxColumn stt;
+        private DataGridViewTextBoxColumn maBienNhan;
+        private DataGridViewTextBoxColumn orderDate;
+        private DataGridViewTextBoxColumn refund_date;
+        private DataGridViewTextBoxColumn total;
+        private DataGridViewTextBoxColumn note;
         private DataGridViewTextBoxColumn order_name;
         private DataGridViewTextBoxColumn order_quantity;
         private DataGridViewTextBoxColumn order_total;
+        private DataGridViewTextBoxColumn oderDetail_Id;
     }
 }

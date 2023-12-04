@@ -27,6 +27,7 @@ namespace ABC_Bakery.Repositories
             } catch (Exception e)
             {
                 Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
                 return false;
             }
         }
@@ -46,6 +47,11 @@ namespace ABC_Bakery.Repositories
             return this._db.Receipts.ToList();
         }
 
+        public List<Receipt> FindAllByReceiptType(int type)
+        {
+            return this._db.Receipts.Where(r => r.ReceiptType == (ReceiptType)type).ToList();
+        }
+
         public bool Update(Receipt obj)
         {
             throw new NotImplementedException();
@@ -55,7 +61,7 @@ namespace ABC_Bakery.Repositories
         {
             List<Receipt> ret = this.FindAll();
             string dateStr = date.ToString("dd/MM/yyyy");
-            return ret.Where(r => r.CreatedAt.ToString("dd/MM/yyyy").Equals(dateStr) && r.ReceiptType == (ReceiptType)type).FirstOrDefault();
+            return ret.FirstOrDefault(r => r.CreatedAt.ToString("dd/MM/yyyy").Equals(dateStr) && r.ReceiptType == (ReceiptType)type);
         }
     }
 }

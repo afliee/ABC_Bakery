@@ -38,11 +38,6 @@ namespace ABC_Bakery
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Application));
-            panel1 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            label1 = new Label();
-            menubar = new PictureBox();
-            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             sidebarContainer = new FlowLayoutPanel();
             pnLogo = new Panel();
             pictureBox1 = new PictureBox();
@@ -59,11 +54,11 @@ namespace ABC_Bakery
             pnOrder = new Panel();
             orders = new Button();
             panel8 = new Panel();
-            button7 = new Button();
+            orders_equip = new Button();
             panel2 = new Panel();
-            button1 = new Button();
+            btnOrderDirect = new Button();
             panel7 = new Panel();
-            button6 = new Button();
+            btnOrdersPrePlaced = new Button();
             panel21 = new Panel();
             followReceiptContainer = new FlowLayoutPanel();
             pnFollowReceipt = new Panel();
@@ -82,6 +77,8 @@ namespace ABC_Bakery
             btnCreateOrder = new Button();
             panel25 = new Panel();
             btnCreateDH = new Button();
+            panel12 = new Panel();
+            btnCreatePlaceTCOrder = new Button();
             panel17 = new Panel();
             btnCreateCategory = new Button();
             panel13 = new Panel();
@@ -98,8 +95,6 @@ namespace ABC_Bakery
             panel16 = new Panel();
             button11 = new Button();
             followReceiptTransition = new System.Windows.Forms.Timer(components);
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)menubar).BeginInit();
             sidebarContainer.SuspendLayout();
             pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -121,6 +116,7 @@ namespace ABC_Bakery
             panel3.SuspendLayout();
             panel10.SuspendLayout();
             panel25.SuspendLayout();
+            panel12.SuspendLayout();
             panel17.SuspendLayout();
             panel13.SuspendLayout();
             panel4.SuspendLayout();
@@ -128,72 +124,6 @@ namespace ABC_Bakery
             panel6.SuspendLayout();
             panel16.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(flowLayoutPanel1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(menubar);
-            panel1.Controls.Add(nightControlBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1362, 34);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(3, 34);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(249, 555);
-            flowLayoutPanel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(51, -1);
-            label1.Name = "label1";
-            label1.Size = new Size(115, 32);
-            label1.TabIndex = 0;
-            label1.Text = "ABC Bakery";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // menubar
-            // 
-            menubar.Image = Properties.Resources.menu_bar;
-            menubar.Location = new Point(12, 3);
-            menubar.Name = "menubar";
-            menubar.Size = new Size(33, 28);
-            menubar.SizeMode = PictureBoxSizeMode.Zoom;
-            menubar.TabIndex = 1;
-            menubar.TabStop = false;
-            menubar.Visible = false;
-            menubar.Click += menubar_Click;
-            // 
-            // nightControlBox1
-            // 
-            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            nightControlBox1.BackColor = Color.Transparent;
-            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
-            nightControlBox1.CloseHoverForeColor = Color.White;
-            nightControlBox1.DefaultLocation = true;
-            nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
-            nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
-            nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.EnableMaximizeButton = true;
-            nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.EnableMinimizeButton = true;
-            nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(1223, 0);
-            nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
-            nightControlBox1.MaximizeHoverForeColor = Color.White;
-            nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
-            nightControlBox1.MinimizeHoverForeColor = Color.White;
-            nightControlBox1.Name = "nightControlBox1";
-            nightControlBox1.Size = new Size(139, 31);
-            nightControlBox1.TabIndex = 1;
             // 
             // sidebarContainer
             // 
@@ -211,9 +141,9 @@ namespace ABC_Bakery
             sidebarContainer.Controls.Add(flowLayoutPanel3);
             sidebarContainer.Dock = DockStyle.Left;
             sidebarContainer.FlowDirection = FlowDirection.TopDown;
-            sidebarContainer.Location = new Point(0, 34);
+            sidebarContainer.Location = new Point(0, 0);
             sidebarContainer.Name = "sidebarContainer";
-            sidebarContainer.Size = new Size(292, 791);
+            sidebarContainer.Size = new Size(292, 825);
             sidebarContainer.TabIndex = 1;
             sidebarContainer.WrapContents = false;
             // 
@@ -271,7 +201,7 @@ namespace ABC_Bakery
             receipts.FlatAppearance.MouseDownBackColor = Color.FromArgb(219, 149, 112);
             receipts.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 149, 112);
             receipts.FlatStyle = FlatStyle.Flat;
-            receipts.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            receipts.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             receipts.ForeColor = Color.Black;
             receipts.Image = (Image)resources.GetObject("receipts.Image");
             receipts.ImageAlign = ContentAlignment.MiddleLeft;
@@ -281,7 +211,7 @@ namespace ABC_Bakery
             receipts.RightToLeft = RightToLeft.No;
             receipts.Size = new Size(317, 68);
             receipts.TabIndex = 3;
-            receipts.Text = "            Phiếu thu chi";
+            receipts.Text = "       Phiếu thu chi";
             receipts.TextAlign = ContentAlignment.MiddleLeft;
             receipts.UseVisualStyleBackColor = false;
             receipts.Click += receipts_Click;
@@ -302,7 +232,7 @@ namespace ABC_Bakery
             button12.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
             button12.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
             button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button12.ForeColor = SystemColors.ControlText;
             button12.Image = (Image)resources.GetObject("button12.Image");
             button12.ImageAlign = ContentAlignment.MiddleLeft;
@@ -312,7 +242,7 @@ namespace ABC_Bakery
             button12.RightToLeft = RightToLeft.No;
             button12.Size = new Size(317, 67);
             button12.TabIndex = 3;
-            button12.Text = "            Phiếu thu";
+            button12.Text = "       Phiếu chi";
             button12.TextAlign = ContentAlignment.MiddleLeft;
             button12.UseVisualStyleBackColor = false;
             button12.Click += btnReceipt_Click;
@@ -333,7 +263,7 @@ namespace ABC_Bakery
             button13.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
             button13.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
             button13.FlatStyle = FlatStyle.Flat;
-            button13.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button13.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             button13.ForeColor = SystemColors.ControlText;
             button13.Image = (Image)resources.GetObject("button13.Image");
             button13.ImageAlign = ContentAlignment.MiddleLeft;
@@ -343,7 +273,7 @@ namespace ABC_Bakery
             button13.RightToLeft = RightToLeft.No;
             button13.Size = new Size(317, 67);
             button13.TabIndex = 3;
-            button13.Text = "            Phiếu chi";
+            button13.Text = "       Phiếu thu";
             button13.TextAlign = ContentAlignment.MiddleLeft;
             button13.UseVisualStyleBackColor = false;
             button13.Click += btnReceive_Click;
@@ -384,7 +314,7 @@ namespace ABC_Bakery
             orders.FlatAppearance.MouseDownBackColor = Color.FromArgb(219, 149, 112);
             orders.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 149, 112);
             orders.FlatStyle = FlatStyle.Flat;
-            orders.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            orders.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             orders.ForeColor = Color.Black;
             orders.Image = (Image)resources.GetObject("orders.Image");
             orders.ImageAlign = ContentAlignment.MiddleLeft;
@@ -394,14 +324,14 @@ namespace ABC_Bakery
             orders.RightToLeft = RightToLeft.No;
             orders.Size = new Size(317, 53);
             orders.TabIndex = 3;
-            orders.Text = "            Biên nhận";
+            orders.Text = "       Biên nhận";
             orders.TextAlign = ContentAlignment.MiddleLeft;
             orders.UseVisualStyleBackColor = false;
             orders.Click += orders_Click;
             // 
             // panel8
             // 
-            panel8.Controls.Add(button7);
+            panel8.Controls.Add(orders_equip);
             panel8.Location = new Point(0, 46);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
@@ -409,29 +339,30 @@ namespace ABC_Bakery
             panel8.Size = new Size(288, 46);
             panel8.TabIndex = 2;
             // 
-            // button7
+            // orders_equip
             // 
-            button7.BackColor = Color.FromArgb(226, 199, 153);
-            button7.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
-            button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.ForeColor = SystemColors.ControlText;
-            button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(-19, -11);
-            button7.Name = "button7";
-            button7.Padding = new Padding(25, 0, 0, 0);
-            button7.RightToLeft = RightToLeft.No;
-            button7.Size = new Size(317, 67);
-            button7.TabIndex = 3;
-            button7.Text = "            Biên nhận thế chân";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = false;
+            orders_equip.BackColor = Color.FromArgb(226, 199, 153);
+            orders_equip.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            orders_equip.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            orders_equip.FlatStyle = FlatStyle.Flat;
+            orders_equip.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            orders_equip.ForeColor = SystemColors.ControlText;
+            orders_equip.Image = (Image)resources.GetObject("orders_equip.Image");
+            orders_equip.ImageAlign = ContentAlignment.MiddleLeft;
+            orders_equip.Location = new Point(-19, -11);
+            orders_equip.Name = "orders_equip";
+            orders_equip.Padding = new Padding(25, 0, 0, 0);
+            orders_equip.RightToLeft = RightToLeft.No;
+            orders_equip.Size = new Size(317, 67);
+            orders_equip.TabIndex = 3;
+            orders_equip.Text = "       Biên nhận thế chân";
+            orders_equip.TextAlign = ContentAlignment.MiddleLeft;
+            orders_equip.UseVisualStyleBackColor = false;
+            orders_equip.Click += orders_equip_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnOrderDirect);
             panel2.Location = new Point(0, 92);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
@@ -439,30 +370,31 @@ namespace ABC_Bakery
             panel2.Size = new Size(288, 46);
             panel2.TabIndex = 2;
             // 
-            // button1
+            // btnOrderDirect
             // 
-            button1.BackColor = Color.FromArgb(226, 199, 153);
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ControlText;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-19, -11);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Padding = new Padding(25, 0, 0, 0);
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(317, 67);
-            button1.TabIndex = 3;
-            button1.Text = "            Biên nhận bánh tại quầy";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            btnOrderDirect.BackColor = Color.FromArgb(226, 199, 153);
+            btnOrderDirect.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnOrderDirect.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnOrderDirect.FlatStyle = FlatStyle.Flat;
+            btnOrderDirect.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOrderDirect.ForeColor = SystemColors.ControlText;
+            btnOrderDirect.Image = (Image)resources.GetObject("btnOrderDirect.Image");
+            btnOrderDirect.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOrderDirect.Location = new Point(-19, -11);
+            btnOrderDirect.Margin = new Padding(0);
+            btnOrderDirect.Name = "btnOrderDirect";
+            btnOrderDirect.Padding = new Padding(25, 0, 0, 0);
+            btnOrderDirect.RightToLeft = RightToLeft.No;
+            btnOrderDirect.Size = new Size(317, 67);
+            btnOrderDirect.TabIndex = 3;
+            btnOrderDirect.Text = "       Biên nhận đặt tại quầy";
+            btnOrderDirect.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrderDirect.UseVisualStyleBackColor = false;
+            btnOrderDirect.Click += btnOrderDirect_Click;
             // 
             // panel7
             // 
-            panel7.Controls.Add(button6);
+            panel7.Controls.Add(btnOrdersPrePlaced);
             panel7.Location = new Point(0, 138);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
@@ -470,25 +402,26 @@ namespace ABC_Bakery
             panel7.Size = new Size(288, 46);
             panel7.TabIndex = 2;
             // 
-            // button6
+            // btnOrdersPrePlaced
             // 
-            button6.BackColor = Color.FromArgb(226, 199, 153);
-            button6.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
-            button6.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = SystemColors.ControlText;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-19, -11);
-            button6.Name = "button6";
-            button6.Padding = new Padding(25, 0, 0, 0);
-            button6.RightToLeft = RightToLeft.No;
-            button6.Size = new Size(317, 67);
-            button6.TabIndex = 3;
-            button6.Text = "            Biên nhận bánh đặt trước";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = false;
+            btnOrdersPrePlaced.BackColor = Color.FromArgb(226, 199, 153);
+            btnOrdersPrePlaced.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnOrdersPrePlaced.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnOrdersPrePlaced.FlatStyle = FlatStyle.Flat;
+            btnOrdersPrePlaced.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOrdersPrePlaced.ForeColor = SystemColors.ControlText;
+            btnOrdersPrePlaced.Image = (Image)resources.GetObject("btnOrdersPrePlaced.Image");
+            btnOrdersPrePlaced.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOrdersPrePlaced.Location = new Point(-19, -11);
+            btnOrdersPrePlaced.Name = "btnOrdersPrePlaced";
+            btnOrdersPrePlaced.Padding = new Padding(25, 0, 0, 0);
+            btnOrdersPrePlaced.RightToLeft = RightToLeft.No;
+            btnOrdersPrePlaced.Size = new Size(317, 67);
+            btnOrdersPrePlaced.TabIndex = 3;
+            btnOrdersPrePlaced.Text = "       Biên nhận bánh đặt trước";
+            btnOrdersPrePlaced.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrdersPrePlaced.UseVisualStyleBackColor = false;
+            btnOrdersPrePlaced.Click += btnOrdersPrePlaced_Click;
             // 
             // panel21
             // 
@@ -648,12 +581,13 @@ namespace ABC_Bakery
             flowLayoutPanel3.Controls.Add(panel3);
             flowLayoutPanel3.Controls.Add(panel10);
             flowLayoutPanel3.Controls.Add(panel25);
+            flowLayoutPanel3.Controls.Add(panel12);
             flowLayoutPanel3.Controls.Add(panel17);
             flowLayoutPanel3.Controls.Add(panel13);
             flowLayoutPanel3.Location = new Point(0, 608);
             flowLayoutPanel3.Margin = new Padding(0);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(290, 230);
+            flowLayoutPanel3.Size = new Size(290, 279);
             flowLayoutPanel3.TabIndex = 7;
             // 
             // panel3
@@ -724,7 +658,7 @@ namespace ABC_Bakery
             panel25.Margin = new Padding(0);
             panel25.Name = "panel25";
             panel25.RightToLeft = RightToLeft.Yes;
-            panel25.Size = new Size(286, 46);
+            panel25.Size = new Size(290, 46);
             panel25.TabIndex = 2;
             // 
             // btnCreateDH
@@ -749,10 +683,42 @@ namespace ABC_Bakery
             btnCreateDH.UseVisualStyleBackColor = false;
             btnCreateDH.Click += btnCreateDH_Click;
             // 
+            // panel12
+            // 
+            panel12.Controls.Add(btnCreatePlaceTCOrder);
+            panel12.Location = new Point(0, 138);
+            panel12.Margin = new Padding(0);
+            panel12.Name = "panel12";
+            panel12.RightToLeft = RightToLeft.Yes;
+            panel12.Size = new Size(290, 46);
+            panel12.TabIndex = 4;
+            // 
+            // btnCreatePlaceTCOrder
+            // 
+            btnCreatePlaceTCOrder.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreatePlaceTCOrder.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreatePlaceTCOrder.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreatePlaceTCOrder.FlatStyle = FlatStyle.Flat;
+            btnCreatePlaceTCOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreatePlaceTCOrder.ForeColor = SystemColors.ControlText;
+            btnCreatePlaceTCOrder.Image = (Image)resources.GetObject("btnCreatePlaceTCOrder.Image");
+            btnCreatePlaceTCOrder.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreatePlaceTCOrder.Location = new Point(-19, -5);
+            btnCreatePlaceTCOrder.Margin = new Padding(3, 2, 3, 2);
+            btnCreatePlaceTCOrder.Name = "btnCreatePlaceTCOrder";
+            btnCreatePlaceTCOrder.Padding = new Padding(22, 0, 0, 0);
+            btnCreatePlaceTCOrder.RightToLeft = RightToLeft.No;
+            btnCreatePlaceTCOrder.Size = new Size(317, 57);
+            btnCreatePlaceTCOrder.TabIndex = 3;
+            btnCreatePlaceTCOrder.Text = "       Tạo Đơn đặt thiết bị";
+            btnCreatePlaceTCOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreatePlaceTCOrder.UseVisualStyleBackColor = false;
+            btnCreatePlaceTCOrder.Click += btnCreatePlaceTCOrder_Click;
+            // 
             // panel17
             // 
             panel17.Controls.Add(btnCreateCategory);
-            panel17.Location = new Point(0, 138);
+            panel17.Location = new Point(0, 184);
             panel17.Margin = new Padding(0);
             panel17.Name = "panel17";
             panel17.RightToLeft = RightToLeft.Yes;
@@ -783,7 +749,7 @@ namespace ABC_Bakery
             // panel13
             // 
             panel13.Controls.Add(btnCreateProduct);
-            panel13.Location = new Point(0, 184);
+            panel13.Location = new Point(0, 230);
             panel13.Margin = new Padding(0);
             panel13.Name = "panel13";
             panel13.RightToLeft = RightToLeft.Yes;
@@ -955,15 +921,11 @@ namespace ABC_Bakery
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1362, 825);
             Controls.Add(sidebarContainer);
-            Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             Name = "Application";
             Text = " ";
             WindowState = FormWindowState.Maximized;
             Load += Application_Load;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)menubar).EndInit();
             sidebarContainer.ResumeLayout(false);
             pnLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -985,6 +947,7 @@ namespace ABC_Bakery
             panel3.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel25.ResumeLayout(false);
+            panel12.ResumeLayout(false);
             panel17.ResumeLayout(false);
             panel13.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -995,22 +958,16 @@ namespace ABC_Bakery
         }
 
         #endregion
-
-        private Panel panel1;
-        private PictureBox menubar;
-        private Label label1;
-        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
-        private FlowLayoutPanel flowLayoutPanel1;
         private FlowLayoutPanel sidebarContainer;
         private FlowLayoutPanel orderContainer;
         private Panel panel2;
-        private Button button1;
+        private Button btnOrderDirect;
         private Panel pnOrder;
         private Button orders;
         private Panel panel7;
-        private Button button6;
+        private Button btnOrdersPrePlaced;
         private Panel panel8;
-        private Button button7;
+        private Button orders_equip;
         private System.Windows.Forms.Timer orderTransition;
         private System.Windows.Forms.Timer sidebarTransition;
         private FlowLayoutPanel follow_oders;
@@ -1062,5 +1019,6 @@ namespace ABC_Bakery
         private Button btnCreateOrderNoPayment;
         private Panel panel25;
         private Button btnCreateDH;
+        private Button btnCreatePlaceTCOrder;
     }
 }

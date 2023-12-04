@@ -1,5 +1,6 @@
 ﻿using ABC_Bakery.Helpers;
 using ABC_Bakery.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +37,7 @@ namespace ABC_Bakery.Repositories
 
         public OrderDetail Find(int id)
         {
-            throw new NotImplementedException();
+            return this._context.OrderDetails.Find(id);
         }
 
         public List<OrderDetail> FindAll()
@@ -46,12 +47,55 @@ namespace ABC_Bakery.Repositories
 
         public bool Update(OrderDetail obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                this._context.OrderDetails.Update(obj);
+                return this._context.SaveChanges() > 0;
+            } catch (Exception e)
+            {
+                Console.Write(e.ToString());
+                return false;
+            }
+        }
+
+        public bool UpdateQuantity(int orderDetailId, int quantity)
+        {
+            try
+            {
+                var orderDetail = Find(orderDetailId);
+                if (orderDetail == null)
+                {
+                    return false;
+                }
+
+
+                this._context.OrderDetails.Where(od => od.Id == orderDetailId).ExecuteUpdate(entity => entity.SetProperty(od => od.Quantity, quantity));
+
+                this._context.OrderDetails.Where(od => od.Id == orderDetailId).ExecuteUpdate(entity => entity.SetProperty(od => od.Total, quantity * orderDetail.Price));
+
+                return true;
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
         }
 
         public List<OrderDetail> FindByOrderId(int orderId)
         {
             return this._context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+        }
+
+        public int CountProductByOrderId(int orderId)
+        {
+            var ordersDetail = this._context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+
+            if (ordersDetail == null)
+            {
+                return 0;
+            }
+
+            return ordersDetail.Sum(od => od.Quantity);
         }
     }
 }

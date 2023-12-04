@@ -70,7 +70,7 @@ namespace ABC_Bakery.Repositories
 
         public Product FindByName(string name)
         {
-               return this.context.Products.Where(p => p.Name == name).FirstOrDefault();
+               return this.context.Products.Where(p => p.Name.Equals(name)).FirstOrDefault();
         }
 
         public List<Product> FindByNameContains(string name)

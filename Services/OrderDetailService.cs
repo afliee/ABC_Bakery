@@ -16,7 +16,8 @@ namespace ABC_Bakery.Services
 
         private OrderDetailService()
         {
-            _db = new Helpers.DatabaseContext();
+            //_db = new Helpers.DatabaseContext();
+            _db = Helpers.SingletonContext.GetInstance().GetDatabaseContext();
             _orderDetailRepository = new Repositories.OrderDetailRepository(_db);
             _productRepository = new Repositories.ProductRepository(_db);
         }
@@ -51,6 +52,16 @@ namespace ABC_Bakery.Services
             }
 
             return products;
+        }
+
+        public bool UpdateQuantity(int orderDetailId, int quantity)
+        {
+            return _orderDetailRepository.UpdateQuantity(orderDetailId, quantity);
+        }
+
+        public int CountProductByOrderId(int orderId)
+        {
+            return _orderDetailRepository.CountProductByOrderId(orderId);
         }
     }
 }

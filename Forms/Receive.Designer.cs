@@ -34,311 +34,244 @@ namespace ABC_Bakery.Forms
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            label6 = new Label();
-            ten = new DataGridViewTextBoxColumn();
-            SL = new DataGridViewTextBoxColumn();
-            Thanhtien = new DataGridViewTextBoxColumn();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            roundedPanel1 = new Helpers.UI.RoundedPanel();
-            label3 = new Label();
-            dataGridView1 = new DataGridView();
-            panel5 = new Panel();
-            roundedPanel3 = new Helpers.UI.RoundedPanel();
-            dataGridView3 = new DataGridView();
-            stt = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            roundedPanel2 = new Helpers.UI.RoundedPanel();
-            panel4 = new Panel();
+            panel3 = new Panel();
+            label1 = new Label();
             panel2 = new Panel();
             roundedPanel4 = new Helpers.UI.RoundedPanel();
-            datetimePickerCustom1 = new Helpers.UI.DatetimePickerCustom();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
+            dt_date = new Helpers.UI.DatetimePickerCustom();
+            roundedPanel1 = new Helpers.UI.RoundedPanel();
+            roundedPanel5 = new Helpers.UI.RoundedPanel();
             panel1 = new Panel();
-            flowLayoutPanel1.SuspendLayout();
-            roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel5.SuspendLayout();
-            roundedPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            roundedPanel2.SuspendLayout();
-            panel4.SuspendLayout();
+            dgReceiptDetail = new DataGridView();
+            roundedPanel6 = new Helpers.UI.RoundedPanel();
+            label2 = new Label();
+            metroDivider1 = new ReaLTaiizor.Controls.MetroDivider();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            roundedPanel3 = new Helpers.UI.RoundedPanel();
+            dgReceipts = new DataGridView();
+            stt = new DataGridViewTextBoxColumn();
+            maPhieu = new DataGridViewTextBoxColumn();
+            date = new DataGridViewTextBoxColumn();
+            order_paid_quantity = new DataGridViewTextBoxColumn();
+            total = new DataGridViewTextBoxColumn();
+            id = new DataGridViewTextBoxColumn();
+            roundedPanel2 = new Helpers.UI.RoundedPanel();
+            label6 = new Label();
+            order_name = new DataGridViewTextBoxColumn();
+            order_quantity = new DataGridViewTextBoxColumn();
+            order_total = new DataGridViewTextBoxColumn();
+            oderDetail_Id = new DataGridViewTextBoxColumn();
+            panel3.SuspendLayout();
             panel2.SuspendLayout();
             roundedPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            roundedPanel1.SuspendLayout();
+            roundedPanel5.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgReceiptDetail).BeginInit();
+            roundedPanel6.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            roundedPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgReceipts).BeginInit();
+            roundedPanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // label6
+            // panel3
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(6, 20);
-            label6.Name = "label6";
-            label6.Size = new Size(121, 29);
-            label6.TabIndex = 0;
-            label6.Text = "Phiếu chi";
+            panel3.BackColor = Color.FromArgb(0, 0, 0, 0);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(panel2);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1434, 65);
+            panel3.TabIndex = 17;
             // 
-            // ten
+            // label1
             // 
-            ten.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            ten.Frozen = true;
-            ten.HeaderText = "Tên";
-            ten.MinimumWidth = 6;
-            ten.Name = "ten";
-            ten.ReadOnly = true;
-            ten.Width = 196;
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(0, 0, 0, 0);
+            label1.Font = new Font("Arial Narrow", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(15, 18);
+            label1.Margin = new Padding(15);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(118, 33);
+            label1.TabIndex = 9;
+            label1.Text = "Phiếu thu";
             // 
-            // SL
+            // panel2
             // 
-            SL.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            SL.Frozen = true;
-            SL.HeaderText = "SL";
-            SL.MinimumWidth = 6;
-            SL.Name = "SL";
-            SL.ReadOnly = true;
-            SL.Width = 68;
+            panel2.BackColor = Color.FromArgb(0, 0, 0, 0);
+            panel2.Controls.Add(roundedPanel4);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(1033, 0);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(5);
+            panel2.Size = new Size(401, 65);
+            panel2.TabIndex = 10;
             // 
-            // Thanhtien
+            // roundedPanel4
             // 
-            Thanhtien.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Thanhtien.Frozen = true;
-            Thanhtien.HeaderText = "Thành tiền";
-            Thanhtien.MinimumWidth = 6;
-            Thanhtien.Name = "Thanhtien";
-            Thanhtien.ReadOnly = true;
-            Thanhtien.Width = 202;
+            roundedPanel4.BackColor = Color.FromArgb(154, 59, 59);
+            roundedPanel4.Controls.Add(dt_date);
+            roundedPanel4.Dock = DockStyle.Fill;
+            roundedPanel4.ForeColor = Color.White;
+            roundedPanel4.Location = new Point(5, 5);
+            roundedPanel4.Margin = new Padding(3, 15, 3, 3);
+            roundedPanel4.Name = "roundedPanel4";
+            roundedPanel4.Size = new Size(391, 55);
+            roundedPanel4.TabIndex = 6;
             // 
-            // flowLayoutPanel1
+            // dt_date
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            flowLayoutPanel1.Controls.Add(roundedPanel1);
-            flowLayoutPanel1.Controls.Add(dataGridView1);
-            flowLayoutPanel1.Dock = DockStyle.Right;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            flowLayoutPanel1.Location = new Point(1173, 93);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(466, 976);
-            flowLayoutPanel1.TabIndex = 4;
+            dt_date.BorderColor = Color.FromArgb(154, 59, 59);
+            dt_date.BorderSize = 3;
+            dt_date.CalendarFont = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dt_date.CustomFormat = "dddd , dd MMMM yyyy";
+            dt_date.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dt_date.Location = new Point(16, 2);
+            dt_date.MinimumSize = new Size(4, 50);
+            dt_date.Name = "dt_date";
+            dt_date.Size = new Size(366, 50);
+            dt_date.SkinColor = Color.FromArgb(154, 59, 59);
+            dt_date.TabIndex = 1;
+            dt_date.TextColor = Color.White;
             // 
             // roundedPanel1
             // 
-            roundedPanel1.BackColor = Color.FromArgb(255, 224, 192);
-            roundedPanel1.Controls.Add(label3);
+            roundedPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel1.Controls.Add(roundedPanel5);
+            roundedPanel1.Dock = DockStyle.Right;
             roundedPanel1.ForeColor = Color.White;
-            roundedPanel1.Location = new Point(3, 4);
-            roundedPanel1.Margin = new Padding(3, 4, 3, 4);
+            roundedPanel1.Location = new Point(1033, 65);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(457, 75);
-            roundedPanel1.TabIndex = 7;
+            roundedPanel1.Padding = new Padding(5, 3, 5, 25);
+            roundedPanel1.Size = new Size(401, 737);
+            roundedPanel1.TabIndex = 18;
             // 
-            // label3
+            // roundedPanel5
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(7, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(199, 29);
-            label3.TabIndex = 0;
-            label3.Text = "Chi tiết hóa đơn";
+            roundedPanel5.BackColor = Color.FromArgb(249, 245, 220);
+            roundedPanel5.Controls.Add(panel1);
+            roundedPanel5.Controls.Add(roundedPanel6);
+            roundedPanel5.Dock = DockStyle.Fill;
+            roundedPanel5.ForeColor = Color.White;
+            roundedPanel5.Location = new Point(5, 3);
+            roundedPanel5.Name = "roundedPanel5";
+            roundedPanel5.Padding = new Padding(3);
+            roundedPanel5.Size = new Size(391, 709);
+            roundedPanel5.TabIndex = 0;
             // 
-            // dataGridView1
+            // panel1
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(255, 224, 192);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            panel1.Controls.Add(dgReceiptDetail);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 68);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(385, 638);
+            panel1.TabIndex = 8;
+            // 
+            // dgReceiptDetail
+            // 
+            dgReceiptDetail.AllowUserToAddRows = false;
+            dgReceiptDetail.AllowUserToDeleteRows = false;
+            dgReceiptDetail.AllowUserToOrderColumns = true;
+            dgReceiptDetail.BackgroundColor = Color.FromArgb(249, 245, 220);
+            dgReceiptDetail.BorderStyle = BorderStyle.None;
+            dgReceiptDetail.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgReceiptDetail.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.Padding = new Padding(0, 10, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeight = 54;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ten, SL, Thanhtien });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle2.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(6, 90);
-            dataGridView1.Margin = new Padding(6, 7, 6, 7);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle3.Font = new Font("Arial Narrow", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ShowEditingIcon = false;
-            dataGridView1.Size = new Size(455, 853);
-            dataGridView1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.Controls.Add(roundedPanel3);
-            panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(17, 79);
-            panel5.Margin = new Padding(3, 4, 3, 4);
-            panel5.Name = "panel5";
-            panel5.Padding = new Padding(0, 13, 0, 13);
-            panel5.Size = new Size(1605, 877);
-            panel5.TabIndex = 6;
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
-            roundedPanel3.Controls.Add(dataGridView3);
-            roundedPanel3.Dock = DockStyle.Fill;
-            roundedPanel3.ForeColor = Color.White;
-            roundedPanel3.Location = new Point(0, 13);
-            roundedPanel3.Margin = new Padding(3, 4, 3, 4);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(1605, 851);
-            roundedPanel3.TabIndex = 0;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView3.BackgroundColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridView3.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgReceiptDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgReceiptDetail.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgReceiptDetail.Columns.AddRange(new DataGridViewColumn[] { order_name, order_quantity, order_total, oderDetail_Id });
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle5.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.NullValue = "dasd";
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView3.ColumnHeadersHeight = 54;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { stt, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.RosyBrown;
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView3.EnableHeadersVisualStyles = false;
-            dataGridView3.GridColor = Color.FromArgb(224, 224, 224);
-            dataGridView3.Location = new Point(-2, 0);
-            dataGridView3.Margin = new Padding(0);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridView3.RowHeadersVisible = false;
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.ScrollBars = ScrollBars.None;
-            dataGridView3.Size = new Size(1158, 954);
-            dataGridView3.TabIndex = 3;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgReceiptDetail.DefaultCellStyle = dataGridViewCellStyle5;
+            dgReceiptDetail.Dock = DockStyle.Fill;
+            dgReceiptDetail.EnableHeadersVisualStyles = false;
+            dgReceiptDetail.GridColor = Color.FromArgb(224, 224, 224);
+            dgReceiptDetail.Location = new Point(0, 0);
+            dgReceiptDetail.Name = "dgReceiptDetail";
+            dgReceiptDetail.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgReceiptDetail.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(249, 245, 220);
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dgReceiptDetail.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgReceiptDetail.RowTemplate.Height = 40;
+            dgReceiptDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgReceiptDetail.Size = new Size(385, 638);
+            dgReceiptDetail.TabIndex = 6;
             // 
-            // stt
+            // roundedPanel6
             // 
-            stt.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle6.BackColor = Color.Red;
-            dataGridViewCellStyle6.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            stt.DefaultCellStyle = dataGridViewCellStyle6;
-            stt.Frozen = true;
-            stt.HeaderText = "STT";
-            stt.MinimumWidth = 6;
-            stt.Name = "stt";
-            stt.Resizable = DataGridViewTriState.True;
-            stt.Width = 74;
+            roundedPanel6.BackColor = Color.FromArgb(249, 245, 220);
+            roundedPanel6.Controls.Add(label2);
+            roundedPanel6.Controls.Add(metroDivider1);
+            roundedPanel6.Dock = DockStyle.Top;
+            roundedPanel6.ForeColor = Color.White;
+            roundedPanel6.Location = new Point(3, 3);
+            roundedPanel6.Margin = new Padding(3, 3, 3, 50);
+            roundedPanel6.Name = "roundedPanel6";
+            roundedPanel6.Size = new Size(385, 65);
+            roundedPanel6.TabIndex = 6;
             // 
-            // dataGridViewTextBoxColumn2
+            // label2
             // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewTextBoxColumn2.FillWeight = 273.6842F;
-            dataGridViewTextBoxColumn2.HeaderText = "Mã Phiếu";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.Width = 170;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(127, 12);
+            label2.Name = "label2";
+            label2.Size = new Size(166, 22);
+            label2.TabIndex = 1;
+            label2.Text = "Chi tiết phiếu thu";
             // 
-            // dataGridViewTextBoxColumn3
+            // metroDivider1
             // 
-            dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn3.FillWeight = 42.1052666F;
-            dataGridViewTextBoxColumn3.HeaderText = "Ngày";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 42.1052666F;
-            dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.FillWeight = 42.1052666F;
-            dataGridViewTextBoxColumn5.HeaderText = "Ghi chú";
-            dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // roundedPanel2
-            // 
-            roundedPanel2.BackColor = Color.FromArgb(255, 224, 192);
-            roundedPanel2.Controls.Add(label6);
-            roundedPanel2.Dock = DockStyle.Top;
-            roundedPanel2.ForeColor = Color.Black;
-            roundedPanel2.Location = new Point(17, 4);
-            roundedPanel2.Margin = new Padding(3, 4, 3, 4);
-            roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1605, 75);
-            roundedPanel2.TabIndex = 4;
+            metroDivider1.IsDerivedStyle = true;
+            metroDivider1.Location = new Point(3, 49);
+            metroDivider1.Name = "metroDivider1";
+            metroDivider1.Orientation = ReaLTaiizor.Enum.Metro.DividerStyle.Horizontal;
+            metroDivider1.Size = new Size(378, 4);
+            metroDivider1.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            metroDivider1.StyleManager = null;
+            metroDivider1.TabIndex = 3;
+            metroDivider1.Text = "metroDivider1";
+            metroDivider1.ThemeAuthor = "Taiizor";
+            metroDivider1.ThemeName = "MetroLight";
+            metroDivider1.Thickness = 1;
             // 
             // panel4
             // 
@@ -346,145 +279,263 @@ namespace ABC_Bakery.Forms
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(roundedPanel2);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 93);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(0, 65);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(17, 4, 17, 20);
-            panel4.Size = new Size(1639, 976);
-            panel4.TabIndex = 5;
+            panel4.Padding = new Padding(15, 3, 15, 15);
+            panel4.Size = new Size(1033, 737);
+            panel4.TabIndex = 19;
             // 
-            // panel2
+            // panel5
             // 
-            panel2.Controls.Add(roundedPanel4);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(1173, 13);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(455, 67);
-            panel2.TabIndex = 7;
+            panel5.Controls.Add(roundedPanel3);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(15, 59);
+            panel5.Name = "panel5";
+            panel5.Padding = new Padding(0, 10, 0, 10);
+            panel5.Size = new Size(1003, 663);
+            panel5.TabIndex = 6;
             // 
-            // roundedPanel4
+            // roundedPanel3
             // 
-            roundedPanel4.BackColor = Color.FromArgb(154, 59, 59);
-            roundedPanel4.Controls.Add(datetimePickerCustom1);
-            roundedPanel4.Controls.Add(pictureBox1);
-            roundedPanel4.Dock = DockStyle.Fill;
-            roundedPanel4.ForeColor = Color.White;
-            roundedPanel4.Location = new Point(0, 0);
-            roundedPanel4.Margin = new Padding(3, 20, 3, 4);
-            roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(455, 67);
-            roundedPanel4.TabIndex = 6;
+            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel3.Controls.Add(dgReceipts);
+            roundedPanel3.Dock = DockStyle.Fill;
+            roundedPanel3.ForeColor = Color.White;
+            roundedPanel3.Location = new Point(0, 10);
+            roundedPanel3.Name = "roundedPanel3";
+            roundedPanel3.Size = new Size(1003, 643);
+            roundedPanel3.TabIndex = 0;
             // 
-            // datetimePickerCustom1
+            // dgReceipts
             // 
-            datetimePickerCustom1.BorderColor = Color.FromArgb(154, 59, 59);
-            datetimePickerCustom1.BorderSize = 3;
-            datetimePickerCustom1.CustomFormat = "dddd , dd MMMM yyyy";
-            datetimePickerCustom1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            datetimePickerCustom1.Location = new Point(71, 11);
-            datetimePickerCustom1.Margin = new Padding(3, 4, 3, 4);
-            datetimePickerCustom1.MinimumSize = new Size(4, 50);
-            datetimePickerCustom1.Name = "datetimePickerCustom1";
-            datetimePickerCustom1.Size = new Size(374, 50);
-            datetimePickerCustom1.SkinColor = Color.FromArgb(154, 59, 59);
-            datetimePickerCustom1.TabIndex = 1;
-            datetimePickerCustom1.TextColor = Color.White;
+            dgReceipts.AllowUserToAddRows = false;
+            dgReceipts.BackgroundColor = Color.FromArgb(249, 245, 220);
+            dgReceipts.BorderStyle = BorderStyle.None;
+            dgReceipts.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgReceipts.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
+            dgReceipts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.NullValue = "dasd";
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgReceipts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dgReceipts.ColumnHeadersHeight = 58;
+            dgReceipts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgReceipts.Columns.AddRange(new DataGridViewColumn[] { stt, maPhieu, date, order_paid_quantity, total, id });
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.RosyBrown;
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dgReceipts.DefaultCellStyle = dataGridViewCellStyle12;
+            dgReceipts.Dock = DockStyle.Fill;
+            dgReceipts.EnableHeadersVisualStyles = false;
+            dgReceipts.GridColor = Color.FromArgb(224, 224, 224);
+            dgReceipts.Location = new Point(0, 0);
+            dgReceipts.Margin = new Padding(0);
+            dgReceipts.MultiSelect = false;
+            dgReceipts.Name = "dgReceipts";
+            dgReceipts.ReadOnly = true;
+            dgReceipts.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dgReceipts.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dgReceipts.RowHeadersVisible = false;
+            dgReceipts.RowHeadersWidth = 51;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(226, 199, 153);
+            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
+            dgReceipts.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dgReceipts.RowTemplate.Height = 50;
+            dgReceipts.ScrollBars = ScrollBars.None;
+            dgReceipts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgReceipts.Size = new Size(1003, 643);
+            dgReceipts.TabIndex = 3;
+            dgReceipts.CellContentClick += dgReceipts_CellContentClick;
             // 
-            // pictureBox1
+            // stt
             // 
-            pictureBox1.Image = Properties.Resources.calender;
-            pictureBox1.Location = new Point(3, 13);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(62, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            stt.DefaultCellStyle = dataGridViewCellStyle8;
+            stt.HeaderText = "STT";
+            stt.Name = "stt";
+            stt.ReadOnly = true;
             // 
-            // label1
+            // maPhieu
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial Narrow", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(22, 26);
-            label1.Margin = new Padding(17, 20, 17, 20);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(148, 43);
-            label1.TabIndex = 2;
-            label1.Text = "Phiếu chi";
-            label1.Click += label1_Click;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            maPhieu.DefaultCellStyle = dataGridViewCellStyle9;
+            maPhieu.HeaderText = "Mã Phiếu";
+            maPhieu.Name = "maPhieu";
+            maPhieu.ReadOnly = true;
+            maPhieu.Width = 150;
             // 
-            // panel1
+            // date
             // 
-            panel1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(11, 13, 11, 13);
-            panel1.Size = new Size(1639, 93);
-            panel1.TabIndex = 3;
+            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            date.DefaultCellStyle = dataGridViewCellStyle10;
+            date.HeaderText = "Ngày";
+            date.Name = "date";
+            date.ReadOnly = true;
+            date.Width = 250;
+            // 
+            // order_paid_quantity
+            // 
+            order_paid_quantity.HeaderText = "SL Hóa đơn";
+            order_paid_quantity.Name = "order_paid_quantity";
+            order_paid_quantity.ReadOnly = true;
+            order_paid_quantity.Width = 200;
+            // 
+            // total
+            // 
+            total.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            total.DefaultCellStyle = dataGridViewCellStyle11;
+            total.HeaderText = "Tổng Tiền";
+            total.Name = "total";
+            total.ReadOnly = true;
+            // 
+            // id
+            // 
+            id.HeaderText = "";
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Visible = false;
+            id.Width = 5;
+            // 
+            // roundedPanel2
+            // 
+            roundedPanel2.BackColor = Color.FromArgb(249, 245, 220);
+            roundedPanel2.Controls.Add(label6);
+            roundedPanel2.Dock = DockStyle.Top;
+            roundedPanel2.ForeColor = Color.Black;
+            roundedPanel2.Location = new Point(15, 3);
+            roundedPanel2.Name = "roundedPanel2";
+            roundedPanel2.Size = new Size(1003, 56);
+            roundedPanel2.TabIndex = 4;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(5, 15);
+            label6.Name = "label6";
+            label6.Size = new Size(281, 22);
+            label6.TabIndex = 0;
+            label6.Text = "Phiếu thu thống kê theo ngày";
+            // 
+            // order_name
+            // 
+            order_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            order_name.DefaultCellStyle = dataGridViewCellStyle2;
+            order_name.HeaderText = "Tên";
+            order_name.Name = "order_name";
+            order_name.ReadOnly = true;
+            // 
+            // order_quantity
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            order_quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            order_quantity.HeaderText = "SL";
+            order_quantity.Name = "order_quantity";
+            order_quantity.ReadOnly = true;
+            order_quantity.Width = 65;
+            // 
+            // order_total
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            order_total.DefaultCellStyle = dataGridViewCellStyle4;
+            order_total.HeaderText = "Thành tiền";
+            order_total.Name = "order_total";
+            order_total.ReadOnly = true;
+            order_total.Width = 150;
+            // 
+            // oderDetail_Id
+            // 
+            oderDetail_Id.HeaderText = "";
+            oderDetail_Id.Name = "oderDetail_Id";
+            oderDetail_Id.ReadOnly = true;
+            oderDetail_Id.Visible = false;
+            oderDetail_Id.Width = 5;
             // 
             // Receive
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Bg;
-            ClientSize = new Size(1639, 1069);
-            Controls.Add(flowLayoutPanel1);
+            ClientSize = new Size(1434, 802);
             Controls.Add(panel4);
-            Controls.Add(panel1);
+            Controls.Add(roundedPanel1);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Receive";
             Text = "Receive";
-            flowLayoutPanel1.ResumeLayout(false);
-            roundedPanel1.ResumeLayout(false);
-            roundedPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel5.ResumeLayout(false);
-            roundedPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            roundedPanel2.ResumeLayout(false);
-            roundedPanel2.PerformLayout();
-            panel4.ResumeLayout(false);
+            Load += Receive_Load;
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel2.ResumeLayout(false);
             roundedPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            roundedPanel1.ResumeLayout(false);
+            roundedPanel5.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgReceiptDetail).EndInit();
+            roundedPanel6.ResumeLayout(false);
+            roundedPanel6.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            roundedPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgReceipts).EndInit();
+            roundedPanel2.ResumeLayout(false);
+            roundedPanel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Label label6;
-        private DataGridViewTextBoxColumn ten;
-        private DataGridViewTextBoxColumn SL;
-        private DataGridViewTextBoxColumn Thanhtien;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Helpers.UI.RoundedPanel roundedPanel1;
-        private Label label3;
-        private DataGridView dataGridView1;
-        private Panel panel5;
-        private Helpers.UI.RoundedPanel roundedPanel3;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn stt;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Helpers.UI.RoundedPanel roundedPanel2;
-        private Panel panel4;
+        private Panel panel3;
+        private Label label1;
         private Panel panel2;
         private Helpers.UI.RoundedPanel roundedPanel4;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom1;
-        private PictureBox pictureBox1;
-        private Label label1;
+        private Helpers.UI.DatetimePickerCustom dt_date;
+        private Helpers.UI.RoundedPanel roundedPanel1;
+        private Helpers.UI.RoundedPanel roundedPanel5;
         private Panel panel1;
+        private DataGridView dgReceiptDetail;
+        private Helpers.UI.RoundedPanel roundedPanel6;
+        private Label label2;
+        private ReaLTaiizor.Controls.MetroDivider metroDivider1;
+        private Panel panel4;
+        private Panel panel5;
+        private Helpers.UI.RoundedPanel roundedPanel3;
+        private DataGridView dgReceipts;
+        private Helpers.UI.RoundedPanel roundedPanel2;
+        private Label label6;
+        private DataGridViewTextBoxColumn stt;
+        private DataGridViewTextBoxColumn maPhieu;
+        private DataGridViewTextBoxColumn date;
+        private DataGridViewTextBoxColumn order_paid_quantity;
+        private DataGridViewTextBoxColumn total;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn order_name;
+        private DataGridViewTextBoxColumn order_quantity;
+        private DataGridViewTextBoxColumn order_total;
+        private DataGridViewTextBoxColumn oderDetail_Id;
     }
 }
