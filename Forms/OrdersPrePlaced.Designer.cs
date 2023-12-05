@@ -828,7 +828,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgOrderDetail).EndInit();
             parrotGroupBox1.ResumeLayout(false);
-            parrotGroupBox1.PerformLayout();
             roundedPanel6.ResumeLayout(false);
             roundedPanel6.PerformLayout();
             panel4.ResumeLayout(false);
@@ -838,7 +837,6 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
-            parrotGroupBox2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();

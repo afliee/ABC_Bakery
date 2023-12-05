@@ -105,11 +105,16 @@ namespace ABC_Bakery.Forms
         private void OrdersDirect_Load(object sender, EventArgs e)
         {
             Load_Order();
+            this.ControlBox = false;
         }
 
         private void dt_date_ValueChanged(object sender, EventArgs e)
         {
             Load_Order();
+        }
+
+        private void btn_view_products_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -17,6 +17,8 @@ using System.Xml.Linq;
 using ABC_Bakery.Models.Constants;
 using System.Drawing.Printing;
 using Color = System.Drawing.Color;
+using ABC_Bakery.Helpers.UI;
+
 namespace ABC_Bakery.Forms
 {
     public partial class Order : Form
@@ -28,6 +30,7 @@ namespace ABC_Bakery.Forms
         private TextCurrency _moneyChange;
         private TextCurrency _moneyRecieved;
         private Models.Order _order;
+        private SearchForm _searchForm;
         public Order()
         {
             //this.BackgroundImage = Properties.Resources.Bg;
@@ -471,7 +474,7 @@ namespace ABC_Bakery.Forms
             graphic.DrawString("Số Lượng", font, new SolidBrush(Color.Black), startX + 200, startY + offset * 7);
             graphic.DrawString("Đơn Giá", font, new SolidBrush(Color.Black), startX + 300, startY + offset * 7);
             graphic.DrawString("Thành Tiền", font, new SolidBrush(Color.Black), startX + 400, startY + offset * 7);
-            
+
             int i = 0;
             var orderDetails = _orderDetailService.FindByOrderId(_order.Id);
             foreach (OrderDetail orderDetail in orderDetails)
@@ -487,21 +490,23 @@ namespace ABC_Bakery.Forms
                     Format = TextCurrency.NO_DECIMAL
                 }.ToString(), font, new SolidBrush(Color.Black), startX + 300, startY + offset * (8 + i));
 
-                graphic.DrawString(new TextCurrency { 
+                graphic.DrawString(new TextCurrency
+                {
                     CultureInfor = TextCurrency.VIETNAM,
                     Value = orderDetail.Total,
                     Format = TextCurrency.NO_DECIMAL
                 }.ToString(), font, new SolidBrush(Color.Black), startX + 400, startY + offset * (8 + i));
                 i++;
             }
-            graphic.DrawString(string.Format("Tổng tiền: {0}", new TextCurrency { 
+            graphic.DrawString(string.Format("Tổng tiền: {0}", new TextCurrency
+            {
                 CultureInfor = TextCurrency.VIETNAM,
                 Value = _order.Price,
                 Format = TextCurrency.NO_DECIMAL
             }).ToString(), font, new SolidBrush(Color.Black), startX, startY + offset * (8 + i));
 
             graphic.DrawString("Cảm ơn quý khách", font, new SolidBrush(Color.Black), startX, startY + offset * (9 + i));
-            
+
             // set graphic to print
             //e.HasMorePages = false;
         }
@@ -516,6 +521,42 @@ namespace ABC_Bakery.Forms
                 dgProducts.Rows.RemoveAt(e.RowIndex);
                 Update_Total();
             }
+        }
+
+        private void filter_Click(object sender, EventArgs e)
+        {
+            if (_searchForm == null)
+            {
+                _searchForm = new SearchForm(this);
+            }
+
+            // check _searchForm is disposed
+            if (_searchForm.IsDisposed)
+            {
+                _searchForm = new SearchForm(this);
+            }
+
+            _searchForm.Show();
+        }
+
+        public DataGridView GetDataGridView()
+        {
+            return dgProducts;
+        }
+
+        public Label GetTotalLabel()
+        {
+            return lbTotal;
+        }
+
+        public RJTextBox GetTbSurcharge()
+        {
+            return tbSurcharge;
+        }
+
+        public void UpdateTotal()
+        {
+            Update_Total();
         }
     }
 }

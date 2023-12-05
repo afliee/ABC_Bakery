@@ -659,6 +659,7 @@
             btn_view_products.TabIndex = 1;
             btn_view_products.Text = "Xem chi tiết";
             btn_view_products.TextAlignment = StringAlignment.Center;
+            btn_view_products.Click += btn_view_products_Click;
             // 
             // dungeonLabel8
             // 
@@ -821,7 +822,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgOrderDetail).EndInit();
             parrotGroupBox1.ResumeLayout(false);
-            parrotGroupBox1.PerformLayout();
             roundedPanel6.ResumeLayout(false);
             roundedPanel6.PerformLayout();
             panel4.ResumeLayout(false);
@@ -831,7 +831,6 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
-            parrotGroupBox2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();

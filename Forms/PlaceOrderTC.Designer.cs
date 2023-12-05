@@ -61,7 +61,6 @@
             roundedPanel4 = new Helpers.UI.RoundedPanel();
             panel9 = new Panel();
             tbSearch = new Helpers.UI.RJTextBox();
-            pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             roundedPanel10 = new Helpers.UI.RoundedPanel();
             tbSurcharge = new Helpers.UI.RJTextBox();
@@ -98,6 +97,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             print_order = new System.Drawing.Printing.PrintDocument();
+            filter = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dgProducts).BeginInit();
             roundedPanel11.SuspendLayout();
             roundedPanel9.SuspendLayout();
@@ -110,7 +110,6 @@
             panel7.SuspendLayout();
             roundedPanel4.SuspendLayout();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             roundedPanel10.SuspendLayout();
             roundedPanel6.SuspendLayout();
             roundedPanel13.SuspendLayout();
@@ -125,6 +124,7 @@
             roundedPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)filter).BeginInit();
             SuspendLayout();
             // 
             // dgProducts
@@ -467,8 +467,8 @@
             // 
             // panel9
             // 
+            panel9.Controls.Add(filter);
             panel9.Controls.Add(tbSearch);
-            panel9.Controls.Add(pictureBox2);
             panel9.Dock = DockStyle.Right;
             panel9.Location = new System.Drawing.Point(469, 0);
             panel9.Name = "panel9";
@@ -499,16 +499,6 @@
             tbSearch.UnderlinedStyle = false;
             tbSearch._TextChanged += tbSearch__TextChanged;
             tbSearch.KeyDown += tbSearch_KeyDown;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.find;
-            pictureBox2.Location = new System.Drawing.Point(44, 17);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(27, 33);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
             // 
             // dungeonHeaderLabel2
             // 
@@ -997,6 +987,20 @@
             // 
             print_order.PrintPage += print_order_PrintPage;
             // 
+            // filter
+            // 
+            filter.BackColor = System.Drawing.Color.FromArgb(249, 245, 220);
+            filter.ForeColor = System.Drawing.Color.Black;
+            filter.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            filter.IconColor = System.Drawing.Color.Black;
+            filter.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            filter.Location = new System.Drawing.Point(24, 17);
+            filter.Name = "filter";
+            filter.Size = new System.Drawing.Size(32, 32);
+            filter.TabIndex = 6;
+            filter.TabStop = false;
+            filter.Click += filter_Click;
+            // 
             // PlaceOrderTC
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1026,7 +1030,6 @@
             roundedPanel4.ResumeLayout(false);
             roundedPanel4.PerformLayout();
             panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             roundedPanel10.ResumeLayout(false);
             roundedPanel10.PerformLayout();
             roundedPanel6.ResumeLayout(false);
@@ -1049,6 +1052,7 @@
             flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)filter).EndInit();
             ResumeLayout(false);
         }
 
@@ -1079,7 +1083,6 @@
         private Helpers.UI.RoundedPanel roundedPanel4;
         private Panel panel9;
         private Helpers.UI.RJTextBox tbSearch;
-        private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel2;
         private Helpers.UI.RoundedPanel roundedPanel10;
         private Helpers.UI.RJTextBox tbSurcharge;
@@ -1116,5 +1119,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
         private System.Drawing.Printing.PrintDocument print_order;
+        private FontAwesome.Sharp.IconPictureBox filter;
     }
 }

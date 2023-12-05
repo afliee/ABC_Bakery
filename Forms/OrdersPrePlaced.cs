@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
 namespace ABC_Bakery.Forms
 {
     public partial class OrdersPrePlaced : Form
@@ -120,6 +120,7 @@ namespace ABC_Bakery.Forms
         private void OrdersPrePlaced_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            Load_Order();
         }
     }
 }

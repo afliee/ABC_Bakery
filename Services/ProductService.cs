@@ -10,12 +10,20 @@ using IronBarCode;
 using Image = System.Drawing.Image;
 namespace ABC_Bakery.Services
 {
+    internal enum TextSearchFlag
+    {
+        TEXT_NORMAL = 1,
+        TEXT_IGNORE_CASE = 2,
+        TEXT_CONTAINS = 3
+    }
+
     internal class ProductService
     {
         private static ProductService _instance = null;
         private readonly DatabaseContext _db;
         private readonly ProductRepository _productRepository;
 
+        
         private ProductService()
         {
             _db = new DatabaseContext();
@@ -82,6 +90,11 @@ namespace ABC_Bakery.Services
         public Product FindByName(string name)
         {
             return _productRepository.FindByName(name);
+        }
+
+        public List<Product> FindByNameContains(string name)
+        {
+            return _productRepository.FindByNameContains(name);
         }
     }
 }

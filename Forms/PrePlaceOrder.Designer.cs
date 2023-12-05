@@ -111,9 +111,9 @@
             roundedPanel4 = new Helpers.UI.RoundedPanel();
             panel9 = new Panel();
             tbSearch = new Helpers.UI.RJTextBox();
-            pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             print_order = new System.Drawing.Printing.PrintDocument();
+            filter = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -145,7 +145,7 @@
             panel7.SuspendLayout();
             roundedPanel4.SuspendLayout();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)filter).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -1398,8 +1398,8 @@
             // 
             // panel9
             // 
+            panel9.Controls.Add(filter);
             panel9.Controls.Add(tbSearch);
-            panel9.Controls.Add(pictureBox2);
             panel9.Dock = DockStyle.Right;
             panel9.Location = new System.Drawing.Point(422, 0);
             panel9.Name = "panel9";
@@ -1431,16 +1431,6 @@
             tbSearch._TextChanged += tbSearch__TextChanged;
             tbSearch.KeyDown += tbSearch_KeyDown;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.find;
-            pictureBox2.Location = new System.Drawing.Point(44, 17);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(27, 33);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
             // dungeonHeaderLabel2
             // 
             dungeonHeaderLabel2.AutoSize = true;
@@ -1457,6 +1447,20 @@
             // print_order
             // 
             print_order.PrintPage += print_order_PrintPage;
+            // 
+            // filter
+            // 
+            filter.BackColor = System.Drawing.Color.FromArgb(249, 245, 220);
+            filter.ForeColor = System.Drawing.Color.Black;
+            filter.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            filter.IconColor = System.Drawing.Color.Black;
+            filter.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            filter.Location = new System.Drawing.Point(21, 17);
+            filter.Name = "filter";
+            filter.Size = new System.Drawing.Size(32, 32);
+            filter.TabIndex = 5;
+            filter.TabStop = false;
+            filter.Click += filter_Click;
             // 
             // PrePlaceOrder
             // 
@@ -1499,11 +1503,9 @@
             roundedPanel14.PerformLayout();
             roundedPanel16.ResumeLayout(false);
             parrotGroupBox2.ResumeLayout(false);
-            parrotGroupBox2.PerformLayout();
             roundedPanel17.ResumeLayout(false);
             roundedPanel17.PerformLayout();
             parrotGroupBox1.ResumeLayout(false);
-            parrotGroupBox1.PerformLayout();
             roundedPanel6.ResumeLayout(false);
             roundedPanel6.PerformLayout();
             panel3.ResumeLayout(false);
@@ -1518,7 +1520,7 @@
             roundedPanel4.ResumeLayout(false);
             roundedPanel4.PerformLayout();
             panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)filter).EndInit();
             ResumeLayout(false);
         }
 
@@ -1555,7 +1557,6 @@
         private Helpers.UI.RoundedPanel roundedPanel4;
         private Panel panel9;
         private Helpers.UI.RJTextBox tbSearch;
-        private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel2;
         private Helpers.UI.RJButton btnSave;
         private Helpers.UI.RoundedPanel roundedPanel6;
@@ -1602,5 +1603,6 @@
         private Label label17;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
         private System.Drawing.Printing.PrintDocument print_order;
+        private FontAwesome.Sharp.IconPictureBox filter;
     }
 }

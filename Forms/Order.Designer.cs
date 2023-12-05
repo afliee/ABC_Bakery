@@ -80,13 +80,6 @@ namespace ABC_Bakery.Forms
             panel8 = new Panel();
             roundedPanel11 = new Helpers.UI.RoundedPanel();
             dgProducts = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            barcode = new DataGridViewImageColumn();
-            name = new DataGridViewTextBoxColumn();
-            price = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            total = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewButtonColumn();
             panel4 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel5 = new Panel();
@@ -98,11 +91,19 @@ namespace ABC_Bakery.Forms
             btnPrint = new Helpers.UI.RJButton();
             roundedPanel4 = new Helpers.UI.RoundedPanel();
             panel9 = new Panel();
+            filter = new FontAwesome.Sharp.IconPictureBox();
             tbSearch = new Helpers.UI.RJTextBox();
-            pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             print_review_order = new PrintPreviewDialog();
             print_order = new System.Drawing.Printing.PrintDocument();
+            id = new DataGridViewTextBoxColumn();
+            barcode = new DataGridViewImageColumn();
+            name = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            total = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewButtonColumn();
+            product_id = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -128,7 +129,7 @@ namespace ABC_Bakery.Forms
             panel7.SuspendLayout();
             roundedPanel4.SuspendLayout();
             panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)filter).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -652,7 +653,7 @@ namespace ABC_Bakery.Forms
             dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgProducts.ColumnHeadersHeight = 55;
             dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgProducts.Columns.AddRange(new DataGridViewColumn[] { id, barcode, name, price, quantity, total, delete });
+            dgProducts.Columns.AddRange(new DataGridViewColumn[] { id, barcode, name, price, quantity, total, delete, product_id });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -690,61 +691,6 @@ namespace ABC_Bakery.Forms
             dgProducts.Size = new Size(857, 758);
             dgProducts.TabIndex = 6;
             dgProducts.CellContentClick += dgProducts_CellContentClick;
-            // 
-            // id
-            // 
-            id.HeaderText = "Mã SP";
-            id.Name = "id";
-            id.ReadOnly = true;
-            // 
-            // barcode
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
-            dataGridViewCellStyle2.Padding = new Padding(5);
-            barcode.DefaultCellStyle = dataGridViewCellStyle2;
-            barcode.HeaderText = "Barcode";
-            barcode.Name = "barcode";
-            barcode.ReadOnly = true;
-            barcode.Width = 150;
-            // 
-            // name
-            // 
-            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            name.FillWeight = 28.3298721F;
-            name.HeaderText = "Tên Sản Phẩm";
-            name.MinimumWidth = 6;
-            name.Name = "name";
-            // 
-            // price
-            // 
-            price.FillWeight = 4.35844231F;
-            price.HeaderText = "Giá Tiền";
-            price.MinimumWidth = 6;
-            price.Name = "price";
-            // 
-            // quantity
-            // 
-            quantity.FillWeight = 4.35844231F;
-            quantity.HeaderText = "Số lượng";
-            quantity.MinimumWidth = 6;
-            quantity.Name = "quantity";
-            // 
-            // total
-            // 
-            total.HeaderText = "Tổng Tiền";
-            total.Name = "total";
-            total.ReadOnly = true;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new Padding(10);
-            delete.DefaultCellStyle = dataGridViewCellStyle3;
-            delete.HeaderText = "Thao Tác";
-            delete.Name = "delete";
-            delete.Text = "Xóa";
-            delete.UseColumnTextForButtonValue = true;
             // 
             // panel4
             // 
@@ -897,13 +843,27 @@ namespace ABC_Bakery.Forms
             // 
             // panel9
             // 
+            panel9.Controls.Add(filter);
             panel9.Controls.Add(tbSearch);
-            panel9.Controls.Add(pictureBox2);
             panel9.Dock = DockStyle.Right;
             panel9.Location = new Point(502, 0);
             panel9.Name = "panel9";
             panel9.Size = new Size(355, 63);
             panel9.TabIndex = 4;
+            // 
+            // filter
+            // 
+            filter.BackColor = Color.FromArgb(249, 245, 220);
+            filter.ForeColor = Color.Black;
+            filter.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            filter.IconColor = Color.Black;
+            filter.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            filter.Location = new Point(33, 15);
+            filter.Name = "filter";
+            filter.Size = new Size(32, 32);
+            filter.TabIndex = 4;
+            filter.TabStop = false;
+            filter.Click += filter_Click;
             // 
             // tbSearch
             // 
@@ -929,16 +889,6 @@ namespace ABC_Bakery.Forms
             tbSearch.UnderlinedStyle = false;
             tbSearch._TextChanged += tbSearch__TextChanged;
             tbSearch.KeyDown += tbSearch_KeyDown;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.find;
-            pictureBox2.Location = new Point(44, 17);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(27, 33);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
             // 
             // dungeonHeaderLabel2
             // 
@@ -966,6 +916,69 @@ namespace ABC_Bakery.Forms
             // print_order
             // 
             print_order.PrintPage += print_order_PrintPage;
+            // 
+            // id
+            // 
+            id.HeaderText = "Mã SP";
+            id.Name = "id";
+            id.ReadOnly = true;
+            // 
+            // barcode
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            barcode.DefaultCellStyle = dataGridViewCellStyle2;
+            barcode.HeaderText = "Barcode";
+            barcode.Name = "barcode";
+            barcode.ReadOnly = true;
+            barcode.Width = 150;
+            // 
+            // name
+            // 
+            name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            name.FillWeight = 28.3298721F;
+            name.HeaderText = "Tên Sản Phẩm";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            // 
+            // price
+            // 
+            price.FillWeight = 4.35844231F;
+            price.HeaderText = "Giá Tiền";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            // 
+            // quantity
+            // 
+            quantity.FillWeight = 4.35844231F;
+            quantity.HeaderText = "Số lượng";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            // 
+            // total
+            // 
+            total.HeaderText = "Tổng Tiền";
+            total.Name = "total";
+            total.ReadOnly = true;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Padding = new Padding(10);
+            delete.DefaultCellStyle = dataGridViewCellStyle3;
+            delete.HeaderText = "Thao Tác";
+            delete.Name = "delete";
+            delete.Text = "Xóa";
+            delete.UseColumnTextForButtonValue = true;
+            // 
+            // product_id
+            // 
+            product_id.HeaderText = "id";
+            product_id.Name = "product_id";
+            product_id.ReadOnly = true;
+            product_id.Visible = false;
+            product_id.Width = 5;
             // 
             // Order
             // 
@@ -1021,7 +1034,7 @@ namespace ABC_Bakery.Forms
             roundedPanel4.ResumeLayout(false);
             roundedPanel4.PerformLayout();
             panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)filter).EndInit();
             ResumeLayout(false);
         }
 
@@ -1074,13 +1087,15 @@ namespace ABC_Bakery.Forms
         private Panel panel7;
         private Helpers.UI.RJButton btnPrint;
         private Panel panel8;
-        private PictureBox pictureBox2;
         private Helpers.UI.RJTextBox tbSearch;
         private Panel panel9;
         private Helpers.UI.RoundedPanel roundedPanel11;
         private DataGridView dgProducts;
         private ReaLTaiizor.Controls.DungeonHeaderLabel lbTotal;
         private ReaLTaiizor.Controls.DungeonHeaderLabel lbMoneyChange;
+        private PrintPreviewDialog print_review_order;
+        private System.Drawing.Printing.PrintDocument print_order;
+        private FontAwesome.Sharp.IconPictureBox filter;
         private DataGridViewTextBoxColumn id;
         private DataGridViewImageColumn barcode;
         private DataGridViewTextBoxColumn name;
@@ -1088,7 +1103,6 @@ namespace ABC_Bakery.Forms
         private DataGridViewTextBoxColumn quantity;
         private DataGridViewTextBoxColumn total;
         private DataGridViewButtonColumn delete;
-        private PrintPreviewDialog print_review_order;
-        private System.Drawing.Printing.PrintDocument print_order;
+        private DataGridViewTextBoxColumn product_id;
     }
 }

@@ -1,4 +1,5 @@
-﻿using ABC_Bakery.Helpers.Utils;
+﻿using ABC_Bakery.Helpers.UI;
+using ABC_Bakery.Helpers.Utils;
 using ABC_Bakery.Models;
 using ABC_Bakery.Models.Constants;
 using ABC_Bakery.Services;
@@ -24,6 +25,7 @@ namespace ABC_Bakery.Forms
         private readonly ProductService _productService;
         private readonly OrderService _orderService;
         private OrderDetailService _orderDetailService;
+        private SearchForm _searchForm;
         private readonly TextCurrency _total = new TextCurrency
         {
             Format = TextCurrency.NO_DECIMAL,
@@ -446,7 +448,7 @@ namespace ABC_Bakery.Forms
                 }.ToString(), font, new SolidBrush(Color.Black), startX + 400, startY + offset * (8 + i));
                 i++;
             }
-            
+
             graphic.DrawString(string.Format("Tổng tiền: {0}", new TextCurrency
             {
                 CultureInfor = TextCurrency.VIETNAM,
@@ -475,6 +477,38 @@ namespace ABC_Bakery.Forms
 
             btnCanceled.Enabled = false;
             btnPrint.Enabled = false;
+        }
+
+        private void filter_Click(object sender, EventArgs e)
+        {
+            
+            if (_searchForm == null)
+            {
+                _searchForm = new SearchForm(this);
+            }
+
+            // check _searchForm is disposed
+            if (_searchForm.IsDisposed)
+            {
+                _searchForm = new SearchForm(this);
+            }
+
+            _searchForm.Show();
+        }
+
+        public DataGridView GetDataGridView()
+        {
+            return dgProducts;
+        }
+
+        public RJTextBox GetTbSurcharge()
+        {
+            return tbSurcharge;
+        }
+
+        public void UpdateTotal()
+        {
+            Update_Total();
         }
     }
 }

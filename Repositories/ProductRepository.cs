@@ -82,5 +82,10 @@ namespace ABC_Bakery.Repositories
         {
             return this.context.Products.Where(p => ids.Contains(p.Id)).ToList();
         }
+
+        public List<Product> FindByNameIgnoreCase(string name)
+        {
+            return this.context.Products.Where(p => p.Name.ToLower().Equals(name.ToLower())).ToList();
+        }
     }
 }

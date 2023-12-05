@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using Image = System.Drawing.Image;
 using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
 using Color = System.Drawing.Color;
+using ABC_Bakery.Helpers.UI;
 
 namespace ABC_Bakery.Forms
 {
@@ -25,6 +26,7 @@ namespace ABC_Bakery.Forms
         private OrderDetailService _orderDetailService;
         private OrderService _orderService;
         private Models.Order _order;
+        private SearchForm _searchForm;
         private readonly TextCurrency _total = new TextCurrency
         {
             Format = TextCurrency.NO_DECIMAL,
@@ -402,6 +404,37 @@ namespace ABC_Bakery.Forms
 
             btnCanceled.Enabled = false;
             btnPrint.Enabled = false;
+        }
+
+        private void filter_Click(object sender, EventArgs e)
+        {
+            if (_searchForm == null)
+            {
+                _searchForm = new SearchForm(this);
+            }
+
+            // check _searchForm is disposed
+            if (_searchForm.IsDisposed)
+            {
+                _searchForm = new SearchForm(this);
+            }
+
+            _searchForm.Show();
+        }
+
+        public DataGridView GetDataGridView()
+        {
+            return dgProducts;
+        }
+
+        public RJTextBox GetTbSurcharge()
+        {
+            return tbSurcharge;
+        }
+
+        public void UpdateTotal()
+        {
+            Update_Total();
         }
     }
 }
