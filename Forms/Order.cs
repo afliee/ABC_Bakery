@@ -311,7 +311,7 @@ namespace ABC_Bakery.Forms
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public void SaveOrder()
         {
             if (dgProducts.Rows.Count == 0)
             {
@@ -402,7 +402,9 @@ namespace ABC_Bakery.Forms
                 {
                     // do something else
                     btnCanceled.Enabled = false;
-                    btnRenew_Click(sender, e);
+                    //btnRenew_Click(sender, e);
+                    btnPrint.Enabled = false;
+                    btnRenew.Enabled = true;
                 }
             }
             else
@@ -411,7 +413,13 @@ namespace ABC_Bakery.Forms
             }
         }
 
-        private void btnRenew_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveOrder();
+        }
+
+
+        public void ClearInput()
         {
             dgProducts.Rows.Clear();
             tbSearch.ClearText();
@@ -432,6 +440,10 @@ namespace ABC_Bakery.Forms
                 CultureInfor = TextCurrency.VIETNAM
             }.ToString();
             lb_index.Text = $"No. {Models.Order.PREFIX}{_orderService.Count() - 1}";
+        }
+        private void btnRenew_Click(object sender, EventArgs e)
+        {
+            ClearInput();
         }
 
         private void btnCanceled_Click(object sender, EventArgs e)

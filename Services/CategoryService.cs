@@ -16,7 +16,7 @@ namespace ABC_Bakery.Services
         private readonly CategoryRepository _categoryRepository;
         private CategoryService()
         {
-            _db = new DatabaseContext();
+            _db = SingletonContext.GetInstance().GetDatabaseContext();
             _categoryRepository = new CategoryRepository(_db);
         }
 

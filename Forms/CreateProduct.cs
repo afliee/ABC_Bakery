@@ -30,7 +30,7 @@ namespace ABC_Bakery.Forms
 
         private void Init()
         {
-            var db = new DatabaseContext();
+            var db = SingletonContext.GetInstance().GetDatabaseContext();
             categoryRepository = new CategoryRepository(db);
             productRepository = new ProductRepository(db);
 
@@ -72,6 +72,9 @@ namespace ABC_Bakery.Forms
         private void CreateProduct_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            // temporary hide panel product boundary
+            // hide util form load completed
+            this.pnInfoBounary.Visible = false;
         }
 
         private void tbSearch_Enter(object sender, EventArgs e)
@@ -421,6 +424,12 @@ namespace ABC_Bakery.Forms
                     Load_Data();
                 }
             }
+        }
+
+        private void CreateProduct_Shown(object sender, EventArgs e)
+        {
+            // show pnInputProduct
+            this.pnInfoBounary.Visible = true;
         }
     }
 }

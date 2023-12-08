@@ -27,6 +27,7 @@ namespace ABC_Bakery
         private OrdersEquipment ordersEquipment;
         private OrdersDirect ordersDirect;
         private OrdersPrePlaced ordersPrePlaced;
+        private CreateCategory createCategory;
         public Application()
         {
             InitializeComponent();
@@ -302,7 +303,15 @@ namespace ABC_Bakery
 
         private void btnCreateCategory_Click(object sender, EventArgs e)
         {
-
+            if (createCategory == null || createCategory.IsDisposed)
+            {
+                createCategory = new CreateCategory();
+                createCategory.Show();    
+            } else
+            {
+                // show the existing form
+                createCategory.Activate();
+            }
         }
 
         private void btnReceipt_Click(object sender, EventArgs e)

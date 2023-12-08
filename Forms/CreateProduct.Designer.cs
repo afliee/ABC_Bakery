@@ -60,13 +60,6 @@ namespace ABC_Bakery.Forms
             pnProductBoundary = new Panel();
             roundedPanel2 = new Helpers.UI.RoundedPanel();
             dgProducts = new DataGridView();
-            stt = new DataGridViewTextBoxColumn();
-            barcode = new DataGridViewImageColumn();
-            name = new DataGridViewTextBoxColumn();
-            price = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            status = new DataGridViewCheckBoxColumn();
-            delete = new DataGridViewButtonColumn();
             pnProducts = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             parrotGroupBox3 = new ReaLTaiizor.Controls.ParrotGroupBox();
@@ -78,14 +71,21 @@ namespace ABC_Bakery.Forms
             cbCategory = new CustomControls.RJControls.RJComboBox();
             parrotGroupBox4 = new ReaLTaiizor.Controls.ParrotGroupBox();
             tbQuantity = new Helpers.UI.RJTextBox();
-            roundedPanel5 = new Helpers.UI.RoundedPanel();
-            parrotGroupBox5 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            tbDescription = new Helpers.UI.RJTextBox();
-            btnSave = new Helpers.UI.RJButton();
             showProducts = new System.Windows.Forms.Timer(components);
             delayTextChanged = new System.Windows.Forms.Timer(components);
             error = new ErrorProvider(components);
             pnInfoBounary = new Helpers.UI.RoundedPanel();
+            btnSave = new Helpers.UI.RJButton();
+            roundedPanel5 = new Helpers.UI.RoundedPanel();
+            parrotGroupBox5 = new ReaLTaiizor.Controls.ParrotGroupBox();
+            tbDescription = new Helpers.UI.RJTextBox();
+            stt = new DataGridViewTextBoxColumn();
+            barcode = new DataGridViewImageColumn();
+            name = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            status = new DataGridViewCheckBoxColumn();
+            delete = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -103,10 +103,10 @@ namespace ABC_Bakery.Forms
             parrotGroupBox2.SuspendLayout();
             roundedPanel3.SuspendLayout();
             parrotGroupBox4.SuspendLayout();
-            roundedPanel5.SuspendLayout();
-            parrotGroupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)error).BeginInit();
             pnInfoBounary.SuspendLayout();
+            roundedPanel5.SuspendLayout();
+            parrotGroupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -184,7 +184,7 @@ namespace ABC_Bakery.Forms
             flowLayoutPanel2.Dock = DockStyle.Right;
             flowLayoutPanel2.Location = new Point(1243, 87);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(0, 730);
+            flowLayoutPanel2.Size = new Size(0, 855);
             flowLayoutPanel2.TabIndex = 1;
             // 
             // roundedPanel4
@@ -264,7 +264,7 @@ namespace ABC_Bakery.Forms
             pnProductBoundary.Location = new Point(10, 63);
             pnProductBoundary.Name = "pnProductBoundary";
             pnProductBoundary.Padding = new Padding(0, 10, 0, 0);
-            pnProductBoundary.Size = new Size(1223, 176);
+            pnProductBoundary.Size = new Size(1223, 255);
             pnProductBoundary.TabIndex = 4;
             // 
             // roundedPanel2
@@ -275,7 +275,7 @@ namespace ABC_Bakery.Forms
             roundedPanel2.ForeColor = Color.White;
             roundedPanel2.Location = new Point(0, 10);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1223, 166);
+            roundedPanel2.Size = new Size(1223, 245);
             roundedPanel2.TabIndex = 0;
             // 
             // dgProducts
@@ -331,9 +331,314 @@ namespace ABC_Bakery.Forms
             dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle7;
             dgProducts.RowTemplate.Height = 50;
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgProducts.Size = new Size(1223, 166);
+            dgProducts.Size = new Size(1223, 245);
             dgProducts.TabIndex = 5;
             dgProducts.CellContentClick += dgProducts_CellContentClick;
+            // 
+            // pnProducts
+            // 
+            pnProducts.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnProducts.BackColor = Color.FromArgb(0, 0, 0, 0);
+            pnProducts.Controls.Add(pnProductBoundary);
+            pnProducts.Controls.Add(roundedPanel4);
+            pnProducts.Dock = DockStyle.Top;
+            pnProducts.Location = new Point(0, 87);
+            pnProducts.Name = "pnProducts";
+            pnProducts.Padding = new Padding(10, 0, 10, 0);
+            pnProducts.Size = new Size(1243, 318);
+            pnProducts.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(parrotGroupBox3, 0, 1);
+            tableLayoutPanel1.Controls.Add(parrotGroupBox1, 0, 0);
+            tableLayoutPanel1.Controls.Add(parrotGroupBox2, 1, 0);
+            tableLayoutPanel1.Controls.Add(parrotGroupBox4, 1, 1);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(4, 4);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.Padding = new Padding(10);
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1235, 212);
+            tableLayoutPanel1.TabIndex = 3;
+            // 
+            // parrotGroupBox3
+            // 
+            parrotGroupBox3.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            parrotGroupBox3.BorderWidth = 1;
+            parrotGroupBox3.Controls.Add(tbPrice);
+            parrotGroupBox3.Dock = DockStyle.Fill;
+            parrotGroupBox3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            parrotGroupBox3.Location = new Point(13, 113);
+            parrotGroupBox3.Name = "parrotGroupBox3";
+            parrotGroupBox3.ShowText = true;
+            parrotGroupBox3.Size = new Size(601, 94);
+            parrotGroupBox3.TabIndex = 2;
+            parrotGroupBox3.TabStop = false;
+            parrotGroupBox3.Text = "Giá sản phẩm";
+            parrotGroupBox3.TextColor = Color.White;
+            // 
+            // tbPrice
+            // 
+            tbPrice.BackColor = Color.FromArgb(255, 224, 192);
+            tbPrice.BorderColor = Color.FromArgb(154, 59, 59);
+            tbPrice.BorderFocusColor = Color.FromArgb(192, 130, 97);
+            tbPrice.BorderRadius = 5;
+            tbPrice.BorderSize = 2;
+            tbPrice.Dock = DockStyle.Fill;
+            tbPrice.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbPrice.ForeColor = Color.FromArgb(64, 64, 64);
+            tbPrice.Location = new Point(3, 32);
+            tbPrice.Margin = new Padding(4);
+            tbPrice.Multiline = true;
+            tbPrice.Name = "tbPrice";
+            tbPrice.Padding = new Padding(10, 7, 10, 7);
+            tbPrice.PasswordChar = false;
+            tbPrice.PlaceholderColor = Color.DarkGray;
+            tbPrice.PlaceholderText = "Nhập giá tiền. VD: 10000 = 10.000VND";
+            tbPrice.Size = new Size(595, 59);
+            tbPrice.TabIndex = 1;
+            tbPrice.TextAlign = HorizontalAlignment.Left;
+            tbPrice.Texts = "";
+            tbPrice.UnderlinedStyle = false;
+            tbPrice._TextChanged += tbPrice__TextChanged;
+            // 
+            // parrotGroupBox1
+            // 
+            parrotGroupBox1.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            parrotGroupBox1.BorderWidth = 0;
+            parrotGroupBox1.Controls.Add(tbName);
+            parrotGroupBox1.Dock = DockStyle.Fill;
+            parrotGroupBox1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            parrotGroupBox1.Location = new Point(13, 13);
+            parrotGroupBox1.Name = "parrotGroupBox1";
+            parrotGroupBox1.ShowText = true;
+            parrotGroupBox1.Size = new Size(601, 94);
+            parrotGroupBox1.TabIndex = 0;
+            parrotGroupBox1.TabStop = false;
+            parrotGroupBox1.Text = "Tên sản phẩm";
+            parrotGroupBox1.TextColor = Color.White;
+            // 
+            // tbName
+            // 
+            tbName.BackColor = Color.FromArgb(255, 224, 192);
+            tbName.BorderColor = Color.FromArgb(154, 59, 59);
+            tbName.BorderFocusColor = Color.FromArgb(192, 130, 97);
+            tbName.BorderRadius = 5;
+            tbName.BorderSize = 2;
+            tbName.Dock = DockStyle.Fill;
+            tbName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbName.ForeColor = Color.FromArgb(64, 64, 64);
+            tbName.Location = new Point(3, 32);
+            tbName.Margin = new Padding(4);
+            tbName.Multiline = true;
+            tbName.Name = "tbName";
+            tbName.Padding = new Padding(10, 7, 10, 7);
+            tbName.PasswordChar = false;
+            tbName.PlaceholderColor = Color.DarkGray;
+            tbName.PlaceholderText = "Nhập tên sản phẩm";
+            tbName.Size = new Size(595, 59);
+            tbName.TabIndex = 1;
+            tbName.TextAlign = HorizontalAlignment.Left;
+            tbName.Texts = "";
+            tbName.UnderlinedStyle = false;
+            tbName._TextChanged += tbName__TextChanged;
+            // 
+            // parrotGroupBox2
+            // 
+            parrotGroupBox2.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            parrotGroupBox2.BorderWidth = 1;
+            parrotGroupBox2.Controls.Add(roundedPanel3);
+            parrotGroupBox2.Dock = DockStyle.Fill;
+            parrotGroupBox2.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            parrotGroupBox2.Location = new Point(620, 13);
+            parrotGroupBox2.Name = "parrotGroupBox2";
+            parrotGroupBox2.ShowText = true;
+            parrotGroupBox2.Size = new Size(602, 94);
+            parrotGroupBox2.TabIndex = 1;
+            parrotGroupBox2.TabStop = false;
+            parrotGroupBox2.Text = "Thể loại";
+            parrotGroupBox2.TextColor = Color.White;
+            // 
+            // roundedPanel3
+            // 
+            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel3.Controls.Add(cbCategory);
+            roundedPanel3.Dock = DockStyle.Fill;
+            roundedPanel3.ForeColor = Color.White;
+            roundedPanel3.Location = new Point(3, 32);
+            roundedPanel3.Name = "roundedPanel3";
+            roundedPanel3.Size = new Size(596, 59);
+            roundedPanel3.TabIndex = 3;
+            // 
+            // cbCategory
+            // 
+            cbCategory.BackColor = Color.FromArgb(255, 224, 192);
+            cbCategory.BorderColor = Color.FromArgb(154, 59, 59);
+            cbCategory.BorderSize = 2;
+            cbCategory.Dock = DockStyle.Fill;
+            cbCategory.DropDownStyle = ComboBoxStyle.DropDown;
+            cbCategory.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCategory.ForeColor = Color.DimGray;
+            cbCategory.IconColor = Color.MediumSlateBlue;
+            cbCategory.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbCategory.ListTextColor = Color.DimGray;
+            cbCategory.Location = new Point(0, 0);
+            cbCategory.MinimumSize = new Size(200, 30);
+            cbCategory.Name = "cbCategory";
+            cbCategory.Padding = new Padding(2);
+            cbCategory.Size = new Size(596, 59);
+            cbCategory.TabIndex = 0;
+            cbCategory.Texts = "";
+            // 
+            // parrotGroupBox4
+            // 
+            parrotGroupBox4.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            parrotGroupBox4.BorderWidth = 1;
+            parrotGroupBox4.Controls.Add(tbQuantity);
+            parrotGroupBox4.Dock = DockStyle.Fill;
+            parrotGroupBox4.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            parrotGroupBox4.Location = new Point(620, 113);
+            parrotGroupBox4.Name = "parrotGroupBox4";
+            parrotGroupBox4.ShowText = true;
+            parrotGroupBox4.Size = new Size(602, 94);
+            parrotGroupBox4.TabIndex = 3;
+            parrotGroupBox4.TabStop = false;
+            parrotGroupBox4.Text = "Số lượng sản phẩm";
+            parrotGroupBox4.TextColor = Color.White;
+            // 
+            // tbQuantity
+            // 
+            tbQuantity.BackColor = Color.FromArgb(255, 224, 192);
+            tbQuantity.BorderColor = Color.FromArgb(154, 59, 59);
+            tbQuantity.BorderFocusColor = Color.FromArgb(192, 130, 97);
+            tbQuantity.BorderRadius = 5;
+            tbQuantity.BorderSize = 2;
+            tbQuantity.Dock = DockStyle.Fill;
+            tbQuantity.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbQuantity.ForeColor = Color.FromArgb(64, 64, 64);
+            tbQuantity.Location = new Point(3, 32);
+            tbQuantity.Margin = new Padding(4);
+            tbQuantity.Multiline = true;
+            tbQuantity.Name = "tbQuantity";
+            tbQuantity.Padding = new Padding(10, 7, 10, 7);
+            tbQuantity.PasswordChar = false;
+            tbQuantity.PlaceholderColor = Color.DarkGray;
+            tbQuantity.PlaceholderText = "Nhập số lượng sản phẩm";
+            tbQuantity.Size = new Size(596, 59);
+            tbQuantity.TabIndex = 1;
+            tbQuantity.TextAlign = HorizontalAlignment.Left;
+            tbQuantity.Texts = "";
+            tbQuantity.UnderlinedStyle = false;
+            tbQuantity._TextChanged += tbQuantity__TextChanged;
+            // 
+            // showProducts
+            // 
+            showProducts.Interval = 3;
+            showProducts.Tick += showProducts_Tick;
+            // 
+            // delayTextChanged
+            // 
+            delayTextChanged.Interval = 500;
+            delayTextChanged.Tick += delayTextChanged_Tick;
+            // 
+            // error
+            // 
+            error.ContainerControl = this;
+            // 
+            // pnInfoBounary
+            // 
+            pnInfoBounary.BackColor = Color.FromArgb(0, 0, 0, 0);
+            pnInfoBounary.Controls.Add(tableLayoutPanel1);
+            pnInfoBounary.Dock = DockStyle.Top;
+            pnInfoBounary.ForeColor = Color.White;
+            pnInfoBounary.Location = new Point(0, 405);
+            pnInfoBounary.Margin = new Padding(3, 2, 3, 2);
+            pnInfoBounary.Name = "pnInfoBounary";
+            pnInfoBounary.Padding = new Padding(4);
+            pnInfoBounary.Size = new Size(1243, 231);
+            pnInfoBounary.TabIndex = 6;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(154, 59, 59);
+            btnSave.BackgroundColor = Color.FromArgb(154, 59, 59);
+            btnSave.BorderColor = Color.PaleVioletRed;
+            btnSave.BorderRadius = 5;
+            btnSave.BorderSize = 0;
+            btnSave.Dock = DockStyle.Bottom;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(0, 887);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(1243, 55);
+            btnSave.TabIndex = 7;
+            btnSave.Text = "LƯU THÔNG TIN SẢN PHẨM";
+            btnSave.TextColor = Color.White;
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // roundedPanel5
+            // 
+            roundedPanel5.BackColor = Color.FromArgb(0, 0, 0, 0);
+            roundedPanel5.Controls.Add(parrotGroupBox5);
+            roundedPanel5.Dock = DockStyle.Fill;
+            roundedPanel5.ForeColor = Color.White;
+            roundedPanel5.Location = new Point(0, 636);
+            roundedPanel5.Name = "roundedPanel5";
+            roundedPanel5.Padding = new Padding(10);
+            roundedPanel5.Size = new Size(1243, 251);
+            roundedPanel5.TabIndex = 8;
+            // 
+            // parrotGroupBox5
+            // 
+            parrotGroupBox5.BorderColor = Color.FromArgb(0, 0, 0, 0);
+            parrotGroupBox5.BorderWidth = 1;
+            parrotGroupBox5.Controls.Add(tbDescription);
+            parrotGroupBox5.Dock = DockStyle.Fill;
+            parrotGroupBox5.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            parrotGroupBox5.Location = new Point(10, 10);
+            parrotGroupBox5.Name = "parrotGroupBox5";
+            parrotGroupBox5.Padding = new Padding(5);
+            parrotGroupBox5.ShowText = true;
+            parrotGroupBox5.Size = new Size(1223, 231);
+            parrotGroupBox5.TabIndex = 0;
+            parrotGroupBox5.TabStop = false;
+            parrotGroupBox5.Text = "Mô tả sản phẩm";
+            parrotGroupBox5.TextColor = Color.White;
+            // 
+            // tbDescription
+            // 
+            tbDescription.BackColor = Color.FromArgb(255, 224, 192);
+            tbDescription.BorderColor = Color.FromArgb(154, 59, 59);
+            tbDescription.BorderFocusColor = Color.FromArgb(192, 130, 97);
+            tbDescription.BorderRadius = 5;
+            tbDescription.BorderSize = 2;
+            tbDescription.Dock = DockStyle.Fill;
+            tbDescription.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbDescription.ForeColor = Color.FromArgb(64, 64, 64);
+            tbDescription.Location = new Point(5, 34);
+            tbDescription.Margin = new Padding(4);
+            tbDescription.Multiline = true;
+            tbDescription.Name = "tbDescription";
+            tbDescription.Padding = new Padding(10, 7, 10, 7);
+            tbDescription.PasswordChar = false;
+            tbDescription.PlaceholderColor = Color.DarkGray;
+            tbDescription.PlaceholderText = "Nhập mô tả của sản phẩm";
+            tbDescription.Size = new Size(1213, 192);
+            tbDescription.TabIndex = 1;
+            tbDescription.TextAlign = HorizontalAlignment.Left;
+            tbDescription.Texts = "";
+            tbDescription.UnderlinedStyle = false;
             // 
             // stt
             // 
@@ -371,6 +676,7 @@ namespace ABC_Bakery.Forms
             name.HeaderText = "Tên Sản Phẩm";
             name.MinimumWidth = 6;
             name.Name = "name";
+            name.ReadOnly = true;
             // 
             // price
             // 
@@ -378,6 +684,7 @@ namespace ABC_Bakery.Forms
             price.HeaderText = "Giá Tiền";
             price.MinimumWidth = 6;
             price.Name = "price";
+            price.ReadOnly = true;
             price.Width = 125;
             // 
             // quantity
@@ -386,6 +693,7 @@ namespace ABC_Bakery.Forms
             quantity.HeaderText = "Số lượng";
             quantity.MinimumWidth = 6;
             quantity.Name = "quantity";
+            quantity.ReadOnly = true;
             quantity.Width = 125;
             // 
             // status
@@ -419,320 +727,16 @@ namespace ABC_Bakery.Forms
             delete.UseColumnTextForButtonValue = true;
             delete.Width = 125;
             // 
-            // pnProducts
-            // 
-            pnProducts.BackColor = Color.FromArgb(0, 0, 0, 0);
-            pnProducts.Controls.Add(pnProductBoundary);
-            pnProducts.Controls.Add(roundedPanel4);
-            pnProducts.Dock = DockStyle.Top;
-            pnProducts.Location = new Point(0, 87);
-            pnProducts.Name = "pnProducts";
-            pnProducts.Padding = new Padding(10, 0, 10, 0);
-            pnProducts.Size = new Size(1243, 239);
-            pnProducts.TabIndex = 2;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(0, 0, 0, 0);
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(parrotGroupBox3, 0, 1);
-            tableLayoutPanel1.Controls.Add(parrotGroupBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(parrotGroupBox2, 1, 0);
-            tableLayoutPanel1.Controls.Add(parrotGroupBox4, 1, 1);
-            tableLayoutPanel1.Dock = DockStyle.Top;
-            tableLayoutPanel1.Location = new Point(4, 4);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.Padding = new Padding(10);
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1235, 212);
-            tableLayoutPanel1.TabIndex = 3;
-            // 
-            // parrotGroupBox3
-            // 
-            parrotGroupBox3.BorderColor = Color.FromArgb(0, 0, 0, 0);
-            parrotGroupBox3.BorderWidth = 1;
-            parrotGroupBox3.Controls.Add(tbPrice);
-            parrotGroupBox3.Dock = DockStyle.Fill;
-            parrotGroupBox3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox3.Location = new Point(13, 113);
-            parrotGroupBox3.Name = "parrotGroupBox3";
-            parrotGroupBox3.ShowText = true;
-            parrotGroupBox3.Size = new Size(593, 94);
-            parrotGroupBox3.TabIndex = 2;
-            parrotGroupBox3.TabStop = false;
-            parrotGroupBox3.Text = "Giá sản phẩm";
-            parrotGroupBox3.TextColor = Color.White;
-            // 
-            // tbPrice
-            // 
-            tbPrice.BackColor = Color.FromArgb(255, 224, 192);
-            tbPrice.BorderColor = Color.FromArgb(154, 59, 59);
-            tbPrice.BorderFocusColor = Color.FromArgb(192, 130, 97);
-            tbPrice.BorderRadius = 5;
-            tbPrice.BorderSize = 2;
-            tbPrice.Dock = DockStyle.Fill;
-            tbPrice.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbPrice.ForeColor = Color.FromArgb(64, 64, 64);
-            tbPrice.Location = new Point(3, 32);
-            tbPrice.Margin = new Padding(4);
-            tbPrice.Multiline = true;
-            tbPrice.Name = "tbPrice";
-            tbPrice.Padding = new Padding(10, 7, 10, 7);
-            tbPrice.PasswordChar = false;
-            tbPrice.PlaceholderColor = Color.DarkGray;
-            tbPrice.PlaceholderText = "Nhập giá tiền. VD: 10000 = 10.000VND";
-            tbPrice.Size = new Size(587, 59);
-            tbPrice.TabIndex = 1;
-            tbPrice.TextAlign = HorizontalAlignment.Left;
-            tbPrice.Texts = "";
-            tbPrice.UnderlinedStyle = false;
-            tbPrice._TextChanged += tbPrice__TextChanged;
-            // 
-            // parrotGroupBox1
-            // 
-            parrotGroupBox1.BorderColor = Color.FromArgb(0, 0, 0, 0);
-            parrotGroupBox1.BorderWidth = 0;
-            parrotGroupBox1.Controls.Add(tbName);
-            parrotGroupBox1.Dock = DockStyle.Fill;
-            parrotGroupBox1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox1.Location = new Point(13, 13);
-            parrotGroupBox1.Name = "parrotGroupBox1";
-            parrotGroupBox1.ShowText = true;
-            parrotGroupBox1.Size = new Size(593, 94);
-            parrotGroupBox1.TabIndex = 0;
-            parrotGroupBox1.TabStop = false;
-            parrotGroupBox1.Text = "Tên sản phẩm";
-            parrotGroupBox1.TextColor = Color.White;
-            // 
-            // tbName
-            // 
-            tbName.BackColor = Color.FromArgb(255, 224, 192);
-            tbName.BorderColor = Color.FromArgb(154, 59, 59);
-            tbName.BorderFocusColor = Color.FromArgb(192, 130, 97);
-            tbName.BorderRadius = 5;
-            tbName.BorderSize = 2;
-            tbName.Dock = DockStyle.Fill;
-            tbName.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbName.ForeColor = Color.FromArgb(64, 64, 64);
-            tbName.Location = new Point(3, 32);
-            tbName.Margin = new Padding(4);
-            tbName.Multiline = true;
-            tbName.Name = "tbName";
-            tbName.Padding = new Padding(10, 7, 10, 7);
-            tbName.PasswordChar = false;
-            tbName.PlaceholderColor = Color.DarkGray;
-            tbName.PlaceholderText = "Nhập tên sản phẩm";
-            tbName.Size = new Size(587, 59);
-            tbName.TabIndex = 1;
-            tbName.TextAlign = HorizontalAlignment.Left;
-            tbName.Texts = "";
-            tbName.UnderlinedStyle = false;
-            tbName._TextChanged += tbName__TextChanged;
-            // 
-            // parrotGroupBox2
-            // 
-            parrotGroupBox2.BorderColor = Color.FromArgb(0, 0, 0, 0);
-            parrotGroupBox2.BorderWidth = 1;
-            parrotGroupBox2.Controls.Add(roundedPanel3);
-            parrotGroupBox2.Dock = DockStyle.Fill;
-            parrotGroupBox2.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox2.Location = new Point(612, 13);
-            parrotGroupBox2.Name = "parrotGroupBox2";
-            parrotGroupBox2.ShowText = true;
-            parrotGroupBox2.Size = new Size(593, 94);
-            parrotGroupBox2.TabIndex = 1;
-            parrotGroupBox2.TabStop = false;
-            parrotGroupBox2.Text = "Thể loại";
-            parrotGroupBox2.TextColor = Color.White;
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.FromArgb(0, 0, 0, 0);
-            roundedPanel3.Controls.Add(cbCategory);
-            roundedPanel3.Dock = DockStyle.Fill;
-            roundedPanel3.ForeColor = Color.White;
-            roundedPanel3.Location = new Point(3, 32);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(587, 59);
-            roundedPanel3.TabIndex = 3;
-            // 
-            // cbCategory
-            // 
-            cbCategory.BackColor = Color.FromArgb(255, 224, 192);
-            cbCategory.BorderColor = Color.FromArgb(154, 59, 59);
-            cbCategory.BorderSize = 2;
-            cbCategory.Dock = DockStyle.Fill;
-            cbCategory.DropDownStyle = ComboBoxStyle.DropDown;
-            cbCategory.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCategory.ForeColor = Color.DimGray;
-            cbCategory.IconColor = Color.MediumSlateBlue;
-            cbCategory.ListBackColor = Color.FromArgb(230, 228, 245);
-            cbCategory.ListTextColor = Color.DimGray;
-            cbCategory.Location = new Point(0, 0);
-            cbCategory.MinimumSize = new Size(200, 30);
-            cbCategory.Name = "cbCategory";
-            cbCategory.Padding = new Padding(2);
-            cbCategory.Size = new Size(587, 59);
-            cbCategory.TabIndex = 0;
-            cbCategory.Texts = "";
-            // 
-            // parrotGroupBox4
-            // 
-            parrotGroupBox4.BorderColor = Color.FromArgb(0, 0, 0, 0);
-            parrotGroupBox4.BorderWidth = 1;
-            parrotGroupBox4.Controls.Add(tbQuantity);
-            parrotGroupBox4.Dock = DockStyle.Fill;
-            parrotGroupBox4.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox4.Location = new Point(612, 113);
-            parrotGroupBox4.Name = "parrotGroupBox4";
-            parrotGroupBox4.ShowText = true;
-            parrotGroupBox4.Size = new Size(593, 94);
-            parrotGroupBox4.TabIndex = 3;
-            parrotGroupBox4.TabStop = false;
-            parrotGroupBox4.Text = "Số lượng sản phẩm";
-            parrotGroupBox4.TextColor = Color.White;
-            // 
-            // tbQuantity
-            // 
-            tbQuantity.BackColor = Color.FromArgb(255, 224, 192);
-            tbQuantity.BorderColor = Color.FromArgb(154, 59, 59);
-            tbQuantity.BorderFocusColor = Color.FromArgb(192, 130, 97);
-            tbQuantity.BorderRadius = 5;
-            tbQuantity.BorderSize = 2;
-            tbQuantity.Dock = DockStyle.Fill;
-            tbQuantity.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbQuantity.ForeColor = Color.FromArgb(64, 64, 64);
-            tbQuantity.Location = new Point(3, 32);
-            tbQuantity.Margin = new Padding(4);
-            tbQuantity.Multiline = true;
-            tbQuantity.Name = "tbQuantity";
-            tbQuantity.Padding = new Padding(10, 7, 10, 7);
-            tbQuantity.PasswordChar = false;
-            tbQuantity.PlaceholderColor = Color.DarkGray;
-            tbQuantity.PlaceholderText = "Nhập số lượng sản phẩm";
-            tbQuantity.Size = new Size(587, 59);
-            tbQuantity.TabIndex = 1;
-            tbQuantity.TextAlign = HorizontalAlignment.Left;
-            tbQuantity.Texts = "";
-            tbQuantity.UnderlinedStyle = false;
-            tbQuantity._TextChanged += tbQuantity__TextChanged;
-            // 
-            // roundedPanel5
-            // 
-            roundedPanel5.BackColor = Color.FromArgb(0, 0, 0, 0);
-            roundedPanel5.Controls.Add(parrotGroupBox5);
-            roundedPanel5.Dock = DockStyle.Bottom;
-            roundedPanel5.ForeColor = Color.White;
-            roundedPanel5.Location = new Point(4, 169);
-            roundedPanel5.Name = "roundedPanel5";
-            roundedPanel5.Padding = new Padding(10);
-            roundedPanel5.Size = new Size(1235, 176);
-            roundedPanel5.TabIndex = 4;
-            // 
-            // parrotGroupBox5
-            // 
-            parrotGroupBox5.BorderColor = Color.FromArgb(0, 0, 0, 0);
-            parrotGroupBox5.BorderWidth = 1;
-            parrotGroupBox5.Controls.Add(tbDescription);
-            parrotGroupBox5.Dock = DockStyle.Fill;
-            parrotGroupBox5.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            parrotGroupBox5.Location = new Point(10, 10);
-            parrotGroupBox5.Name = "parrotGroupBox5";
-            parrotGroupBox5.Padding = new Padding(5);
-            parrotGroupBox5.ShowText = true;
-            parrotGroupBox5.Size = new Size(1198, 156);
-            parrotGroupBox5.TabIndex = 0;
-            parrotGroupBox5.TabStop = false;
-            parrotGroupBox5.Text = "Mô tả sản phẩm";
-            parrotGroupBox5.TextColor = Color.White;
-            // 
-            // tbDescription
-            // 
-            tbDescription.BackColor = Color.FromArgb(255, 224, 192);
-            tbDescription.BorderColor = Color.FromArgb(154, 59, 59);
-            tbDescription.BorderFocusColor = Color.FromArgb(192, 130, 97);
-            tbDescription.BorderRadius = 5;
-            tbDescription.BorderSize = 2;
-            tbDescription.Dock = DockStyle.Fill;
-            tbDescription.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            tbDescription.ForeColor = Color.FromArgb(64, 64, 64);
-            tbDescription.Location = new Point(5, 34);
-            tbDescription.Margin = new Padding(4);
-            tbDescription.Multiline = true;
-            tbDescription.Name = "tbDescription";
-            tbDescription.Padding = new Padding(10, 7, 10, 7);
-            tbDescription.PasswordChar = false;
-            tbDescription.PlaceholderColor = Color.DarkGray;
-            tbDescription.PlaceholderText = "Nhập mô tả của sản phẩm";
-            tbDescription.Size = new Size(1188, 117);
-            tbDescription.TabIndex = 1;
-            tbDescription.TextAlign = HorizontalAlignment.Left;
-            tbDescription.Texts = "";
-            tbDescription.UnderlinedStyle = false;
-            // 
-            // btnSave
-            // 
-            btnSave.BackColor = Color.FromArgb(154, 59, 59);
-            btnSave.BackgroundColor = Color.FromArgb(154, 59, 59);
-            btnSave.BorderColor = Color.PaleVioletRed;
-            btnSave.BorderRadius = 5;
-            btnSave.BorderSize = 0;
-            btnSave.Dock = DockStyle.Bottom;
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(0, 762);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(1243, 55);
-            btnSave.TabIndex = 5;
-            btnSave.Text = "LƯU THÔNG TIN SẢN PHẨM";
-            btnSave.TextColor = Color.White;
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click;
-            // 
-            // showProducts
-            // 
-            showProducts.Interval = 3;
-            showProducts.Tick += showProducts_Tick;
-            // 
-            // delayTextChanged
-            // 
-            delayTextChanged.Interval = 500;
-            delayTextChanged.Tick += delayTextChanged_Tick;
-            // 
-            // error
-            // 
-            error.ContainerControl = this;
-            // 
-            // pnInfoBounary
-            // 
-            pnInfoBounary.BackColor = Color.FromArgb(0, 0, 0, 0);
-            pnInfoBounary.Controls.Add(tableLayoutPanel1);
-            pnInfoBounary.Controls.Add(roundedPanel5);
-            pnInfoBounary.Dock = DockStyle.Top;
-            pnInfoBounary.ForeColor = Color.White;
-            pnInfoBounary.Location = new Point(0, 326);
-            pnInfoBounary.Margin = new Padding(3, 2, 3, 2);
-            pnInfoBounary.Name = "pnInfoBounary";
-            pnInfoBounary.Padding = new Padding(4);
-            pnInfoBounary.Size = new Size(1243, 349);
-            pnInfoBounary.TabIndex = 6;
-            // 
             // CreateProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Bg;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1243, 817);
-            Controls.Add(pnInfoBounary);
+            ClientSize = new Size(1243, 942);
+            Controls.Add(roundedPanel5);
             Controls.Add(btnSave);
+            Controls.Add(pnInfoBounary);
             Controls.Add(pnProducts);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(panel1);
@@ -741,6 +745,7 @@ namespace ABC_Bakery.Forms
             Name = "CreateProduct";
             Text = "CreateProduct";
             Load += CreateProduct_Load;
+            Shown += CreateProduct_Shown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
@@ -764,11 +769,11 @@ namespace ABC_Bakery.Forms
             roundedPanel3.ResumeLayout(false);
             parrotGroupBox4.ResumeLayout(false);
             parrotGroupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)error).EndInit();
+            pnInfoBounary.ResumeLayout(false);
             roundedPanel5.ResumeLayout(false);
             parrotGroupBox5.ResumeLayout(false);
             parrotGroupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)error).EndInit();
-            pnInfoBounary.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -800,13 +805,14 @@ namespace ABC_Bakery.Forms
         private Helpers.UI.RJTextBox tbPrice;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox4;
         private Helpers.UI.RJTextBox tbQuantity;
-        private Helpers.UI.RoundedPanel roundedPanel5;
-        private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox5;
-        private Helpers.UI.RJTextBox tbDescription;
-        private Helpers.UI.RJButton btnSave;
         private System.Windows.Forms.Timer showProducts;
         private System.Windows.Forms.Timer delayTextChanged;
         private ErrorProvider error;
+        private Helpers.UI.RoundedPanel pnInfoBounary;
+        private Helpers.UI.RJButton btnSave;
+        private Helpers.UI.RoundedPanel roundedPanel5;
+        private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox5;
+        private Helpers.UI.RJTextBox tbDescription;
         private DataGridViewTextBoxColumn stt;
         private DataGridViewImageColumn barcode;
         private DataGridViewTextBoxColumn name;
@@ -814,6 +820,5 @@ namespace ABC_Bakery.Forms
         private DataGridViewTextBoxColumn quantity;
         private DataGridViewCheckBoxColumn status;
         private DataGridViewButtonColumn delete;
-        private Helpers.UI.RoundedPanel pnInfoBounary;
     }
 }
