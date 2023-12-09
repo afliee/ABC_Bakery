@@ -34,5 +34,10 @@ namespace ABC_Bakery.Services
         {
             return _userRepository.Find(id);
         }
+
+        public User FindFirstCashier()
+        {
+            return _userRepository.FindFirstCashier();
+        }
     }
 }

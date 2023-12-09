@@ -63,9 +63,9 @@ namespace ABC_Bakery.Helpers
                 );
 
             ModelBuilder.Entity<Promotion>().HasData(
-                    new Promotion { Name = "Không có", Code = "NONE", Ratio = 0, IsActived = true, Id = 1 },
-                    new Promotion { Name = "Giảm 10%", Code = "ABCNGON", Ratio = 10, IsActived = true, Id = 2 },
-                    new Promotion { Name = "Giảm 20%", Code = "LATEAM", Ratio = 20, IsActived = true, Id = 3}
+                    new Promotion { Name = "Không có", Code = "NONE", Ratio = 0, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 1 },
+                    new Promotion { Name = "Giảm 10%", Code = "ABCNGON", Ratio = 10, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 2 },
+                    new Promotion { Name = "Giảm 20%", Code = "LATEAM", Ratio = 20, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 3}
                 );
 
             ModelBuilder.Entity<Models.Receipt>().HasData(

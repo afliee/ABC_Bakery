@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrePlaceOrder));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             panel1 = new Panel();
             lbIndex = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
@@ -110,10 +111,11 @@
             btnPrint = new Helpers.UI.RJButton();
             roundedPanel4 = new Helpers.UI.RoundedPanel();
             panel9 = new Panel();
+            filter = new FontAwesome.Sharp.IconPictureBox();
             tbSearch = new Helpers.UI.RJTextBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             print_order = new System.Drawing.Printing.PrintDocument();
-            filter = new FontAwesome.Sharp.IconPictureBox();
+            delayTimeDiscount = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
@@ -597,6 +599,7 @@
             tbDiscount.TextAlign = HorizontalAlignment.Left;
             tbDiscount.Texts = "";
             tbDiscount.UnderlinedStyle = false;
+            tbDiscount._TextChanged += tbDiscount__TextChanged;
             // 
             // label5
             // 
@@ -1144,25 +1147,25 @@
             dgProducts.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             dgProducts.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dgProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(154, 59, 59);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(154, 59, 59);
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgProducts.ColumnHeadersHeight = 55;
             dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgProducts.Columns.AddRange(new DataGridViewColumn[] { id, barcode, name, price, quantity, total, delete });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgProducts.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dgProducts.DefaultCellStyle = dataGridViewCellStyle10;
             dgProducts.Dock = DockStyle.Fill;
             dgProducts.EnableHeadersVisualStyles = false;
             dgProducts.GridColor = System.Drawing.Color.FromArgb(224, 224, 224);
@@ -1171,22 +1174,22 @@
             dgProducts.MultiSelect = false;
             dgProducts.Name = "dgProducts";
             dgProducts.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgProducts.RowHeadersVisible = false;
             dgProducts.RowHeadersWidth = 50;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(226, 199, 153);
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(226, 199, 153);
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dgProducts.RowsDefaultCellStyle = dataGridViewCellStyle12;
             dgProducts.RowTemplate.Height = 50;
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgProducts.Size = new System.Drawing.Size(777, 841);
@@ -1201,10 +1204,10 @@
             // 
             // barcode
             // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
-            dataGridViewCellStyle2.Padding = new Padding(5);
-            barcode.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = resources.GetObject("dataGridViewCellStyle8.NullValue");
+            dataGridViewCellStyle8.Padding = new Padding(5);
+            barcode.DefaultCellStyle = dataGridViewCellStyle8;
             barcode.HeaderText = "Barcode";
             barcode.Name = "barcode";
             barcode.ReadOnly = true;
@@ -1240,9 +1243,9 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Padding = new Padding(10);
-            delete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Padding = new Padding(10);
+            delete.DefaultCellStyle = dataGridViewCellStyle9;
             delete.HeaderText = "Thao Tác";
             delete.Name = "delete";
             delete.Text = "Xóa";
@@ -1406,6 +1409,20 @@
             panel9.Size = new System.Drawing.Size(355, 63);
             panel9.TabIndex = 4;
             // 
+            // filter
+            // 
+            filter.BackColor = System.Drawing.Color.FromArgb(249, 245, 220);
+            filter.ForeColor = System.Drawing.Color.Black;
+            filter.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            filter.IconColor = System.Drawing.Color.Black;
+            filter.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            filter.Location = new System.Drawing.Point(21, 17);
+            filter.Name = "filter";
+            filter.Size = new System.Drawing.Size(32, 32);
+            filter.TabIndex = 5;
+            filter.TabStop = false;
+            filter.Click += filter_Click;
+            // 
             // tbSearch
             // 
             tbSearch.BackColor = SystemColors.Window;
@@ -1448,19 +1465,10 @@
             // 
             print_order.PrintPage += print_order_PrintPage;
             // 
-            // filter
+            // delayTimeDiscount
             // 
-            filter.BackColor = System.Drawing.Color.FromArgb(249, 245, 220);
-            filter.ForeColor = System.Drawing.Color.Black;
-            filter.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            filter.IconColor = System.Drawing.Color.Black;
-            filter.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            filter.Location = new System.Drawing.Point(21, 17);
-            filter.Name = "filter";
-            filter.Size = new System.Drawing.Size(32, 32);
-            filter.TabIndex = 5;
-            filter.TabStop = false;
-            filter.Click += filter_Click;
+            delayTimeDiscount.Interval = 500;
+            delayTimeDiscount.Tick += delayTimeDiscount_Tick;
             // 
             // PrePlaceOrder
             // 
@@ -1503,9 +1511,11 @@
             roundedPanel14.PerformLayout();
             roundedPanel16.ResumeLayout(false);
             parrotGroupBox2.ResumeLayout(false);
+            parrotGroupBox2.PerformLayout();
             roundedPanel17.ResumeLayout(false);
             roundedPanel17.PerformLayout();
             parrotGroupBox1.ResumeLayout(false);
+            parrotGroupBox1.PerformLayout();
             roundedPanel6.ResumeLayout(false);
             roundedPanel6.PerformLayout();
             panel3.ResumeLayout(false);
@@ -1604,5 +1614,6 @@
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
         private System.Drawing.Printing.PrintDocument print_order;
         private FontAwesome.Sharp.IconPictureBox filter;
+        private System.Windows.Forms.Timer delayTimeDiscount;
     }
 }

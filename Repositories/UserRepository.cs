@@ -73,5 +73,26 @@ namespace ABC_Bakery.Repositories
                 return null;
             } 
         }
+
+        public User FindFirstCashier()
+        {
+            try
+            {
+                this._context.Users.ToList();
+                var role = this._roleRepository.FindByName("Cashier");
+                if (role == null)
+                {
+                    return null;
+                }
+
+                return _context.Users
+                    .Where(u => u.RoleId == role.Id)
+                    .FirstOrDefault();
+            } catch (Exception e)
+            {
+                Console.Write(e.ToString());
+                return null;
+            }
+        }
     }
 }

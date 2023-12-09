@@ -24,8 +24,10 @@ namespace ABC_Bakery.Forms
     {
         private readonly ProductService _productService;
         private OrderDetailService _orderDetailService;
+        private PromotionService _promotionService;
         private OrderService _orderService;
         private Models.Order _order;
+        private Promotion _promotion;
         private SearchForm _searchForm;
         private readonly TextCurrency _total = new TextCurrency
         {
@@ -39,6 +41,7 @@ namespace ABC_Bakery.Forms
             _productService = ProductService.GetInstance();
             _orderDetailService = OrderDetailService.GetInstance();
             _orderService = OrderService.GetInstance();
+            _promotionService = PromotionService.GetInstance();
         }
 
         private void PlaceOrderTC_Load(object sender, EventArgs e)
@@ -136,6 +139,12 @@ namespace ABC_Bakery.Forms
             {
                 total += double.Parse(surchargeText);
             }
+
+            if (_promotion != null)
+            {
+                total = total * (100 - _promotion.Ratio) / 100;
+            }
+
             _total.Value = total;
             tbTotal.Texts = _total.ToString();
         }
@@ -251,6 +260,14 @@ namespace ABC_Bakery.Forms
             {
                 deposit = Math.Min(deposit, _total.Value);
                 orderType = OrderType.Completed;
+            }
+
+
+            MessageBox.Show(string.Format("Tổng tiền: {0}\nNhận: {1}\nTrả lại: {2}\nDeposit: {3}", _total.ToString(), _moneyRecieved.ToString(), _moneyChange.ToString(), deposit), "Thông Báo");
+
+            if (_promotion != null)
+            {
+                note += string.Format(" Khuyến mãi: {0} - {1}%\n", _promotion.Name, _promotion.Ratio);
             }
 
             Models.Order orderEntity = new Models.Order
@@ -435,6 +452,55 @@ namespace ABC_Bakery.Forms
         public void UpdateTotal()
         {
             Update_Total();
+        }
+
+        private void ValidateDiscount()
+        {
+            DateTime now = DateTime.Now;
+            string discount = tbDiscount.Texts;
+
+            var isExist = _promotionService.CheckCodeExistBeforeOrEqualDate(discount, now);
+            if (!isExist)
+            {
+                tbDiscount.BorderColor = Color.Red;
+                tbDiscount.ForeColor = Color.Red;
+            }
+            else
+            {
+                tbDiscount.BorderColor = Color.Green;
+                tbDiscount.ForeColor = Color.Green;
+                _promotion = _promotionService.FindByCode(discount);
+                UpdateTotal();
+            }
+        }
+
+        private void delayTimeDiscount_Tick(object sender, EventArgs e)
+        {
+            delayTimeDiscount.Stop();
+            ValidateDiscount();
+        }
+
+        private void tbDiscount__TextChanged(object sender, EventArgs e)
+        {
+            string discount = tbDiscount.Texts;
+
+            if (string.IsNullOrWhiteSpace(discount))
+            {
+                return;
+            }
+
+            if (discount.Length == 0)
+            {
+                tbDiscount.Texts = "0";
+                return;
+            }
+
+            if (discount.Length < 6)
+            {
+                return;
+            }
+            delayTimeDiscount.Stop();
+            delayTimeDiscount.Start();
         }
     }
 }

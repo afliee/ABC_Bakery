@@ -25,6 +25,7 @@ namespace ABC_Bakery.Forms
         private readonly ProductService _productService;
         private readonly OrderService _orderService;
         private OrderDetailService _orderDetailService;
+        private readonly PromotionService _promotionService;
         private SearchForm _searchForm;
         private readonly TextCurrency _total = new TextCurrency
         {
@@ -33,12 +34,14 @@ namespace ABC_Bakery.Forms
             CultureInfor = TextCurrency.VIETNAM
         };
         private Models.Order _order;
+        private Promotion _promotion;
         public PrePlaceOrder()
         {
             InitializeComponent();
             _productService = ProductService.GetInstance();
             _orderService = OrderService.GetInstance();
             _orderDetailService = OrderDetailService.GetInstance();
+            _promotionService = PromotionService.GetInstance();
         }
 
         private void PrePlaceOrder_Load(object sender, EventArgs e)
@@ -173,6 +176,13 @@ namespace ABC_Bakery.Forms
             {
                 total += double.Parse(surchargeText);
             }
+
+            if (_promotion != null)
+            {
+                total = total * (100 - _promotion.Ratio) / 100;
+            }
+
+
             _total.Value = total;
             tbTotal.Texts = _total.ToString();
         }
@@ -305,6 +315,12 @@ namespace ABC_Bakery.Forms
             {
                 orderType = OrderType.Prepay;
             }
+
+            if (_promotion != null)
+            {
+                note += string.Format(" Khuyến mãi: {0} - {1}%\n", _promotion.Name, _promotion.Ratio);
+            }
+
             Models.Order orderEntity = new Models.Order
             {
                 Address = "",
@@ -411,7 +427,7 @@ namespace ABC_Bakery.Forms
             int startY = 10;
             int offset = 40;
 
-            graphic.DrawString("ABC Bakery", new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
+            graphic.DrawString("ABC Bakery", new Font("Courier New", 24), new SolidBrush(Color.Black), startX, startY);
 
             graphic.DrawString("Số Điện Thoại: 0123456789", font, new SolidBrush(Color.Black), startX, startY + offset);
             graphic.DrawString("Địa Chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM", font, new SolidBrush(Color.Black), startX, startY + offset * 2);
@@ -481,7 +497,7 @@ namespace ABC_Bakery.Forms
 
         private void filter_Click(object sender, EventArgs e)
         {
-            
+
             if (_searchForm == null)
             {
                 _searchForm = new SearchForm(this);
@@ -509,6 +525,55 @@ namespace ABC_Bakery.Forms
         public void UpdateTotal()
         {
             Update_Total();
+        }
+
+        private void tbDiscount__TextChanged(object sender, EventArgs e)
+        {
+            string discount = tbDiscount.Texts;
+
+            if (string.IsNullOrWhiteSpace(discount))
+            {
+                return;
+            }
+
+            if (discount.Length == 0)
+            {
+                tbDiscount.Texts = "0";
+                return;
+            }
+
+            if (discount.Length < 6)
+            {
+                return;
+            }
+            delayTimeDiscount.Stop();
+            delayTimeDiscount.Start();
+        }
+
+        private void delayTimeDiscount_Tick(object sender, EventArgs e)
+        {
+            delayTimeDiscount.Stop();
+            ValidateDiscount();
+        }
+
+        private void ValidateDiscount()
+        {
+            DateTime now = DateTime.Now;
+            string discount = tbDiscount.Texts;
+
+            var isExist = _promotionService.CheckCodeExistBeforeOrEqualDate(discount, now);
+            if (!isExist)
+            {
+                tbDiscount.BorderColor = Color.Red;
+                tbDiscount.ForeColor = Color.Red;
+            }
+            else
+            {
+                tbDiscount.BorderColor = Color.Green;
+                tbDiscount.ForeColor = Color.Green;
+                _promotion = _promotionService.FindByCode(discount);
+                UpdateTotal();
+            }
         }
     }
 }

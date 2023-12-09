@@ -95,6 +95,8 @@ namespace ABC_Bakery
             panel16 = new Panel();
             button11 = new Button();
             followReceiptTransition = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            btnCreatePromotion = new Button();
             sidebarContainer.SuspendLayout();
             pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -123,6 +125,7 @@ namespace ABC_Bakery
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel16.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // sidebarContainer
@@ -584,10 +587,11 @@ namespace ABC_Bakery
             flowLayoutPanel3.Controls.Add(panel12);
             flowLayoutPanel3.Controls.Add(panel17);
             flowLayoutPanel3.Controls.Add(panel13);
+            flowLayoutPanel3.Controls.Add(panel1);
             flowLayoutPanel3.Location = new Point(0, 608);
             flowLayoutPanel3.Margin = new Padding(0);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(290, 279);
+            flowLayoutPanel3.Size = new Size(290, 325);
             flowLayoutPanel3.TabIndex = 7;
             // 
             // panel3
@@ -914,6 +918,37 @@ namespace ABC_Bakery
             followReceiptTransition.Interval = 15;
             followReceiptTransition.Tick += followReceiptTransition_Tick;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnCreatePromotion);
+            panel1.Location = new Point(0, 276);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.RightToLeft = RightToLeft.Yes;
+            panel1.Size = new Size(288, 46);
+            panel1.TabIndex = 5;
+            // 
+            // btnCreatePromotion
+            // 
+            btnCreatePromotion.BackColor = Color.FromArgb(226, 199, 153);
+            btnCreatePromotion.FlatAppearance.MouseDownBackColor = Color.FromArgb(207, 184, 145);
+            btnCreatePromotion.FlatAppearance.MouseOverBackColor = Color.FromArgb(207, 184, 145);
+            btnCreatePromotion.FlatStyle = FlatStyle.Flat;
+            btnCreatePromotion.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreatePromotion.ForeColor = SystemColors.ControlText;
+            btnCreatePromotion.Image = (Image)resources.GetObject("btnCreatePromotion.Image");
+            btnCreatePromotion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCreatePromotion.Location = new Point(-19, -11);
+            btnCreatePromotion.Name = "btnCreatePromotion";
+            btnCreatePromotion.Padding = new Padding(25, 0, 0, 0);
+            btnCreatePromotion.RightToLeft = RightToLeft.No;
+            btnCreatePromotion.Size = new Size(317, 67);
+            btnCreatePromotion.TabIndex = 3;
+            btnCreatePromotion.Text = "       Khuyến mãi";
+            btnCreatePromotion.TextAlign = ContentAlignment.MiddleLeft;
+            btnCreatePromotion.UseVisualStyleBackColor = false;
+            btnCreatePromotion.Click += btnCreatePromotion_Click;
+            // 
             // Application
             // 
             AllowDrop = true;
@@ -954,6 +989,7 @@ namespace ABC_Bakery
             panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel16.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1020,5 +1056,7 @@ namespace ABC_Bakery
         private Panel panel25;
         private Button btnCreateDH;
         private Button btnCreatePlaceTCOrder;
+        private Panel panel1;
+        private Button btnCreatePromotion;
     }
 }

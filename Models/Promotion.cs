@@ -16,7 +16,8 @@ namespace ABC_Bakery.Models
         public Boolean IsActived { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        
+        public DateTime ExpiredAt { get; set; }
+
         public virtual ICollection<Order>? Orders { get; set; }
 
         public Promotion()

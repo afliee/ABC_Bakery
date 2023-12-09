@@ -28,6 +28,7 @@ namespace ABC_Bakery
         private OrdersDirect ordersDirect;
         private OrdersPrePlaced ordersPrePlaced;
         private CreateCategory createCategory;
+        private PromotionForm promotionForm;
         public Application()
         {
             InitializeComponent();
@@ -306,8 +307,9 @@ namespace ABC_Bakery
             if (createCategory == null || createCategory.IsDisposed)
             {
                 createCategory = new CreateCategory();
-                createCategory.Show();    
-            } else
+                createCategory.Show();
+            }
+            else
             {
                 // show the existing form
                 createCategory.Activate();
@@ -488,6 +490,27 @@ namespace ABC_Bakery
         private void OrdersPrePlaced_FormClosed(object sender, FormClosedEventArgs e)
         {
             ordersPrePlaced = null;
+        }
+
+        private void btnCreatePromotion_Click(object sender, EventArgs e)
+        {
+            if (promotionForm == null)
+            {
+                promotionForm = new PromotionForm();
+                promotionForm.MdiParent = this;
+                promotionForm.Dock = DockStyle.Fill;
+                promotionForm.FormClosed += PromotionForm_FormClosed;
+                promotionForm.Show();
+            }
+            else
+            {
+                promotionForm.Activate();
+            }
+        }
+
+        private void PromotionForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            promotionForm = null;
         }
     }
 

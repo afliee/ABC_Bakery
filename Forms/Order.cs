@@ -31,15 +31,16 @@ namespace ABC_Bakery.Forms
         private TextCurrency _moneyRecieved;
         private Models.Order _order;
         private SearchForm _searchForm;
+        private Promotion _promotion;
+        private PromotionService _promotionService;
         public Order()
         {
             //this.BackgroundImage = Properties.Resources.Bg;
             InitializeComponent();
-            //this.ControlBox = false;
-            //this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             _productService = ProductService.GetInstance();
             _orderDetailService = OrderDetailService.GetInstance();
             _orderService = OrderService.GetInstance();
+            _promotionService = PromotionService.GetInstance();
             _total = new TextCurrency
             {
                 Format = TextCurrency.NO_DECIMAL,
@@ -96,15 +97,6 @@ namespace ABC_Bakery.Forms
             string text = tbSearch.Texts;
             // get value of keypress
             if (!(text.Length > 0)) return;
-
-            //if (text.Contains(Keys.Enter.ToString()))
-            //{
-            //    MessageBox.Show("Enter pressed");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Enter not pressed");
-            //}
         }
 
         private void tbSearch_KeyDown(object sender, KeyEventArgs e)
@@ -184,8 +176,16 @@ namespace ABC_Bakery.Forms
             {
                 total += double.Parse(surchargeText);
             }
+
+            if (_promotion != null)
+            {
+                total = total * (100 - _promotion.Ratio) / 100;
+            }
+
+
             _total.Value = total;
             lbTotal.Text = _total.ToString();
+            Calculate_Change();
         }
 
         private void tbSurcharge__TextChanged(object sender, EventArgs e)
@@ -326,7 +326,7 @@ namespace ABC_Bakery.Forms
             }
 
             string note = tbNote.Texts;
-            User cashier = UserService.GetInstance().Find(1);
+            User cashier = UserService.GetInstance().FindFirstCashier();
             Models.Receipt receipt = ReceiptService.GetInstance().FindByCreatedDayAndReceiptType(DateTime.Now, (int)ReceiptType.Import);
             OrderType orderType;
             double deposit = 0;
@@ -339,7 +339,13 @@ namespace ABC_Bakery.Forms
             {
                 orderType = OrderType.Completed;
             }
+            
             MessageBox.Show(string.Format("Tổng tiền: {0}\nNhận: {1}\nTrả lại: {2}\nDeposit: {3}", _total.ToString(), _moneyRecieved.ToString(), _moneyChange.ToString(), deposit), "Thông Báo");
+            
+            if (_promotion != null)
+            {
+                note += string.Format(" Khuyến mãi: {0} - {1}%\n", _promotion.Name, _promotion.Ratio);
+            }
             Models.Order orderEntity = new Models.Order
             {
                 Address = "",
@@ -570,5 +576,55 @@ namespace ABC_Bakery.Forms
         {
             Update_Total();
         }
+
+        private void tbDiscount__TextChanged(object sender, EventArgs e)
+        {
+            string discount = tbDiscount.Texts;
+
+            if (string.IsNullOrWhiteSpace(discount))
+            {
+                return;
+            }
+
+            if (discount.Length == 0)
+            {
+                tbDiscount.Texts = "0";
+                return;
+            }
+
+            if (discount.Length < 6)
+            {
+                return;
+            }
+            delayTimeDiscount.Stop();
+            delayTimeDiscount.Start();
+        }
+
+        private void ValidateDiscount()
+        {
+            DateTime now = DateTime.Now;
+            string discount = tbDiscount.Texts;
+
+            var isExist = _promotionService.CheckCodeExistBeforeOrEqualDate(discount, now);
+            if (!isExist)
+            {
+                tbDiscount.BorderColor = Color.Red;
+                tbDiscount.ForeColor = Color.Red;
+            }
+            else
+            {
+                tbDiscount.BorderColor = Color.Green;
+                tbDiscount.ForeColor = Color.Green;
+                _promotion = _promotionService.FindByCode(discount);
+                UpdateTotal();
+            }
+        }
+
+        private void delayTimeDiscount_Tick(object sender, EventArgs e)
+        {
+            delayTimeDiscount.Stop();
+            ValidateDiscount();
+        }
+
     }
 }
