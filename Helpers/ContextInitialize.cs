@@ -103,11 +103,11 @@ namespace ABC_Bakery.Helpers
             new Receipt
             {
                 Id = 4,
-                Name = string.Format("Hóa đơn thu ngày {0}", DateTime.Now.AddDays(1).ToString("dd/MM/yyyy")),
+                Name = string.Format("Hóa đơn chi ngày {0}", DateTime.Now.AddDays(1).ToString("dd/MM/yyyy")),
                 Recieved = 0,
                 Expense = 0,
                 Total = 0,
-                ReceiptType = ReceiptType.Import,
+                ReceiptType = ReceiptType.Export,
                 Orders = new List<Order>()
             }
             );
