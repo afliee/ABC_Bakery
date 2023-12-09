@@ -262,9 +262,6 @@ namespace ABC_Bakery.Forms
                 orderType = OrderType.Completed;
             }
 
-
-            MessageBox.Show(string.Format("Tổng tiền: {0}\nNhận: {1}\nTrả lại: {2}\nDeposit: {3}", _total.ToString(), _moneyRecieved.ToString(), _moneyChange.ToString(), deposit), "Thông Báo");
-
             if (_promotion != null)
             {
                 note += string.Format(" Khuyến mãi: {0} - {1}%\n", _promotion.Name, _promotion.Ratio);
