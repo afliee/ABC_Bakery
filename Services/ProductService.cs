@@ -96,5 +96,15 @@ namespace ABC_Bakery.Services
         {
             return _productRepository.FindByNameContains(name);
         }
+
+        public List<Product> FindProductNearExpired()
+        {
+            return _productRepository.FindProductNearExpired();
+        }
+
+        public List<Product> FindProductNearMinimumQuantity()
+        {
+            return _productRepository.FindProductNearMinimumQuantity();
+        }
     }
 }

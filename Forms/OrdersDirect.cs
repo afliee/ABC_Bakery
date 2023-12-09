@@ -18,12 +18,15 @@ namespace ABC_Bakery.Forms
     {
         private OrderService _orderService;
         private ProductService _productService;
+        private OrderDetailService _orderDetailService;
+        private ProductNearMinimumForm _productNearMinimumForm;
         private int _orderIndex = 0;
         public OrdersDirect()
         {
             InitializeComponent();
             _orderService = OrderService.GetInstance();
             _productService = ProductService.GetInstance();
+            _orderDetailService = OrderDetailService.GetInstance();
         }
 
         private void Load_Order()
@@ -40,9 +43,11 @@ namespace ABC_Bakery.Forms
             }
             int i = 0;
             double total = 0;
+            int productBought = 0;
             foreach (Models.Order order in ordersPaid)
             {
                 total += order.Price;
+                productBought += _orderDetailService.CountProductByOrderId(order.Id);
                 dgOrders.Rows.Add(i + 1,
                     $"{Models.Order.PREFIX}{order.Id}",
                     order.CreatedAt,
@@ -56,6 +61,7 @@ namespace ABC_Bakery.Forms
                 i++;
             }
 
+            lb_product_bought.Text = productBought.ToString();
             lb_total_day.Text = new TextCurrency
             {
                 CultureInfor = TextCurrency.VIETNAM,
@@ -113,8 +119,18 @@ namespace ABC_Bakery.Forms
             Load_Order();
         }
 
+
         private void btn_view_products_Click(object sender, EventArgs e)
         {
+            if (_productNearMinimumForm == null || _productNearMinimumForm.IsDisposed)
+            {
+                _productNearMinimumForm = new ProductNearMinimumForm();
+                _productNearMinimumForm.Show();
+            }
+            else
+            {
+                _productNearMinimumForm.Activate();
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ namespace ABC_Bakery.Repositories
 {
     internal class ProductRepository : Repository<Product>
     {
+        private const int NEAR_EXPIRED_DAYS = 7;
+        private const int MINIMUM_QUANTITY = 10;
         private readonly DatabaseContext context;
 
         public ProductRepository(DatabaseContext db)
@@ -86,6 +88,16 @@ namespace ABC_Bakery.Repositories
         public List<Product> FindByNameIgnoreCase(string name)
         {
             return this.context.Products.Where(p => p.Name.ToLower().Equals(name.ToLower())).ToList();
+        }
+    
+        public List<Product> FindProductNearExpired()
+        {
+            return this.context.Products.Where(p => p.ExpiredDate != null && p.ExpiredDate.Subtract(DateTime.Now).Days <= NEAR_EXPIRED_DAYS).ToList();
+        }
+
+        public List<Product> FindProductNearMinimumQuantity()
+        {
+            return this.context.Products.Where(p => p.Amount <= MINIMUM_QUANTITY).ToList();
         }
     }
 }

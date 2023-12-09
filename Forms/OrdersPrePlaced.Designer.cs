@@ -80,7 +80,7 @@
             lb_order_paid = new ReaLTaiizor.Controls.DungeonLabel();
             dungeonLabel6 = new ReaLTaiizor.Controls.DungeonLabel();
             panel7 = new Panel();
-            dungeonLabel3 = new ReaLTaiizor.Controls.DungeonLabel();
+            lb_product_bought = new ReaLTaiizor.Controls.DungeonLabel();
             dungeonLabel4 = new ReaLTaiizor.Controls.DungeonLabel();
             panel6 = new Panel();
             lb_total_day = new ReaLTaiizor.Controls.DungeonLabel();
@@ -666,6 +666,7 @@
             btn_view_products.TabIndex = 1;
             btn_view_products.Text = "Xem chi tiết";
             btn_view_products.TextAlignment = StringAlignment.Center;
+            btn_view_products.Click += btn_view_products_Click;
             // 
             // dungeonLabel8
             // 
@@ -720,7 +721,7 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(dungeonLabel3);
+            panel7.Controls.Add(lb_product_bought);
             panel7.Controls.Add(dungeonLabel4);
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new System.Drawing.Point(458, 3);
@@ -729,19 +730,19 @@
             panel7.Size = new System.Drawing.Size(449, 44);
             panel7.TabIndex = 1;
             // 
-            // dungeonLabel3
+            // lb_product_bought
             // 
-            dungeonLabel3.AutoSize = true;
-            dungeonLabel3.BackColor = System.Drawing.Color.Transparent;
-            dungeonLabel3.Dock = DockStyle.Right;
-            dungeonLabel3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dungeonLabel3.ForeColor = System.Drawing.Color.FromArgb(76, 76, 77);
-            dungeonLabel3.Location = new System.Drawing.Point(422, 0);
-            dungeonLabel3.Name = "dungeonLabel3";
-            dungeonLabel3.Size = new System.Drawing.Size(17, 20);
-            dungeonLabel3.TabIndex = 1;
-            dungeonLabel3.Text = "0";
-            dungeonLabel3.TextAlign = ContentAlignment.MiddleRight;
+            lb_product_bought.AutoSize = true;
+            lb_product_bought.BackColor = System.Drawing.Color.Transparent;
+            lb_product_bought.Dock = DockStyle.Right;
+            lb_product_bought.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lb_product_bought.ForeColor = System.Drawing.Color.FromArgb(76, 76, 77);
+            lb_product_bought.Location = new System.Drawing.Point(422, 0);
+            lb_product_bought.Name = "lb_product_bought";
+            lb_product_bought.Size = new System.Drawing.Size(17, 20);
+            lb_product_bought.TabIndex = 1;
+            lb_product_bought.Text = "0";
+            lb_product_bought.TextAlign = ContentAlignment.MiddleRight;
             // 
             // dungeonLabel4
             // 
@@ -828,7 +829,6 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgOrderDetail).EndInit();
             parrotGroupBox1.ResumeLayout(false);
-            parrotGroupBox1.PerformLayout();
             roundedPanel6.ResumeLayout(false);
             roundedPanel6.PerformLayout();
             panel4.ResumeLayout(false);
@@ -838,7 +838,6 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
-            parrotGroupBox2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -893,7 +892,7 @@
         private ReaLTaiizor.Controls.DungeonLabel lb_order_paid;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel6;
         private Panel panel7;
-        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel3;
+        private ReaLTaiizor.Controls.DungeonLabel lb_product_bought;
         private ReaLTaiizor.Controls.DungeonLabel dungeonLabel4;
         private Panel panel6;
         private ReaLTaiizor.Controls.DungeonLabel lb_total_day;

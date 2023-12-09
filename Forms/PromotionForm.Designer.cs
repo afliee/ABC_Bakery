@@ -56,6 +56,7 @@
             pnProductBoundary = new Panel();
             roundedPanel2 = new Helpers.UI.RoundedPanel();
             dgPromotions = new DataGridView();
+            delayTextChanged = new System.Windows.Forms.Timer(components);
             stt = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
             price = new DataGridViewTextBoxColumn();
@@ -64,7 +65,6 @@
             status = new DataGridViewCheckBoxColumn();
             cb_select = new DataGridViewButtonColumn();
             id = new DataGridViewTextBoxColumn();
-            delayTextChanged = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -447,6 +447,11 @@
             dgPromotions.TabIndex = 5;
             dgPromotions.CellContentClick += dgPromotions_CellContentClick;
             // 
+            // delayTextChanged
+            // 
+            delayTextChanged.Interval = 500;
+            delayTextChanged.Tick += delayTextChanged_Tick;
+            // 
             // stt
             // 
             stt.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -510,8 +515,8 @@
             cb_select.HeaderText = "Chọn";
             cb_select.Name = "cb_select";
             cb_select.Resizable = DataGridViewTriState.True;
-            cb_select.Text = "Chọn";
-            cb_select.ToolTipText = "Chọn";
+            cb_select.Text = "Xóa";
+            cb_select.ToolTipText = "Xóa";
             cb_select.UseColumnTextForButtonValue = true;
             // 
             // id
@@ -521,11 +526,6 @@
             id.ReadOnly = true;
             id.Visible = false;
             id.Width = 5;
-            // 
-            // delayTextChanged
-            // 
-            delayTextChanged.Interval = 500;
-            delayTextChanged.Tick += delayTextChanged_Tick;
             // 
             // PromotionForm
             // 
@@ -586,6 +586,7 @@
         private Panel pnProductBoundary;
         private Helpers.UI.RoundedPanel roundedPanel2;
         private DataGridView dgPromotions;
+        private System.Windows.Forms.Timer delayTextChanged;
         private DataGridViewTextBoxColumn stt;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn price;
@@ -594,6 +595,5 @@
         private DataGridViewCheckBoxColumn status;
         private DataGridViewButtonColumn cb_select;
         private DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.Timer delayTextChanged;
     }
 }
