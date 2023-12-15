@@ -8,6 +8,6 @@ namespace ABC_Bakery.Helpers.UI
 {
     internal class GroupBoxRounded : GroupBox
     {
-        
+
     }
 }

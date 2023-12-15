@@ -7,12 +7,13 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
-using ABC_Bakery.Helpers.Constants;
 using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+using ABC_Bakery.Helpers.Constants;
+
 namespace ABC_Bakery.Helpers.UI
 {
     internal class RoundedPanel : Panel
@@ -20,19 +21,19 @@ namespace ABC_Bakery.Helpers.UI
         //Fields
         private int borderSize = 0;
         private int borderRadius = 20;
-        private Color borderColor = ColorTranslator.FromHtml(Constants.Colors.Primary);
+        private Color borderColor = ColorTranslator.FromHtml(Colors.Primary);
 
         public RoundedPanel()
         {
-            this.BackColor = ColorTranslator.FromHtml(Constants.Colors.Primary);
-            this.ForeColor = Color.White;
+            BackColor = ColorTranslator.FromHtml(Colors.Primary);
+            ForeColor = Color.White;
         }
 
         private GraphicsPath GetFigurePath(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
             path.StartFigure();
-// corner radius 20
+            // corner radius 20
             path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
             path.AddArc(rect.Right - radius, rect.Y, radius, radius, 270, 90);
             path.AddArc(rect.Right - radius, rect.Bottom - radius, radius, radius, 0, 90);
@@ -45,7 +46,7 @@ namespace ABC_Bakery.Helpers.UI
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
-            Rectangle rectSurface = this.ClientRectangle;
+            Rectangle rectSurface = ClientRectangle;
             Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
             int smoothSize = 2;
             if (borderSize > 0)
@@ -54,12 +55,12 @@ namespace ABC_Bakery.Helpers.UI
             {
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-                using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
+                using (Pen penSurface = new Pen(Parent.BackColor, smoothSize))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     //Button surface
-                    this.Region = new Region(pathSurface);
+                    Region = new Region(pathSurface);
                     //Button border
                     if (borderSize >= 1)
                         pevent.Graphics.DrawPath(penBorder, pathBorder);
@@ -68,7 +69,7 @@ namespace ABC_Bakery.Helpers.UI
             else //Normal button
             {
                 pevent.Graphics.SmoothingMode = SmoothingMode.None;
-                this.Region = new Region(rectSurface);
+                Region = new Region(rectSurface);
                 if (borderSize >= 1)
                 {
                     using (Pen penBorder = new Pen(borderColor)
@@ -83,11 +84,11 @@ namespace ABC_Bakery.Helpers.UI
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+            Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
-            this.Invalidate();
+            Invalidate();
         }
     }
 }

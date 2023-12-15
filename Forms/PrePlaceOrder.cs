@@ -215,7 +215,7 @@ namespace ABC_Bakery.Forms
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         tbSurcharge.Texts = "0";
@@ -256,7 +256,7 @@ namespace ABC_Bakery.Forms
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         tbSurcharge.Texts = "0";
@@ -369,13 +369,17 @@ namespace ABC_Bakery.Forms
                 {
                     // print receipt
                     print_order.Print();
-                    btnPrint.Enabled = true;
                     btnRenew.Enabled = true;
+                    btnPrint.Enabled = true;
+                    btnCanceled.Enabled = false;
                 }
                 else if (dialogResult == DialogResult.No)
                 {
                     // do something else
                     btnCanceled.Enabled = false;
+                    //btnRenew_Click(sender, e);
+                    btnPrint.Enabled = false;
+                    btnRenew.Enabled = true;
                 }
             }
             else

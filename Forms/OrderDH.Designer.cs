@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class OrderDH
     {
@@ -774,18 +776,18 @@
 
         #endregion
 
-        private Helpers.UI.RoundedButton btnSave;
+        private RoundedButton btnSave;
         private Label label2;
-        private Helpers.UI.RoundedPanel roundedPanel6;
+        private RoundedPanel roundedPanel6;
         private ReaLTaiizor.Controls.MetroDivider metroDivider1;
         private Panel panel1;
-        private Helpers.UI.RoundedPanel roundedPanel5;
-        private Helpers.UI.RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel5;
+        private RoundedPanel roundedPanel1;
         private Panel panel3;
         private Label label1;
         private Panel panel2;
-        private Helpers.UI.RoundedPanel roundedPanel4;
-        private Helpers.UI.DatetimePickerCustom dt_date;
+        private RoundedPanel roundedPanel4;
+        private DatetimePickerCustom dt_date;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
         private ReaLTaiizor.Controls.CyberRadioButton rb_not_done;
         private ReaLTaiizor.Controls.CyberRadioButton rb_done;
@@ -793,9 +795,9 @@
         private ReaLTaiizor.Controls.MetroDivider metroDivider2;
         private Panel panel4;
         private Panel panel5;
-        private Helpers.UI.RoundedPanel roundedPanel3;
+        private RoundedPanel roundedPanel3;
         private DataGridView dgOrders;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private Label label6;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
         private ReaLTaiizor.Controls.CyberRadioButton rb_not_delivery;

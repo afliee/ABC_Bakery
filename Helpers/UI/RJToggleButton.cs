@@ -13,6 +13,7 @@ using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+
 namespace ABC_Bakery.Helpers.UI
 {
     public class RJToggleButton : CheckBox
@@ -36,7 +37,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 onBackColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -51,7 +52,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 onToggleColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -66,7 +67,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 offBackColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -81,7 +82,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 offToggleColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -95,7 +96,7 @@ namespace ABC_Bakery.Helpers.UI
 
             set
             {
-               
+
             }
         }
 
@@ -111,22 +112,22 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 solidStyle = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
         //Constructor
         public RJToggleButton()
         {
-            this.MinimumSize = new Size(45, 22);
+            MinimumSize = new Size(45, 22);
         }
 
         //Methods
         private GraphicsPath GetFigurePath()
         {
-            int arcSize = this.Height - 1;
+            int arcSize = Height - 1;
             Rectangle leftArc = new Rectangle(0, 0, arcSize, arcSize);
-            Rectangle rightArc = new Rectangle(this.Width - arcSize - 2, 0, arcSize, arcSize);
+            Rectangle rightArc = new Rectangle(Width - arcSize - 2, 0, arcSize, arcSize);
 
             GraphicsPath path = new GraphicsPath();
             path.StartFigure();
@@ -139,25 +140,25 @@ namespace ABC_Bakery.Helpers.UI
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            int toggleSize = this.Height - 5;
+            int toggleSize = Height - 5;
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            pevent.Graphics.Clear(this.Parent.BackColor);
+            pevent.Graphics.Clear(Parent.BackColor);
 
-            if (this.Checked) //ON
+            if (Checked) //ON
             {
                 //Draw the control surface
                 if (solidStyle)
                     pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
-                else pevent.Graphics.DrawPath(new Pen(onBackColor,2), GetFigurePath());
+                else pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
                 //Draw the toggle
                 pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor),
-                    new Rectangle(this.Width - this.Height + 1, 2, toggleSize, toggleSize));
+                    new Rectangle(Width - Height + 1, 2, toggleSize, toggleSize));
             }
             else //OFF
             {
                 //Draw the control surface
-                if(solidStyle)
-                pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
+                if (solidStyle)
+                    pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
                 else pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
                 //Draw the toggle
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),

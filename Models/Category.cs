@@ -19,8 +19,8 @@ namespace ABC_Bakery.Models
 
         public Category()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
             Products = new List<Product>();
         }
 
@@ -45,6 +45,6 @@ namespace ABC_Bakery.Models
                 .IsRequired();
         }
 
-        public override string ToString() => this.Name;
+        public override string ToString() => Name;
     }
 }

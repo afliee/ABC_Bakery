@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class CreateCategory
     {
@@ -391,10 +393,10 @@
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
         private Helpers.UI.RJTextBox tbName;
-        private Helpers.UI.RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel1;
         private ReaLTaiizor.Controls.RibbonButtonLeft btnClose;
         private ReaLTaiizor.Controls.RibbonButtonRight btnSave;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private DataGridView dgProducts;
         private DataGridViewTextBoxColumn stt;
         private DataGridViewTextBoxColumn name;

@@ -74,7 +74,7 @@ namespace ABC_Bakery.Forms
                     {
                         Image barcode = _productService.GetBarcode(product.Id);
                         dgvProduct.Rows.Add(
-                            $"{Models.Product.Prefix}_{product.Id}",
+                            $"{Product.Prefix}_{product.Id}",
                             barcode
                             , product.Name,
                             new TextCurrency
@@ -98,7 +98,7 @@ namespace ABC_Bakery.Forms
                         Image barcode = _productService.GetBarcode(product.Id);
                         DataGridViewCheckBoxCell cell = new DataGridViewCheckBoxCell();
                         dgvProduct.Rows.Add(
-                            $"{Models.Product.Prefix}_{product.Id}",
+                            $"{Product.Prefix}_{product.Id}",
                             barcode,
                             product.Name,
                             new TextCurrency

@@ -25,7 +25,8 @@ namespace ABC_Bakery.Repositories
             {
                 _context.Permissions.Add(obj);
                 return _context.SaveChanges() > 0;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -37,7 +38,8 @@ namespace ABC_Bakery.Repositories
             {
                 _context.Permissions.Remove(obj);
                 return _context.SaveChanges() > 0;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -54,7 +56,7 @@ namespace ABC_Bakery.Repositories
         }
 
         public bool Update(Permission obj)
-    {
+        {
             throw new NotImplementedException();
         }
 
@@ -74,30 +76,30 @@ namespace ABC_Bakery.Repositories
 
         public void Initialize()
         {
-            if (this.FindAll().Count > 0) return;
+            if (FindAll().Count > 0) return;
 
-            this.Create(new Permission { Name = "Xem người dùng" , Group = PermissionGroupType.UserManagement.Name});
-            this.Create(new Permission { Name = "Thêm người dùng", Group = PermissionGroupType.UserManagement.Name });
-            this.Create(new Permission { Name = "Sửa người dùng", Group = PermissionGroupType.UserManagement.Name });
-            this.Create(new Permission { Name = "Xóa người dùng", Group = PermissionGroupType.UserManagement.Name });
+            Create(new Permission { Name = "Xem người dùng", Group = PermissionGroupType.UserManagement.Name });
+            Create(new Permission { Name = "Thêm người dùng", Group = PermissionGroupType.UserManagement.Name });
+            Create(new Permission { Name = "Sửa người dùng", Group = PermissionGroupType.UserManagement.Name });
+            Create(new Permission { Name = "Xóa người dùng", Group = PermissionGroupType.UserManagement.Name });
 
-            this.Create(new Permission { Name = "Xem vai trò", Group = PermissionGroupType.RoleManagement.Name });
-            this.Create(new Permission { Name = "Thêm vai trò" , Group = PermissionGroupType.RoleManagement.Name });
-            this.Create(new Permission { Name = "Sửa vai trò", Group = PermissionGroupType.RoleManagement.Name });
-            this.Create(new Permission { Name = "Xóa vai trò", Group = PermissionGroupType.RoleManagement.Name });
+            Create(new Permission { Name = "Xem vai trò", Group = PermissionGroupType.RoleManagement.Name });
+            Create(new Permission { Name = "Thêm vai trò", Group = PermissionGroupType.RoleManagement.Name });
+            Create(new Permission { Name = "Sửa vai trò", Group = PermissionGroupType.RoleManagement.Name });
+            Create(new Permission { Name = "Xóa vai trò", Group = PermissionGroupType.RoleManagement.Name });
 
-            this.Create(new Permission { Name = "Xem sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
-            this.Create(new Permission { Name = "Thêm sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
-            this.Create(new Permission { Name = "Sửa sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
-            this.Create(new Permission { Name = "Xóa sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
+            Create(new Permission { Name = "Xem sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
+            Create(new Permission { Name = "Thêm sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
+            Create(new Permission { Name = "Sửa sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
+            Create(new Permission { Name = "Xóa sản phẩm", Group = PermissionGroupType.ProductManagement.Name });
 
-            this.Create(new Permission { Name = "Xem đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
-            this.Create(new Permission { Name = "Thêm đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
-            this.Create(new Permission { Name = "Sửa đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
-            this.Create(new Permission { Name = "Xóa đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
+            Create(new Permission { Name = "Xem đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
+            Create(new Permission { Name = "Thêm đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
+            Create(new Permission { Name = "Sửa đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
+            Create(new Permission { Name = "Xóa đơn hàng", Group = PermissionGroupType.OrderManagement.Name });
 
-            this.Create(new Permission { Name = "Thống kê báo cáo", Group = PermissionGroupType.ReportManagement.Name });
-            this.Create(new Permission { Name = "Xem thống kê báo cáo", Group = PermissionGroupType.ReportManagement.Name });
+            Create(new Permission { Name = "Thống kê báo cáo", Group = PermissionGroupType.ReportManagement.Name });
+            Create(new Permission { Name = "Xem thống kê báo cáo", Group = PermissionGroupType.ReportManagement.Name });
 
             MessageBox.Show("Create permission successfull");
         }

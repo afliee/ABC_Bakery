@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class DefaultForm
     {
@@ -139,8 +141,8 @@
         private System.Windows.Forms.Timer timer;
         private ReaLTaiizor.Controls.SkyLabel skyLabel1;
         private ReaLTaiizor.Controls.SmallLabel lbTimer;
-        private Helpers.UI.RJCircularPictureBox rjCircularPictureBox1;
-        private Helpers.UI.RoundedPanel main_component;
+        private RJCircularPictureBox rjCircularPictureBox1;
+        private RoundedPanel main_component;
         private ReaLTaiizor.Controls.BigLabel lbTime;
     }
 }

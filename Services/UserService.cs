@@ -30,7 +30,7 @@ namespace ABC_Bakery.Services
             return _instance;
         }
 
-        public User Find(int id )
+        public User Find(int id)
         {
             return _userRepository.Find(id);
         }

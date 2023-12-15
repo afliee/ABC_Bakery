@@ -1,6 +1,4 @@
-﻿using ABC_Bakery.Models;
-using ABC_Bakery.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +10,14 @@ using System.Windows.Forms;
 using ABC_Bakery.Helpers;
 using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
 using Image = System.Drawing.Image;
-using ABC_Bakery.Helpers.Utils;
 using System.Xml.Linq;
-using ABC_Bakery.Models.Constants;
 using System.Drawing.Printing;
 using Color = System.Drawing.Color;
 using ABC_Bakery.Helpers.UI;
+using ABC_Bakery.Services;
+using ABC_Bakery.Models.Constants;
+using ABC_Bakery.Models;
+using ABC_Bakery.Helpers.Utils;
 
 namespace ABC_Bakery.Forms
 {
@@ -216,7 +216,7 @@ namespace ABC_Bakery.Forms
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         tbSurcharge.Texts = "0";
@@ -258,7 +258,7 @@ namespace ABC_Bakery.Forms
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         tbReceived.Texts = "0";

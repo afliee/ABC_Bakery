@@ -4,17 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ABC_Bakery.Models;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 using ABC_Bakery.Models.Constants;
 using ABC_Bakery.Services;
+using ABC_Bakery.Models;
+using ABC_Bakery.Helpers;
 
 namespace ABC_Bakery.Helpers
 {
     internal class DatabaseContext : DbContext
     {
         //private static readonly string CONNECTION_STRING = "Data Source=TRONGDAT;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-        private static readonly string CONNECTION_STRING = "Data Source=ALFIE;Initial Catalog=ABC_Bakery;Persist Security Info=True;Encrypt=False;User ID=sa;Password=123456";
+        private static readonly string CONNECTION_STRING = "Data Source=ALFIE;Initial Catalog=ABC_Bakery_N5;Persist Security Info=True;Encrypt=False;User ID=sa;Password=123456";
         //private static readonly string CONNECTION_STRING = "Data Source=HOANG-PHUC;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
         //private static readonly string CONNECTION_STRING = "Data Source=BARO;Initial Catalog=ABC_Bakery;Integrated Security=True;TrustServerCertificate=True";
         public DatabaseContext() : base()
@@ -22,17 +23,18 @@ namespace ABC_Bakery.Helpers
             if (!Database.CanConnect())
             {
                 Database.EnsureCreated();
-            } else
+            }
+            else
             {
                 //Database.Migrate();
             }
         }
 
-        
+
 
         //public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) 
         //{ 
-               
+
         //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

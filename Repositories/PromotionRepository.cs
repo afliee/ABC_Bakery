@@ -25,7 +25,8 @@ namespace ABC_Bakery.Repositories
                 _context.Promotions.Add(obj);
                 _context.SaveChanges();
                 return true;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return false;
@@ -51,10 +52,11 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                this._context.Promotions.Update(obj);
-                this._context.SaveChanges();
+                _context.Promotions.Update(obj);
+                _context.SaveChanges();
                 return true;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return false;
@@ -111,10 +113,11 @@ namespace ABC_Bakery.Repositories
                 }
 
                 promotion.IsActived = status;
-                this._context.Promotions.Update(promotion);
-                this._context.SaveChanges();
+                _context.Promotions.Update(promotion);
+                _context.SaveChanges();
                 return true;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return false;

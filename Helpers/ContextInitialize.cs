@@ -15,7 +15,7 @@ namespace ABC_Bakery.Helpers
 
         public ContextInitialize(ModelBuilder modelBuilder)
         {
-            this.ModelBuilder = modelBuilder;
+            ModelBuilder = modelBuilder;
         }
 
         public void Seed()
@@ -24,7 +24,7 @@ namespace ABC_Bakery.Helpers
             ModelBuilder.Entity<Role>().HasData(
                 new Role { Name = "Admin", Id = 1 },
                 new Role { Name = "Cashier", Id = 2 },
-                new Role { Name = "Accounting", Id = 3}
+                new Role { Name = "Accounting", Id = 3 }
             );
 
             ModelBuilder.Entity<User>().HasData(
@@ -52,23 +52,23 @@ namespace ABC_Bakery.Helpers
                 );
 
             ModelBuilder.Entity<Category>().HasData(
-                    new Category { Name = "Bánh Mì", Products = new List<Product>(),Id = 1 },
+                    new Category { Name = "Bánh Mì", Products = new List<Product>(), Id = 1 },
                     new Category { Name = "Bánh Ngọt", Products = new List<Product>(), Id = 2 },
                     new Category { Name = "Bánh Kem Nhỏ", Products = new List<Product>(), Id = 3 },
                     new Category { Name = "Bánh Kem", Products = new List<Product>(), Id = 4 },
                     new Category { Name = "Bánh Đóng Gói", Products = new List<Product>(), Id = 5 },
                     new Category { Name = "Bánh Bao", Products = new List<Product>(), Id = 6 },
-                    new Category { Name = "Bánh Theo Mùa", Products = new List<Product>(), Id = 7},
-                    new Category { Name = "Thiết bị, Dụng cụ", Products = new List<Product>(), Id = 8}
+                    new Category { Name = "Bánh Theo Mùa", Products = new List<Product>(), Id = 7 },
+                    new Category { Name = "Thiết bị, Dụng cụ", Products = new List<Product>(), Id = 8 }
                 );
 
             ModelBuilder.Entity<Promotion>().HasData(
                     new Promotion { Name = "Không có", Code = "NONE", Ratio = 0, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 1 },
                     new Promotion { Name = "Giảm 10%", Code = "ABCNGON", Ratio = 10, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 2 },
-                    new Promotion { Name = "Giảm 20%", Code = "LATEAM", Ratio = 20, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 3}
+                    new Promotion { Name = "Giảm 20%", Code = "LATEAM", Ratio = 20, IsActived = true, ExpiredAt = DateTime.Now.AddDays(6), Id = 3 }
                 );
 
-            ModelBuilder.Entity<Models.Receipt>().HasData(
+            ModelBuilder.Entity<Receipt>().HasData(
                 new Receipt
                 {
                     Id = 1,
@@ -135,7 +135,7 @@ namespace ABC_Bakery.Helpers
                 },
                 new Product
                 {
-                    Id = 3, 
+                    Id = 3,
                     Amount = 50,
                     CategoryId = 1,
                     Name = "Bánh mì phô mai",

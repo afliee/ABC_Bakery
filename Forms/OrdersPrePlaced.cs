@@ -1,5 +1,6 @@
 ﻿using ABC_Bakery.Helpers.Utils;
 using ABC_Bakery.Models;
+using ABC_Bakery.Models.Constants;
 using ABC_Bakery.Services;
 using System;
 using System.Collections.Generic;
@@ -90,16 +91,16 @@ namespace ABC_Bakery.Forms
             int orderId = int.Parse(dgOrders.Rows[_orderIndex].Cells[1].Value.ToString().Replace(orderPrefix, ""));
 
             // get order details by order id
-            List<Models.OrderDetail> orderDetails = OrderDetailService.GetInstance().FindByOrderId(orderId);
+            List<OrderDetail> orderDetails = OrderDetailService.GetInstance().FindByOrderId(orderId);
             var orderEntity = _orderService.FindById(orderId);
             if (orderEntity != null)
             {
                 switch (orderEntity.Type)
                 {
-                    case (int)Models.Constants.OrderType.Prepay:
+                    case (int)OrderType.Prepay:
                         rb_not_done.Checked = true;
                         break;
-                    case (int)Models.Constants.OrderType.Completed:
+                    case (int)OrderType.Completed:
                         rb_done.Checked = true;
                         break;
                 }

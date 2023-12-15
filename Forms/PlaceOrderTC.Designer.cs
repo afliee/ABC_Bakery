@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class PlaceOrderTC
     {
@@ -1073,8 +1075,8 @@
         private DataGridViewTextBoxColumn quantity;
         private DataGridViewTextBoxColumn total;
         private DataGridViewButtonColumn delete;
-        private Helpers.UI.RoundedPanel roundedPanel11;
-        private Helpers.UI.RoundedPanel roundedPanel9;
+        private RoundedPanel roundedPanel11;
+        private RoundedPanel roundedPanel9;
         private Helpers.UI.RJTextBox tbDiscount;
         private Label label5;
         private Panel panel8;
@@ -1082,46 +1084,46 @@
         private Panel panel4;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel5;
-        private Helpers.UI.RJButton btnRenew;
-        private Helpers.UI.RJButton rjButton1;
+        private RJButton btnRenew;
+        private RJButton rjButton1;
         private Panel panel6;
-        private Helpers.UI.RJButton btnCanceled;
+        private RJButton btnCanceled;
         private Panel panel7;
-        private Helpers.UI.RJButton btnPrint;
-        private Helpers.UI.RoundedPanel roundedPanel4;
+        private RJButton btnPrint;
+        private RoundedPanel roundedPanel4;
         private Panel panel9;
         private Helpers.UI.RJTextBox tbSearch;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel2;
-        private Helpers.UI.RoundedPanel roundedPanel10;
+        private RoundedPanel roundedPanel10;
         private Helpers.UI.RJTextBox tbSurcharge;
         private Label label7;
         private Label label6;
-        private Helpers.UI.RJButton btnSave;
+        private RJButton btnSave;
         private Label label2;
-        private Helpers.UI.RoundedPanel roundedPanel6;
+        private RoundedPanel roundedPanel6;
         private ReaLTaiizor.Controls.MetroDivider metroDivider1;
-        private Helpers.UI.RoundedPanel roundedPanel13;
+        private RoundedPanel roundedPanel13;
         private Helpers.UI.RJTextBox tbDeposit;
         private Label label9;
         private Label label10;
         private Label label13;
-        private Helpers.UI.RoundedPanel roundedPanel18;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom4;
+        private RoundedPanel roundedPanel18;
+        private DatetimePickerCustom datetimePickerCustom4;
         private Label label17;
-        private Helpers.UI.RoundedPanel roundedPanel7;
-        private Helpers.UI.DatetimePickerCustom dt_refundedTime;
+        private RoundedPanel roundedPanel7;
+        private DatetimePickerCustom dt_refundedTime;
         private Label label1;
-        private Helpers.UI.RoundedPanel roundedPanel14;
+        private RoundedPanel roundedPanel14;
         private Helpers.UI.RJTextBox tbTotal;
         private Label label12;
         private FlowLayoutPanel flowLayoutPanel2;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
         private Helpers.UI.RJTextBox tbNote;
-        private Helpers.UI.RoundedPanel roundedPanel3;
-        private Helpers.UI.RoundedPanel roundedPanel2;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom1;
+        private RoundedPanel roundedPanel3;
+        private RoundedPanel roundedPanel2;
+        private DatetimePickerCustom datetimePickerCustom1;
         private PictureBox pictureBox1;
-        private Helpers.UI.RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel1;
         private ReaLTaiizor.Controls.DungeonHeaderLabel lbIndex;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private FlowLayoutPanel flowLayoutPanel1;

@@ -23,13 +23,15 @@ namespace ABC_Bakery.Models
 
         public OrderDetail()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
 
         public static void Config(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<OrderDetail>()
+                .ToTable("order_detail");
             modelBuilder.Entity<OrderDetail>()
                 .Property(od => od.CreatedAt)
                 .HasDefaultValueSql("getdate()");

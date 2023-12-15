@@ -5,6 +5,7 @@ using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
 using Point = System.Drawing.Point;
 using SizeF = System.Drawing.SizeF;
+using ABC_Bakery.Helpers.UI;
 
 namespace ABC_Bakery.Forms
 {
@@ -68,7 +69,7 @@ namespace ABC_Bakery.Forms
             tbName = new Helpers.UI.RJTextBox();
             parrotGroupBox2 = new ReaLTaiizor.Controls.ParrotGroupBox();
             roundedPanel3 = new Helpers.UI.RoundedPanel();
-            cbCategory = new CustomControls.RJControls.RJComboBox();
+            cbCategory = new RJComboBox();
             parrotGroupBox4 = new ReaLTaiizor.Controls.ParrotGroupBox();
             tbQuantity = new Helpers.UI.RJTextBox();
             showProducts = new System.Windows.Forms.Timer(components);
@@ -781,26 +782,26 @@ namespace ABC_Bakery.Forms
 
         private Panel panel1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Helpers.UI.RoundedPanel roundedPanel1;
-        private Helpers.UI.DatetimePickerCustom datetimePickerCustom1;
+        private RoundedPanel roundedPanel1;
+        private DatetimePickerCustom datetimePickerCustom1;
         private PictureBox pictureBox1;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private FlowLayoutPanel flowLayoutPanel2;
-        private Helpers.UI.RoundedPanel roundedPanel4;
+        private RoundedPanel roundedPanel4;
         private Panel panel9;
         private Helpers.UI.RJTextBox tbSearch;
         private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.DungeonHeaderLabel dungeonHeaderLabel2;
         private Panel pnProductBoundary;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private DataGridView dgProducts;
         private Panel pnProducts;
         private TableLayoutPanel tableLayoutPanel1;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
         private Helpers.UI.RJTextBox tbName;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
-        private Helpers.UI.RoundedPanel roundedPanel3;
-        private CustomControls.RJControls.RJComboBox cbCategory;
+        private RoundedPanel roundedPanel3;
+        private RJComboBox cbCategory;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox3;
         private Helpers.UI.RJTextBox tbPrice;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox4;
@@ -808,9 +809,9 @@ namespace ABC_Bakery.Forms
         private System.Windows.Forms.Timer showProducts;
         private System.Windows.Forms.Timer delayTextChanged;
         private ErrorProvider error;
-        private Helpers.UI.RoundedPanel pnInfoBounary;
-        private Helpers.UI.RJButton btnSave;
-        private Helpers.UI.RoundedPanel roundedPanel5;
+        private RoundedPanel pnInfoBounary;
+        private RJButton btnSave;
+        private RoundedPanel roundedPanel5;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox5;
         private Helpers.UI.RJTextBox tbDescription;
         private DataGridViewTextBoxColumn stt;

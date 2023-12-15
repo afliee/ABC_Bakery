@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ABC_Bakery.Helpers;
-using ABC_Bakery.Models;
-using ABC_Bakery.Repositories;
 using Microsoft.IdentityModel.Tokens;
 using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
 using IronBarCode;
-using ABC_Bakery.Services;
 using Image = System.Drawing.Image;
+using ABC_Bakery.Repositories;
+using ABC_Bakery.Helpers;
+using ABC_Bakery.Services;
+using ABC_Bakery.Models;
+
 namespace ABC_Bakery.Forms
 {
     public partial class CreateProduct : Form
@@ -178,7 +179,7 @@ namespace ABC_Bakery.Forms
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         tbPrice.Texts = "1";
@@ -209,7 +210,7 @@ namespace ABC_Bakery.Forms
             {
                 if (text.All(char.IsDigit))
                 {
-                    Helpers.UI.MessageBox.Show("Tên sản phẩm không hợp lệ. Vui lòng xóa và nhập lại", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tên sản phẩm không hợp lệ. Vui lòng xóa và nhập lại", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         return;
@@ -249,7 +250,7 @@ namespace ABC_Bakery.Forms
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Giá tiền không hợp lệ", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     if (text.Length == 1)
                     {
                         tbQuantity.Texts = "1";
@@ -272,37 +273,37 @@ namespace ABC_Bakery.Forms
 
             if (string.IsNullOrWhiteSpace(name))
             {
-                Helpers.UI.MessageBox.Show("Tên sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrWhiteSpace(price))
             {
-                Helpers.UI.MessageBox.Show("Giá sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Giá sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(quantity))
             {
-                Helpers.UI.MessageBox.Show("Số lượng sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (category == null)
             {
-                Helpers.UI.MessageBox.Show("Danh mục sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Danh mục sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(description))
             {
-                Helpers.UI.MessageBox.Show("Mô tả sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mô tả sản phẩm không được để trống", "Lỗi cú pháp", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             Product existProduct = productRepository.FindByName(name);
             if (existProduct != null)
             {
-                Helpers.UI.MessageBox.Show("Tên sản phẩm đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên sản phẩm đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbName.Focus();
                 return;
             }
@@ -325,12 +326,12 @@ namespace ABC_Bakery.Forms
             }
             if (!result)
             {
-                Helpers.UI.MessageBox.Show("Thêm sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                Helpers.UI.MessageBox.Show("Thêm sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgProducts.Rows.Clear();
                 Load_Data();
                 return;
@@ -365,7 +366,7 @@ namespace ABC_Bakery.Forms
                 Product product = productRepository.Find(id);
                 if (product == null)
                 {
-                    Helpers.UI.MessageBox.Show("Không tìm thấy sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -380,7 +381,7 @@ namespace ABC_Bakery.Forms
                 Product product = productRepository.Find(id);
                 if (product == null)
                 {
-                    Helpers.UI.MessageBox.Show("Không tìm thấy sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -389,12 +390,12 @@ namespace ABC_Bakery.Forms
                 bool result = productRepository.Update(product);
                 if (!result)
                 {
-                    Helpers.UI.MessageBox.Show("Cập nhật trạng thái sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cập nhật trạng thái sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show("Cập nhật trạng thái sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật trạng thái sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgProducts.Rows.Clear();
                     Load_Data();
                     return;
@@ -404,7 +405,7 @@ namespace ABC_Bakery.Forms
 
         private void Handle_Delete_Product(Product product)
         {
-            DialogResult dialogResult = Helpers.UI.MessageBox.Show(
+            DialogResult dialogResult = MessageBox.Show(
                                string.Format("Bạn có chắc chắn muốn xóa sản phẩm {0} không?", product.Name)
                                               , "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
@@ -412,12 +413,12 @@ namespace ABC_Bakery.Forms
                 bool result = productRepository.Delete(product);
                 if (!result)
                 {
-                    Helpers.UI.MessageBox.Show("Xóa sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Xóa sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else
                 {
-                    Helpers.UI.MessageBox.Show(
+                    MessageBox.Show(
                         string.Format("Xóa sản phẩm {0} thành công", product.Name)
                         , "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgProducts.Rows.Clear();

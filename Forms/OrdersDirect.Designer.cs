@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class OrdersDirect
     {
@@ -43,10 +45,10 @@
             panel3 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            roundedPanel4 = new Helpers.UI.RoundedPanel();
-            dt_date = new Helpers.UI.DatetimePickerCustom();
-            roundedPanel1 = new Helpers.UI.RoundedPanel();
-            roundedPanel5 = new Helpers.UI.RoundedPanel();
+            roundedPanel4 = new RoundedPanel();
+            dt_date = new DatetimePickerCustom();
+            roundedPanel1 = new RoundedPanel();
+            roundedPanel5 = new RoundedPanel();
             panel1 = new Panel();
             dgOrderDetail = new DataGridView();
             order_name = new DataGridViewTextBoxColumn();
@@ -55,20 +57,20 @@
             parrotGroupBox1 = new ReaLTaiizor.Controls.ParrotGroupBox();
             rb_not_done = new ReaLTaiizor.Controls.CyberRadioButton();
             rb_done = new ReaLTaiizor.Controls.CyberRadioButton();
-            roundedPanel6 = new Helpers.UI.RoundedPanel();
+            roundedPanel6 = new RoundedPanel();
             label2 = new Label();
             metroDivider1 = new ReaLTaiizor.Controls.MetroDivider();
-            roundedButton1 = new Helpers.UI.RoundedButton();
+            roundedButton1 = new RoundedButton();
             panel4 = new Panel();
             panel5 = new Panel();
-            roundedPanel3 = new Helpers.UI.RoundedPanel();
+            roundedPanel3 = new RoundedPanel();
             dgOrders = new DataGridView();
             stt = new DataGridViewTextBoxColumn();
             maBienNhan = new DataGridViewTextBoxColumn();
             orderDate = new DataGridViewTextBoxColumn();
             total = new DataGridViewTextBoxColumn();
             note = new DataGridViewTextBoxColumn();
-            roundedPanel2 = new Helpers.UI.RoundedPanel();
+            roundedPanel2 = new RoundedPanel();
             metroDivider2 = new ReaLTaiizor.Controls.MetroDivider();
             parrotGroupBox2 = new ReaLTaiizor.Controls.ParrotGroupBox();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -831,6 +833,7 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
+            parrotGroupBox2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -848,24 +851,24 @@
         private Panel panel3;
         private Label label1;
         private Panel panel2;
-        private Helpers.UI.RoundedPanel roundedPanel4;
-        private Helpers.UI.DatetimePickerCustom dt_date;
-        private Helpers.UI.RoundedPanel roundedPanel1;
-        private Helpers.UI.RoundedPanel roundedPanel5;
+        private RoundedPanel roundedPanel4;
+        private DatetimePickerCustom dt_date;
+        private RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel5;
         private Panel panel1;
         private DataGridView dgOrderDetail;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
         private ReaLTaiizor.Controls.CyberRadioButton rb_not_done;
         private ReaLTaiizor.Controls.CyberRadioButton rb_done;
-        private Helpers.UI.RoundedPanel roundedPanel6;
+        private RoundedPanel roundedPanel6;
         private Label label2;
         private ReaLTaiizor.Controls.MetroDivider metroDivider1;
-        private Helpers.UI.RoundedButton roundedButton1;
+        private RoundedButton roundedButton1;
         private Panel panel4;
         private Panel panel5;
-        private Helpers.UI.RoundedPanel roundedPanel3;
+        private RoundedPanel roundedPanel3;
         private DataGridView dgOrders;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private ReaLTaiizor.Controls.MetroDivider metroDivider2;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
         private TableLayoutPanel tableLayoutPanel1;

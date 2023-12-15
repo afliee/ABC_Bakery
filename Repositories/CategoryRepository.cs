@@ -14,20 +14,21 @@ namespace ABC_Bakery.Repositories
 
         public CategoryRepository(DatabaseContext db)
         {
-            this.context = db;
+            context = db;
         }
 
         public bool Create(Category obj)
         {
             try
             {
-                this.context.Categories.Add(obj);
-                return this.context.SaveChanges() > 0;
-            } catch (Exception e)
+                context.Categories.Add(obj);
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.Write(e);
                 return false;
-            } 
+            }
         }
 
         public bool Delete(Category obj)
@@ -44,8 +45,9 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                return this.context.Categories.ToList();
-            } catch (Exception e)
+                return context.Categories.ToList();
+            }
+            catch (Exception e)
             {
                 Console.Write(e);
                 return null;
@@ -56,9 +58,10 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                this.context.Categories.Update(obj);
-                return this.context.SaveChanges() > 0;
-            } catch (Exception e)
+                context.Categories.Update(obj);
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.Write(e);
                 return false;
@@ -67,9 +70,9 @@ namespace ABC_Bakery.Repositories
 
         public Category FindByName(string name)
         {
-            return this.context.Categories.Where(c => c.Name == name).FirstOrDefault();
+            return context.Categories.Where(c => c.Name == name).FirstOrDefault();
         }
 
-        public bool Save() => this.context.SaveChanges() > 0;
+        public bool Save() => context.SaveChanges() > 0;
     }
 }

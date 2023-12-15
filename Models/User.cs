@@ -16,14 +16,14 @@ namespace ABC_Bakery.Models
         public DateTime UpdatedAt { get; set; }
         public required int RoleId { get; set; }
 
-        public virtual  Role Role { get; set; }
-        public virtual  ICollection<Order> Orders { get; set; }
-        public virtual  ICollection<Import> Imports { get; set; }
+        public virtual Role Role { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Import> Imports { get; set; }
 
         public User()
         {
-            this.CreateAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreateAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
         public static void Config(ModelBuilder modelBuilder)
@@ -51,7 +51,7 @@ namespace ABC_Bakery.Models
                     v => DateTime.Parse(v)
                 )
                 .HasDefaultValueSql("getdate()");
-            
+
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Role)
                 .WithMany(r => r.Users)
@@ -61,7 +61,7 @@ namespace ABC_Bakery.Models
                 .HasMany(o => o.Orders)
                 .WithOne(u => u.Cashier)
                 .HasForeignKey(u => u.CashierId);
-                
+
         }
 
     }

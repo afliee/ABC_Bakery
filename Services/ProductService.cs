@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IronBarCode;
+using Image = System.Drawing.Image;
 using ABC_Bakery.Helpers;
 using ABC_Bakery.Repositories;
 using ABC_Bakery.Models;
-using IronBarCode;
-using Image = System.Drawing.Image;
+
 namespace ABC_Bakery.Services
 {
     internal enum TextSearchFlag
@@ -23,7 +24,7 @@ namespace ABC_Bakery.Services
         private readonly DatabaseContext _db;
         private readonly ProductRepository _productRepository;
 
-        
+
         private ProductService()
         {
             _db = new DatabaseContext();
@@ -68,7 +69,7 @@ namespace ABC_Bakery.Services
 
             // convert barcode to image
             Image barcodeImage = barcode.Image;
-            
+
             return barcodeImage;
         }
 

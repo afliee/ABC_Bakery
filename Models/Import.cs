@@ -13,7 +13,7 @@ namespace ABC_Bakery.Models
         public int SupplierId { get; set; }
         public int UserId { get; set; }
         public int Total { get; set; }
-        public Boolean IsInternal { get; set; }
+        public bool IsInternal { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
@@ -23,8 +23,8 @@ namespace ABC_Bakery.Models
 
         public Import()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
         public static void Config(ModelBuilder modelBuilder)

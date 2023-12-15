@@ -1,12 +1,12 @@
-﻿using ABC_Bakery.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ABC_Bakery.Helpers;
 using ABC_Bakery.Repositories;
+using ABC_Bakery.Helpers;
 using ABC_Bakery.Models;
+
 namespace ABC_Bakery.Services
 {
     internal sealed class CategoryService
@@ -34,9 +34,9 @@ namespace ABC_Bakery.Services
             return _categoryRepository.FindAll();
         }
 
-        public bool Create(String name)
+        public bool Create(string name)
         {
-            if (String.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(name))
             {
                 return false;
             }

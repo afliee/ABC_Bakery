@@ -28,7 +28,7 @@ namespace ABC_Bakery.Helpers.Utils
         // override Clone method
         public TextCurrency Clone()
         {
-            return (TextCurrency)this.MemberwiseClone();
+            return (TextCurrency)MemberwiseClone();
         }
     }
 }

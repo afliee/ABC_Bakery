@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ABC_Bakery.Repositories
 {
-    internal class OrderRepository : Repository<Models.Order>
+    internal class OrderRepository : Repository<Order>
     {
         private readonly DatabaseContext _context;
         private readonly ProductRepository _productRepository;
@@ -18,14 +18,14 @@ namespace ABC_Bakery.Repositories
 
         public OrderRepository(DatabaseContext context)
         {
-            this._context = context;
-            this._productRepository = new ProductRepository(context);
+            _context = context;
+            _productRepository = new ProductRepository(context);
         }
         public bool Create(Order obj)
         {
             try
             {
-                switch ((int)obj.RecordType)
+                switch (obj.RecordType)
                 {
                     case (int)OrderRecordType.Direct:
                     case (int)OrderRecordType.Equipment:
@@ -36,21 +36,22 @@ namespace ABC_Bakery.Repositories
                                 foreach (var orderDetail in obj.OrderDetails)
                                 {
                                     // update product quantity
-                                    Product product = this._productRepository.Find(orderDetail.ProductId);
+                                    Product product = _productRepository.Find(orderDetail.ProductId);
                                     if (product != null && orderDetail != null)
                                     {
                                         product.Amount -= orderDetail.Quantity;
-                                        this._productRepository.Update(product);
+                                        _productRepository.Update(product);
                                     }
                                 }
                             }
                         }
                         break;
                 }
-                this._context.Orders.Add(obj);
-                
-                return this._context.SaveChanges() > 0;
-            } catch (Exception e)
+                _context.Orders.Add(obj);
+
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 // alert log
                 Console.WriteLine(e);
@@ -68,7 +69,8 @@ namespace ABC_Bakery.Repositories
             try
             {
                 return _context.Orders.Find(id);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return null;
@@ -91,20 +93,21 @@ namespace ABC_Bakery.Repositories
                         foreach (var orderDetail in obj.OrderDetails)
                         {
                             // update product quantity
-                            Product product = this._productRepository.Find(orderDetail.ProductId);
+                            Product product = _productRepository.Find(orderDetail.ProductId);
                             if (product != null && orderDetail != null)
                             {
                                 product.Amount -= orderDetail.Quantity;
-                                this._productRepository.Update(product);
+                                _productRepository.Update(product);
                             }
                         }
                     }
                 }
 
-                this._context.Orders.Update(obj);
+                _context.Orders.Update(obj);
 
-                return this._context.SaveChanges() > 0;
-            } catch (Exception e)
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return false;
@@ -113,9 +116,11 @@ namespace ABC_Bakery.Repositories
 
         public List<Order> FindAllByReceiptId(int receiptId)
         {
-            try {
-                return this._context.Orders.Where(o => o.ReceiptId == receiptId).ToList();
-            } catch (Exception e)
+            try
+            {
+                return _context.Orders.Where(o => o.ReceiptId == receiptId).ToList();
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return null;
@@ -127,8 +132,9 @@ namespace ABC_Bakery.Repositories
             try
             {
                 // find and sort by created_at desc
-                return this._context.Orders.Where(o => o.Type == type).OrderByDescending(o => o.CreatedAt).ToList();
-            } catch (Exception e)
+                return _context.Orders.Where(o => o.Type == type).OrderByDescending(o => o.CreatedAt).ToList();
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return null;
@@ -140,7 +146,7 @@ namespace ABC_Bakery.Repositories
             try
             {
                 // find and sort by created_at desc
-                return this._context.Orders.Where(o => o.RecordType == recordType).OrderByDescending(o => o.CreatedAt).ToList();
+                return _context.Orders.Where(o => o.RecordType == recordType).OrderByDescending(o => o.CreatedAt).ToList();
             }
             catch (Exception e)
             {
@@ -154,7 +160,7 @@ namespace ABC_Bakery.Repositories
             try
             {
                 // find and sort by created_at desc
-                return this._context.Orders.Where(o => o.RecordType == recordType && o.Type == type).OrderByDescending(o => o.CreatedAt).ToList();
+                return _context.Orders.Where(o => o.RecordType == recordType && o.Type == type).OrderByDescending(o => o.CreatedAt).ToList();
             }
             catch (Exception e)
             {
@@ -170,10 +176,10 @@ namespace ABC_Bakery.Repositories
 
                 // format datetime to yyyy-MM-dd
                 string dateStr = date.ToString("dd/MM/yyyy");
-                List<Order> orders = this.FindAllByRecordType(recordType);
+                List<Order> orders = FindAllByRecordType(recordType);
                 // find and sort by created_at desc
                 // find all by repord type and type with date in this 
-                return orders.Where(o => o.CreatedAt.ToString("dd/MM/yyyy").Equals(dateStr) && o.Type == type).ToList();    
+                return orders.Where(o => o.CreatedAt.ToString("dd/MM/yyyy").Equals(dateStr) && o.Type == type).ToList();
             }
             catch (Exception e)
             {
@@ -184,7 +190,7 @@ namespace ABC_Bakery.Repositories
 
         public int Count()
         {
-            return this._context.Orders.Count();
+            return _context.Orders.Count();
         }
     }
 }

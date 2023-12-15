@@ -28,14 +28,14 @@ namespace ABC_Bakery.Models
         public DateTime RefundedAt { get; set; }
 
         public virtual Promotion Promotion { get; set; }
-        public virtual Receipt ?Receipt { get; set; }
+        public virtual Receipt? Receipt { get; set; }
         public virtual User? Cashier { get; set; }
         public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
 
         public Order()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
         public static void Config(ModelBuilder modelBuilder)

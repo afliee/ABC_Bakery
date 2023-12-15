@@ -1,12 +1,12 @@
-﻿using ABC_Bakery.Helpers;
-using ABC_Bakery.Repositories;
-using ABC_Bakery.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ABC_Bakery.Models;
+using ABC_Bakery.Helpers;
 using ABC_Bakery.Models.Constants;
+using ABC_Bakery.Repositories;
 
 namespace ABC_Bakery.Services
 {
@@ -31,12 +31,12 @@ namespace ABC_Bakery.Services
             return _instance;
         }
 
-        public bool Create(Models.Order obj)
+        public bool Create(Order obj)
         {
             return _orderRepository.Create(obj);
         }
 
-        public bool Update(Models.Order obj)
+        public bool Update(Order obj)
         {
             return _orderRepository.Update(obj);
         }

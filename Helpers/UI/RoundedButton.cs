@@ -7,12 +7,13 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
-using ABC_Bakery.Helpers.Constants;
 using Color = System.Drawing.Color;
 using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+using ABC_Bakery.Helpers.Constants;
+
 namespace ABC_Bakery.Helpers.UI
 {
     internal class RoundedButton : Button
@@ -20,17 +21,17 @@ namespace ABC_Bakery.Helpers.UI
         //Fields
         private int borderSize = 0;
         private int borderRadius = 20;
-// parse string #FF0000 to Color
-        private Color borderColor = ColorTranslator.FromHtml(Constants.Colors.Primary);
+        // parse string #FF0000 to Color
+        private Color borderColor = ColorTranslator.FromHtml(Colors.Primary);
 
         public RoundedButton()
         {
-            this.FlatStyle = FlatStyle.Flat;
-            this.FlatAppearance.BorderSize = 0;
-            this.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            this.Size = new Size(100, 40);
-            this.BackColor = ColorTranslator.FromHtml(Constants.Colors.Primary);
-            this.ForeColor = Color.White;
+            FlatStyle = FlatStyle.Flat;
+            FlatAppearance.BorderSize = 0;
+            FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Size = new Size(100, 40);
+            BackColor = ColorTranslator.FromHtml(Colors.Primary);
+            ForeColor = Color.White;
         }
 
         private GraphicsPath GetFigurePath(Rectangle rect, float radius)
@@ -48,7 +49,7 @@ namespace ABC_Bakery.Helpers.UI
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
-            Rectangle rectSurface = this.ClientRectangle;
+            Rectangle rectSurface = ClientRectangle;
             Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
             int smoothSize = 2;
             if (borderSize > 0)
@@ -57,12 +58,12 @@ namespace ABC_Bakery.Helpers.UI
             {
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-                using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
+                using (Pen penSurface = new Pen(Parent.BackColor, smoothSize))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                     //Button surface
-                    this.Region = new Region(pathSurface);
+                    Region = new Region(pathSurface);
                     //Draw surface border for HD result
                     pevent.Graphics.DrawPath(penSurface, pathSurface);
                     //Button border                    
@@ -75,14 +76,14 @@ namespace ABC_Bakery.Helpers.UI
             {
                 pevent.Graphics.SmoothingMode = SmoothingMode.None;
                 //Button surface
-                this.Region = new Region(rectSurface);
+                Region = new Region(rectSurface);
                 //Button border
                 if (borderSize >= 1)
                 {
                     using (Pen penBorder = new Pen(borderColor, borderSize))
                     {
                         penBorder.Alignment = PenAlignment.Inset;
-                        pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);
+                        pevent.Graphics.DrawRectangle(penBorder, 0, 0, Width - 1, Height - 1);
                     }
                 }
             }
@@ -91,11 +92,11 @@ namespace ABC_Bakery.Helpers.UI
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+            Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
-            this.Invalidate();
+            Invalidate();
         }
     }
 }

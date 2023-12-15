@@ -1,6 +1,4 @@
-﻿using ABC_Bakery.Services;
-using ABC_Bakery.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ABC_Bakery.Helpers.Utils;
 using MessageBox = ABC_Bakery.Helpers.UI.MessageBox;
-
+using ABC_Bakery.Services;
+using ABC_Bakery.Models.Constants;
+using ABC_Bakery.Models;
+using ABC_Bakery.Helpers.Utils;
 
 namespace ABC_Bakery.Forms
 {
@@ -37,6 +37,9 @@ namespace ABC_Bakery.Forms
 
         private void Load_Order()
         {
+            dgOrderDetail.Rows.Clear();
+            dgOrders.Rows.Clear();
+
             DateTime now = dt_date.Value;
             List<Models.Order> ordersPaid = _orderService.FindAllOrderPrePlaceNoPayment(now);
             if (ordersPaid == null || ordersPaid.Count() == 0)
@@ -76,23 +79,23 @@ namespace ABC_Bakery.Forms
             int orderId = int.Parse(dgOrders.Rows[_orderIndex].Cells[1].Value.ToString().Replace(orderPrefix, ""));
 
             // get order details by order id
-            List<Models.OrderDetail> orderDetails = OrderDetailService.GetInstance().FindByOrderId(orderId);
+            List<OrderDetail> orderDetails = OrderDetailService.GetInstance().FindByOrderId(orderId);
             var orderEntity = _orderService.FindById(orderId);
             if (orderEntity != null)
             {
                 switch (orderEntity.Status)
                 {
-                    case (int)Models.Constants.OrderStatus.Completed:
+                    case (int)OrderStatus.Completed:
                         rb_done.Checked = true;
                         rb_delivery.Checked = true;
                         break;
-                    case (int)Models.Constants.OrderStatus.Delivered:
+                    case (int)OrderStatus.Delivered:
                         rb_delivery.Checked = true;
                         rb_not_delivery.Checked = false;
                         break;
-                    case (int)Models.Constants.OrderStatus.Pending:
-                    case (int)Models.Constants.OrderStatus.Canceled:
-                    case (int)Models.Constants.OrderStatus.Processing:
+                    case (int)OrderStatus.Pending:
+                    case (int)OrderStatus.Canceled:
+                    case (int)OrderStatus.Processing:
                         rb_delivery.Checked = false;
                         rb_not_delivery.Checked = true;
                         rb_not_done.Checked = true;
@@ -101,10 +104,10 @@ namespace ABC_Bakery.Forms
 
                 switch (orderEntity.Type)
                 {
-                    case (int)Models.Constants.OrderType.Prepay:
+                    case (int)OrderType.Prepay:
                         rb_not_done.Checked = true;
                         break;
-                    case (int)Models.Constants.OrderType.Completed:
+                    case (int)OrderType.Completed:
                         rb_done.Checked = true;
                         break;
                 }
@@ -258,9 +261,9 @@ namespace ABC_Bakery.Forms
                 return;
             }
 
-            orderEntity.Status = rb_done.Checked ? (int)Models.Constants.OrderStatus.Completed : (int)Models.Constants.OrderStatus.Delivered;
+            orderEntity.Status = rb_done.Checked ? (int)OrderStatus.Completed : (int)OrderStatus.Delivered;
 
-            orderEntity.Type = rb_not_done.Checked ? (int)Models.Constants.OrderType.Prepay : (int)Models.Constants.OrderType.Completed;
+            orderEntity.Type = rb_not_done.Checked ? (int)OrderType.Prepay : (int)OrderType.Completed;
 
             //orderEntity.Price = _totalPrice;
             // get total Price in order

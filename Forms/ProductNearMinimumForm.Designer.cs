@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class ProductNearMinimumForm
     {
@@ -245,7 +247,7 @@
         private Panel panel1;
         private ReaLTaiizor.Controls.BigLabel bigLabel1;
         private Panel pnProductBoundary;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private DataGridView dgvProduct;
         private DataGridViewTextBoxColumn stt;
         private DataGridViewImageColumn barcode;

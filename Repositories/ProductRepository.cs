@@ -17,16 +17,17 @@ namespace ABC_Bakery.Repositories
 
         public ProductRepository(DatabaseContext db)
         {
-            this.context = db;
+            context = db;
         }
 
         public bool Create(Product obj)
         {
             try
             {
-                this.context.Products.Add(obj);
-                return this.context.SaveChanges() > 0;
-            } catch (Exception e)
+                context.Products.Add(obj);
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return false;
@@ -37,33 +38,34 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                this.context.Products.Remove(obj);
-                return this.context.SaveChanges() > 0;
+                context.Products.Remove(obj);
+                return context.SaveChanges() > 0;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 return false;
-            } 
+            }
         }
 
         public Product Find(int id)
         {
-            return this.context.Products.Find(id);
+            return context.Products.Find(id);
         }
 
         public List<Product> FindAll()
         {
-            return this.context.Products.ToList();  
+            return context.Products.ToList();
         }
 
         public bool Update(Product obj)
         {
             try
             {
-                this.context.Products.Update(obj);
-                return this.context.SaveChanges() > 0;
-            } catch (Exception e)
+                context.Products.Update(obj);
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return false;
@@ -72,32 +74,32 @@ namespace ABC_Bakery.Repositories
 
         public Product FindByName(string name)
         {
-               return this.context.Products.Where(p => p.Name.Equals(name)).FirstOrDefault();
+            return context.Products.Where(p => p.Name.Equals(name)).FirstOrDefault();
         }
 
         public List<Product> FindByNameContains(string name)
         {
-            return this.context.Products.Where(p => p.Name.Contains(name)).ToList();
+            return context.Products.Where(p => p.Name.Contains(name)).ToList();
         }
 
         public List<Product> FindByIdIn(List<int> ids)
         {
-            return this.context.Products.Where(p => ids.Contains(p.Id)).ToList();
+            return context.Products.Where(p => ids.Contains(p.Id)).ToList();
         }
 
         public List<Product> FindByNameIgnoreCase(string name)
         {
-            return this.context.Products.Where(p => p.Name.ToLower().Equals(name.ToLower())).ToList();
+            return context.Products.Where(p => p.Name.ToLower().Equals(name.ToLower())).ToList();
         }
-    
+
         public List<Product> FindProductNearExpired()
         {
-            return this.context.Products.Where(p => p.ExpiredDate != null && p.ExpiredDate.Subtract(DateTime.Now).Days <= NEAR_EXPIRED_DAYS).ToList();
+            return context.Products.Where(p => p.ExpiredDate != null && p.ExpiredDate.Subtract(DateTime.Now).Days <= NEAR_EXPIRED_DAYS).ToList();
         }
 
         public List<Product> FindProductNearMinimumQuantity()
         {
-            return this.context.Products.Where(p => p.Amount <= MINIMUM_QUANTITY).ToList();
+            return context.Products.Where(p => p.Amount <= MINIMUM_QUANTITY).ToList();
         }
     }
 }

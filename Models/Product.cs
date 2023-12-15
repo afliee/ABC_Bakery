@@ -17,8 +17,8 @@ namespace ABC_Bakery.Models
         public static readonly string Prefix = "SP";
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public Boolean IsAvailable { get; set; }
-        public Boolean IsActived { get; set; }
+        public bool IsAvailable { get; set; }
+        public bool IsActived { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual ICollection<Image>? Images { get; set; }
@@ -27,13 +27,14 @@ namespace ABC_Bakery.Models
 
         public Product()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
-            this.IsAvailable = true;
-            this.IsActived = true;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+            IsAvailable = true;
+            IsActived = true;
         }
 
-        public static void Config(ModelBuilder modelBuilder) { 
+        public static void Config(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Product>()
                 .Property(p => p.CreatedAt)
                 .HasDefaultValueSql("getdate()");

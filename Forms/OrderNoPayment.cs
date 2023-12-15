@@ -1,5 +1,6 @@
 ﻿using ABC_Bakery.Helpers.Utils;
 using ABC_Bakery.Models;
+using ABC_Bakery.Models.Constants;
 using ABC_Bakery.Services;
 using Microsoft.VisualBasic;
 using System;
@@ -80,16 +81,16 @@ namespace ABC_Bakery.Forms
             int orderId = int.Parse(dgOrders.Rows[_orderIndex].Cells[1].Value.ToString().Replace(orderPrefix, ""));
 
             // get order details by order id
-            List<Models.OrderDetail> orderDetails = OrderDetailService.GetInstance().FindByOrderId(orderId);
+            List<OrderDetail> orderDetails = OrderDetailService.GetInstance().FindByOrderId(orderId);
             var orderEntity = _orderService.FindById(orderId);
             if (orderEntity != null)
             {
                 switch (orderEntity.Type)
                 {
-                    case (int)Models.Constants.OrderType.Prepay:
+                    case (int)OrderType.Prepay:
                         rb_not_done.Checked = true;
                         break;
-                    case (int)Models.Constants.OrderType.Completed:
+                    case (int)OrderType.Completed:
                         rb_done.Checked = true;
                         break;
                 }
@@ -263,9 +264,9 @@ namespace ABC_Bakery.Forms
                 return;
             }
 
-            orderEntity.Status = rb_done.Checked ? (int)Models.Constants.OrderStatus.Completed : (int)Models.Constants.OrderStatus.Delivered;
+            orderEntity.Status = rb_done.Checked ? (int)OrderStatus.Completed : (int)OrderStatus.Delivered;
 
-            orderEntity.Type = rb_not_done.Checked ? (int)Models.Constants.OrderType.Prepay : (int)Models.Constants.OrderType.Completed;
+            orderEntity.Type = rb_not_done.Checked ? (int)OrderType.Prepay : (int)OrderType.Completed;
 
             var totalPriceCol = dgOrders.Rows[_orderIndex].Cells[3].Value as TextCurrency;
             orderEntity.Price = totalPriceCol.Value;

@@ -13,7 +13,7 @@ namespace ABC_Bakery.Models
         public required string Name { get; set; }
         public required string Code { get; set; }
         public int Ratio { get; set; }
-        public Boolean IsActived { get; set; }
+        public bool IsActived { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime ExpiredAt { get; set; }
@@ -22,8 +22,8 @@ namespace ABC_Bakery.Models
 
         public Promotion()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
         public static void Config(ModelBuilder modelBuilder)

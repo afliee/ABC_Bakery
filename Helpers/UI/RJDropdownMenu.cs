@@ -13,6 +13,8 @@ using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+using ABC_Bakery.Helpers.UI;
+
 namespace ABC_Bakery.Helpers.UI
 {
     public class RJDropdownMenu : ContextMenuStrip
@@ -71,7 +73,7 @@ namespace ABC_Bakery.Helpers.UI
                 menuItemHeaderSize = new Bitmap(25, 45);
             else menuItemHeaderSize = new Bitmap(20, menuItemHeight);
 
-            foreach (ToolStripMenuItem menuItemL1 in this.Items)
+            foreach (ToolStripMenuItem menuItemL1 in Items)
             {
                 menuItemL1.ImageScaling = ToolStripItemImageScaling.None;
                 if (menuItemL1.Image == null) menuItemL1.Image = menuItemHeaderSize;
@@ -101,9 +103,9 @@ namespace ABC_Bakery.Helpers.UI
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            if (this.DesignMode == false)
+            if (DesignMode == false)
             {
-                this.Renderer = new MenuRenderer(isMainMenu, primaryColor, menuItemTextColor);
+                Renderer = new MenuRenderer(isMainMenu, primaryColor, menuItemTextColor);
                 LoadMenuItemHeight();
             }
         }

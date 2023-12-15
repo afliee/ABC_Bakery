@@ -3,36 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ABC_Bakery.Models;
 using ABC_Bakery.Helpers;
+using ABC_Bakery.Models;
 
 namespace ABC_Bakery.Repositories
 {
-    internal class UserRepository : Repository<Models.User>
+    internal class UserRepository : Repository<User>
     {
         private readonly DatabaseContext _context;
         private readonly RoleRepository _roleRepository;
 
         public UserRepository(DatabaseContext context)
         {
-            this._context = context;
-            this._roleRepository = new RoleRepository(context);
+            _context = context;
+            _roleRepository = new RoleRepository(context);
         }
 
         public bool Create(User obj)
         {
             try
             {
-                var role = this._roleRepository.Find(obj.RoleId);
+                var role = _roleRepository.Find(obj.RoleId);
                 if (role == null)
                 {
                     return false;
                 }
 
                 obj.Role = role;
-                this._context.Users.Add(obj);
-                return this._context.SaveChanges() > 0;
-            } catch (Exception e)
+                _context.Users.Add(obj);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.Write(e.ToString());
                 return false;
@@ -46,12 +47,12 @@ namespace ABC_Bakery.Repositories
 
         public User Find(int id)
         {
-            return this._context.Users.Find(id);
+            return _context.Users.Find(id);
         }
 
         public List<User> FindAll()
         {
-            return this._context.Users.ToList();
+            return _context.Users.ToList();
         }
 
         public bool Update(User obj)
@@ -63,23 +64,24 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                this._context.Users.ToList();
+                _context.Users.ToList();
                 return _context.Users
                     .Where(u => u.Name.Equals(user_name))
                     .FirstOrDefault();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.Write(e.ToString());
                 return null;
-            } 
+            }
         }
 
         public User FindFirstCashier()
         {
             try
             {
-                this._context.Users.ToList();
-                var role = this._roleRepository.FindByName("Cashier");
+                _context.Users.ToList();
+                var role = _roleRepository.FindByName("Cashier");
                 if (role == null)
                 {
                     return null;
@@ -88,7 +90,8 @@ namespace ABC_Bakery.Repositories
                 return _context.Users
                     .Where(u => u.RoleId == role.Id)
                     .FirstOrDefault();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.Write(e.ToString());
                 return null;

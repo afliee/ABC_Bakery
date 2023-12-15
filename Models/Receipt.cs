@@ -23,9 +23,9 @@ namespace ABC_Bakery.Models
 
         public Receipt()
         {
-            this.CreatedAt = DateTime.Now;
-            this.Orders = new HashSet<Order>();
-            this.ReceiptType = ReceiptType.Import;
+            CreatedAt = DateTime.Now;
+            Orders = new HashSet<Order>();
+            ReceiptType = ReceiptType.Import;
         }
 
         public static void Config(ModelBuilder modelBuilder)

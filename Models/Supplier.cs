@@ -20,8 +20,8 @@ namespace ABC_Bakery.Models
 
         public Supplier()
         {
-            this.CreatedAt = DateTime.Now;
-            this.UpdatedAt = DateTime.Now;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
 
         public static void Config(ModelBuilder modelBuilder)

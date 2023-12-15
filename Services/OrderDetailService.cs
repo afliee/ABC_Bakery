@@ -1,4 +1,6 @@
-﻿using ABC_Bakery.Models;
+﻿using ABC_Bakery.Helpers;
+using ABC_Bakery.Models;
+using ABC_Bakery.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +12,16 @@ namespace ABC_Bakery.Services
     internal class OrderDetailService
     {
         private static OrderDetailService _instance = null;
-        private readonly Repositories.OrderDetailRepository _orderDetailRepository;
-        private readonly Repositories.ProductRepository _productRepository;
-        private readonly Helpers.DatabaseContext _db;
+        private readonly OrderDetailRepository _orderDetailRepository;
+        private readonly ProductRepository _productRepository;
+        private readonly DatabaseContext _db;
 
         private OrderDetailService()
         {
             //_db = new Helpers.DatabaseContext();
-            _db = Helpers.SingletonContext.GetInstance().GetDatabaseContext();
-            _orderDetailRepository = new Repositories.OrderDetailRepository(_db);
-            _productRepository = new Repositories.ProductRepository(_db);
+            _db = SingletonContext.GetInstance().GetDatabaseContext();
+            _orderDetailRepository = new OrderDetailRepository(_db);
+            _productRepository = new ProductRepository(_db);
         }
 
         public static OrderDetailService GetInstance()
@@ -31,7 +33,7 @@ namespace ABC_Bakery.Services
             return _instance;
         }
 
-        public bool Create(Models.OrderDetail obj)
+        public bool Create(OrderDetail obj)
         {
             return _orderDetailRepository.Create(obj);
         }

@@ -12,6 +12,7 @@ using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+
 namespace ABC_Bakery.Helpers.UI
 {
     class RJRadioButton : RadioButton
@@ -31,7 +32,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 checkedColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -45,16 +46,16 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 unCheckedColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
         //Constructor
         public RJRadioButton()
         {
-            this.MinimumSize = new Size(0, 21);
+            MinimumSize = new Size(0, 21);
             //Add a padding of 10 to the left to have a considerable distance between the text and the RadioButton.
-            this.Padding = new Padding(10,0,0,0);
+            Padding = new Padding(10, 0, 0, 0);
         }
 
         //Overridden methods
@@ -68,14 +69,14 @@ namespace ABC_Bakery.Helpers.UI
             RectangleF rectRbBorder = new RectangleF()
             {
                 X = 0.5F,
-                Y = (this.Height - rbBorderSize) / 2, //Center
+                Y = (Height - rbBorderSize) / 2, //Center
                 Width = rbBorderSize,
                 Height = rbBorderSize
             };
             RectangleF rectRbCheck = new RectangleF()
             {
-                X = rectRbBorder.X + ((rectRbBorder.Width - rbCheckSize) / 2), //Center
-                Y = (this.Height - rbCheckSize) / 2, //Center
+                X = rectRbBorder.X + (rectRbBorder.Width - rbCheckSize) / 2, //Center
+                Y = (Height - rbCheckSize) / 2, //Center
                 Width = rbCheckSize,
                 Height = rbCheckSize
             };
@@ -83,12 +84,12 @@ namespace ABC_Bakery.Helpers.UI
             //Drawing
             using (Pen penBorder = new Pen(checkedColor, 1.6F))
             using (SolidBrush brushRbCheck = new SolidBrush(checkedColor))
-            using (SolidBrush brushText = new SolidBrush(this.ForeColor))
+            using (SolidBrush brushText = new SolidBrush(ForeColor))
             {
                 //Draw surface
-                graphics.Clear(this.BackColor);
+                graphics.Clear(BackColor);
                 //Draw Radio Button
-                if (this.Checked)
+                if (Checked)
                 {
                     graphics.DrawEllipse(penBorder, rectRbBorder);//Circle border
                     graphics.FillEllipse(brushRbCheck, rectRbCheck); //Circle Radio Check
@@ -99,8 +100,8 @@ namespace ABC_Bakery.Helpers.UI
                     graphics.DrawEllipse(penBorder, rectRbBorder); //Circle border
                 }
                 //Draw text
-                graphics.DrawString(this.Text, this.Font, brushText,
-                    rbBorderSize + 8, (this.Height - TextRenderer.MeasureText(this.Text, this.Font).Height) / 2);//Y=Center
+                graphics.DrawString(Text, Font, brushText,
+                    rbBorderSize + 8, (Height - TextRenderer.MeasureText(Text, Font).Height) / 2);//Y=Center
             }
         }
 

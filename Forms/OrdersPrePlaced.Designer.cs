@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class OrdersPrePlaced
     {
@@ -829,6 +831,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgOrderDetail).EndInit();
             parrotGroupBox1.ResumeLayout(false);
+            parrotGroupBox1.PerformLayout();
             roundedPanel6.ResumeLayout(false);
             roundedPanel6.PerformLayout();
             panel4.ResumeLayout(false);
@@ -838,6 +841,7 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             parrotGroupBox2.ResumeLayout(false);
+            parrotGroupBox2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
@@ -855,10 +859,10 @@
         private Panel panel3;
         private Label label1;
         private Panel panel2;
-        private Helpers.UI.RoundedPanel roundedPanel4;
-        private Helpers.UI.DatetimePickerCustom dt_date;
-        private Helpers.UI.RoundedPanel roundedPanel1;
-        private Helpers.UI.RoundedPanel roundedPanel5;
+        private RoundedPanel roundedPanel4;
+        private DatetimePickerCustom dt_date;
+        private RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel5;
         private Panel panel1;
         private DataGridView dgOrderDetail;
         private DataGridViewTextBoxColumn order_name;
@@ -867,13 +871,13 @@
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox1;
         private ReaLTaiizor.Controls.CyberRadioButton rb_not_done;
         private ReaLTaiizor.Controls.CyberRadioButton rb_done;
-        private Helpers.UI.RoundedPanel roundedPanel6;
+        private RoundedPanel roundedPanel6;
         private Label label2;
         private ReaLTaiizor.Controls.MetroDivider metroDivider1;
-        private Helpers.UI.RoundedButton roundedButton1;
+        private RoundedButton roundedButton1;
         private Panel panel4;
         private Panel panel5;
-        private Helpers.UI.RoundedPanel roundedPanel3;
+        private RoundedPanel roundedPanel3;
         private DataGridView dgOrders;
         private DataGridViewTextBoxColumn stt;
         private DataGridViewTextBoxColumn maBienNhan;
@@ -881,7 +885,7 @@
         private DataGridViewTextBoxColumn refund_date;
         private DataGridViewTextBoxColumn total;
         private DataGridViewTextBoxColumn note;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private ReaLTaiizor.Controls.MetroDivider metroDivider2;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox2;
         private TableLayoutPanel tableLayoutPanel1;

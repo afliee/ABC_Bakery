@@ -27,9 +27,10 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                this._context.RolePermissions.Add(obj);
-                return this._context.SaveChanges() > 0;
-            } catch (Exception e)
+                _context.RolePermissions.Add(obj);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -57,14 +58,14 @@ namespace ABC_Bakery.Repositories
 
         public void Initialize()
         {
-            if (this._permissionRepository != null)
+            if (_permissionRepository != null)
             {
-                  if (this._permissionRepository.FindAll().Count > 0) return;
+                if (_permissionRepository.FindAll().Count > 0) return;
             }
 
-            if (this._roleRepository != null)
+            if (_roleRepository != null)
             {
-                if (this._roleRepository.FindAll().Count > 0) return;
+                if (_roleRepository.FindAll().Count > 0) return;
             }
 
             Role Admin = _roleRepository.FindByName(RoleType.Admin.ToString());
@@ -78,20 +79,20 @@ namespace ABC_Bakery.Repositories
 
             foreach (var permission in userPerrmissions)
             {
-                this.Create(new RolePermission(Admin, permission));
+                Create(new RolePermission(Admin, permission));
             }
 
             foreach (var permission in productPerrmissions)
             {
-                this.Create(new RolePermission(Admin, permission));
-                this.Create(new RolePermission(Accounting, permission));
+                Create(new RolePermission(Admin, permission));
+                Create(new RolePermission(Accounting, permission));
             }
 
             foreach (var permission in orderPerrmissions)
             {
-                this.Create(new RolePermission(Admin, permission));
-                this.Create(new RolePermission(Accounting, permission));
-                this.Create(new RolePermission(Cashier, permission));
+                Create(new RolePermission(Admin, permission));
+                Create(new RolePermission(Accounting, permission));
+                Create(new RolePermission(Cashier, permission));
             }
 
             MessageBox.Show("Role Permission Initialized");

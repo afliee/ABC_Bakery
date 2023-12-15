@@ -20,8 +20,8 @@ namespace ABC_Bakery.Models
 
         public ImportProduct()
         {
-            this.Price = 0;
-            this.Amount = 0;
+            Price = 0;
+            Amount = 0;
         }
 
         public static void Config(ModelBuilder modelBuilder)

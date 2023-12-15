@@ -13,6 +13,7 @@ using Image = System.Drawing.Image;
 using RectangleF = System.Drawing.RectangleF;
 using Rectangle = System.Drawing.Rectangle;
 using Size = System.Drawing.Size;
+
 namespace ABC_Bakery.Helpers.UI
 {
     class RJCircularPictureBox : PictureBox
@@ -28,8 +29,8 @@ namespace ABC_Bakery.Helpers.UI
         //Constructor
         public RJCircularPictureBox()
         {
-            this.Size = new Size(100, 100);
-            this.SizeMode = PictureBoxSizeMode.StretchImage;
+            Size = new Size(100, 100);
+            SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         //Properties
@@ -40,7 +41,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 borderSize = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -51,7 +52,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 borderColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -62,7 +63,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 borderColor2 = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -73,7 +74,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 borderLineStyle = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -84,7 +85,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 borderCapStyle = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -95,7 +96,7 @@ namespace ABC_Bakery.Helpers.UI
             set
             {
                 gradientAngle = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -103,7 +104,7 @@ namespace ABC_Bakery.Helpers.UI
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            this.Size = new Size(this.Width, this.Width);
+            Size = new Size(Width, Width);
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -111,12 +112,12 @@ namespace ABC_Bakery.Helpers.UI
             base.OnPaint(pe);
             //Fields
             var graph = pe.Graphics;
-            var rectContourSmooth = Rectangle.Inflate(this.ClientRectangle, -1, -1);
+            var rectContourSmooth = Rectangle.Inflate(ClientRectangle, -1, -1);
             var rectBorder = Rectangle.Inflate(rectContourSmooth, -borderSize, -borderSize);
             var smoothSize = borderSize > 0 ? borderSize * 3 : 1;
             using (var borderGColor = new LinearGradientBrush(rectBorder, borderColor, borderColor2, gradientAngle))
             using (var pathRegion = new GraphicsPath())
-            using (var penSmooth = new Pen(this.Parent.BackColor, smoothSize))
+            using (var penSmooth = new Pen(Parent.BackColor, smoothSize))
             using (var penBorder = new Pen(borderGColor, borderSize))
             {
                 graph.SmoothingMode = SmoothingMode.AntiAlias;
@@ -124,7 +125,7 @@ namespace ABC_Bakery.Helpers.UI
                 penBorder.DashCap = borderCapStyle;
                 pathRegion.AddEllipse(rectContourSmooth);
                 //Set rounded region 
-                this.Region = new Region(pathRegion);
+                Region = new Region(pathRegion);
 
                 //Drawing
                 graph.DrawEllipse(penSmooth, rectContourSmooth);//Draw contour smoothing

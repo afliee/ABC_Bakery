@@ -46,7 +46,7 @@ namespace ABC_Bakery.Services
             {
                 return false;
             }
-            
+
             existPromotion = _repository.FindByCodeExistBeforeOrEqualDate(code, expiredAt);
             if (existPromotion != null)
             {

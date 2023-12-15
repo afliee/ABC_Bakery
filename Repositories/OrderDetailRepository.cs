@@ -15,15 +15,16 @@ namespace ABC_Bakery.Repositories
 
         public OrderDetailRepository(DatabaseContext context)
         {
-            this._context = context;
+            _context = context;
         }
         public bool Create(OrderDetail obj)
         {
             try
             {
-                this._context.OrderDetails.Add(obj);
-                return this._context.SaveChanges() > 0;
-            } catch (Exception e)
+                _context.OrderDetails.Add(obj);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.Write(e.ToString());
                 return false;
@@ -37,7 +38,7 @@ namespace ABC_Bakery.Repositories
 
         public OrderDetail Find(int id)
         {
-            return this._context.OrderDetails.Find(id);
+            return _context.OrderDetails.Find(id);
         }
 
         public List<OrderDetail> FindAll()
@@ -49,9 +50,10 @@ namespace ABC_Bakery.Repositories
         {
             try
             {
-                this._context.OrderDetails.Update(obj);
-                return this._context.SaveChanges() > 0;
-            } catch (Exception e)
+                _context.OrderDetails.Update(obj);
+                return _context.SaveChanges() > 0;
+            }
+            catch (Exception e)
             {
                 Console.Write(e.ToString());
                 return false;
@@ -69,12 +71,13 @@ namespace ABC_Bakery.Repositories
                 }
 
 
-                this._context.OrderDetails.Where(od => od.Id == orderDetailId).ExecuteUpdate(entity => entity.SetProperty(od => od.Quantity, quantity));
+                _context.OrderDetails.Where(od => od.Id == orderDetailId).ExecuteUpdate(entity => entity.SetProperty(od => od.Quantity, quantity));
 
-                this._context.OrderDetails.Where(od => od.Id == orderDetailId).ExecuteUpdate(entity => entity.SetProperty(od => od.Total, quantity * orderDetail.Price));
+                _context.OrderDetails.Where(od => od.Id == orderDetailId).ExecuteUpdate(entity => entity.SetProperty(od => od.Total, quantity * orderDetail.Price));
 
                 return true;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return false;
@@ -83,12 +86,12 @@ namespace ABC_Bakery.Repositories
 
         public List<OrderDetail> FindByOrderId(int orderId)
         {
-            return this._context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+            return _context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
         }
 
         public int CountProductByOrderId(int orderId)
         {
-            var ordersDetail = this._context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
+            var ordersDetail = _context.OrderDetails.Where(od => od.OrderId == orderId).ToList();
 
             if (ordersDetail == null)
             {

@@ -1,4 +1,6 @@
-﻿namespace ABC_Bakery.Forms
+﻿using ABC_Bakery.Helpers.UI;
+
+namespace ABC_Bakery.Forms
 {
     partial class PromotionForm
     {
@@ -580,11 +582,11 @@
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox4;
         private Helpers.UI.RJTextBox tbName;
         private ReaLTaiizor.Controls.ParrotGroupBox parrotGroupBox3;
-        private Helpers.UI.RoundedPanel roundedPanel1;
-        private Helpers.UI.RJButton btnSave;
-        private Helpers.UI.DatetimePickerCustom dt_date;
+        private RoundedPanel roundedPanel1;
+        private RJButton btnSave;
+        private DatetimePickerCustom dt_date;
         private Panel pnProductBoundary;
-        private Helpers.UI.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private DataGridView dgPromotions;
         private System.Windows.Forms.Timer delayTextChanged;
         private DataGridViewTextBoxColumn stt;
