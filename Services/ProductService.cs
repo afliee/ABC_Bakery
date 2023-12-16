@@ -60,6 +60,7 @@ namespace ABC_Bakery.Services
             if (!int.TryParse(id, out int result)) return null;
 
             var product = _productRepository.Find(result);
+            if (product == null) return null;
             return product.IsActived ? product : null;
         }
 
