@@ -31,8 +31,6 @@ namespace ABC_Bakery.Models
         public static void Config(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OrderDetail>()
-                .ToTable("order_detail");
-            modelBuilder.Entity<OrderDetail>()
                 .Property(od => od.CreatedAt)
                 .HasDefaultValueSql("getdate()");
 

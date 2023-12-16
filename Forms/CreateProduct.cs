@@ -432,5 +432,61 @@ namespace ABC_Bakery.Forms
             // show pnInputProduct
             this.pnInfoBounary.Visible = true;
         }
+
+        private void dgProducts_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // get id of cell
+            int id = Int32.Parse(dgProducts.Rows[e.RowIndex].Cells[0].Value.ToString());
+            Product product = productRepository.Find(id);
+            if (product == null)
+            {
+                MessageBox.Show("Không tìm thấy sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // get value of cell
+            var cellChanged = dgProducts.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if (cellChanged.Value == null)
+            {
+                MessageBox.Show("Giá trị không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string value = cellChanged.Value.ToString();
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                MessageBox.Show("Giá trị không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            switch (e.ColumnIndex)
+            {
+                case 2:
+                    product.Name = value;
+                    break;
+                case 3:
+                    product.Price = Int32.Parse(value);
+                    break;
+                case 4:
+                    product.Amount = Int32.Parse(value);
+                    break;
+                default:
+                    break;
+            }
+
+            bool result = productRepository.Update(product);
+            if (!result)
+            {
+                MessageBox.Show("Cập nhật sản phẩm thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật sản phẩm thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgProducts.Rows.Clear();
+                Load_Data();
+                return;
+            }
+        }
     }
 }

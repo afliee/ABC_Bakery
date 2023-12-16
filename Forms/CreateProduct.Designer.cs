@@ -49,37 +49,37 @@ namespace ABC_Bakery.Forms
             panel1 = new Panel();
             bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            roundedPanel1 = new Helpers.UI.RoundedPanel();
-            datetimePickerCustom1 = new Helpers.UI.DatetimePickerCustom();
+            roundedPanel1 = new RoundedPanel();
+            datetimePickerCustom1 = new DatetimePickerCustom();
             pictureBox1 = new PictureBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            roundedPanel4 = new Helpers.UI.RoundedPanel();
+            roundedPanel4 = new RoundedPanel();
             panel9 = new Panel();
-            tbSearch = new Helpers.UI.RJTextBox();
+            tbSearch = new RJTextBox();
             pictureBox2 = new PictureBox();
             dungeonHeaderLabel2 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             pnProductBoundary = new Panel();
-            roundedPanel2 = new Helpers.UI.RoundedPanel();
+            roundedPanel2 = new RoundedPanel();
             dgProducts = new DataGridView();
             pnProducts = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             parrotGroupBox3 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            tbPrice = new Helpers.UI.RJTextBox();
+            tbPrice = new RJTextBox();
             parrotGroupBox1 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            tbName = new Helpers.UI.RJTextBox();
+            tbName = new RJTextBox();
             parrotGroupBox2 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            roundedPanel3 = new Helpers.UI.RoundedPanel();
+            roundedPanel3 = new RoundedPanel();
             cbCategory = new RJComboBox();
             parrotGroupBox4 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            tbQuantity = new Helpers.UI.RJTextBox();
+            tbQuantity = new RJTextBox();
             showProducts = new System.Windows.Forms.Timer(components);
             delayTextChanged = new System.Windows.Forms.Timer(components);
             error = new ErrorProvider(components);
-            pnInfoBounary = new Helpers.UI.RoundedPanel();
-            btnSave = new Helpers.UI.RJButton();
-            roundedPanel5 = new Helpers.UI.RoundedPanel();
+            pnInfoBounary = new RoundedPanel();
+            btnSave = new RJButton();
+            roundedPanel5 = new RoundedPanel();
             parrotGroupBox5 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            tbDescription = new Helpers.UI.RJTextBox();
+            tbDescription = new RJTextBox();
             stt = new DataGridViewTextBoxColumn();
             barcode = new DataGridViewImageColumn();
             name = new DataGridViewTextBoxColumn();
@@ -335,6 +335,7 @@ namespace ABC_Bakery.Forms
             dgProducts.Size = new Size(1223, 245);
             dgProducts.TabIndex = 5;
             dgProducts.CellContentClick += dgProducts_CellContentClick;
+            dgProducts.CellEndEdit += dgProducts_CellEndEdit;
             // 
             // pnProducts
             // 
@@ -677,7 +678,6 @@ namespace ABC_Bakery.Forms
             name.HeaderText = "Tên Sản Phẩm";
             name.MinimumWidth = 6;
             name.Name = "name";
-            name.ReadOnly = true;
             // 
             // price
             // 
@@ -685,7 +685,6 @@ namespace ABC_Bakery.Forms
             price.HeaderText = "Giá Tiền";
             price.MinimumWidth = 6;
             price.Name = "price";
-            price.ReadOnly = true;
             price.Width = 125;
             // 
             // quantity
@@ -694,7 +693,6 @@ namespace ABC_Bakery.Forms
             quantity.HeaderText = "Số lượng";
             quantity.MinimumWidth = 6;
             quantity.Name = "quantity";
-            quantity.ReadOnly = true;
             quantity.Width = 125;
             // 
             // status
